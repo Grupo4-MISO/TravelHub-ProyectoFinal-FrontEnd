@@ -38,3 +38,20 @@ nav{
   --bs-btn-active-bg: #f59e0b ;
   --bs-btn-active-border-color: #f59e0b;
 }
+
+.nv-link{
+    color: #111827;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-right: black 1px solid;
+}
+
+.nv-link.final{
+  border-right: none;
+}
+
+.nv-icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}

@@ -1,8 +1,38 @@
 <nav class="navbar-shell d-flex align-items-center justify-content-between px-5">
   <img src="/Logo.svg" alt="Logo" class="logo">
 
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link nv-link" href="#"> 
+        <img src="/search.svg" class="nv-icon">
+        Buscar
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nv-link" href="#">
+        <img src="/fire.svg" class="nv-icon">
+        Ofertas
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nv-link" [routerLink]="['/login']">
+        <img src="/calendar-ico.svg" class="nv-icon">
+        Reservas
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nv-link final" href="#">
+        <img src="/service-bell.svg" class="nv-icon">
+        Ayuda
+      </a>
+
+    </li>
+  </ul>
+
+
   <div class="d-flex gap-2">
-    <button type="button" class="btn btn-lg btn-brand-primary">Iniciar sesión</button>
+    <button type="button" class="btn btn-lg btn-brand-primary" [routerLink]="['/login']">Iniciar sesión</button>
     <button type="button" class="btn btn-lg btn-brand-secondary">Crear Cuenta</button>
   </div>
 </nav>
+
