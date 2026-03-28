@@ -11,7 +11,6 @@ phases:
       nodejs: 20
     commands:
       - echo "Instalando dependencias..."
-      - apt-get update
       - npm install -g @angular/cli
       - npm install
 
