@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -9,12 +9,11 @@ describe('PropertyDetailPageComponent', () => {
   let component: PropertyDetailPageComponent;
   let fixture: ComponentFixture<PropertyDetailPageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PropertyDetailPageComponent ]
-    })
-    .compileComponents();
-  }));
+  beforeEach(async() => {
+    await TestBed.configureTestingModule({
+      declarations: [PropertyDetailPageComponent]
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PropertyDetailPageComponent);

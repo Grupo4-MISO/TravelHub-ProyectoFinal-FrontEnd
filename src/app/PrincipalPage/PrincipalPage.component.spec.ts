@@ -1,20 +1,21 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { SearchbarComponent } from '../searchbar/searchbar.component';
 import { PrincipalPageComponent } from './PrincipalPage.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PrincipalPageComponent', () => {
   let component: PrincipalPageComponent;
   let fixture: ComponentFixture<PrincipalPageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PrincipalPageComponent, SearchbarComponent ]
-    })
-    .compileComponents();
-  }));
+  beforeEach(async() => {
+    await TestBed.configureTestingModule({
+      declarations: [PrincipalPageComponent, SearchbarComponent],
+      imports: [RouterTestingModule]
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PrincipalPageComponent);
