@@ -2,7 +2,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { SearchbarComponent } from '../searchbar/searchbar.component';
+import { SearchbarComponent } from '../searchbar/searchbar/searchbar.component';
 import { PrincipalPageComponent } from './PrincipalPage.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
