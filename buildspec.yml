@@ -8,7 +8,7 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      nodejs: 24
     commands:
       - echo "Instalando dependencias..."
       - npm install -g @angular/cli
@@ -31,7 +31,7 @@ phases:
       - echo "Invalidando caché de CloudFront..."
       - aws cloudfront create-invalidation \
           --distribution-id $CLOUDFRONT_DISTRIBUTION_ID \
-          --paths "/index.html"
+          --paths "browser/index.html"
 
 cache:
   paths:
