@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  pre_build:
+    runtime-versions:
+      nodejs: 24
+    commands:
+      - npm install -g @angular/cli
+      - npm install
+
+  build:
+    commands:
+      - ng build --configuration production
+
+  post_build:
+    commands:
+      - aws s3 sync dist/travelhub/browser/ s3://mi-bucket --delete
+      - aws cloudfront create-invalidation --distribution-id ESCOR63MVWODB --paths "/*"
