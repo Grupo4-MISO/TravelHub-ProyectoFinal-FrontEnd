@@ -1,4 +1,3 @@
-```yaml
 version: 0.2
 
 env:
@@ -38,4 +37,3 @@ phases:
 cache:
   paths:
     - node_modules/**/*
-```
