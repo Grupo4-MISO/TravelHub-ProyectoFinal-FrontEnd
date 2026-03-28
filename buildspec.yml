@@ -1,18 +1,41 @@
+```yaml
 version: 0.2
 
+env:
+  variables:
+    S3_BUCKET: frontend-grupo-4
+    CLOUDFRONT_DISTRIBUTION_ID: ESCOR63MVWODB
+
 phases:
-  pre_build:
+  install:
     runtime-versions:
-      nodejs: 24
+      nodejs: 20
     commands:
+      - echo "Instalando dependencias..."
+      - apt-get update
       - npm install -g @angular/cli
       - npm install
 
+  pre_build:
+    commands:
+      - echo "Ejecutando tests..."
+      - ng test --watch=false
+
   build:
     commands:
+      - echo "Construyendo la aplicación Angular..."
       - ng build --configuration production
 
   post_build:
     commands:
-      - aws s3 sync dist/travelhub/browser/ s3://mi-bucket --delete
-      - aws cloudfront create-invalidation --distribution-id ESCOR63MVWODB --paths "/*"
+      - echo "Desplegando en S3..."
+      - aws s3 sync dist/travelhub/browser/ s3://$S3_BUCKET --delete
+      - echo "Invalidando caché de CloudFront..."
+      - aws cloudfront create-invalidation \
+          --distribution-id $CLOUDFRONT_DISTRIBUTION_ID \
+          --paths "/index.html"
+
+cache:
+  paths:
+    - node_modules/**/*
+```
