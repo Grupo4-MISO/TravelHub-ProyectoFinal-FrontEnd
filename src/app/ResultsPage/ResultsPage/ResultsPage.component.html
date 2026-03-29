@@ -1,0 +1,66 @@
+<app-searchbar></app-searchbar>
+<div class="results-container">
+
+  <!--Loading -->
+  <div *ngIf="loading" class="state-message">
+    Buscando hospedajes...
+  </div>
+
+  <!--Error -->
+  <div *ngIf="!loading && error" class="state-message error">
+    {{ error }}
+  </div>
+
+  <!--Resultados -->
+  <div 
+    class="results-list" 
+    *ngIf="!loading && resultados.length > 0">
+
+    <div class="card" *ngFor="let item of resultados">
+
+      <!-- Imagen -->
+      <div class="card-image"></div>
+
+      <!-- Info -->
+      <div class="card-info">
+
+        <h2 class="title">{{ item.nombre }}</h2>
+
+        <p class="location">
+          {{ item.ciudad }}, {{ item.pais }}
+        </p>
+
+        <div class="details">
+          <p>1 habitación</p>
+          <p>Capacidad: {{ item.capacidad }} huéspedes</p>
+        </div>
+
+      </div>
+
+      <!-- Precio -->
+      <div class="card-price">
+
+        <div class="price">
+          ${{ item.precio }}
+          <span>/noche</span>
+        </div>
+
+        <button class="btn">
+          Ver disponibilidad
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--Sin resultados -->
+  <div 
+    *ngIf="!loading && resultados.length === 0 && !error" 
+    class="state-message">
+
+    No se encontraron hospedajes disponibles
+  </div>
+
+</div>

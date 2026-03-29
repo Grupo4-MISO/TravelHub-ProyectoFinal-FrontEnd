@@ -1,0 +1,48 @@
+import { SearchBarService } from '../../searchbar/searchbar.service';
+import { SearchBar } from '../../searchbar/searchbar';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-ResultsPage',
+  templateUrl: './ResultsPage.component.html',
+  styleUrls: ['./ResultsPage.component.css'],
+  standalone: false
+})
+export class ResultsPageComponent implements OnInit {
+
+  constructor(
+    private route: ActivatedRoute,
+    private searchService: SearchBarService
+  ) { }
+
+  resultados: SearchBar[] = [];
+  loading = false;
+  error = '';
+
+  buscar(ciudad: string, check_in: string, check_out: string, capacidad: number) {
+    this.loading = true;
+
+    this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad)
+      .subscribe({
+        next: (data) => {
+          this.resultados = data;
+          this.loading = false;
+        },
+        error: (data) => {
+          this.error = data;
+          this.loading = false;
+        }
+      });
+}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const { ciudad, check_in, check_out, capacidad } = params;
+
+      if (ciudad && check_in && check_out && capacidad) {
+        this.buscar(ciudad, check_in, check_out, capacidad);
+      }
+    });
+  }
+}

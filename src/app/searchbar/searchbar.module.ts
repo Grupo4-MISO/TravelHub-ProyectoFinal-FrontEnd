@@ -1,4 +1,5 @@
-import { SearchbarComponent } from './searchbar/searchbar.component';
+import { SearchBarComponent } from './searchbar/searchbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -6,13 +7,14 @@ import { NgModule } from '@angular/core';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
-    SearchbarComponent
+    SearchBarComponent
   ],
   declarations: [
-    SearchbarComponent
+    SearchBarComponent
   ]
 })
 

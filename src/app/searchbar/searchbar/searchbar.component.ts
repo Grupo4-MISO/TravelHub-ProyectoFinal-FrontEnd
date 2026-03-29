@@ -1,7 +1,7 @@
-import { SearchBarService } from "../../searchbar/searchbar.service";
-import {SearchBar} from "../../searchbar/searchbar";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SearchBar } from '../searchbar';
 
 @Component({
   selector: 'app-searchbar',
@@ -10,17 +10,46 @@ import { Router } from '@angular/router';
   standalone: false
 })
 
-export class SearchbarComponent implements OnInit {
-  // Definimos variables de inicializacion
-  propiedades: Array<SearchBar> = [];
+export class SearchBarComponent implements OnInit {
+
+  searchForm!: FormGroup;
+  resultados: SearchBar[] = [];
+  loading: boolean = false;
+  error: string = '';
 
   constructor(
-    private searchBarService: SearchBarService,
+    private fb: FormBuilder,
     private routerPath: Router
-  ) { }
+  ) {}
 
-  ngOnInit() {
-    this.searchBarService.buscarHospedajes
+  ngOnInit(): void {
+    this.searchForm = this.fb.group({
+      ciudad: ['', Validators.required],
+      check_in: ['', Validators.required],
+      check_out: ['', Validators.required],
+      capacidad: [1, [Validators.required, Validators.min(1)]]
+    });
   }
 
+  ResultsPage(): void {
+    this.routerPath.navigate(['/results']);
+  }
+
+  buscar(): void {
+  if (this.searchForm.invalid) {
+    this.searchForm.markAllAsTouched();
+    return;
+  }
+
+  const { ciudad, check_in, check_out, capacidad } = this.searchForm.value;
+
+  this.routerPath.navigate(['/results'], {
+      queryParams: {
+        ciudad,
+        check_in,
+        check_out,
+        capacidad
+      }
+    });
+  }
 }

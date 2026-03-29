@@ -1,4 +1,78 @@
-<p>
-    TODO: SEARCH BAR debe programarse en su propio componente llamado searchbar 
-    y al hacer click en <a routerLink="/results">Buscar</a> debe dirigir al componente de resultados (ResultsPage).
-</p>
+<div class="search-container">
+  <form [formGroup]="searchForm" (ngSubmit)="buscar()" class="search-bar">
+
+  <!-- Ciudad -->
+  <div class="field">
+    <label>Destino</label>
+    <input 
+      type="text" 
+      formControlName="ciudad"
+      placeholder="Ciudad destino"
+      [class.invalid]="searchForm.get('ciudad')?.invalid && searchForm.get('ciudad')?.touched">
+
+    <small *ngIf="searchForm.get('ciudad')?.touched && searchForm.get('ciudad')?.hasError('required')">
+      La ciudad es obligatoria
+    </small>
+  </div>
+
+  <!-- Check-in -->
+  <div class="field">
+    <label>Check-In</label>
+    <input 
+      type="date" 
+      formControlName="check_in"
+      [class.invalid]="searchForm.get('check_in')?.invalid && searchForm.get('check_in')?.touched">
+
+    <small *ngIf="searchForm.get('check_in')?.touched && searchForm.get('check_in')?.hasError('required')">
+      La fecha de entrada es obligatoria
+    </small>
+  </div>
+
+  <!-- Check-out -->
+  <div class="field">
+    <label>Check-Out</label>
+    <input 
+      type="date" 
+      formControlName="check_out"
+      [class.invalid]="searchForm.get('check_out')?.invalid && searchForm.get('check_out')?.touched">
+
+    <small *ngIf="searchForm.get('check_out')?.touched && searchForm.get('check_out')?.hasError('required')">
+      La fecha de salida es obligatoria
+    </small>
+  </div>
+
+  <!-- Huéspedes -->
+  <div class="field">
+    <label>Huéspedes</label>
+    <input 
+      type="number" 
+      formControlName="capacidad"
+      min="1"
+      [class.invalid]="searchForm.get('capacidad')?.invalid && searchForm.get('capacidad')?.touched">
+
+    <!-- requerido -->
+    <small *ngIf="searchForm.get('capacidad')?.touched && searchForm.get('capacidad')?.hasError('required')">
+      La cantidad de huéspedes es obligatoria
+    </small>
+
+    <!-- mínimo -->
+    <small *ngIf="searchForm.get('capacidad')?.touched && searchForm.get('capacidad')?.hasError('min')">
+      Debe haber al menos 1 huésped
+    </small>
+  </div>
+
+  <!-- Error de fechas -->
+  <div class="error-fechas" *ngIf="searchForm.hasError('fechasInvalidas')">
+    La fecha de salida debe ser posterior al check-in
+  </div>
+
+  <!-- Botón -->
+  <button 
+    type="submit" 
+    class="search-btn"
+    [disabled]="searchForm.invalid || loading">
+
+    {{ loading ? 'Buscando...' : 'Buscar' }}
+  </button>
+  </form>
+</div>

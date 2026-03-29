@@ -1,0 +1,170 @@
+/* CONTENEDOR GENERAL */
+.results-container {
+  padding: 30px 20px;
+  background: #f7f7f7;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* LISTADO */
+.results-list {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background: white;
+  border-radius: 20px;
+  padding: 16px;
+
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* IMAGEN */
+.card-image {
+  width: 220px;
+  height: 150px;
+  border-radius: 16px;
+
+  
+  background: linear-gradient(135deg, #f06d51, #f06d51);
+
+  flex-shrink: 0;
+}
+
+/* INFO */
+.card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* TITULO */
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* UBICACIÓN */
+.location {
+  margin: 5px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* DETALLES */
+.details {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* PRECIO */
+.card-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* TEXTO PRECIO */
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #015C77;
+}
+
+.price span {
+  font-size: 14px;
+  color: #015C77;
+  font-weight: bold;
+}
+
+/* BOTÓN */
+.btn {
+  background: linear-gradient(135deg, #015C77, #015C77);
+  color: white;
+  border: none;
+
+  padding: 10px 16px;
+  border-radius: 12px;
+
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* ===================== */
+/* 📱 TABLET */
+/* ===================== */
+@media (max-width: 992px) {
+  .card {
+    gap: 15px;
+  }
+
+  .card-image {
+    width: 180px;
+    height: 130px;
+  }
+}
+
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .card-price {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.state-message {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #555;
+}
+
+.state-message.error {
+  color: #ff5a5f;
+}
