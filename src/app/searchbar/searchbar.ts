@@ -8,4 +8,5 @@ export interface SearchBar {
   rating: number;
   capacidad: number;
   precio: number;
+  descripcion: string;
 }
