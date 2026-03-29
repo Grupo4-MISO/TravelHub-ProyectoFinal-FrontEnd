@@ -35,6 +35,18 @@
 	font-weight: 400;
 }
 
+.login-error {
+	width: min(100%, 580px);
+	margin: 0 auto 1rem;
+	padding: 0.75rem 1rem;
+	border-radius: 10px;
+	background: #fdeaea;
+	border: 1px solid #e3a5a5;
+	color: #9a1f1f;
+	font-size: 1rem;
+	text-align: left;
+}
+
 .login-form {
 	width: min(100%, 580px);
 	margin: 0 auto;

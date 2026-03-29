@@ -5,11 +5,14 @@
     </h1>
 
     <p id="login-title" class="login-subtitle">Inicia sesion para continuar</p>
-
+    @if (error) {
+      <p class="login-error" role="alert" aria-live="polite">{{ error }}</p>
+    }
     <form class="login-form" novalidate>
       <div class="form-group">
         <label for="email">Email</label>
         <input
+          #email
           id="email"
           name="email"
           type="email"
@@ -22,6 +25,7 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input
+          #password
           id="password"
           name="password"
           type="password"
@@ -31,7 +35,7 @@
         />
       </div>
 
-      <button type="submit" class="login-button">Iniciar sesion</button>
+      <button type="button" (click)="Authlogin(email.value, password.value)" class="login-button">Iniciar sesion</button>
     </form>
   </section>
 </main>
