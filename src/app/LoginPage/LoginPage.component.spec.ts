@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { LogginPageComponent } from './LogginPage.component';
+import { LoginPageComponent } from './LoginPage.component';
 
-describe('LogginPageComponent', () => {
-  let component: LogginPageComponent;
-  let fixture: ComponentFixture<LogginPageComponent>;
+describe('LoginPageComponent', () => {
+  let component: LoginPageComponent;
+  let fixture: ComponentFixture<LoginPageComponent>;
 
   beforeEach(async() => {
       await TestBed.configureTestingModule({
-        declarations: [LogginPageComponent]
+        declarations: [LoginPageComponent]
       }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LogginPageComponent);
+    fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

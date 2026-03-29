@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LogginPageComponent } from './LogginPage/LogginPage.component';
+import { LoginPageComponent } from './LoginPage/LoginPage.component';
 import { FooterComponent } from './footer/footer.component';
 import { PrincipalPageComponent } from './PrincipalPage/PrincipalPage.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -18,7 +18,7 @@ import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetail
     FooterComponent,
     SearchbarComponent,
     PrincipalPageComponent,
-    LogginPageComponent,
+    LoginPageComponent,
     ResultsPageComponent,
     PropertyDetailPageComponent
   ],
