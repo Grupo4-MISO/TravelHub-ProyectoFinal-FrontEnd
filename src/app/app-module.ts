@@ -5,17 +5,16 @@ import { App } from './app';
 import { SearchBarModule } from './searchbar/searchbar.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LogginPageComponent } from './LogginPage/LogginPage.component';
-import { FooterComponent } from './footer/footer.component';
 import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalPageModule } from './PrincipalPage/PrincipalPage.module';
 import { ResultsPageModule } from './ResultsPage/ResultsPage.module';
+import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   declarations: [
     App,
     NavbarComponent,
-    FooterComponent,
     LogginPageComponent,
     PropertyDetailPageComponent
   ],
@@ -25,7 +24,8 @@ import { ResultsPageModule } from './ResultsPage/ResultsPage.module';
     ReactiveFormsModule,
     SearchBarModule,
     PrincipalPageModule,
-    ResultsPageModule
+    ResultsPageModule,
+    FooterModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

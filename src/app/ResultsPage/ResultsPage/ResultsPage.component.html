@@ -1,51 +1,69 @@
 <app-searchbar></app-searchbar>
+
 <div class="results-container">
 
-  <!--Loading -->
+  <!-- Loading -->
   <div *ngIf="loading" class="state-message">
-    Buscando hospedajes...
+    <div class="spinner"></div>
+    <p>Buscando hospedajes...</p>
   </div>
 
-  <!--Error -->
+  <!-- Error -->
   <div *ngIf="!loading && error" class="state-message error">
     {{ error }}
   </div>
 
-  <!--Resultados -->
-  <div 
-    class="results-list" 
-    *ngIf="!loading && resultados.length > 0">
+  <!-- Resultados -->
+  <div class="results-list" *ngIf="!loading && resultados.length > 0">
+    <div class="list-length" *ngIf="resultados.length == 1; else elseBlock">
+      1 hospedaje encontrado
+    </div>
 
-    <div class="card" *ngFor="let item of resultados">
+    <ng-template #elseBlock>
+      {{ resultados.length }} hospedajes encontrados
+    </ng-template>
+
+    <div class="hotel-card" *ngFor="let item of resultados">
 
       <!-- Imagen -->
-      <div class="card-image"></div>
+      <div class="card-image">
+        <div class="image-placeholder"></div>
+      </div>
 
-      <!-- Info -->
-      <div class="card-info">
+      <!-- Información -->
+      <div class="card-details">
 
-        <h2 class="title">{{ item.nombre }}</h2>
+        <h2 class="hotel-name">{{ item.nombre }}</h2>
 
-        <p class="location">
-          {{ item.ciudad }}, {{ item.pais }}
-        </p>
+        <span class="city">{{ item.ciudad }}, {{ item.pais }}</span>
 
-        <div class="details">
-          <p>1 habitación</p>
-          <p>Capacidad: {{ item.capacidad }} huéspedes</p>
+        <div class="room-info">
+          <div class="room-badge">{{ item.capacidad }} persona(s)</div>
+          <div class="bed-info">{{ item.descripcion }}</div>
         </div>
 
       </div>
 
-      <!-- Precio -->
-      <div class="card-price">
+      <!-- Derecha: rating + precio + botón -->
+      <div class="card-action">
 
-        <div class="price">
-          ${{ item.precio }}
-          <span>/noche</span>
+        <!--RATING ARRIBA -->
+        <div class="rating rating-top">
+          <div class="stars">
+            <span *ngFor="let star of getStarArray(item.rating)" class="star filled">★</span>
+            <span *ngFor="let star of getEmptyStarArray(item.rating)" class="star">☆</span>
+          </div>
+          <span class="rating-value">{{ item.rating }}</span>
         </div>
 
-        <button class="btn">
+        <!--PRECIO -->
+        <div class="price">
+          <span class="amount">${{ item.precio }}</span>
+          <span class="period">/noche</span>
+        </div>
+
+        <!--BOTÓN -->
+        <button class="btn-primary">
           Ver disponibilidad
         </button>
 
@@ -55,12 +73,10 @@
 
   </div>
 
-  <!--Sin resultados -->
-  <div 
-    *ngIf="!loading && resultados.length === 0 && !error" 
-    class="state-message">
-
+  <!-- Sin resultados -->
+  <div *ngIf="!loading && resultados.length === 0 && !error" class="state-message">
     No se encontraron hospedajes disponibles
   </div>
 
 </div>
+<app-footer></app-footer>

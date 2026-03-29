@@ -27,6 +27,42 @@ export class ResultsPageComponent implements OnInit {
       capacidad: 2,
       precio: 100,
       descripcion: 'Habitación deluxe'
+  },
+{
+      habitacion_id: '1',
+      hospedaje_id: '1',
+      nombre: 'Hotel Test',
+      pais: 'Testland',
+      ciudad: 'Test City',
+      direccion: '123 Test St',
+      rating: 4.5,
+      capacidad: 2,
+      precio: 100,
+      descripcion: 'Habitación deluxe'
+  },
+{
+      habitacion_id: '1',
+      hospedaje_id: '1',
+      nombre: 'Hotel Test',
+      pais: 'Testland',
+      ciudad: 'Test City',
+      direccion: '123 Test St',
+      rating: 4.5,
+      capacidad: 2,
+      precio: 100,
+      descripcion: 'Habitación deluxe'
+  },
+{
+      habitacion_id: '1',
+      hospedaje_id: '1',
+      nombre: 'Hotel Test',
+      pais: 'Testland',
+      ciudad: 'Test City',
+      direccion: '123 Test St',
+      rating: 4.5,
+      capacidad: 2,
+      precio: 100,
+      descripcion: 'Habitación deluxe'
   }];
 
   loading = false;
@@ -48,7 +84,15 @@ export class ResultsPageComponent implements OnInit {
     //       this.loading = false;
     //     }
     //   });
-}
+  }
+
+  getStarArray(rating: number): number[] {
+    return Array(Math.floor(rating));
+  }
+
+  getEmptyStarArray(rating: number): number[] {
+    return Array(5 - Math.floor(rating));
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {

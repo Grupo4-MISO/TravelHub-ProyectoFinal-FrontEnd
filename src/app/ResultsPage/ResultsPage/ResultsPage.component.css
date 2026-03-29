@@ -1,142 +1,209 @@
-/* CONTENEDOR GENERAL */
+.list-length {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1e2a3e;
+}
+
+/* CONTENEDOR */
 .results-container {
-  padding: 30px 20px;
-  background: #f7f7f7;
+  background: #f5f7fa;
   min-height: 100vh;
+  padding: 2rem 1.5rem;
   display: flex;
   justify-content: center;
 }
 
-/* LISTADO */
+/* LISTA */
 .results-list {
+  max-width: 1200px;
   width: 100%;
-  max-width: 1100px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 /* CARD */
-.card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
+.hotel-card {
   background: white;
-  border-radius: 20px;
-  padding: 16px;
-
-  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-  transition: all 0.25s ease;
+  border-radius: 1.5rem;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
 }
 
-.card:hover {
-  transform: translateY(-3px);
+.hotel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
 /* IMAGEN */
 .card-image {
-  width: 220px;
-  height: 150px;
-  border-radius: 16px;
-
-  
-  background: linear-gradient(135deg, #f06d51, #f06d51);
-
+  width: 260px;
   flex-shrink: 0;
-}
-
-/* INFO */
-.card-info {
-  flex: 1;
+  background: linear-gradient(135deg, #ff7a5c, #ff5a5f);
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
-/* TITULO */
-.title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-/* UBICACIÓN */
-.location {
-  margin: 5px 0;
-  color: #777;
-  font-size: 14px;
+.image-placeholder {
+  font-size: 4rem;
+  opacity: 0.6;
 }
 
 /* DETALLES */
-.details {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #444;
+.card-details {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* NOMBRE */
+.hotel-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1e2a3e;
+}
+
+/* CIUDAD */
+.city {
+  font-size: 0.95rem;
+  color: #5a6874;
+}
+
+/* INFO */
+.room-info {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.room-badge,
+.bed-info {
+  background: #eef2ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+/* DERECHA */
+.card-action {
+  width: 220px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-left: 1px solid #edf2f7;
+}
+
+/* RATING */
+.rating-top {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.star.filled {
+  color: #f5b042;
+}
+
+.rating-value {
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 /* PRECIO */
-.card-price {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 12px;
-}
-
-/* TEXTO PRECIO */
 .price {
-  font-size: 22px;
-  font-weight: bold;
+  text-align: right;
+}
+
+.amount {
+  font-size: 1.8rem;
+  font-weight: 800;
   color: #015C77;
 }
 
-.price span {
-  font-size: 14px;
+.period {
+  font-size: 0.9rem;
   color: #015C77;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /* BOTÓN */
-.btn {
-  background: linear-gradient(135deg, #015C77, #015C77);
+.btn-primary {
+  background: #015C77;
   color: white;
   border: none;
-
-  padding: 10px 16px;
-  border-radius: 12px;
-
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
+  width: 100%;
 }
 
-.btn:hover {
-  opacity: 0.9;
+.btn-primary:hover {
+  background: #014a61;
+  transform: scale(0.98);
 }
 
-/* ===================== */
-/* 📱 TABLET */
-/* ===================== */
-@media (max-width: 992px) {
-  .card {
-    gap: 15px;
+/* MENSAJES */
+.state-message {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1rem;
+  color: #5a6874;
+}
+
+.state-message.error {
+  color: #e53e3e;
+  background: #fff5f5;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+/* SPINNER */
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #015C77;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-
-  .card-image {
-    width: 180px;
-    height: 130px;
-  }
 }
 
-/* ===================== */
-/* 📱 MOBILE */
-/* ===================== */
-@media (max-width: 768px) {
-
-  .card {
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hotel-card {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .card-image {
@@ -144,27 +211,32 @@
     height: 180px;
   }
 
-  .card-price {
+  .card-action {
     width: 100%;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-left: none;
+    border-top: 1px solid #edf2f7;
   }
 
   .price {
-    font-size: 20px;
+    text-align: left;
   }
 
-  .btn {
+  .btn-primary {
+    width: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .card-action {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .btn-primary {
     width: 100%;
   }
-}
-
-.state-message {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 16px;
-  color: #555;
-}
-
-.state-message.error {
-  color: #ff5a5f;
 }
