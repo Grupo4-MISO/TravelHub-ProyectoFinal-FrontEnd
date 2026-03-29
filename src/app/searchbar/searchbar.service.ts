@@ -1,4 +1,5 @@
 import { environment } from '../../environments/environment';
+import { HttpParams } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SearchBar } from './searchbar';
@@ -16,9 +17,13 @@ export class SearchBarService {
 
     buscarHospedajes(ciudad: string, check_in: string, check_out: string, capacidad: number): Observable<SearchBar[]> {
         // Cadena de consulta para el backend
-        let params: string = `?ciudad=${ciudad}&check_in=${check_in}&check_out=${check_out}&capacidad=${capacidad}`;
+        let params = new HttpParams()
+            .set('ciudad', ciudad)
+            .set('check_in', check_in)
+            .set('check_out', check_out)
+            .set('capacidad', capacidad.toString());
         
         // Realizamos la peticion GET al backend
-        return this.http.get<SearchBar[]>(`${this.api_url}/api/v1/busquedas/search${params}`);
+        return this.http.get<SearchBar[]>(`${this.api_url}/api/v1/busquedas/search`, { params });
     }
 }
