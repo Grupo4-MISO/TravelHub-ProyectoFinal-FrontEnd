@@ -15,13 +15,12 @@
 
   <!-- Resultados -->
   <div class="results-list" *ngIf="!loading && resultados.length > 0">
-    <div class="list-length" *ngIf="resultados.length == 1; else elseBlock">
-      1 hospedaje encontrado
+    <div class="list-length" *ngIf="resultados.length == 1">
+      1 Alojamiento encontrado
     </div>
-
-    <ng-template #elseBlock>
-      {{ resultados.length }} hospedajes encontrados
-    </ng-template>
+    <div class="list-length" *ngIf="resultados.length > 1">
+        {{ resultados.length }} Alojamientos encontrados
+    </div>
 
     <div class="hotel-card" *ngFor="let item of resultados">
 
@@ -79,4 +78,3 @@
   </div>
 
 </div>
-<app-footer></app-footer>

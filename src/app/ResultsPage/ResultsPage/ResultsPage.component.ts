@@ -35,7 +35,7 @@ export class ResultsPageComponent implements OnInit {
       pais: 'Testland',
       ciudad: 'Test City',
       direccion: '123 Test St',
-      rating: 4.5,
+      rating: 5,
       capacidad: 2,
       precio: 100,
       descripcion: 'Habitación deluxe'
@@ -47,7 +47,7 @@ export class ResultsPageComponent implements OnInit {
       pais: 'Testland',
       ciudad: 'Test City',
       direccion: '123 Test St',
-      rating: 4.5,
+      rating: 3.5,
       capacidad: 2,
       precio: 100,
       descripcion: 'Habitación deluxe'
@@ -59,7 +59,7 @@ export class ResultsPageComponent implements OnInit {
       pais: 'Testland',
       ciudad: 'Test City',
       direccion: '123 Test St',
-      rating: 4.5,
+      rating: 2.5,
       capacidad: 2,
       precio: 100,
       descripcion: 'Habitación deluxe'
