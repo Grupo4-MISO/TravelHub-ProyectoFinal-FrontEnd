@@ -16,24 +16,38 @@ export class ResultsPageComponent implements OnInit {
     private searchService: SearchBarService
   ) { }
 
-  resultados: SearchBar[] = [];
+  resultados: SearchBar[] = [{
+      habitacion_id: '1',
+      hospedaje_id: '1',
+      nombre: 'Hotel Test',
+      pais: 'Testland',
+      ciudad: 'Test City',
+      direccion: '123 Test St',
+      rating: 4.5,
+      capacidad: 2,
+      precio: 100,
+      descripcion: 'Habitación deluxe'
+  }];
+
   loading = false;
   error = '';
 
   buscar(ciudad: string, check_in: string, check_out: string, capacidad: number) {
     this.loading = true;
+    this.resultados = this.resultados;
+    this.loading = false;
 
-    this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad)
-      .subscribe({
-        next: (data) => {
-          this.resultados = data;
-          this.loading = false;
-        },
-        error: (data) => {
-          this.error = data;
-          this.loading = false;
-        }
-      });
+    // this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad)
+    //   .subscribe({
+    //     next: (data) => {
+    //       this.resultados = data;
+    //       this.loading = false;
+    //     },
+    //     error: (data) => {
+    //       this.error = data;
+    //       this.loading = false;
+    //     }
+    //   });
 }
 
   ngOnInit(): void {
