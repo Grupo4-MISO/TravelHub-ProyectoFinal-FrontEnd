@@ -28,6 +28,8 @@ export class AuthService {
 
   logout(): void {
     sessionStorage.removeItem('idUsuario');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('role');
   }
 
   isAuthenticated(): boolean {
@@ -43,5 +45,9 @@ export class AuthService {
     const idUsuario = sessionStorage.getItem('idUsuario');
     // In a real application, you would fetch the user details from the backend using the idUsuario
     return null;
+  }
+
+  getRoleUser(): string | null {
+    return sessionStorage.getItem('role');
   }
 }
