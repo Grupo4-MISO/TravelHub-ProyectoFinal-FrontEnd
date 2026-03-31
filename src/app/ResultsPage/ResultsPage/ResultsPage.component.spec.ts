@@ -2,8 +2,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { SearchbarComponent } from '../searchbar/searchbar/searchbar.component';
+import { SearchBarComponent } from '../../searchbar/searchbar/searchbar.component';
 import { ResultsPageComponent } from './ResultsPage.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ToastrService } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ResultsPageComponent', () => {
   let component: ResultsPageComponent;
@@ -11,7 +14,19 @@ describe('ResultsPageComponent', () => {
 
   beforeEach(async() => {
     await TestBed.configureTestingModule({
-      declarations: [ResultsPageComponent, SearchbarComponent]
+      declarations: [ResultsPageComponent, SearchBarComponent],
+      imports: [RouterTestingModule, ReactiveFormsModule],
+      providers: [
+  {
+    provide: ToastrService,
+      useValue: {
+        success: () => {},
+        error: () => {},
+        warning: () => {},
+        info: () => {}
+      }
+    }
+  ]
     }).compileComponents();
   });
 

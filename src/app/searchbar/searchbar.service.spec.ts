@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, inject } from '@angular/core/testing';
-import { SearchbarService } from './searchbar.service';
+import { SearchBarService } from './searchbar.service';
 
 describe('Service: Searchbar', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SearchbarService]
+      providers: [SearchBarService]
     });
   });
 
-  it('should ...', inject([SearchbarService], (service: SearchbarService) => {
+  it('should ...', inject([SearchBarService], (service: SearchBarService) => {
     expect(service).toBeTruthy();
   }));
 });
