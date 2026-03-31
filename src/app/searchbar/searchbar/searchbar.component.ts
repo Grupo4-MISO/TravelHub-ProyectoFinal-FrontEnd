@@ -13,7 +13,6 @@ import { SearchBar } from '../searchbar';
 export class SearchBarComponent implements OnInit {
 
   searchForm!: FormGroup;
-  resultados: SearchBar[] = [];
   loading: boolean = false;
   error: string = '';
 

@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 
 export class SearchBarService {
     // Importamos URL del backend
-    private api_url = 'http://a4ac82cb515834c5981857cba02bb462-982938479.us-east-1.elb.amazonaws.com';
+    private api_url = 'http://a201d35fa743f41fe813f52aaac9d8f9-524475012.us-east-1.elb.amazonaws.com';
 
     constructor(private http: HttpClient) { }
 

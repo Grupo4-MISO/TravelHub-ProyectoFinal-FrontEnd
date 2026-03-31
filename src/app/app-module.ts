@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalPageModule } from './PrincipalPage/PrincipalPage.module';
 import { ResultsPageModule } from './ResultsPage/ResultsPage.module';
 import { FooterModule } from './footer/footer.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -20,15 +22,17 @@ import { FooterModule } from './footer/footer.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     SearchBarModule,
     PrincipalPageModule,
     ResultsPageModule,
-    FooterModule
+    FooterModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
+    provideToastr()
   ],
   bootstrap: [App]
 })

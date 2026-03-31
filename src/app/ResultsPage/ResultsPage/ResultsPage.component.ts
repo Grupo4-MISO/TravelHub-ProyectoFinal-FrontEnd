@@ -1,7 +1,10 @@
 import { SearchBarService } from '../../searchbar/searchbar.service';
 import { SearchBar } from '../../searchbar/searchbar';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Inject } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-ResultsPage',
@@ -9,81 +12,45 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./ResultsPage.component.css'],
   standalone: false
 })
-export class ResultsPageComponent implements OnInit {
+
+export class ResultsPageComponent implements OnInit, OnDestroy {
+  resultados: SearchBar[] = [];
+  loading: boolean = false;
+  error: string = '';
+  private queryParamsSubscription?: Subscription;
+  private isSearching: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
-    private searchService: SearchBarService
+    private searchService: SearchBarService,
+    @Inject(ToastrService) private toastr: ToastrService,
+    private cdr: ChangeDetectorRef
   ) { }
 
-  resultados: SearchBar[] = [{
-      habitacion_id: '1',
-      hospedaje_id: '1',
-      nombre: 'Hotel Test',
-      pais: 'Testland',
-      ciudad: 'Test City',
-      direccion: '123 Test St',
-      rating: 4.5,
-      capacidad: 2,
-      precio: 100,
-      descripcion: 'Habitación deluxe'
-  },
-{
-      habitacion_id: '1',
-      hospedaje_id: '1',
-      nombre: 'Hotel Test',
-      pais: 'Testland',
-      ciudad: 'Test City',
-      direccion: '123 Test St',
-      rating: 5,
-      capacidad: 2,
-      precio: 100,
-      descripcion: 'Habitación deluxe'
-  },
-{
-      habitacion_id: '1',
-      hospedaje_id: '1',
-      nombre: 'Hotel Test',
-      pais: 'Testland',
-      ciudad: 'Test City',
-      direccion: '123 Test St',
-      rating: 3.5,
-      capacidad: 2,
-      precio: 100,
-      descripcion: 'Habitación deluxe'
-  },
-{
-      habitacion_id: '1',
-      hospedaje_id: '1',
-      nombre: 'Hotel Test',
-      pais: 'Testland',
-      ciudad: 'Test City',
-      direccion: '123 Test St',
-      rating: 2.5,
-      capacidad: 2,
-      precio: 100,
-      descripcion: 'Habitación deluxe'
-  }];
-
-  loading = false;
-  error = '';
-
   buscar(ciudad: string, check_in: string, check_out: string, capacidad: number) {
+    if (this.isSearching) return;
+    this.isSearching = true;
+    this.error = '';
     this.loading = true;
-    this.resultados = this.resultados;
-    this.loading = false;
+    this.cdr.detectChanges();
 
-    // this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad)
-    //   .subscribe({
-    //     next: (data) => {
-    //       this.resultados = data;
-    //       this.loading = false;
-    //     },
-    //     error: (data) => {
-    //       this.error = data;
-    //       this.loading = false;
-    //     }
-    //   });
+    this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad)
+      .subscribe({
+        next: (data) => {
+          this.resultados = data;
+          this.loading = false;
+          this.isSearching = false;
+          this.toastr.success('Hospedajes encontrados', '', { positionClass: 'toast-bottom-right' });
+          this.cdr.detectChanges();
+        },
+        error: (err) => {
+          this.error = err?.error?.msg || 'Error al buscar hospedajes';
+          this.loading = false;
+          this.isSearching = false;
+          this.toastr.error(this.error, '', { positionClass: 'toast-bottom-right' });
+          this.cdr.detectChanges();
+        }
+      });
   }
 
   getStarArray(rating: number): number[] {
@@ -94,13 +61,16 @@ export class ResultsPageComponent implements OnInit {
     return Array(5 - Math.floor(rating));
   }
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
+  ngOnInit() {
+    this.queryParamsSubscription = this.route.queryParams.subscribe(params => {
       const { ciudad, check_in, check_out, capacidad } = params;
-
       if (ciudad && check_in && check_out && capacidad) {
         this.buscar(ciudad, check_in, check_out, capacidad);
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.queryParamsSubscription?.unsubscribe();
   }
 }
