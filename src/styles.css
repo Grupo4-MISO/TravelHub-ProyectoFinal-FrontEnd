@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+.travelhub-toast {
+	border-radius: 12px;
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+	background-image: none;
+	padding: 14px 16px 14px 16px;
+}
+
+.travelhub-toast-title {
+	font-weight: 700;
+	font-size: 0.95rem;
+}
+
+.travelhub-toast-message {
+	font-size: 0.9rem;
+}
