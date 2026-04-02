@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NavbarComponent } from './navbar.component';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -12,7 +13,7 @@ describe('NavbarComponent', () => {
   beforeEach(async() => {
         await TestBed.configureTestingModule({
           declarations: [NavbarComponent],
-          imports: [RouterTestingModule]
+          imports: [RouterTestingModule, ToastrModule.forRoot()]
         }).compileComponents();
   });
 
