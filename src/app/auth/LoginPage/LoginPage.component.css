@@ -1,50 +1,48 @@
-.login-page {
-	min-height: 100vh;
-	display: grid;
-	place-items: center;
-	background: #f1f1f1;
-	padding: 2rem 1rem;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	color: #4a4a4a;
+.img-container{
+	padding: 30px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.img-container img {
+	width: 75%;
+	height: 60%;
+	object-fit: cover;
 }
 
 .login-card {
+	margin: 30px;
+	padding: 30px;
 	width: min(100%, 660px);
+	height: 80%;
 	text-align: center;
+	border: 2px solid #d0d0d0;
+	border-radius: 12px;
 }
 
-.brand {
-	margin: 0;
-	font-size: clamp(2.2rem, 4vw, 3rem);
-	font-weight: 700;
-	letter-spacing: 0.5px;
-	line-height: 1;
-}
-
-.brand-primary {
-	color: #005d79;
-}
-
-.brand-secondary {
-	color: #f16e52;
+.login-card img{
+	margin-top: 1.5rem;
 }
 
 .login-subtitle {
-	margin: 1.8rem 0 2.2rem;
-	font-size: clamp(1.5rem, 2.8vw, 2rem);
+	margin: 0.2rem 0 0.2rem;
+	font-size: clamp(0.5rem, 1.5vw, 2rem);
 	font-weight: 400;
 }
 
 .login-error {
 	width: min(100%, 580px);
-	margin: 0 auto 1rem;
-	padding: 0.75rem 1rem;
+	margin: 1.7rem auto;
+	padding: 1.7rem;
 	border-radius: 10px;
 	background: #fdeaea;
 	border: 1px solid #e3a5a5;
 	color: #9a1f1f;
 	font-size: 1rem;
-	text-align: left;
+	text-align: center;
 }
 
 .login-form {
@@ -52,8 +50,6 @@
 	margin: 0 auto;
 	padding: 1.7rem;
 	text-align: left;
-	border: 2px solid #d0d0d0;
-	border-radius: 12px;
 	background: transparent;
 }
 
@@ -64,20 +60,20 @@
 .form-group label {
 	display: block;
 	margin-bottom: 0.6rem;
-	font-size: 1.7rem;
+	font-size: 1 rem;
 	font-weight: 400;
 	color: #4b4b4b;
 }
 
 .form-group input {
 	width: 100%;
-	height: 78px;
+	height: 48px;
 	border: none;
 	border-radius: 14px;
 	padding: 0 1.7rem;
 	background: #e8e8e8;
 	color: #292929;
-	font-size: 1.7rem;
+	font-size: 1rem;
 	border-bottom: 3px solid #3b3b3b;
 	outline: none;
 	transition: box-shadow 0.2s ease, border-color 0.2s ease;
@@ -96,13 +92,15 @@
 
 .login-button {
 	margin-top: 0.65rem;
-	width: 100%;
-	height: 80px;
+	margin-left: 10%;
+	margin-bottom: 1.5rem;
+	width: 80%;
+	height: 64px;
 	border: none;
 	border-radius: 14px;
 	background: #056680;
 	color: #ffffff;
-	font-size: 1.7rem;
+	font-size: 1.2rem;
 	font-weight: 400;
 	cursor: pointer;
 	transition: filter 0.2s ease, transform 0.15s ease;

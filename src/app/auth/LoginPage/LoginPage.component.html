@@ -1,41 +1,47 @@
-<main class="login-page">
-  <section class="login-card" aria-labelledby="login-title">
-    <h1 class="brand" aria-label="TravelHub">
-      <span class="brand-primary">Travel</span><span class="brand-secondary">Hub</span>
-    </h1>
-
-    <p id="login-title" class="login-subtitle">Inicia sesion para continuar</p>
-    @if (error) {
+<main class="login-page container-fluid">
+  <div class="row h-100">
+    <section class="img-container w-50">
+      <img
+        src="/mock_publicidad_login.png"
+        alt="Imagen publicitaria TravelHub"
+        style="object-fit: cover;"
+      />
+    </section>
+    <section class="login-card" aria-labelledby="login-title">
+      <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/">
+      <p id="login-title" class="login-subtitle">Inicia sesion para continuar</p>
+      @if (error) {
       <p class="login-error" role="alert" aria-live="polite">{{ error }}</p>
-    }
-    <form class="login-form" novalidate>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          #email
-          id="email"
-          name="email"
-          type="email"
-          placeholder="micorreo@email.com"
-          autocomplete="email"
-          required
-        />
-      </div>
+      }
+      <form class="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            #email
+            id="email"
+            name="email"
+            type="email"
+            placeholder="micorreo@email.com"
+            autocomplete="email"
+            required
+          />
+        </div>
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          #password
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Mi clave"
-          autocomplete="current-password"
-          required
-        />
-      </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            #password
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Mi clave"
+            autocomplete="current-password"
+            required
+          />
+        </div>
 
-      <button type="button" (click)="Authlogin(email.value, password.value)" class="login-button">Iniciar sesion</button>
-    </form>
-  </section>
+        <button type="button" (click)="Authlogin(email.value, password.value)" class="login-button">Iniciar sesion</button>
+      </form>
+    </section>
+  </div>
 </main>
