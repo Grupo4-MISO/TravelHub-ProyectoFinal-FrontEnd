@@ -42,7 +42,7 @@ nav{
 .nv-link{
     color: #111827;
     font-size: 1.2em;
-    font-weight: 500;
+    font-weight: 400;
     border-right: black 1px solid;
 }
 
@@ -54,4 +54,15 @@ nav{
     width: 20px;
     height: 20px;
     margin-left: 5px;
+}
+
+.bar-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.dropdown button{
+    color: #111827;
+    font-size: 1.2em;
+    font-weight: 400;
 }

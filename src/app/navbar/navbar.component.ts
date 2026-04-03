@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   standalone: false
 })
 export class NavbarComponent implements OnInit {
+  username: string | null = null;
 
   constructor(private authService: AuthService,
               private toastrService: ToastrService,
@@ -17,13 +18,20 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  get userRole(): string | null {
+    return sessionStorage.getItem('role');
+  }
+
+
   isAuthenticated(): boolean {
+    this.username = sessionStorage.getItem('userName');
     return this.authService.isAuthenticated();
   }
 
   isNotAuthenticated(): boolean {
     return this.authService.isNotAuthenticated();
   }
+
   logout(): void {
     this.authService.logout();
     this.toastrService.success('Sesión cerrada correctamente.', 'Éxito');
