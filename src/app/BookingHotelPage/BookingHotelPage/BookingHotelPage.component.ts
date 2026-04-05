@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   standalone: false
 })
 export class BookingHotelPageComponent implements OnInit {
+  username: string | null = null;
 
   constructor() { }
 
   ngOnInit() {
+    this.username = sessionStorage.getItem('userName');
   }
 
 }
