@@ -15,17 +15,19 @@ import { PrincipalPageModule } from './PrincipalPage/PrincipalPage.module';
 import { ResultsPageModule } from './ResultsPage/ResultsPage.module';
 import { FooterModule } from './footer/footer.module';
 import { provideToastr } from 'ngx-toastr';
+import { RoomsPageComponent } from './RoomsPage/RoomsPage.component';
 
 export function tokenGetter(): string | null {
   return sessionStorage.getItem('token');
 }
 
 @NgModule({
-  declarations: [
+  declarations: [	
     App,
     NavbarComponent,
-    PropertyDetailPageComponent
-  ],
+    PropertyDetailPageComponent,
+    RoomsPageComponent
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

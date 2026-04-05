@@ -24,13 +24,13 @@
     }
     @if (userRole === 'Accomodation') {
       <li class="nav-item">
-        <a class="nav-link nv-link">
+        <a class="nav-link nv-link" [routerLink]="['/rooms']">
           <img src="/iconos/room.svg" class="nv-icon">
           Habitaciones
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nv-link">
+        <a class="nav-link nv-link" [routerLink]="['/booking']">
           <img src="/iconos/key.svg" class="nv-icon">
           Reservas
         </a>
