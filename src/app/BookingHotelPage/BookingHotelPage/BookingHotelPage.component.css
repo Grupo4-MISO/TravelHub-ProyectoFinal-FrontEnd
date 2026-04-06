@@ -1,4 +1,20 @@
 
+.containterDashboard{
+    margin: 5vh;
+}
+
+.containterDashboard .card{
+    border: none;
+}
+
+.table-secondary{
+    font-size: 1.7em;
+}
+
+table{
+    width: 80%;
+}
+
 img{
     width: 100%;
     height: auto;

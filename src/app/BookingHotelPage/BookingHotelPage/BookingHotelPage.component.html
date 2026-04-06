@@ -1,13 +1,57 @@
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775408091/vojtech-bruzek-Yrxr3bsPdS0-unsplash_l4ja49.jpg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{username}}</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+<div class="containterDashboard"> 
+  <div class="card mb-3" style="max-width: 540px;" *ngIf="hotelVm$ | async as hotelVm">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775408091/vojtech-bruzek-Yrxr3bsPdS0-unsplash_l4ja49.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ hotelVm.loading ? 'Cargando hotel...' : hotelVm.nombre }}</h5>
+          <p class="card-text">{{ hotelVm.loading ? 'Cargando dirección...' : hotelVm.direccion }} <br> {{ hotelVm.loading ? 'Cargando país...' : hotelVm.pais }}</p>
+        </div>
       </div>
     </div>
   </div>
+  
+  <table class="table table-hover">
+    @if (modo=='reservas'){
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col" colspan="5">Reservas</th>
+        </tr>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Id Habitacion</th>
+          <th scope="col">Valor de la Reserva</th>
+          <th scope="col">Fechas</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+    }
+    @if (modo=='habitaciones'){
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col" colspan="5">Habitaciones</th>
+        </tr>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Tipo de Habitación</th>
+          <th scope="col">Capacidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Reservas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of roomsVm$ | async; let i = index">
+          <td>{{ i + 101}}</td>
+          <td>{{ room.descripcion }}</td>
+          <td>{{ room.capacidad }}</td>
+          <td>{{ room.precio }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    }
+  </table>
+
+
 </div>
