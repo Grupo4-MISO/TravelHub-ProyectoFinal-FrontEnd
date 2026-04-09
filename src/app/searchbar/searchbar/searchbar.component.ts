@@ -1,7 +1,9 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SearchBarService } from '../searchbar.service';
+import { ChangeDetectorRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { debounceTime } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { SearchBar } from '../searchbar';
 
 @Component({
   selector: 'app-searchbar',
@@ -9,16 +11,19 @@ import { SearchBar } from '../searchbar';
   styleUrls: ['./searchbar.component.css'],
   standalone: false
 })
-
 export class SearchBarComponent implements OnInit {
 
   searchForm!: FormGroup;
   loading: boolean = false;
   error: string = '';
+  ciudades: string[] = [];
+  ciudadesFiltradas: string[] = [];
 
   constructor(
     private fb: FormBuilder,
-    private routerPath: Router
+    private routerPath: Router,
+    private searchBarService: SearchBarService,
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +33,35 @@ export class SearchBarComponent implements OnInit {
       check_out: ['', Validators.required],
       capacidad: [1, [Validators.required, Validators.min(1)]]
     });
+
+    this.searchBarService.listadoCiudades().subscribe({
+      next: (data) => {
+        this.ciudades = data;
+      }
+    });
+
+    this.searchForm.get('ciudad')?.valueChanges
+      .pipe(debounceTime(200))
+      .subscribe(valor => {
+        this.filtrarCiudades(valor);
+        this.cd.detectChanges();
+      });
+  }
+
+  filtrarCiudades(valor: string) {
+    if (!valor || valor.trim() === '') {
+      this.ciudadesFiltradas = [];
+      return;
+    }
+
+    this.ciudadesFiltradas = this.ciudades.filter(c =>
+      c.toLowerCase().includes(valor.toLowerCase())
+    );
+  }
+
+  seleccionarCiudad(ciudad: string) {
+    this.searchForm.patchValue({ ciudad }, { emitEvent: false });
+    this.ciudadesFiltradas = [];
   }
 
   ResultsPage(): void {
@@ -35,14 +69,14 @@ export class SearchBarComponent implements OnInit {
   }
 
   buscar(): void {
-  if (this.searchForm.invalid) {
-    this.searchForm.markAllAsTouched();
-    return;
-  }
+    if (this.searchForm.invalid) {
+      this.searchForm.markAllAsTouched();
+      return;
+    }
 
-  const { ciudad, check_in, check_out, capacidad } = this.searchForm.value;
+    const { ciudad, check_in, check_out, capacidad } = this.searchForm.value;
 
-  this.routerPath.navigate(['/results'], {
+    this.routerPath.navigate(['/results'], {
       queryParams: {
         ciudad,
         check_in,

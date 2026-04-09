@@ -144,3 +144,38 @@ small {
   font-size: 12px;
   margin-top: 5px;
 }
+
+.autocomplete {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+
+  max-height: 200px;
+  overflow-y: auto;
+
+  z-index: 9999;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #f5f5f5;
+}

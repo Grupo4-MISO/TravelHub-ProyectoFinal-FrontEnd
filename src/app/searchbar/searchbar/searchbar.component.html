@@ -2,14 +2,24 @@
   <form [formGroup]="searchForm" (ngSubmit)="buscar()" class="search-bar">
 
   <!-- Ciudad -->
-  <div class="field">
+  <div class="field autocomplete">
     <label>Destino</label>
+
     <input 
       type="text" 
       formControlName="ciudad"
       placeholder="Ciudad destino"
+      autocomplete="off"
       [class.invalid]="searchForm.get('ciudad')?.invalid && searchForm.get('ciudad')?.touched">
 
+    <ul *ngIf="ciudadesFiltradas.length > 0" class="dropdown">
+      <li *ngFor="let ciudad of ciudadesFiltradas"
+          (click)="seleccionarCiudad(ciudad)">
+        {{ ciudad }}
+      </li>
+    </ul>
+
+    <!-- Error -->
     <small *ngIf="searchForm.get('ciudad')?.touched && searchForm.get('ciudad')?.hasError('required')">
       La ciudad es obligatoria
     </small>

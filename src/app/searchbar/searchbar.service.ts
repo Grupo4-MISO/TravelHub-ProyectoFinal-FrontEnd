@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 
 export class SearchBarService {
     // Importamos URL del backend
-    private api_url = 'http://a201d35fa743f41fe813f52aaac9d8f9-524475012.us-east-1.elb.amazonaws.com';
+    private api_url = 'http://a27c37bf0d99b4fb792ef889278b903e-807938674.us-east-1.elb.amazonaws.com';
 
     constructor(private http: HttpClient) { }
 
@@ -25,5 +25,10 @@ export class SearchBarService {
         
         // Realizamos la peticion GET al backend
         return this.http.get<SearchBar[]>(`${this.api_url}/api/v1/busquedas/search`, { params });
+    }
+
+    listadoCiudades(): Observable<string[]> {
+        // Realizamos la peticion GET al backend para obtener las ciudades disponibles
+        return this.http.get<string[]>(`${this.api_url}/api/v1/inventarios/ciudades`);
     }
 }
