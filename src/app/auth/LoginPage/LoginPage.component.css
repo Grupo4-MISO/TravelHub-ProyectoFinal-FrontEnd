@@ -1,0 +1,146 @@
+.img-container{
+	padding: 30px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.img-container img {
+	width: 75%;
+	height: 60%;
+	object-fit: cover;
+}
+
+.login-card {
+	margin: 30px;
+	padding: 30px;
+	width: min(100%, 660px);
+	height: 80%;
+	text-align: center;
+	border: 2px solid #d0d0d0;
+	border-radius: 12px;
+}
+
+.login-card img{
+	margin-top: 1.5rem;
+}
+
+.login-subtitle {
+	margin: 0.2rem 0 0.2rem;
+	font-size: clamp(0.5rem, 1.5vw, 2rem);
+	font-weight: 400;
+}
+
+.login-error {
+	width: min(100%, 580px);
+	margin: 1.7rem auto;
+	padding: 1.7rem;
+	border-radius: 10px;
+	background: #fdeaea;
+	border: 1px solid #e3a5a5;
+	color: #9a1f1f;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.login-form {
+	width: min(100%, 580px);
+	margin: 0 auto;
+	padding: 1.7rem;
+	text-align: left;
+	background: transparent;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 0.6rem;
+	font-size: 1 rem;
+	font-weight: 400;
+	color: #4b4b4b;
+}
+
+.form-group input {
+	width: 100%;
+	height: 48px;
+	border: none;
+	border-radius: 14px;
+	padding: 0 1.7rem;
+	background: #e8e8e8;
+	color: #292929;
+	font-size: 1rem;
+	border-bottom: 3px solid #3b3b3b;
+	outline: none;
+	transition: box-shadow 0.2s ease, border-color 0.2s ease;
+	box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+	color: #3c3c3c;
+	opacity: 0.95;
+}
+
+.form-group input:focus {
+	border-bottom-color: #0d647f;
+	box-shadow: 0 0 0 2px rgba(13, 100, 127, 0.2);
+}
+
+.login-button {
+	margin-top: 0.65rem;
+	margin-left: 10%;
+	margin-bottom: 1.5rem;
+	width: 80%;
+	height: 64px;
+	border: none;
+	border-radius: 14px;
+	background: #056680;
+	color: #ffffff;
+	font-size: 1.2rem;
+	font-weight: 400;
+	cursor: pointer;
+	transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.login-button:hover {
+	filter: brightness(1.05);
+}
+
+.login-button:active {
+	transform: translateY(1px);
+}
+
+.login-button:focus-visible {
+	outline: 3px solid rgba(5, 102, 128, 0.35);
+	outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+	.login-subtitle {
+		margin: 1.2rem 0 1.6rem;
+		font-size: 1.7rem;
+	}
+
+	.login-form {
+		padding: 1rem;
+	}
+
+	.form-group label {
+		font-size: 1.9rem;
+	}
+
+	.form-group input {
+		height: 64px;
+		font-size: 1.55rem;
+		border-bottom-width: 2px;
+	}
+
+	.login-button {
+		height: 72px;
+		font-size: 1.95rem;
+	}
+}
