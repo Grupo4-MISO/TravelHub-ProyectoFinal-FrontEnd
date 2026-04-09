@@ -14,8 +14,22 @@
 
     <ul *ngIf="ciudadesFiltradas.length > 0" class="dropdown">
       <li *ngFor="let ciudad of ciudadesFiltradas"
-          (click)="seleccionarCiudad(ciudad)">
-        {{ ciudad }}
+          (click)="seleccionarCiudad(ciudad)"
+          class="dropdown-item">
+
+        <div class="item-content">
+          
+          <!-- Icono -->
+          <img src="/iconos/location.svg" class="dropdown-icon" alt="location">
+
+          <!-- Texto -->
+          <div class="text">
+            <div class="city">{{ ciudad.ciudad }}</div>
+            <div class="country">{{ ciudad.pais }}</div>
+          </div>
+
+        </div>
+
       </li>
     </ul>
 

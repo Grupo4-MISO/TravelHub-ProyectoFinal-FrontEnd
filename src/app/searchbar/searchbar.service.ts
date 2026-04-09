@@ -1,10 +1,10 @@
 // import { environment } from '../../environments/environment';
+import { ListadoCiudades } from './listado_ciudades';
 import { HttpParams } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SearchBar } from './searchbar';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +28,8 @@ export class SearchBarService {
         return this.http.get<SearchBar[]>(`${this.api_url}/api/v1/busquedas/search`, { params });
     }
 
-    listadoCiudades(): Observable<string[]> {
+    listadoCiudades(): Observable<ListadoCiudades[]> {
         // Realizamos la peticion GET al backend para obtener las ciudades disponibles
-        return this.http.get<string[]>(`${this.api_url}/api/v1/inventarios/ciudades`);
+        return this.http.get<ListadoCiudades[]>(`${this.api_url}/api/v1/inventarios/ciudades`);
     }
 }

@@ -1,5 +1,6 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchBarService } from '../searchbar.service';
+import { ListadoCiudades } from '../listado_ciudades';
 import { ChangeDetectorRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
@@ -16,8 +17,8 @@ export class SearchBarComponent implements OnInit {
   searchForm!: FormGroup;
   loading: boolean = false;
   error: string = '';
-  ciudades: string[] = [];
-  ciudadesFiltradas: string[] = [];
+  ciudades: ListadoCiudades[] = [];
+  ciudadesFiltradas: ListadoCiudades[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -54,13 +55,16 @@ export class SearchBarComponent implements OnInit {
       return;
     }
 
+    const texto = valor.toLowerCase();
+
     this.ciudadesFiltradas = this.ciudades.filter(c =>
-      c.toLowerCase().includes(valor.toLowerCase())
+      c.ciudad.toLowerCase().includes(texto) ||
+      c.pais.toLowerCase().includes(texto)
     );
   }
 
-  seleccionarCiudad(ciudad: string) {
-    this.searchForm.patchValue({ ciudad }, { emitEvent: false });
+  seleccionarCiudad(ciudad: ListadoCiudades) {
+    this.searchForm.patchValue({ ciudad: ciudad.ciudad }, { emitEvent: false });
     this.ciudadesFiltradas = [];
   }
 
