@@ -1,5 +1,4 @@
 // import { environment } from '../../environments/environment';
-import { ListadoCiudades } from './listado_ciudades';
 import { HttpParams } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -16,20 +15,22 @@ export class SearchBarService {
 
     constructor(private http: HttpClient) { }
 
-    buscarHospedajes(ciudad: string, check_in: string, check_out: string, capacidad: number): Observable<SearchBar[]> {
+    buscarHospedajes(ciudad: string, check_in: string, check_out: string, capacidad: number, country_code: string, currency_code: string): Observable<SearchBar[]> {
         // Cadena de consulta para el backend
         let params = new HttpParams()
             .set('ciudad', ciudad)
             .set('check_in', check_in)
             .set('check_out', check_out)
-            .set('capacidad', capacidad.toString());
-        
+            .set('capacidad', capacidad.toString())
+            .set('country_code', country_code)
+            .set('currency_code', currency_code);
+
         // Realizamos la peticion GET al backend
         return this.http.get<SearchBar[]>(`${this.api_url}/api/v1/busquedas/search`, { params });
     }
 
-    listadoCiudades(): Observable<ListadoCiudades[]> {
-        // Realizamos la peticion GET al backend para obtener las ciudades disponibles
-        return this.http.get<ListadoCiudades[]>(`${this.api_url}/api/v1/inventarios/ciudades`);
+    listadoCiudades(country_code: string): Observable<string[]> {
+        // Realizamos la peticion GET al backend para obtener las ciudades disponibles por pais
+        return this.http.get<string[]>(`${this.api_url}/api/v1/inventarios/countries/${country_code}/popular-cities`);
     }
 }

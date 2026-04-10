@@ -1,10 +1,10 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchBarService } from '../searchbar.service';
-import { ListadoCiudades } from '../listado_ciudades';
-import { ChangeDetectorRef } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { NavbarService } from '../../navbar/navbar.service';
+import { CountryList } from '../../navbar/countrylist';
 
 @Component({
   selector: 'app-searchbar',
@@ -17,13 +17,20 @@ export class SearchBarComponent implements OnInit {
   searchForm!: FormGroup;
   loading: boolean = false;
   error: string = '';
-  ciudades: ListadoCiudades[] = [];
-  ciudadesFiltradas: ListadoCiudades[] = [];
+
+  ciudades: string[] = [];
+  ciudadesFiltradas: string[] = [];
+
+  currentCountry!: CountryList;
+
+  currentCountryCode: string = 'CO';
+  currentCurrency: string = 'COP';
 
   constructor(
     private fb: FormBuilder,
     private routerPath: Router,
     private searchBarService: SearchBarService,
+    private navbarService: NavbarService,
     private cd: ChangeDetectorRef
   ) {}
 
@@ -35,10 +42,16 @@ export class SearchBarComponent implements OnInit {
       capacidad: [1, [Validators.required, Validators.min(1)]]
     });
 
-    this.searchBarService.listadoCiudades().subscribe({
-      next: (data) => {
-        this.ciudades = data;
+    this.navbarService.country$.subscribe((country: CountryList | null) => {
+      if (country) {
+        this.currentCountry = country;
+        this.currentCountryCode = country.code;
+        this.cargarCiudadesPorPais(country.code);
       }
+    });
+
+    this.navbarService.currency$.subscribe(currency => {
+      this.currentCurrency = currency;
     });
 
     this.searchForm.get('ciudad')?.valueChanges
@@ -47,6 +60,22 @@ export class SearchBarComponent implements OnInit {
         this.filtrarCiudades(valor);
         this.cd.detectChanges();
       });
+  }
+
+  cargarCiudadesPorPais(countryCode: string) {
+    this.searchBarService.listadoCiudades(countryCode).subscribe({
+      next: (data) => {
+        this.ciudades = data;
+        this.ciudadesFiltradas = [];
+
+        // reset input cuando cambia país
+        this.searchForm.patchValue({ ciudad: '' });
+      },
+      error: () => {
+        this.ciudades = [];
+        this.ciudadesFiltradas = [];
+      }
+    });
   }
 
   filtrarCiudades(valor: string) {
@@ -58,18 +87,13 @@ export class SearchBarComponent implements OnInit {
     const texto = valor.toLowerCase();
 
     this.ciudadesFiltradas = this.ciudades.filter(c =>
-      c.ciudad.toLowerCase().includes(texto) ||
-      c.pais.toLowerCase().includes(texto)
+      c.toLowerCase().includes(texto)
     );
   }
 
-  seleccionarCiudad(ciudad: ListadoCiudades) {
-    this.searchForm.patchValue({ ciudad: ciudad.ciudad }, { emitEvent: false });
+  seleccionarCiudad(ciudad: string) {
+    this.searchForm.patchValue({ ciudad: ciudad }, { emitEvent: false });
     this.ciudadesFiltradas = [];
-  }
-
-  ResultsPage(): void {
-    this.routerPath.navigate(['/results']);
   }
 
   buscar(): void {
@@ -85,7 +109,9 @@ export class SearchBarComponent implements OnInit {
         ciudad,
         check_in,
         check_out,
-        capacidad
+        capacidad,
+        country_code: this.currentCountryCode,
+        currency_code: this.currentCurrency
       }
     });
   }

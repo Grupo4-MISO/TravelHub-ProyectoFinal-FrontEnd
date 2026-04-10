@@ -27,14 +27,14 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
     private cdr: ChangeDetectorRef
   ) { }
 
-  buscar(ciudad: string, check_in: string, check_out: string, capacidad: number) {
+  buscar(ciudad: string, check_in: string, check_out: string, capacidad: number, country_code: string, currency_code: string) {
     if (this.isSearching) return;
     this.isSearching = true;
     this.error = '';
     this.loading = true;
     this.cdr.detectChanges();
 
-    this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad)
+    this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad, country_code, currency_code)
       .subscribe({
         next: (data) => {
           this.resultados = data;
@@ -63,9 +63,9 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.queryParamsSubscription = this.route.queryParams.subscribe(params => {
-      const { ciudad, check_in, check_out, capacidad } = params;
-      if (ciudad && check_in && check_out && capacidad) {
-        this.buscar(ciudad, check_in, check_out, capacidad);
+      const { ciudad, check_in, check_out, capacidad, country_code, currency_code } = params;
+      if (ciudad && check_in && check_out && capacidad && country_code && currency_code) {
+        this.buscar(ciudad, check_in, check_out, capacidad, country_code, currency_code);
       }
     });
   }
