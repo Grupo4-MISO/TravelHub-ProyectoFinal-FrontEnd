@@ -7,8 +7,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { App } from './app';
+import { NavbarModule } from './navbar/navbar.module';
 import { SearchBarModule } from './searchbar/searchbar.module';
-import { NavbarComponent } from './navbar/navbar.component';
 import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalPageModule } from './PrincipalPage/PrincipalPage.module';
@@ -23,7 +23,6 @@ export function tokenGetter(): string | null {
 @NgModule({
   declarations: [	
     App,
-    NavbarComponent,
     PropertyDetailPageComponent
    ],
   imports: [
@@ -34,6 +33,7 @@ export function tokenGetter(): string | null {
     SearchBarModule,
     PrincipalPageModule,
     ResultsPageModule,
+    NavbarModule,
     FooterModule,
     HttpClientModule,
     ToastrModule.forRoot({
