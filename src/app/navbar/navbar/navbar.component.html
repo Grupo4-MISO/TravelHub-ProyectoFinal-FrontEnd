@@ -44,10 +44,26 @@
     </li>
 
   </ul>
-  <div>
-  <img src="/iconos/currency.svg" class="bar-icon">
-  COP
-  <img src="/iconos/world.svg" class="bar-icon">
+  <div class="navbar-selectors">
+
+    <select 
+      [(ngModel)]="selectedCountry"
+      (ngModelChange)="onCountryChange($event)"
+    >
+      <option *ngFor="let c of countries" [ngValue]="c">
+        {{ c.FlagEmoji }} {{ c.code }}
+      </option>
+    </select>
+    
+    <select 
+      [(ngModel)]="selectedCurrency"
+      (ngModelChange)="onCurrencyChange($event)"
+    >
+      <option *ngFor="let c of countries" [value]="c.CurrencyCode">
+        {{ c.CurrencySymbol }} {{ c.CurrencyCode }}
+      </option>
+    </select>
+
   </div>
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2">
