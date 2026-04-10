@@ -12,4 +12,5 @@ export interface SearchBar {
   precio: number;
   descripcion: string;
   currency_code: string;
+  image_url: string;
 }

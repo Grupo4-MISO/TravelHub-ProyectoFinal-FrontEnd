@@ -40,9 +40,8 @@
 
 /* IMAGEN */
 .card-image {
-  width: 260px;
+  width: 250px;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #ff7a5c, #ff5a5f);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,4 +238,11 @@
   .btn-primary {
     width: 100%;
   }
+}
+
+.hotel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }

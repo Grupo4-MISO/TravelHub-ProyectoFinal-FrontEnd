@@ -38,6 +38,7 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (data) => {
           this.resultados = data;
+          console.log('Resultados obtenidos:', this.resultados);
           this.loading = false;
           this.isSearching = false;
           this.toastr.success('Hospedajes encontrados', '', { positionClass: 'toast-bottom-right' });
