@@ -8,8 +8,9 @@
     <input 
       type="text" 
       formControlName="ciudad"
-      placeholder="Ciudad destino"
+      (focus)="mostrarTodas()"
       autocomplete="off"
+      placeholder="Ciudad destino"
       [class.invalid]="searchForm.get('ciudad')?.invalid && searchForm.get('ciudad')?.touched">
 
     <ul *ngIf="ciudadesFiltradas.length > 0" class="dropdown">

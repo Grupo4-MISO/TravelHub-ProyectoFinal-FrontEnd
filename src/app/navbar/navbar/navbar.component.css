@@ -1,18 +1,18 @@
-nav{
-    height: 100%;   
+nav {
+  height: 100%;
 }
 
-:host{
-    display: block;
-    width: 100%;
-    height: 10vh;
-    border-color: #f5f5f5;
-    border-width: 2px;
-    border-style: solid;
+:host {
+  display: block;
+  width: 100%;
+  height: 10vh;
+  border-color: #f5f5f5;
+  border-width: 2px;
+  border-style: solid;
 }
 
-.logo{
-    width: 250px;
+.logo {
+  width: 250px;
 }
 
 .btn-brand-primary {
@@ -33,97 +33,118 @@ nav{
   --bs-btn-border-color: #f06d51;
   --bs-btn-hover-color: #111827;
   --bs-btn-hover-bg: #D95E45;
-  --bs-btn-hover-border-color: #D95E45 ;
+  --bs-btn-hover-border-color: #D95E45;
   --bs-btn-active-color: #111827;
-  --bs-btn-active-bg: #f59e0b ;
+  --bs-btn-active-bg: #f59e0b;
   --bs-btn-active-border-color: #f59e0b;
 }
 
-.nv-link{
-    color: #111827;
-    font-size: 1.2em;
-    font-weight: 400;
-    border-right: black 1px solid;
+.nv-link {
+  color: #111827;
+  font-size: 1.2em;
+  font-weight: 400;
+  border-right: black 1px solid;
 }
 
-.nv-link.final{
+.nv-link.final {
   border-right: none;
 }
 
-.nv-icon{
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
+.nv-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
 }
 
-.bar-icon{
-    width: 35px;
-    height: 35px;
+.bar-icon {
+  width: 35px;
+  height: 35px;
 }
 
-.dropdown button{
-    color: #111827;
-    font-size: 1.2em;
-    font-weight: 400;
+.dropdown button {
+  color: #111827;
+  font-size: 1.2em;
+  font-weight: 400;
 }
 
+/* ========== SELECTORES MODERNOS ========== */
 .navbar-selectors {
   display: flex;
   align-items: center;
-  gap: 16px;
-  background: #f5f5f5;
-  padding: 8px 16px;
-  border-radius: 10px;
+  gap: 20px;
+  background: #ffffff;
+  padding: 6px 16px;
+  border-radius: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.2s ease;
 }
 
-/* Contenedor de cada dropdown */
+.navbar-selectors:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
 .selector {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: white;
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  transition: all 0.2s ease;
+  gap: 8px;
+  background: transparent;
+  border-radius: 32px;
+  padding: 4px 8px;
+  transition: background 0.2s ease;
 }
 
-/* Hover tipo app moderna */
 .selector:hover {
-  border-color: #999;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #f8f9fc;
 }
 
-/* Iconos */
-.icon {
-  font-size: 14px;
+.selector-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  opacity: 0.8;
 }
 
-/* Select limpio */
 .selector select {
   border: none;
-  outline: none;
   background: transparent;
-  font-size: 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #1e293b;
+  padding: 6px 20px 6px 4px;
   cursor: pointer;
-  appearance: none; /* quita estilo nativo */
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-/* Flechita custom */
-.selector {
-  position: relative;
-}
-
-.selector::after {
-  content: '▼';
-  font-size: 10px;
-  position: absolute;
-  right: 8px;
-  pointer-events: none;
-  color: #666;
-}
-
-/* Espacio para la flecha */
+/* Flecha personalizada (SVG moderno) */
 .selector select {
-  padding-right: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235b6e8c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 14px;
+}
+
+.selector select::-ms-expand {
+  display: none;
+}
+
+.selector select option {
+  background: white;
+  color: #1e293b;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-selectors {
+    gap: 10px;
+    padding: 4px 12px;
+  }
+  .selector select {
+    font-size: 0.85rem;
+    padding-right: 18px;
+  }
 }

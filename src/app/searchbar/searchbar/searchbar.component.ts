@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchBarService } from '../searchbar.service';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NavbarService } from '../../navbar/navbar.service';
 import { CountryList } from '../../navbar/countrylist';
 
@@ -26,12 +26,15 @@ export class SearchBarComponent implements OnInit {
   currentCountryCode: string = 'CO';
   currentCurrency: string = 'COP';
 
+  private initialParams: any = null;
+
   constructor(
     private fb: FormBuilder,
     private routerPath: Router,
     private searchBarService: SearchBarService,
     private navbarService: NavbarService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +43,10 @@ export class SearchBarComponent implements OnInit {
       check_in: ['', Validators.required],
       check_out: ['', Validators.required],
       capacidad: [1, [Validators.required, Validators.min(1)]]
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.initialParams = params;
     });
 
     this.navbarService.country$.subscribe((country: CountryList | null) => {
@@ -68,8 +75,16 @@ export class SearchBarComponent implements OnInit {
         this.ciudades = data;
         this.ciudadesFiltradas = [];
 
-        // reset input cuando cambia país
-        this.searchForm.patchValue({ ciudad: '' });
+        if (this.initialParams) {
+          this.searchForm.patchValue({
+            ciudad: this.initialParams['ciudad'] || '',
+            check_in: this.initialParams['check_in'] || '',
+            check_out: this.initialParams['check_out'] || '',
+            capacidad: this.initialParams['capacidad'] || 1
+          });
+
+          this.initialParams = null;
+        }
       },
       error: () => {
         this.ciudades = [];
@@ -114,5 +129,9 @@ export class SearchBarComponent implements OnInit {
         currency_code: this.currentCurrency
       }
     });
+  }
+
+  mostrarTodas() {
+    this.ciudadesFiltradas = this.ciudades;
   }
 }

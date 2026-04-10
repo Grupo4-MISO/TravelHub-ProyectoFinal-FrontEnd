@@ -42,29 +42,35 @@
         Ayuda
       </a>
     </li>
-
   </ul>
+
+  <!-- SELECTORES MODERNOS -->
   <div class="navbar-selectors">
+    <!-- País -->
+    <div class="selector">
+      <select
+        [(ngModel)]="selectedCountry"
+        (ngModelChange)="onCountryChange($event)"
+      >
+        <option *ngFor="let c of countries" [ngValue]="c">
+          {{ c.FlagEmoji }} {{ c.code }}
+        </option>
+      </select>
+    </div>
 
-    <select 
-      [(ngModel)]="selectedCountry"
-      (ngModelChange)="onCountryChange($event)"
-    >
-      <option *ngFor="let c of countries" [ngValue]="c">
-        {{ c.FlagEmoji }} {{ c.code }}
-      </option>
-    </select>
-    
-    <select 
-      [(ngModel)]="selectedCurrency"
-      (ngModelChange)="onCurrencyChange($event)"
-    >
-      <option *ngFor="let c of countries" [value]="c.CurrencyCode">
-        {{ c.CurrencySymbol }} {{ c.CurrencyCode }}
-      </option>
-    </select>
-
+    <!-- Moneda -->
+    <div class="selector">
+      <select
+        [(ngModel)]="selectedCurrency"
+        (ngModelChange)="onCurrencyChange($event)"
+      >
+        <option *ngFor="let c of countries" [value]="c.CurrencyCode">
+          {{ c.CurrencySymbol }} {{ c.CurrencyCode }}
+        </option>
+      </select>
+    </div>
   </div>
+
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2">
       <button type="button" class="btn btn-lg btn-brand-primary" [routerLink]="['/login']">Iniciar sesión</button>
@@ -101,4 +107,3 @@
     </div>
   }
 </nav>
-
