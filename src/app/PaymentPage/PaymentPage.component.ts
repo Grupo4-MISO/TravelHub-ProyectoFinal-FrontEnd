@@ -47,7 +47,8 @@ export class PaymentPageComponent implements OnInit {
       { label: 'Hotel', value: reservationData.hotel },
       { label: 'Numero de personas', value: reservationData.personas },
       { label: 'Check-in', value: reservationData.checkIn },
-      { label: 'Check-out', value: reservationData.checkOut }
+      { label: 'Check-out', value: reservationData.checkOut },
+      { label: 'Precio total', value: 'Calculando...' }
     ];
   });
 
