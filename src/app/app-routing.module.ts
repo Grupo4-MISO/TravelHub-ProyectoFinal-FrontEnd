@@ -11,7 +11,11 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule) },
   { path: 'results', component: ResultsPageComponent },
   { path: 'property', component: PropertyDetailPageComponent },
-  { path: 'booking', component: BookingHotelPageComponent }
+  { path: 'booking', component: BookingHotelPageComponent },
+  {
+    path: 'payment',
+    loadComponent: () => import('./PaymentPage/PaymentPage.component').then((c) => c.PaymentPageComponent)
+  }
 ];
 
 @NgModule({

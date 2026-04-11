@@ -1,0 +1,48 @@
+<main class="payment-page">
+  @if (!holdReservationError()) {
+  <section class="payment-card">
+    <h1 id="payment-title" class="section-title">Confirmacion de Reserva</h1>
+
+    <div class="reservation-grid" role="table" aria-label="Resumen de la reserva">
+      @for (row of reservationRows; track row.label) {
+      <div class="grid-row" role="row">
+        <span class="grid-label" role="cell">{{ row.label }}</span>
+        <span class="grid-value" role="cell">{{ row.value }}</span>
+      </div>
+      }
+    </div>
+  </section>
+
+  <section class="payment-method" aria-labelledby="method-title">
+    <h2 id="method-title" class="method-title">Medio de Pago</h2>
+
+    <div class="method-options" role="radiogroup" aria-label="Metodos de pago">
+      <button type="button" class="method-card" role="radio" aria-checked="true" aria-label="Tarjetas y billeteras">
+        <div class="brands-grid">
+          <span class="brand-chip mastercard">MasterCard</span>
+          <span class="brand-chip visa">VISA</span>
+          <span class="brand-chip amex">AMEX</span>
+          <span class="brand-chip discover">DISCOVER</span>
+          <span class="brand-chip bank">BANK</span>
+          <span class="brand-chip paypal">PayPal</span>
+        </div>
+      </button>
+
+      <button type="button" class="method-card" role="radio" aria-checked="false" aria-label="Pago por PSE">
+        <div class="pse-circle">
+          <span class="pse-text">pse</span>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <div class="action-row">
+    <button type="button" class="confirm-btn">Confirmar Reserva</button>
+  </div>
+  } @else {
+  <section class="availability-error" aria-live="assertive" role="alert">
+    <h2 class="availability-error-title">Pago no disponible</h2>
+    <p class="availability-error-message">{{ holdReservationErrorMessage }}</p>
+  </section>
+  }
+</main>
