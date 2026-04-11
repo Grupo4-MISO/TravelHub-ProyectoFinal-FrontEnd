@@ -20,8 +20,8 @@ export class PaymentPageComponent implements OnInit {
   private readonly holdReservaPayload: HoldReservaRequest = {
     user_id: 'user-123',
     habitacion_id: '550e8400-e29b-41d4-a716-446655440000',
-    check_in: '2026-04-06',
-    check_out: '2026-04-09'
+    check_in: '2026-04-23',
+    check_out: '2026-04-27'
   };
 
   readonly reservationRows: readonly ReservationRow[] = [

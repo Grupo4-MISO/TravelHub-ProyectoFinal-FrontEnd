@@ -1,4 +1,4 @@
-// import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment';
 import { HttpParams } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 
 export class SearchBarService {
     // Importamos URL del backend
-    private api_url = 'http://a9632d3648c204ee7809bde69b5b6eb8-421692685.us-east-1.elb.amazonaws.com';
+    private api_url = environment.apiUrl;
 
     constructor(private http: HttpClient) { }
 
