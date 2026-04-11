@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PropertyDetail } from './property-detail';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropertyDetailPageService {
     
-    private api_url = 'http://a37f9013b4f114474b89eabea8dc6d88-943704764.us-east-1.elb.amazonaws.com';
-  //private api_url = 'http://127.0.0.1:5000';
+  private api_url = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

@@ -48,15 +48,16 @@
   <div class="navbar-selectors">
     <!-- País -->
     <div class="selector">
-      <select
-        [(ngModel)]="selectedCountry"
-        (ngModelChange)="onCountryChange($event)"
-      >
-        <option *ngFor="let c of countries" [ngValue]="c">
-          {{ c.FlagEmoji }} {{ c.code }}
-        </option>
-      </select>
-    </div>
+    <select
+      [(ngModel)]="selectedCountry"
+      (ngModelChange)="onCountryChange($event)"
+      [compareWith]="compareCountries"
+    >
+      <option *ngFor="let c of countries" [ngValue]="c">
+        {{ c.FlagEmoji }} {{ c.code }}
+      </option>
+    </select>
+  </div>
 
     <!-- Moneda -->
     <div class="selector">
