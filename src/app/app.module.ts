@@ -21,7 +21,7 @@ export function tokenGetter(): string | null {
 }
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     App,
     PropertyDetailPageComponent
    ],
