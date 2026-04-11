@@ -57,11 +57,7 @@ describe('LoginPageComponent', () => {
 
   it('should login successfully, persist session data and navigate to home', () => {
     authServiceSpy.login.mockReturnValue(of({ token: 'fake-token', id: '25' }));
-    vi.spyOn(component.helper, 'decodeToken').mockReturnValueOnce(
-      { username: 'test-user', role: Role.TRAVELER },
-    ).mockReturnValueOnce(
-      { username: 'test-user', role: Role.TRAVELER }
-    ).mockReturnValueOnce(
+    vi.spyOn(component.helper, 'decodeToken').mockReturnValue(
       { username: 'test-user', role: Role.TRAVELER },
     );
 
@@ -75,7 +71,7 @@ describe('LoginPageComponent', () => {
     expect(sessionStorage.getItem('idUsuario')).toBe('25');
     expect(sessionStorage.getItem('userName')).toBe('test-user');
     expect(sessionStorage.getItem('role')).toBe(Role.TRAVELER);
-    expect(toastrServiceSpy.success).toHaveBeenCalledWith('Has iniciado sesion correctamente.', 'Bienvenido');
+    expect(toastrServiceSpy.success).toHaveBeenCalledWith('Has iniciado sesion correctamente.', 'Bienvenido ' + 'test-user');
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
     expect(component.error).toBe('');
   });
