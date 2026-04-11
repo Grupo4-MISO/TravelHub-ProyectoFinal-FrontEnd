@@ -1,7 +1,7 @@
 import { SearchBarService } from '../../searchbar/searchbar.service';
 import { SearchBar } from '../../searchbar/searchbar';
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Inject } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -21,6 +21,7 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
   private isSearching: boolean = false;
 
   constructor(
+    private routerPath: Router,
     private route: ActivatedRoute,
     private searchService: SearchBarService,
     @Inject(ToastrService) private toastr: ToastrService,
@@ -73,5 +74,13 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.queryParamsSubscription?.unsubscribe();
+  }
+
+  verDetalle(hospedajeId: string) {
+    this.routerPath.navigate(['/property'], {
+      queryParams: {
+        id: hospedajeId,
+      }
+    });
   }
 }

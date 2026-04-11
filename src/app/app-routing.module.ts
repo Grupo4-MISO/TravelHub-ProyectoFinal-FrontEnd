@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalPageComponent } from './PrincipalPage/PrincipalPage/PrincipalPage.component';
 import { ResultsPageComponent } from './ResultsPage/ResultsPage/ResultsPage.component';
-import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage.component';
+import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage/PropertyDetailPage.component';
 import { BookingHotelPageComponent } from './BookingHotelPage/BookingHotelPage/BookingHotelPage.component';
 
 const routes: Routes = [
