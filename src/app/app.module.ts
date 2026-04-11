@@ -9,12 +9,13 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { App } from './app';
 import { NavbarModule } from './navbar/navbar.module';
 import { SearchBarModule } from './searchbar/searchbar.module';
-import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage.component';
+import { PropertyDetailPageModule } from './PropertyDetailPage/PropertyDetailPage.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalPageModule } from './PrincipalPage/PrincipalPage.module';
 import { ResultsPageModule } from './ResultsPage/ResultsPage.module';
 import { FooterModule } from './footer/footer.module';
 import { provideToastr } from 'ngx-toastr';
+import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage/PropertyDetailPage.component';
 
 export function tokenGetter(): string | null {
   return sessionStorage.getItem('token');
@@ -23,7 +24,7 @@ export function tokenGetter(): string | null {
 @NgModule({
   declarations: [	
     App,
-    PropertyDetailPageComponent
+    
    ],
   imports: [
     BrowserModule,
@@ -33,6 +34,7 @@ export function tokenGetter(): string | null {
     SearchBarModule,
     PrincipalPageModule,
     ResultsPageModule,
+    PropertyDetailPageModule,
     NavbarModule,
     FooterModule,
     HttpClientModule,
