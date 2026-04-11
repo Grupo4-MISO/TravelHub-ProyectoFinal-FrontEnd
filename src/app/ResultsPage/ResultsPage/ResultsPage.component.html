@@ -21,7 +21,9 @@
 
       <!-- Imagen -->
       <div class="card-image">
-        <div class="image-placeholder"></div>
+        <div class="image-placeholder">
+          <img [src]="item.image_url" alt="{{ item.nombre }}" class="hotel-image">
+        </div>
       </div>
 
       <!-- Información -->
@@ -49,7 +51,10 @@
           </div>
           <span class="rating-value">{{ item.rating }}</span>
         </div>
-
+        <!--REVIES-->
+        <div class="reviews">
+          ({{ item.reviews }} reseñas)
+        </div>
         <!--PRECIO -->
         <div class="price">
           <span class="amount">${{ item.precio }}</span>
@@ -57,8 +62,8 @@
         </div>
 
         <!--BOTÓN -->
-        <button class="btn-primary">
-          Ver disponibilidad
+        <button class="btn-primary" (click)="verDetalle(item.hospedaje_id)">
+          Ver detalle
         </button>
 
       </div>

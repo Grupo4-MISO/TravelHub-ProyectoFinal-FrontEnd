@@ -7,25 +7,25 @@ import { ToastrModule } from 'ngx-toastr';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { App } from './app';
+import { NavbarModule } from './navbar/navbar.module';
 import { SearchBarModule } from './searchbar/searchbar.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage.component';
+import { PropertyDetailPageModule } from './PropertyDetailPage/PropertyDetailPage.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalPageModule } from './PrincipalPage/PrincipalPage.module';
 import { ResultsPageModule } from './ResultsPage/ResultsPage.module';
 import { FooterModule } from './footer/footer.module';
 import { provideToastr } from 'ngx-toastr';
+import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage/PropertyDetailPage.component';
 
 export function tokenGetter(): string | null {
   return sessionStorage.getItem('token');
 }
 
 @NgModule({
-  declarations: [
+  declarations: [		
     App,
-    NavbarComponent,
-    PropertyDetailPageComponent
-  ],
+    
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -34,6 +34,8 @@ export function tokenGetter(): string | null {
     SearchBarModule,
     PrincipalPageModule,
     ResultsPageModule,
+    PropertyDetailPageModule,
+    NavbarModule,
     FooterModule,
     HttpClientModule,
     ToastrModule.forRoot({

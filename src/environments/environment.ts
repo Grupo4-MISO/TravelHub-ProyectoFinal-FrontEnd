@@ -1,3 +1,6 @@
 export const environment = {
-    apiUrl: 'http://localhost:5000'
+    inventariosUrl: 'http://localhost:3000',
+    reservasUrl: 'http://localhost:3001',
+    searchUrl: 'http://localhost:3002',
+    authUrl: 'http://localhost:3003'
 };

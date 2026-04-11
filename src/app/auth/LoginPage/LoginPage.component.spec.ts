@@ -56,7 +56,7 @@ describe('LoginPageComponent', () => {
   });
 
   it('should login successfully, persist session data and navigate to home', () => {
-    authServiceSpy.login.mockReturnValue(of({ token: 'fake-token', id: '25' }));
+    authServiceSpy.login.mockReturnValue(of({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QtdXNlciIsInJvbGUiOiJUUkFWRUxFUiJ9.signature', id: '25' }));
     vi.spyOn(component.helper, 'decodeToken').mockReturnValueOnce(
       { username: 'test-user', role: Role.TRAVELER },
     ).mockReturnValueOnce(
@@ -71,11 +71,11 @@ describe('LoginPageComponent', () => {
       email: 'user@email.com',
       password: 'secret123'
     });
-    expect(sessionStorage.getItem('token')).toBe('fake-token');
+    expect(sessionStorage.getItem('token')).toBe('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QtdXNlciIsInJvbGUiOiJUUkFWRUxFUiJ9.signature');
     expect(sessionStorage.getItem('idUsuario')).toBe('25');
     expect(sessionStorage.getItem('userName')).toBe('test-user');
     expect(sessionStorage.getItem('role')).toBe(Role.TRAVELER);
-    expect(toastrServiceSpy.success).toHaveBeenCalledWith('Has iniciado sesion correctamente.', 'Bienvenido');
+    expect(toastrServiceSpy.success).toHaveBeenCalledWith('Has iniciado sesion correctamente.', 'Bienvenido test-user');
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
     expect(component.error).toBe('');
   });

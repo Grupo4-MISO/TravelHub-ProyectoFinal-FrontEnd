@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NavbarComponent } from './navbar.component';
 import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -13,7 +14,7 @@ describe('NavbarComponent', () => {
   beforeEach(async() => {
         await TestBed.configureTestingModule({
           declarations: [NavbarComponent],
-          imports: [RouterTestingModule, ToastrModule.forRoot()]
+          imports: [RouterTestingModule, ToastrModule.forRoot(), FormsModule]
         }).compileComponents();
   });
 

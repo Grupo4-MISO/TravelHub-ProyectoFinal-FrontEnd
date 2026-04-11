@@ -1,0 +1,109 @@
+<nav class="navbar-shell d-flex align-items-center justify-content-between px-5">
+  <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/">
+
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link nv-link" href="#"> 
+        <img src="/iconos/search.svg" class="nv-icon">
+        Buscar
+      </a>
+    </li>
+    @if (userRole !== 'Accomodation'){
+      <li class="nav-item">
+        <a class="nav-link nv-link" href="#">
+          <img src="/iconos/fire.svg" class="nv-icon">
+          Ofertas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nv-link">
+          <img src="/iconos/calendar-ico.svg" class="nv-icon">
+          Reservas
+        </a>
+      </li>
+    }
+    @if (userRole === 'Accomodation') {
+      <li class="nav-item">
+        <a class="nav-link nv-link" [routerLink]="['/booking']" [queryParams]="{ mode: 'rooms' }">
+          <img src="/iconos/room.svg" class="nv-icon">
+          Habitaciones
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nv-link" [routerLink]="['/booking']" [queryParams]="{ mode: 'reservations' }">
+          <img src="/iconos/key.svg" class="nv-icon">
+          Reservas
+        </a>
+      </li>
+    }
+    <li class="nav-item">
+      <a class="nav-link nv-link final" href="#">
+        <img src="/iconos/service-bell.svg" class="nv-icon">
+        Ayuda
+      </a>
+    </li>
+  </ul>
+
+  <!-- SELECTORES MODERNOS -->
+  <div class="navbar-selectors">
+    <!-- País -->
+    <div class="selector">
+      <select
+        [(ngModel)]="selectedCountry"
+        (ngModelChange)="onCountryChange($event)"
+      >
+        <option *ngFor="let c of countries" [ngValue]="c">
+          {{ c.FlagEmoji }} {{ c.code }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Moneda -->
+    <div class="selector">
+      <select
+        [(ngModel)]="selectedCurrency"
+        (ngModelChange)="onCurrencyChange($event)"
+      >
+        <option *ngFor="let c of countries" [value]="c.CurrencyCode">
+          {{ c.CurrencySymbol }} {{ c.CurrencyCode }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  @if (isNotAuthenticated()) {
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-lg btn-brand-primary" [routerLink]="['/login']">Iniciar sesión</button>
+      <button type="button" class="btn btn-lg btn-brand-secondary">Crear Cuenta</button>
+    </div>
+  }
+  @if (isAuthenticated()) {
+    <div class="d-flex gap-2">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          @if (userRole === 'Accomodation') {
+            <img src="/iconos/hotel.svg" class="nv-icon">
+          }
+          @if (userRole === 'Traveler') {
+            <img src="/iconos/traveler.svg" class="nv-icon">
+          }
+          {{ username }}
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="#">
+              <img src="/iconos/config.svg" class="nv-icon">
+              Configuración</a>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="logout()">
+              <img src="/iconos/exit.svg" class="nv-icon">
+              Cerrar Sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  }
+</nav>
