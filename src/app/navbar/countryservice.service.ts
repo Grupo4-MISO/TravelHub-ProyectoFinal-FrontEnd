@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CountryService {
   // Importamos URL del backend
-  private api_url = 'http://a37f9013b4f114474b89eabea8dc6d88-943704764.us-east-1.elb.amazonaws.com';
+  private api_url = 'http://a9632d3648c204ee7809bde69b5b6eb8-421692685.us-east-1.elb.amazonaws.com';
 
   constructor(private http: HttpClient) { }
 
