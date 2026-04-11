@@ -1,5 +1,15 @@
-import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { HoldReservaRequest, ReservasService } from '../reservas/reservas.service';
+
+type PaymentReservationData = {
+  readonly userId: string;
+  readonly habitacionId: string;
+  readonly checkIn: string;
+  readonly checkOut: string;
+  readonly hotel: string;
+  readonly personas: string;
+};
 
 type ReservationRow = {
   readonly label: string;
@@ -13,42 +23,100 @@ type ReservationRow = {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PaymentPageComponent implements OnInit {
-  readonly holdReservationError = signal(false);
-  readonly holdReservationErrorMessage =
+  private readonly route = inject(ActivatedRoute);
+  private readonly reservasService = inject(ReservasService);
+
+  private readonly missingReservationDataMessage =
+    'No se puede hacer el pago porque faltan datos de la reserva.';
+  private readonly holdReservationErrorMessageText =
     'No se puede hacer el pago porque la habitacion no esta disponible.';
 
-  private readonly holdReservaPayload: HoldReservaRequest = {
-    user_id: 'user-123',
-    habitacion_id: '550e8400-e29b-41d4-a716-446655440000',
-    check_in: '2026-04-06',
-    check_out: '2026-04-09'
-  };
+  readonly holdReservationErrorMessage = signal('');
+  readonly reservationData = signal<PaymentReservationData | null>(null);
 
-  readonly reservationRows: readonly ReservationRow[] = [
-    { label: 'Titular de la reserva', value: '{Nombre Titular}' },
-    { label: 'Numero de personas', value: '{Numero Personas}' },
-    { label: 'Hotel', value: '{Nombre Hotel}' },
-    { label: 'Precio total', value: '{Precio Total}' },
-    { label: 'Check-in', value: '{Fecha Checkin}' },
-    { label: 'Check-out', value: '{Fecha Checkout}' }
-  ];
+  readonly reservationRows = computed<readonly ReservationRow[]>(() => {
+    const reservationData = this.reservationData();
 
-  constructor(private reservasService: ReservasService) {}
+    if (!reservationData) {
+      return [];
+    }
+
+    return [
+      { label: 'User ID', value: reservationData.userId },
+      { label: 'Habitacion ID', value: reservationData.habitacionId },
+      { label: 'Hotel', value: reservationData.hotel },
+      { label: 'Numero de personas', value: reservationData.personas },
+      { label: 'Check-in', value: reservationData.checkIn },
+      { label: 'Check-out', value: reservationData.checkOut }
+    ];
+  });
 
   ngOnInit(): void {
+    const reservationData = this.readReservationDataFromQueryParams();
+
+    if (!reservationData) {
+      this.holdReservationErrorMessage.set(this.missingReservationDataMessage);
+      return;
+    }
+
+    this.reservationData.set(reservationData);
     this.submitHoldReservation();
   }
 
   submitHoldReservation(): void {
-    this.reservasService.holdReserva(this.holdReservaPayload).subscribe({
+    const reservationData = this.reservationData();
+
+    if (!reservationData) {
+      this.holdReservationErrorMessage.set(this.missingReservationDataMessage);
+      return;
+    }
+
+    const holdReservaPayload: HoldReservaRequest = {
+      user_id: reservationData.userId,
+      habitacion_id: reservationData.habitacionId,
+      check_in: reservationData.checkIn,
+      check_out: reservationData.checkOut
+    };
+
+    this.reservasService.holdReserva(holdReservaPayload).subscribe({
       next: () => {
-        this.holdReservationError.set(false);
+        this.holdReservationErrorMessage.set('');
         console.log('Reserva temporal creada correctamente desde pagos.');
       },
       error: (error) => {
-        this.holdReservationError.set(true);
+        this.holdReservationErrorMessage.set(this.holdReservationErrorMessageText);
         console.error('Error al crear la reserva temporal desde pagos.', error);
       }
     });
+  }
+
+  private readReservationDataFromQueryParams(): PaymentReservationData | null {
+    const queryParamMap = this.route.snapshot.queryParamMap;
+
+    const userId = this.getRequiredQueryParam(queryParamMap.get('user_id'));
+    const habitacionId = this.getRequiredQueryParam(queryParamMap.get('habitacion_id'));
+    const checkIn = this.getRequiredQueryParam(queryParamMap.get('check_in'));
+    const checkOut = this.getRequiredQueryParam(queryParamMap.get('check_out'));
+    const hotel = this.getRequiredQueryParam(queryParamMap.get('hotel'));
+    const personas = this.getRequiredQueryParam(queryParamMap.get('personas'));
+
+    if (!userId || !habitacionId || !checkIn || !checkOut || !hotel || !personas) {
+      return null;
+    }
+
+    return {
+      userId,
+      habitacionId,
+      checkIn,
+      checkOut,
+      hotel,
+      personas
+    };
+  }
+
+  private getRequiredQueryParam(value: string | null): string | null {
+    const trimmedValue = value?.trim();
+
+    return trimmedValue ? trimmedValue : null;
   }
 }
