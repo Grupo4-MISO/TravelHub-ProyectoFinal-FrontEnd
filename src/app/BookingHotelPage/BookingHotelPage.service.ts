@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class BookingHotelPageService {
   private inventarios_url = environment.inventariosUrl;
+  private reservas_url = environment.reservasUrl;
 
 constructor(private http: HttpClient) { }
 
@@ -23,4 +24,10 @@ constructor(private http: HttpClient) { }
     return this.http.get<any>(`${this.inventarios_url}/api/v1/inventarios/habitaciones`, { params });
   }
 
+  obtenerReservas(listaHabitaciones: string[]){
+    const body = {
+      habitaciones: listaHabitaciones
+    };
+    return this.http.post<any>(`${this.reservas_url}/api/v1/reservas`, body);
+  }
 }
