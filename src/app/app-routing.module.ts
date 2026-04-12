@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'booking', component: BookingHotelPageComponent },
   {
     path: 'payment',
-    loadComponent: () => import('./PaymentPage/PaymentPage.component').then((c) => c.PaymentPageComponent)
+    loadComponent: () => import('./PaymentPage/Payment/Payment.component').then((c) => c.PaymentComponent)
   }
 ];
 

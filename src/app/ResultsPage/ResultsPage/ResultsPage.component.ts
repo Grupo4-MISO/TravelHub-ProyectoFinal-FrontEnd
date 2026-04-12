@@ -80,6 +80,9 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
     this.routerPath.navigate(['/property'], {
       queryParams: {
         id: hospedajeId,
+        check_in : this.route.snapshot.queryParamMap.get('check_in') || '',
+        check_out : this.route.snapshot.queryParamMap.get('check_out') || '',
+        capacidad : this.route.snapshot.queryParamMap.get('capacidad') || ''
       }
     });
   }
