@@ -1,0 +1,85 @@
+:host {
+  width: 100%;
+  display: block;
+}
+
+.rate-card {
+  width: 100%;
+  border: 1px solid #d5d5d5;
+  border-radius: 8px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.rate-title {
+  margin: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #1f2937;
+  background: #e5e7eb;
+  font-weight: 600;
+}
+
+.rate-message {
+  margin: 0;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #334155;
+}
+
+.rate-message.error {
+  color: #b91c1c;
+}
+
+.rate-grid {
+  display: grid;
+}
+
+.rate-row {
+  min-height: 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 16px;
+  border-top: 1px solid #d9d9d9;
+  font-size: 13px;
+}
+
+.rate-row.total {
+  background: #e2e8f0;
+  font-weight: 700;
+}
+
+.label,
+.value {
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .rate-card {
+    border-radius: 6px;
+  }
+
+  .rate-title {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .rate-message {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .rate-row {
+    min-height: 36px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .label,
+  .value {
+    font-size: 12px;
+  }
+}

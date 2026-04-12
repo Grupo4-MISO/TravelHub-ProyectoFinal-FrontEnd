@@ -1,0 +1,36 @@
+<section class="rate-card" aria-live="polite">
+  <h2 class="rate-title">Tarifa de la Reserva</h2>
+
+  @if (loading()) {
+  <p class="rate-message">Calculando tarifa...</p>
+  } @else if (errorMessage()) {
+  <p class="rate-message error">{{ errorMessage() }}</p>
+  } @else if (rate()) {
+  <div class="rate-grid" role="table" aria-label="Detalle de tarifa">
+    <div class="rate-row" role="row">
+      <span class="label" role="cell">Precio por noche</span>
+      <span class="value" role="cell">{{ precio() }}</span>
+    </div>
+    <div class="rate-row" role="row">
+      <span class="label" role="cell">Total de noches</span>
+      <span class="value" role="cell">{{ totalNoches() }}</span>
+    </div>
+    <div class="rate-row" role="row">
+      <span class="label" role="cell">Precio base</span>
+      <span class="value" role="cell">{{ rate()!.precio_base }}</span>
+    </div>
+    <div class="rate-row" role="row">
+      <span class="label" role="cell">Descuento 10%</span>
+      <span class="value" role="cell">{{ rate()!.descuento }}</span>
+    </div>
+    <div class="rate-row" role="row">
+      <span class="label" role="cell">Impuestos</span>
+      <span class="value" role="cell">{{ rate()!.impuestos }}</span>
+    </div>
+    <div class="rate-row total" role="row">
+      <span class="label" role="cell">Total a pagar</span>
+      <span class="value" role="cell">{{ rate()!.tarifa_total }}</span>
+    </div>
+  </div>
+  }
+</section>

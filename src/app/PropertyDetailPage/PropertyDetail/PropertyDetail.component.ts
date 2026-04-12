@@ -10,6 +10,7 @@ import { PropertyMapComponent } from '../PropertyMap/PropertyMap.component';
 import { PropertyRoomsComponent } from '../PropertyRooms/PropertyRooms.component';
 import { PropertyAmenitiesComponent } from '../PropertyAmenities/PropertyAmenities.component';
 import { PropertyReviewsComponent } from '../PropertyReviews/PropertyReviews.component';
+import { PropertyAvailabilityComponent } from '../PropertyAvailability/PropertyAvailability.component';
 
 @Component({
   selector: 'app-PropertyDetailPage',
@@ -23,7 +24,8 @@ import { PropertyReviewsComponent } from '../PropertyReviews/PropertyReviews.com
     PropertyMapComponent,
     PropertyRoomsComponent,
     PropertyAmenitiesComponent,
-    PropertyReviewsComponent
+    PropertyReviewsComponent,
+    PropertyAvailabilityComponent
   ]
 })
 export class PropertyDetailComponent implements OnInit, OnDestroy {
@@ -31,6 +33,9 @@ export class PropertyDetailComponent implements OnInit, OnDestroy {
   selectedImage: string = '';
   loading: boolean = false;
   error: string = '';
+  check_in: string = '';
+  check_out: string = '';
+  capacidad: number | null = null;
   private queryParamsSubscription?: Subscription;
   private route = inject(ActivatedRoute);
   private propertyService = inject(PropertyDetailService);
@@ -40,6 +45,9 @@ export class PropertyDetailComponent implements OnInit, OnDestroy {
     this.queryParamsSubscription = this.route.queryParams.subscribe(params => {
       setTimeout(() => {
         const id = params['id'];
+        this.check_in = params['check_in'] || params['checkIn'] || '';
+        this.check_out = params['check_out'] || params['checkOut'] || '';
+        this.capacidad = params['capacidad'] ? Number(params['capacidad']) : null;
         const localCurrency = localStorage.getItem('navbar_selected_currency') || 'COP';
         if (!id) {
           this.property = null;

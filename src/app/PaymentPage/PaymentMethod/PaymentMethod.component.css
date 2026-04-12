@@ -1,0 +1,171 @@
+:host {
+  width: 100%;
+  display: block;
+}
+
+.payment-method {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.method-title {
+  margin: 0;
+  padding-left: 0;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #383d43;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.method-options {
+  margin-top: 12px;
+  margin-left: 0;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.method-card {
+  flex: 1;
+  min-width: 140px;
+  height: 60px;
+  border: 2px solid #d7d7d7;
+  border-radius: 8px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.method-card:hover {
+  border-color: #1f7a8c;
+  background: #e3f2fd;
+}
+
+.brands-grid {
+  width: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.brand-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  line-height: 1;
+  font-weight: 700;
+  height: 20px;
+  border-radius: 2px;
+  color: #fff;
+}
+
+.mastercard {
+  background: #e25333;
+}
+
+.visa {
+  background: #1c5ca9;
+}
+
+.amex {
+  background: #51a8d7;
+}
+
+.discover {
+  background: #ef8c37;
+}
+
+.bank {
+  background: #8b8e93;
+}
+
+.paypal {
+  background: #f0c98f;
+  color: #18427c;
+}
+
+.pse-circle {
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #2f5e95, #174071 64%, #17355d);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.pse-text {
+  color: #f4f4f4;
+  font-size: 20px;
+  line-height: 1;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+.pse-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #2f5e95, #174071 64%, #17355d);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.action-row {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.confirm-btn {
+  border: none;
+  border-radius: 8px;
+  background: #02658b;
+  color: #f1f2f3;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.confirm-btn:hover {
+  background: #0a7098;
+  transform: translateY(-2px);
+}
+
+.confirm-btn:focus-visible,
+.method-card:focus-visible {
+  outline: 2px solid #0a7098;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .method-card {
+    min-width: 120px;
+    height: 50px;
+    font-size: 11px;
+  }
+
+  .brands-grid {
+    width: 85px;
+  }
+
+  .confirm-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}

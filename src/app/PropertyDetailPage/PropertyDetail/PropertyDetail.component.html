@@ -30,6 +30,20 @@
       </div>
     </div>
 
-    <app-property-rooms [rooms]="property.habitaciones"></app-property-rooms>
+    <app-property-availability
+      [check_in]="check_in"
+      [check_out]="check_out"
+      [capacidad]="capacidad"
+    ></app-property-availability>
+
+    <app-property-rooms
+      [rooms]="property.habitaciones"
+      [check_in]="check_in"
+      [check_out]="check_out"
+      [capacidad]="capacidad"
+      [propiedadId]="property.id"
+      [propertyNombre]="property.nombre"
+      [pais]="property.countryCode"
+    ></app-property-rooms>
   </div>
 </section>
