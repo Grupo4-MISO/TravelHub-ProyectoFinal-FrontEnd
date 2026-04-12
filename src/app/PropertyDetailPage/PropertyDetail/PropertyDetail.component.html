@@ -1,0 +1,35 @@
+<section class="property-detail-page">
+  <div *ngIf="loading" class="state-message">
+    <div class="spinner"></div>
+    <p><b>Cargando detalle del hospedaje...</b></p>
+  </div>
+
+  <div *ngIf="!loading && error" class="state-message error-message">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && !error && property">
+    <div class="details-grid">
+      <div class="col">
+        <app-property-images
+          [images]="property.imagenes"
+          [selectedImage]="selectedImage"
+          [propertyName]="property.nombre"
+          (imageSelected)="selectImage($event)"
+        ></app-property-images>
+        <app-property-reviews [hospedajeId]="property.id"></app-property-reviews>
+        <app-property-amenities [amenities]="property.amenidades"></app-property-amenities>
+      </div>
+      <div class="col">
+        <app-property-info [property]="property"></app-property-info>
+        <app-property-map
+          [latitude]="property.latitude"
+          [longitude]="property.longitude"
+          [propertyName]="property.nombre"
+        ></app-property-map>
+      </div>
+    </div>
+
+    <app-property-rooms [rooms]="property.habitaciones"></app-property-rooms>
+  </div>
+</section>

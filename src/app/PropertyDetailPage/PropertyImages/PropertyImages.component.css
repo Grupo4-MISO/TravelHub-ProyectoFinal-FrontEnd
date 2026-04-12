@@ -1,0 +1,47 @@
+.gallery-panel {
+	background: #fff;
+	border-radius: 14px;
+	padding: 0.8rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.main-image {
+	width: 100%;
+	height: 380px;
+	object-fit: cover;
+	border-radius: 10px;
+	display: block;
+}
+
+.thumb-list {
+	margin-top: 0.8rem;
+	display: flex;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+}
+
+.thumb-btn {
+	border: 2px solid transparent;
+	border-radius: 10px;
+	padding: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.thumb-btn img {
+	width: 90px;
+	height: 70px;
+	border-radius: 8px;
+	object-fit: cover;
+	display: block;
+}
+
+.thumb-btn.active {
+	border-color: #2575fc;
+}
+
+@media (max-width: 900px) {
+	.main-image {
+		height: 260px;
+	}
+}

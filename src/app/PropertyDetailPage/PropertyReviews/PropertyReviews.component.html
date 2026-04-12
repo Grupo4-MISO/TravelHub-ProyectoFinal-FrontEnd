@@ -1,0 +1,32 @@
+<section class="reviews-section">
+  <h2>Opiniones de usuarios</h2>
+
+  <ng-container *ngIf="vm$ | async as vm">
+    <div *ngIf="vm.loading" class="state-message">Cargando opiniones...</div>
+    <div *ngIf="!vm.loading && vm.error" class="state-message error-message">
+      <div>{{ vm.error }}</div>
+      <small *ngIf="vm.errorDetail" class="error-detail">{{ vm.errorDetail }}</small>
+    </div>
+
+    <div class="reviews-list" *ngIf="!vm.loading && !vm.error && vm.comments.length > 0">
+      <article class="review-card" *ngFor="let review of vm.comments">
+        <div class="review-header">
+          <div class="user-block">
+            <span class="user-icon" aria-hidden="true">&#128100;</span>
+            <strong class="user-name">{{ review.userName }}</strong>
+          </div>
+          <div class="rating">
+            <span *ngFor="let star of getStarArray(review.rating)" class="star filled">★</span>
+            <span *ngFor="let star of getEmptyStarArray(review.rating)" class="star">☆</span>
+          </div>
+        </div>
+
+        <p class="comment">{{ review.comment }}</p>
+      </article>
+    </div>
+
+    <div *ngIf="!vm.loading && !vm.error && vm.comments.length === 0" class="state-message">
+      Este hospedaje aún no tiene opiniones.
+    </div>
+  </ng-container>
+</section>

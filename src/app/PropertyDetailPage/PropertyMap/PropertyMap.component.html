@@ -1,0 +1,20 @@
+<section class="map-panel">
+  <h2>Ubicación</h2>
+
+  <div class="map-frame" *ngIf="mapUrl; else noMap">
+    <iframe
+      [src]="mapUrl"
+      [title]="'Mapa de ' + propertyName"
+      loading="lazy"
+      referrerpolicy="no-referrer"
+    ></iframe>
+  </div>
+
+  <a *ngIf="openMapUrl" class="open-map-link" [href]="openMapUrl" target="_blank" rel="noopener noreferrer">
+    Abrir mapa en nueva pestana
+  </a>
+
+  <ng-template #noMap>
+    <div class="state-message">No fue posible cargar el mapa.</div>
+  </ng-template>
+</section>

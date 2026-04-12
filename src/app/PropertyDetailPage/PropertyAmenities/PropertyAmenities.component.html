@@ -1,0 +1,10 @@
+<section class="amenities-block" *ngIf="amenities.length > 0">
+  <h2>Amenidades</h2>
+
+  <div class="amenities-list">
+    <span class="amenity-chip" *ngFor="let amenity of amenities">
+      <span class="amenity-icon material-symbols-outlined" aria-hidden="true">{{ getAmenityMaterialIcon(amenity.icon) }}</span>
+      <span>{{ amenity.name }}</span>
+    </span>
+  </div>
+</section>

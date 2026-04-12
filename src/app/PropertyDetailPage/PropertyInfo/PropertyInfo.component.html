@@ -1,0 +1,18 @@
+<section class="info-panel" *ngIf="property">
+  <h1>{{ property.nombre }}</h1>
+  <p class="location">{{ property.ciudad }}, {{ property.pais }}</p>
+
+  <div class="rating">
+    <span *ngFor="let star of getStarArray(property.rating)" class="star filled">★</span>
+    <span *ngFor="let star of getEmptyStarArray(property.rating)" class="star">☆</span>
+    <span class="rating-text">{{ property.rating }} ({{ property.reviews }} reseñas)</span>
+  </div>
+
+  <p class="description">{{ property.descripcion }}</p>
+
+  <div class="address-block">
+    <h3>Dirección</h3>
+    <p>{{ property.direccion }}</p>
+    <p>Lat: {{ property.latitude }} | Lng: {{ property.longitude }}</p>
+  </div>
+</section>
