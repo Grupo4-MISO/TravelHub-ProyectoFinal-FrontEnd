@@ -1,53 +1,46 @@
 import { ChangeDetectorRef, Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PropertyDetail } from '../property-detail';
-import { PropertyDetailPageService } from '../PropertyDetailPage.service';
+import { PropertyDetailService } from '../PropertyDetail.service';
+import { PropertyImagesComponent } from '../PropertyImages/PropertyImages.component';
+import { PropertyInfoComponent } from '../PropertyInfo/PropertyInfo.component';
+import { PropertyMapComponent } from '../PropertyMap/PropertyMap.component';
+import { PropertyRoomsComponent } from '../PropertyRooms/PropertyRooms.component';
+import { PropertyAmenitiesComponent } from '../PropertyAmenities/PropertyAmenities.component';
+import { PropertyReviewsComponent } from '../PropertyReviews/PropertyReviews.component';
 
 @Component({
   selector: 'app-PropertyDetailPage',
-  templateUrl: './PropertyDetailPage.component.html',
-  styleUrls: ['./PropertyDetailPage.component.css'],
-  standalone: false
+  templateUrl: './PropertyDetail.component.html',
+  styleUrls: ['./PropertyDetail.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    PropertyImagesComponent,
+    PropertyInfoComponent,
+    PropertyMapComponent,
+    PropertyRoomsComponent,
+    PropertyAmenitiesComponent,
+    PropertyReviewsComponent
+  ]
 })
-export class PropertyDetailPageComponent implements OnInit, OnDestroy {
-  private readonly amenityMaterialIconMap: Record<string, string> = {
-    IconWiFi: 'wifi',
-    IconDesayuno: 'free_breakfast',
-    IconEstacionamiento: 'local_parking',
-    IconPiscina: 'pool',
-    IconGimnasio: 'fitness_center',
-    IconRoomService: 'room_service',
-    IconSpa: 'spa',
-    IconRestaurante: 'restaurant',
-    IconPlayaPrivada: 'beach_access',
-    IconBar: 'local_bar',
-    IconTerraza: 'deck',
-    IconTodoIncluido: 'all_inclusive',
-    IconKidsClub: 'child_care',
-    IconPlaya: 'beach_access',
-    IconSnorkel: 'scuba_diving',
-    IconBusinessCenter: 'business_center',
-    IconChimenea: 'fireplace',
-    IconJardin: 'yard',
-    IconTourCafetero: 'emoji_nature',
-    IconSenderismo: 'hiking'
-  };
-
+export class PropertyDetailComponent implements OnInit, OnDestroy {
   property: PropertyDetail | null = null;
   selectedImage: string = '';
   loading: boolean = false;
   error: string = '';
   private queryParamsSubscription?: Subscription;
   private route = inject(ActivatedRoute);
-  private propertyService = inject(PropertyDetailPageService);
+  private propertyService = inject(PropertyDetailService);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.queryParamsSubscription = this.route.queryParams.subscribe(params => {
       setTimeout(() => {
-        const id = params['id'] ?? params['hospedajeId'];
-
+        const id = params['id'];
+        const localCurrency = localStorage.getItem('navbar_selected_currency') || 'COP';
         if (!id) {
           this.property = null;
           this.error = 'No se encontró el id de la propiedad en la URL.';
@@ -55,7 +48,7 @@ export class PropertyDetailPageComponent implements OnInit, OnDestroy {
           return;
         }
 
-        this.fetchProperty(id);
+        this.fetchProperty(id, localCurrency);
       }, 0);
     });
   }
@@ -64,12 +57,12 @@ export class PropertyDetailPageComponent implements OnInit, OnDestroy {
     this.queryParamsSubscription?.unsubscribe();
   }
 
-  private fetchProperty(id: string): void {
+  private fetchProperty(id: string, localCurrency: string): void {
     this.loading = true;
     this.error = '';
     this.cdr.detectChanges();
 
-    this.propertyService.getPropertyById(id).subscribe({
+    this.propertyService.getPropertyById(id, localCurrency).subscribe({
       next: (data) => {
         setTimeout(() => {
           this.property = {
@@ -96,17 +89,5 @@ export class PropertyDetailPageComponent implements OnInit, OnDestroy {
 
   selectImage(url: string): void {
     this.selectedImage = url;
-  }
-
-  getStarArray(rating: number): number[] {
-    return Array(Math.floor(rating));
-  }
-
-  getEmptyStarArray(rating: number): number[] {
-    return Array(5 - Math.floor(rating));
-  }
-
-  getAmenityMaterialIcon(iconKey: string): string {
-    return this.amenityMaterialIconMap[iconKey] ?? 'check_circle';
   }
 }

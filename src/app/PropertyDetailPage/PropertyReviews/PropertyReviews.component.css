@@ -1,0 +1,90 @@
+.reviews-section {
+	background: #fff;
+	border-radius: 14px;
+	padding: 1.2rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+	margin-bottom: 2rem;
+}
+
+.reviews-section h2 {
+	margin: 0 0 0.9rem;
+}
+
+.reviews-list {
+	display: grid;
+	gap: 0.8rem;
+}
+
+.review-card {
+	border: 1px solid #e6ebf3;
+	border-radius: 12px;
+	padding: 0.9rem;
+	background: #fdfefe;
+}
+
+.review-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.user-block {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+}
+
+.user-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.8rem;
+	height: 1.8rem;
+	border-radius: 999px;
+	background: #eef4ff;
+	font-size: 0.95rem;
+	line-height: 1;
+}
+
+.user-name {
+	color: #1f2d4a;
+}
+
+.rating {
+	display: inline-flex;
+	gap: 0.1rem;
+}
+
+.star {
+	color: #c9ced7;
+	font-size: 1rem;
+}
+
+.star.filled {
+	color: #f9b500;
+}
+
+.comment {
+	margin: 0;
+	line-height: 1.5;
+	color: #2e3a4d;
+}
+
+.state-message {
+	text-align: center;
+	padding: 0.9rem;
+	color: #555;
+}
+
+.error-message {
+	color: #d14343;
+}
+
+.error-detail {
+	display: block;
+	margin-top: 0.35rem;
+	color: #8f2b2b;
+	font-size: 0.82rem;
+}

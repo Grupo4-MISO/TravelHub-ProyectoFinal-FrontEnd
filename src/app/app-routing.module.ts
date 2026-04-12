@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalPageComponent } from './PrincipalPage/PrincipalPage/PrincipalPage.component';
 import { ResultsPageComponent } from './ResultsPage/ResultsPage/ResultsPage.component';
-import { PropertyDetailPageComponent } from './PropertyDetailPage/PropertyDetailPage/PropertyDetailPage.component';
+import { PropertyDetailComponent } from './PropertyDetailPage/PropertyDetail/PropertyDetail.component';
 import { BookingHotelPageComponent } from './BookingHotelPage/BookingHotelPage/BookingHotelPage.component';
 
 const routes: Routes = [
@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'login', redirectTo: 'auth/login', pathMatch: 'full' },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule) },
   { path: 'results', component: ResultsPageComponent },
-  { path: 'property', component: PropertyDetailPageComponent },
+  { path: 'property', component: PropertyDetailComponent },
   { path: 'booking', component: BookingHotelPageComponent },
   {
     path: 'payment',
