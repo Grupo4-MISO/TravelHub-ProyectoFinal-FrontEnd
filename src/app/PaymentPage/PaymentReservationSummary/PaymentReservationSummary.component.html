@@ -1,0 +1,16 @@
+<section class="payment-card">
+  <h1 id="payment-title" class="section-title">Resumen de Reserva</h1>
+
+  <div class="reservation-grid" role="table" aria-label="Resumen de la reserva">
+    @for (row of reservationRows(); track row.label) {
+    <div class="grid-row" role="row">
+      <span class="grid-label" role="cell">{{ row.label }}</span>
+      <span class="grid-value" role="cell">{{ row.value }}</span>
+      @if (row.label2) {
+      <span class="grid-label" role="cell">{{ row.label2 }}</span>
+      <span class="grid-value" role="cell">{{ row.value2 }}</span>
+      }
+    </div>
+    }
+  </div>
+</section>

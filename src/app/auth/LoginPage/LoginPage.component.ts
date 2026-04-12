@@ -50,7 +50,7 @@ export class LoginPageComponent implements OnInit {
         sessionStorage.setItem('idUsuario', res.id);
         const role = this.helper.decodeToken(res.token).role;
         sessionStorage.setItem('role', role);
-        this.toastrService.success('Has iniciado sesion correctamente.', 'Bienvenido');
+        this.toastrService.success('Has iniciado sesion correctamente.', 'Bienvenido ' + this.helper.decodeToken(res.token).username);
 
         if (role == Role.ADMIN) {
           // this.router.navigate([`/admin`, res.id]);

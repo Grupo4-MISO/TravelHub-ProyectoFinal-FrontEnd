@@ -2,14 +2,38 @@
   <form [formGroup]="searchForm" (ngSubmit)="buscar()" class="search-bar">
 
   <!-- Ciudad -->
-  <div class="field">
+  <div class="field autocomplete">
     <label>Destino</label>
+
     <input 
       type="text" 
       formControlName="ciudad"
+      (focus)="mostrarTodas()"
+      autocomplete="off"
       placeholder="Ciudad destino"
       [class.invalid]="searchForm.get('ciudad')?.invalid && searchForm.get('ciudad')?.touched">
 
+    <ul *ngIf="ciudadesFiltradas.length > 0" class="dropdown">
+      <li *ngFor="let ciudad of ciudadesFiltradas"
+          (click)="seleccionarCiudad(ciudad)"
+          class="dropdown-item">
+
+        <div class="item-content">
+          
+          <!-- Icono -->
+          <img src="/iconos/location.svg" class="dropdown-icon" alt="location">
+
+          <!-- Texto -->
+          <div class="text">
+            <div class="city">{{ ciudad }}</div>
+          </div>
+
+        </div>
+
+      </li>
+    </ul>
+
+    <!-- Error -->
     <small *ngIf="searchForm.get('ciudad')?.touched && searchForm.get('ciudad')?.hasError('required')">
       La ciudad es obligatoria
     </small>

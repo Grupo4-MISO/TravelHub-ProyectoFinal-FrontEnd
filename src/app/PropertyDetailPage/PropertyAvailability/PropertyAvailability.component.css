@@ -1,0 +1,36 @@
+.availability-section {
+  margin: 1.2rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.availability-section h2 {
+  margin: 0 0 1rem;
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.availability-item {
+  border: 1px solid #e4e8ef;
+  border-radius: 10px;
+  padding: 0.8rem;
+  background: #f9fbff;
+}
+
+.label {
+  margin: 0;
+  color: #4f5d75;
+  font-size: 0.85rem;
+}
+
+.value {
+  margin: 0.4rem 0 0;
+  color: #1f2937;
+  font-weight: 700;
+}

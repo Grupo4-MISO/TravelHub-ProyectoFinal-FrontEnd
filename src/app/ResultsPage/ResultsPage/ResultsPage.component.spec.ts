@@ -43,14 +43,18 @@ describe('ResultsPageComponent', () => {
       const hospedaje: SearchBar = {
         habitacion_id: `habitacion_${i}`,
         hospedaje_id: `hospedaje_${i}`,
+        code: `CODE${i}`,
         nombre: `Hotel ${i}`,
         pais: `País ${i}`,
         ciudad: `Ciudad ${i}`,
         direccion: `Dirección ${i}`,
         rating: Math.floor(Math.random() * 5) + 1,
+        reviews: Math.floor(Math.random() * 100) + 1,
         capacidad: Math.floor(Math.random() * 4) + 1,
         precio: Math.floor(Math.random() * 200) + 50,
-        descripcion: `Descripción del Hotel ${i}`
+        descripcion: `Descripción del Hotel ${i}`,
+        currency_code: 'USD',
+        image_url: `https://via.placeholder.com/250x150?text=Hotel+${i}`,
       };
       component.resultados.push(hospedaje);
     }

@@ -1,0 +1,65 @@
+<div class="containterDashboard"> 
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775408091/vojtech-bruzek-Yrxr3bsPdS0-unsplash_l4ja49.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
+          <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <table class="table table-hover">
+    @if (modo=='reservas'){
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col" colspan="5">Reservas</th>
+        </tr>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Id Habitacion</th>
+          <th scope="col">Valor de la Reserva</th>
+          <th scope="col">Fechas</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of reservas">
+          <td>{{ reserva.id_visual }}</td>
+          <td>{{ reserva.id_visual_habitacion }}</td>
+          <td>{{ reserva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
+          <td>{{ reserva.check_in }} - {{ reserva.check_out }}</td>
+          <td>{{ reserva.estado }}</td>
+        </tr>
+      </tbody>
+    }
+    @if (modo=='habitaciones'){
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col" colspan="5">Habitaciones</th>
+        </tr>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Tipo de Habitación</th>
+          <th scope="col">Capacidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Reservas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of habitaciones">
+          <td>{{ room.id_visual }}</td>
+          <td>{{ room.descripcion }}</td>
+          <td>{{ room.capacidad }}</td>
+          <td>{{ room.precio | currency:'COP ': 'symbol': '1.0-0' }}</td>
+          <td><div *ngFor="let reserva of room.reservas">{{ reserva.id_visual }}: {{ reserva.check_in }} | {{ reserva.check_out }}</div></td>
+        </tr>
+      </tbody>
+    }
+  </table>
+
+</div>

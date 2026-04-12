@@ -1,0 +1,19 @@
+<section class="gallery-panel" *ngIf="images.length > 0">
+  <img
+    class="main-image"
+    [src]="selectedImage || images[0].url"
+    [alt]="propertyName"
+  />
+
+  <div class="thumb-list">
+    <button
+      type="button"
+      class="thumb-btn"
+      *ngFor="let img of images"
+      (click)="selectImage(img.url)"
+      [class.active]="(selectedImage || images[0].url) === img.url"
+    >
+      <img [src]="img.url" [alt]="'Imagen de ' + propertyName" />
+    </button>
+  </div>
+</section>

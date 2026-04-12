@@ -1,7 +1,7 @@
 import { SearchBarService } from '../../searchbar/searchbar.service';
 import { SearchBar } from '../../searchbar/searchbar';
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Inject } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -21,23 +21,25 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
   private isSearching: boolean = false;
 
   constructor(
+    private routerPath: Router,
     private route: ActivatedRoute,
     private searchService: SearchBarService,
     @Inject(ToastrService) private toastr: ToastrService,
     private cdr: ChangeDetectorRef
   ) { }
 
-  buscar(ciudad: string, check_in: string, check_out: string, capacidad: number) {
+  buscar(ciudad: string, check_in: string, check_out: string, capacidad: number, country_code: string, currency_code: string) {
     if (this.isSearching) return;
     this.isSearching = true;
     this.error = '';
     this.loading = true;
     this.cdr.detectChanges();
 
-    this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad)
+    this.searchService.buscarHospedajes(ciudad, check_in, check_out, capacidad, country_code, currency_code)
       .subscribe({
         next: (data) => {
           this.resultados = data;
+          console.log('Resultados obtenidos:', this.resultados);
           this.loading = false;
           this.isSearching = false;
           this.toastr.success('Hospedajes encontrados', '', { positionClass: 'toast-bottom-right' });
@@ -63,14 +65,25 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.queryParamsSubscription = this.route.queryParams.subscribe(params => {
-      const { ciudad, check_in, check_out, capacidad } = params;
-      if (ciudad && check_in && check_out && capacidad) {
-        this.buscar(ciudad, check_in, check_out, capacidad);
+      const { ciudad, check_in, check_out, capacidad, country_code, currency_code } = params;
+      if (ciudad && check_in && check_out && capacidad && country_code && currency_code) {
+        this.buscar(ciudad, check_in, check_out, capacidad, country_code, currency_code);
       }
     });
   }
 
   ngOnDestroy() {
     this.queryParamsSubscription?.unsubscribe();
+  }
+
+  verDetalle(hospedajeId: string) {
+    this.routerPath.navigate(['/property'], {
+      queryParams: {
+        id: hospedajeId,
+        check_in : this.route.snapshot.queryParamMap.get('check_in') || '',
+        check_out : this.route.snapshot.queryParamMap.get('check_out') || '',
+        capacidad : this.route.snapshot.queryParamMap.get('capacidad') || ''
+      }
+    });
   }
 }

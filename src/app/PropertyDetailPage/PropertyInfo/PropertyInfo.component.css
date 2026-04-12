@@ -1,0 +1,57 @@
+.info-panel {
+	background: #fff;
+	border-radius: 14px;
+	padding: 1.2rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.info-panel h1 {
+	margin: 0;
+	font-size: 1.8rem;
+}
+
+.location {
+	margin: 0.4rem 0 0.8rem;
+	color: #5d5f68;
+}
+
+.description {
+	line-height: 1.5;
+}
+
+.rating {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.2rem;
+	margin-bottom: 1rem;
+}
+
+.star {
+	color: #c9ced7;
+	font-size: 1rem;
+}
+
+.star.filled {
+	color: #f9b500;
+}
+
+.rating-text {
+	margin-left: 0.4rem;
+	color: #3b3d44;
+}
+
+.address-block {
+	margin-top: 1rem;
+	padding: 0.9rem;
+	border-radius: 10px;
+	background: #f4f7ff;
+}
+
+.address-block h3 {
+	margin: 0 0 0.35rem;
+}
+
+.address-block p {
+	margin: 0.25rem 0;
+}

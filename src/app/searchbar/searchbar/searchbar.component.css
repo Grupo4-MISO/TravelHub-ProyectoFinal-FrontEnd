@@ -111,9 +111,6 @@
   }
 }
 
-/* ===================== */
-/* 📱 SMALL MOBILE (<= 480px) */
-/* ===================== */
 @media (max-width: 480px) {
   .field label {
     font-size: 11px;
@@ -143,4 +140,76 @@ small {
   color: #f06d51;
   font-size: 12px;
   margin-top: 5px;
+}
+
+.autocomplete {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.dropdown-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f7f7f7;
+}
+
+/* Layout interno */
+.item-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Icono */
+.icon {
+  font-size: 18px;
+}
+
+/* Texto */
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ciudad */
+.city {
+  font-weight: 600;
+  font-size: 14px;
+  color: #222;
+}
+
+/* País */
+.country {
+  font-size: 12px;
+  color: #777;
+}
+
+.dropdown-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.7;
 }
