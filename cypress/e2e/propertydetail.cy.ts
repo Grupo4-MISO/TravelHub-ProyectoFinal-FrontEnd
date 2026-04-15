@@ -1,9 +1,10 @@
+import { PropertyDetail } from '../pages/propertydetail';
 import { SearchBar } from '../pages/searchbar';
 import { Country } from '../pages/country';
 import { Toastr } from '../pages/toastr';
 import { Helper } from '../utils/helper';
 
-describe('Escenarios E2E para el SearchBar', function () {
+describe('Escenarios E2E para el PropertyDetail', function () {
     //Reglas para antes de cada test
     beforeEach(() => {
         //Visitamos el principal page
@@ -11,7 +12,7 @@ describe('Escenarios E2E para el SearchBar', function () {
         cy.visit(url);
     });
 
-    it('E0001 - Buscar destinos colombianos', function () {
+    it('E0001 - Detalle de una propiedad colombiana', function () {
         //Seleccionamos el pais
         Country.selectCountry('🇨🇴 CO');
 
@@ -32,9 +33,15 @@ describe('Escenarios E2E para el SearchBar', function () {
 
         //Verificamos que el toastr de éxito aparezca
         Toastr.getToastrMessage();
+
+        //Damos click en el primer resultado para ir al detalle de la propiedad
+        PropertyDetail.selectPropertyDetail();
+
+        //Validamos nombre del hospedaje
+        PropertyDetail.getPropertyName('Hotel Casa Medina');
     });
 
-    it('E0002 - Buscar destinos argentinos', function () {
+    it('E0002 - Detalle de una propiedad argentina', function () {
         //Seleccionamos el pais
         Country.selectCountry('🇦🇷 AR');
 
@@ -55,9 +62,15 @@ describe('Escenarios E2E para el SearchBar', function () {
 
         //Verificamos que el toastr de éxito aparezca
         Toastr.getToastrMessage();
+
+        //Damos click en el primer resultado para ir al detalle de la propiedad
+        PropertyDetail.selectPropertyDetail();
+
+        //Validamos nombre del hospedaje
+        PropertyDetail.getPropertyName('Buenos Aires Grand Hotel');
     });
 
-    it('E0003 - Buscar destinos chilenos', function () {
+    it('E0003 - Detalle de una propiedad chilena', function () {
         //Seleccionamos el pais
         Country.selectCountry('🇨🇱 CL');
 
@@ -78,9 +91,15 @@ describe('Escenarios E2E para el SearchBar', function () {
 
         //Verificamos que el toastr de éxito aparezca
         Toastr.getToastrMessage();
+
+        //Damos click en el primer resultado para ir al detalle de la propiedad
+        PropertyDetail.selectPropertyDetail();
+
+        //Validamos nombre del hospedaje
+        PropertyDetail.getPropertyName('Santiago Grand Hotel');
     });
 
-    it('E0004 - Buscar destinos ecuatorianos', function () {
+    it('E0004 - Detalle de una propiedad ecuatoriana', function () {
         //Seleccionamos el pais
         Country.selectCountry('🇪🇨 EC');
 
@@ -101,9 +120,15 @@ describe('Escenarios E2E para el SearchBar', function () {
 
         //Verificamos que el toastr de éxito aparezca
         Toastr.getToastrMessage();
+
+        //Damos click en el primer resultado para ir al detalle de la propiedad
+        PropertyDetail.selectPropertyDetail();
+
+        //Validamos nombre del hospedaje
+        PropertyDetail.getPropertyName('Quito Grand Hotel');
     });
 
-    it('E0005 - Buscar destinos mexicanos', function () {
+    it('E0005 - Detalle de una propiedad mexicana', function () {
         //Seleccionamos el pais
         Country.selectCountry('🇲🇽 MX');
 
@@ -124,9 +149,15 @@ describe('Escenarios E2E para el SearchBar', function () {
 
         //Verificamos que el toastr de éxito aparezca
         Toastr.getToastrMessage();
+
+        //Damos click en el primer resultado para ir al detalle de la propiedad
+        PropertyDetail.selectPropertyDetail();
+
+        //Validamos nombre del hospedaje
+        PropertyDetail.getPropertyName('Tulum Grand Hotel');
     });
 
-    it('E0006 - Buscar destinos peruanos', function () {
+    it('E0006 - Detalle de una propiedad peruana', function () {
         //Seleccionamos el pais
         Country.selectCountry('🇵🇪 PE');
 
@@ -147,5 +178,11 @@ describe('Escenarios E2E para el SearchBar', function () {
 
         //Verificamos que el toastr de éxito aparezca
         Toastr.getToastrMessage();
+
+        //Damos click en el primer resultado para ir al detalle de la propiedad
+        PropertyDetail.selectPropertyDetail();
+
+        //Validamos nombre del hospedaje
+        PropertyDetail.getPropertyName('Cusco Grand Hotel');
     });
 });
