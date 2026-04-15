@@ -42,7 +42,8 @@
   <!-- Check-in -->
   <div class="field">
     <label>Check-In</label>
-    <input 
+    <input
+      data-cy="check-in"
       type="date" 
       formControlName="check_in"
       [class.invalid]="searchForm.get('check_in')?.invalid && searchForm.get('check_in')?.touched">
@@ -55,7 +56,8 @@
   <!-- Check-out -->
   <div class="field">
     <label>Check-Out</label>
-    <input 
+    <input
+      data-cy="check-out" 
       type="date" 
       formControlName="check_out"
       [class.invalid]="searchForm.get('check_out')?.invalid && searchForm.get('check_out')?.touched">
@@ -69,6 +71,7 @@
   <div class="field">
     <label>Huéspedes</label>
     <input 
+      data-cy="guests"
       type="number" 
       formControlName="capacidad"
       min="1"
@@ -91,7 +94,8 @@
   </div>
 
   <!-- Botón -->
-  <button 
+  <button
+    data-cy="search" 
     type="submit" 
     class="search-btn"
     [disabled]="searchForm.invalid || loading">

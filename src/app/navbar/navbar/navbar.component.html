@@ -49,6 +49,7 @@
     <!-- País -->
     <div class="selector">
     <select
+      data-cy="country-select"  
       [(ngModel)]="selectedCountry"
       (ngModelChange)="onCountryChange($event)"
       [compareWith]="compareCountries"
