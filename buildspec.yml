@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     S3_BUCKET: frontend-grupo-4
-    CLOUDFRONT_DISTRIBUTION_ID: ESCOR63MVWODB
+    CLOUDFRONT_DISTRIBUTION_ID: ESABIEJ70ULPV
 
 phases:
   install:
