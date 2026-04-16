@@ -31,7 +31,7 @@ describe('Escenarios E2E para el SearchBar', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
     });
 
     it('E0002 - Buscar destinos argentinos', function () {
@@ -54,7 +54,7 @@ describe('Escenarios E2E para el SearchBar', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
     });
 
     it('E0003 - Buscar destinos chilenos', function () {
@@ -77,7 +77,7 @@ describe('Escenarios E2E para el SearchBar', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
     });
 
     it('E0004 - Buscar destinos ecuatorianos', function () {
@@ -100,7 +100,7 @@ describe('Escenarios E2E para el SearchBar', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
     });
 
     it('E0005 - Buscar destinos mexicanos', function () {
@@ -123,7 +123,7 @@ describe('Escenarios E2E para el SearchBar', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
     });
 
     it('E0006 - Buscar destinos peruanos', function () {
@@ -146,6 +146,6 @@ describe('Escenarios E2E para el SearchBar', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
     });
 });

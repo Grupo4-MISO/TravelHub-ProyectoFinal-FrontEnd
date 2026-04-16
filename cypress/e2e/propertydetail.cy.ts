@@ -32,7 +32,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
 
         //Damos click en el primer resultado para ir al detalle de la propiedad
         PropertyDetail.selectPropertyDetail();
@@ -61,7 +61,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
 
         //Damos click en el primer resultado para ir al detalle de la propiedad
         PropertyDetail.selectPropertyDetail();
@@ -90,7 +90,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
 
         //Damos click en el primer resultado para ir al detalle de la propiedad
         PropertyDetail.selectPropertyDetail();
@@ -119,7 +119,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
 
         //Damos click en el primer resultado para ir al detalle de la propiedad
         PropertyDetail.selectPropertyDetail();
@@ -148,7 +148,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
 
         //Damos click en el primer resultado para ir al detalle de la propiedad
         PropertyDetail.selectPropertyDetail();
@@ -177,7 +177,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         SearchBar.clickSearchButton();
 
         //Verificamos que el toastr de éxito aparezca
-        Toastr.getToastrMessage();
+        Toastr.getToastrMessage('Hospedajes encontrados');
 
         //Damos click en el primer resultado para ir al detalle de la propiedad
         PropertyDetail.selectPropertyDetail();

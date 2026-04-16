@@ -75,7 +75,7 @@
 
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2">
-      <button type="button" class="btn btn-lg btn-brand-primary" [routerLink]="['/login']">Iniciar sesión</button>
+      <button type="button" class="btn btn-lg btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
       <button type="button" class="btn btn-lg btn-brand-secondary">Crear Cuenta</button>
     </div>
   }
@@ -99,7 +99,7 @@
           </li>
           <li><hr class="dropdown-divider"></li>
           <li>
-            <a class="dropdown-item" href="#" (click)="logout()">
+            <a class="dropdown-item" href="#" data-cy="logout-button" (click)="logout()">
               <img src="/iconos/exit.svg" class="nv-icon">
               Cerrar Sesión
             </a>
