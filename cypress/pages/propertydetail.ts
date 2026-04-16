@@ -6,4 +6,8 @@ export class PropertyDetail {
     static getPropertyName(property_name: string) {
         return cy.get('[data-cy="property-info"]').should('include.text', property_name);
     }
+
+    static reservarHabitacion() {
+        return cy.get('[data-cy="reservar-habitacion"]').first().click({ force: true });
+    }
 }
