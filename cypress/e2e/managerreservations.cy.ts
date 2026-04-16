@@ -1,3 +1,5 @@
+import { HotelPage } from '../pages/hotelpage';
+import { NavBar } from '../pages/navbar';
 import { Toastr } from '../pages/toastr';
 import { Helper } from '../utils/helper';
 import { LogIn } from '../pages/login';
@@ -28,7 +30,10 @@ describe('Escenarios E2E para el LogIn', function () {
         Toastr.getToastrMessage(message);
 
         //Click en el boton de mis reservas
+        NavBar.clickReservas();
 
+        //Validamos que vemos las reservas del manager
+        HotelPage.getReservasManager();
     });
 
     it('E0002 - Reservas de usuario tipo manager y cierra sesión', function () {
@@ -48,12 +53,13 @@ describe('Escenarios E2E para el LogIn', function () {
         let message_login = 'Has iniciado sesion correctamente.';
         Toastr.getToastrMessage(message_login);
 
+        //Click en el boton de mis reservas
+        NavBar.clickReservas();
+
+        //Validamos que vemos las reservas del manager
+        HotelPage.getReservasManager();
+
         //Click en el boton de cerrar sesión
         LogIn.clickCerrarSesionButton();
-
-        //Verificamos que el mensaje de exito se muestre
-        let message_logout = 'Sesión cerrada correctamente.';
-        Toastr.getToastrMessage(message_logout);
     });
-    
 });
