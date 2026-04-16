@@ -30,7 +30,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nv-link" [routerLink]="['/booking']" [queryParams]="{ mode: 'reservations' }">
+        <a class="nav-link nv-link" data-cy="reservas-button" [routerLink]="['/booking']" [queryParams]="{ mode: 'reservations' }">
           <img src="/iconos/key.svg" class="nv-icon">
           Reservas
         </a>
@@ -49,6 +49,7 @@
     <!-- País -->
     <div class="selector">
     <select
+      data-cy="country-select"  
       [(ngModel)]="selectedCountry"
       (ngModelChange)="onCountryChange($event)"
       [compareWith]="compareCountries"
@@ -74,7 +75,7 @@
 
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2">
-      <button type="button" class="btn btn-lg btn-brand-primary" [routerLink]="['/login']">Iniciar sesión</button>
+      <button type="button" class="btn btn-lg btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
       <button type="button" class="btn btn-lg btn-brand-secondary">Crear Cuenta</button>
     </div>
   }
@@ -98,7 +99,7 @@
           </li>
           <li><hr class="dropdown-divider"></li>
           <li>
-            <a class="dropdown-item" href="#" (click)="logout()">
+            <a class="dropdown-item" href="#" data-cy="logout-button" (click)="logout()">
               <img src="/iconos/exit.svg" class="nv-icon">
               Cerrar Sesión
             </a>

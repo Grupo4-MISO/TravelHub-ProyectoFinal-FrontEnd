@@ -17,6 +17,7 @@
         <div class="form-group">
           <label for="email">Email</label>
           <input
+            data-cy="email-input"
             #email
             id="email"
             name="email"
@@ -30,6 +31,7 @@
         <div class="form-group">
           <label for="password">Password</label>
           <input
+            data-cy="password-input"
             #password
             id="password"
             name="password"
@@ -40,7 +42,7 @@
           />
         </div>
 
-        <button type="button" (click)="Authlogin(email.value, password.value)" class="login-button">Iniciar sesion</button>
+        <button type="button" data-cy="login-submit-button" (click)="Authlogin(email.value, password.value)" class="login-button">Iniciar sesion</button>
       </form>
     </section>
   </div>
