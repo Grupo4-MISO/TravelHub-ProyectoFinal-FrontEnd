@@ -1,5 +1,5 @@
 import { SearchBar } from '../pages/searchbar';
-import { Country } from '../pages/country';
+import { NavBar } from '../pages/navbar';
 import { Toastr } from '../pages/toastr';
 import { Helper } from '../utils/helper';
 
@@ -13,7 +13,7 @@ describe('Escenarios E2E para el SearchBar', function () {
 
     it('E0001 - Buscar destinos colombianos', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇨🇴 CO');
+        NavBar.selectCountry('🇨🇴 CO');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Bogota');
@@ -36,7 +36,7 @@ describe('Escenarios E2E para el SearchBar', function () {
 
     it('E0002 - Buscar destinos argentinos', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇦🇷 AR');
+        NavBar.selectCountry('🇦🇷 AR');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Buenos Aires');
@@ -59,7 +59,7 @@ describe('Escenarios E2E para el SearchBar', function () {
 
     it('E0003 - Buscar destinos chilenos', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇨🇱 CL');
+        NavBar.selectCountry('🇨🇱 CL');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Santiago');
@@ -82,7 +82,7 @@ describe('Escenarios E2E para el SearchBar', function () {
 
     it('E0004 - Buscar destinos ecuatorianos', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇪🇨 EC');
+        NavBar.selectCountry('🇪🇨 EC');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Quito');
@@ -105,7 +105,7 @@ describe('Escenarios E2E para el SearchBar', function () {
 
     it('E0005 - Buscar destinos mexicanos', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇲🇽 MX');
+        NavBar.selectCountry('🇲🇽 MX');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Tulum');
@@ -128,7 +128,7 @@ describe('Escenarios E2E para el SearchBar', function () {
 
     it('E0006 - Buscar destinos peruanos', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇵🇪 PE');
+        NavBar.selectCountry('🇵🇪 PE');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Cusco');

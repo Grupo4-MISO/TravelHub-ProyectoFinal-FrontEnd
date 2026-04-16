@@ -1,6 +1,6 @@
 import { PropertyDetail } from '../pages/propertydetail';
 import { SearchBar } from '../pages/searchbar';
-import { Country } from '../pages/country';
+import { NavBar } from '../pages/navbar';
 import { Toastr } from '../pages/toastr';
 import { Helper } from '../utils/helper';
 
@@ -14,7 +14,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
     it('E0001 - Detalle de una propiedad colombiana', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇨🇴 CO');
+        NavBar.selectCountry('🇨🇴 CO');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Bogota');
@@ -43,7 +43,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
     it('E0002 - Detalle de una propiedad argentina', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇦🇷 AR');
+        NavBar.selectCountry('🇦🇷 AR');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Buenos Aires');
@@ -72,7 +72,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
     it('E0003 - Detalle de una propiedad chilena', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇨🇱 CL');
+        NavBar.selectCountry('🇨🇱 CL');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Santiago');
@@ -101,7 +101,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
     it('E0004 - Detalle de una propiedad ecuatoriana', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇪🇨 EC');
+        NavBar.selectCountry('🇪🇨 EC');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Quito');
@@ -130,7 +130,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
     it('E0005 - Detalle de una propiedad mexicana', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇲🇽 MX');
+        NavBar.selectCountry('🇲🇽 MX');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Tulum');
@@ -159,7 +159,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
     it('E0006 - Detalle de una propiedad peruana', function () {
         //Seleccionamos el pais
-        Country.selectCountry('🇵🇪 PE');
+        NavBar.selectCountry('🇵🇪 PE');
 
         //Seleccionamos destino
         SearchBar.selectDestination('Cusco');
