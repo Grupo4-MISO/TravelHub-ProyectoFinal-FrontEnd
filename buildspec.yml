@@ -34,7 +34,7 @@ phases:
 
       - echo "Invalidando caché de CloudFront..."
 
-      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/" "/index.html" "/*"
 
 cache:
   paths:
