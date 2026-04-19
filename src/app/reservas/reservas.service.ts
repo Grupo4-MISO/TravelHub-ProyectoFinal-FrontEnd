@@ -27,8 +27,7 @@ export interface TarifaReservaResponse {
 
 @Injectable({ providedIn: 'root' })
 export class ReservasService {
-  private readonly ApiUrl = `${environment.apiUrl}`;
-  // private readonly ApiUrl = 'http://127.0.0.1:3001';
+  private readonly ApiUrl = `${environment.reservasUrl}`;
 
   constructor(private http: HttpClient) {}
 

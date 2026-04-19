@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 })
 
 export class SearchBarService {
-    // Importamos URL del backend
-    private api_url = environment.apiUrl;
+    private busquedas_url = environment.searchUrl;
+    private inventarios_url = environment.inventariosUrl;
 
     constructor(private http: HttpClient) { }
 
@@ -26,11 +26,11 @@ export class SearchBarService {
             .set('currency_code', currency_code);
 
         // Realizamos la peticion GET al backend
-        return this.http.get<SearchBar[]>(`${this.api_url}/api/v1/busquedas/search`, { params });
+        return this.http.get<SearchBar[]>(`${this.busquedas_url}/api/v1/busquedas/search`, { params });
     }
 
     listadoCiudades(country_code: string): Observable<string[]> {
         // Realizamos la peticion GET al backend para obtener las ciudades disponibles por pais
-        return this.http.get<string[]>(`${this.api_url}/api/v1/inventarios/countries/${country_code}/popular-cities`);
+        return this.http.get<string[]>(`${this.inventarios_url}/api/v1/inventarios/countries/${country_code}/popular-cities`);
     }
 }

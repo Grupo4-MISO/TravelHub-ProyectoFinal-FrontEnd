@@ -9,8 +9,7 @@ import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  private apiUrl = environment.apiUrl;
-  // private apiUrl = 'http://127.0.0.1:3004';
+  private apiUrl = environment.authUrl;
 
   constructor(private http: HttpClient) {}
 

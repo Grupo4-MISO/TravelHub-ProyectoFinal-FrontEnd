@@ -10,10 +10,7 @@ import { environment } from '../../environments/environment';
 export class PropertyDetailService {
   
   // Importamos URL del backend
-  private api_url = environment.apiUrl;
-
-  // Para desarrollo local, usar la URL del inventarios
-  //private api_url = environment.inventariosUrl;
+  private api_url = environment.inventariosUrl;
 
   constructor(private http: HttpClient) { }
 
