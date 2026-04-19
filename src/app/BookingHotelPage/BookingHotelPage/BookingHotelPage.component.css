@@ -15,7 +15,23 @@ table{
     width: 80%;
 }
 
+td{
+    cursor: pointer;
+}
+
 img{
     width: 100%;
     height: auto;
+}
+
+.active_reserve > td{
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+
+.offcanvas-body .btn { 
+    width: 80%;
+    margin-left: 10%;
+    align-items: center;
 }

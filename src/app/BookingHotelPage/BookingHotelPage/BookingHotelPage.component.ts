@@ -1,8 +1,9 @@
-// BookingHotelPage.component.ts
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BookingHotelPageService } from '../BookingHotelPage.service';
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import * as bootstrap from 'bootstrap';
 
 interface Hotel {
   id: string;
@@ -22,7 +23,7 @@ interface Habitacion {
 
 interface Reserva {
   id: string;
-  id_visual: string;
+  public_id: string;
   habitacion_id: string;
   id_visual_habitacion: string;
   valor: number;
@@ -37,7 +38,7 @@ interface Reserva {
   styleUrls: ['./BookingHotelPage.component.css'],
   standalone: false
 })
-export class BookingHotelPageComponent implements OnInit {
+export class BookingHotelPageComponent implements OnInit, AfterViewInit {
   username: string | null = null;
 
   hotel: Hotel | null = null;
@@ -47,7 +48,12 @@ export class BookingHotelPageComponent implements OnInit {
   cargandoHotel = false;
   cargandoHabitaciones = false;
   cargandoReservas = false;  
+  
+  reservaActiva: Reserva | null = null;
+  accionModal: string = '';
 
+  offcanvasReserva: bootstrap.Offcanvas | null = null;
+  modalReserva: bootstrap.Modal | null = null;
 
   constructor(
     private bookingService: BookingHotelPageService,
@@ -58,6 +64,17 @@ export class BookingHotelPageComponent implements OnInit {
   ngOnInit(): void {
     this.username = sessionStorage.getItem('userName');
     this.cargarHotelYListas();
+  }
+
+  ngAfterViewInit(): void {
+    const offcanvasElement = document.getElementById('detalleReserva');
+    if (offcanvasElement) {
+      this.offcanvasReserva = new bootstrap.Offcanvas(offcanvasElement);
+    }
+    const modalElement = document.getElementById('staticBackdrop');
+    if (modalElement) {
+      this.modalReserva = new bootstrap.Modal(modalElement);
+    }
   }
 
   get modo(): string {
@@ -105,6 +122,7 @@ export class BookingHotelPageComponent implements OnInit {
         const reservas = await firstValueFrom(
           this.bookingService.obtenerReservas(listaHabitaciones)
         ) as Reserva[];
+        reservas.sort((a, b) => new Date(a.check_in).getTime() - new Date(b.check_in).getTime());
         this.reservas = reservas ?? [];
         this.cargandoReservas = false;
         this.cdr.detectChanges();
@@ -114,6 +132,7 @@ export class BookingHotelPageComponent implements OnInit {
       this.cdr.detectChanges();
       this.actualizarReservas();
       this.cdr.detectChanges();
+      // console.log(this.reservas);
 
     } catch (e) {
       this.hotel = null;
@@ -137,7 +156,6 @@ export class BookingHotelPageComponent implements OnInit {
 
     actualizarReservas(): void {
       for (let reserva of this.reservas) {
-        reserva.id_visual = "RSV-" + (this.reservas.indexOf(reserva) + 201);
         const habitacion = this.habitaciones.find(h => h.habitacion_id === reserva.habitacion_id);
         reserva.id_visual_habitacion = habitacion ? habitacion.id_visual : "N/A";
         reserva.valor = habitacion ? habitacion.precio * this.dar_dias(reserva.check_in, reserva.check_out) : 0;
@@ -151,4 +169,70 @@ export class BookingHotelPageComponent implements OnInit {
       return dias;
     }
 
-}
+    ver_reserva(reserva: Reserva, fila: HTMLTableRowElement): void {
+      const filas = document.querySelectorAll('.active_reserve');
+      filas.forEach(f => f.classList.remove('active_reserve'));
+
+      if (this.reservaActiva && this.reservaActiva.id === reserva.id) {
+        this.ocultar_reserva();
+        return;
+      }
+
+      this.reservaActiva = reserva;
+      fila.classList.add('active_reserve');
+      this.offcanvasReserva?.show();
+
+    }
+
+    ocultar_reserva(): void {
+      this.offcanvasReserva?.hide();
+      const filas = document.querySelectorAll('.active_reserve');
+      filas.forEach(f => f.classList.remove('active_reserve'));
+      this.reservaActiva = null;
+    }
+
+    confirmar_reserva(): void{
+      if (!this.reservaActiva) return;
+      this.bookingService.confirmarReserva(this.reservaActiva.id).subscribe({ 
+        next: (response) => {
+          this.ocultar_reserva();
+          this.cargarHotelYListas();
+        }});
+      this.ocultar_modal();
+    }
+
+    revocar_reserva(): void{
+      if (!this.reservaActiva) return;
+      this.bookingService.revocarReserva(this.reservaActiva.id).subscribe({ 
+        next: (response) => {
+          this.ocultar_reserva();
+          this.cargarHotelYListas();
+        }});
+      this.ocultar_modal();
+    }
+
+    mostrar_modal(accion: string): void {
+      this.accionModal = accion;
+      if (accion === 'confirmar') {
+        const modalTitle = document.getElementById('staticBackdropLabel');
+        const modalBody = document.getElementById('Modalbody');
+        const titulo = 'Confirmar Reserva ' + this.reservaActiva?.public_id;
+        const mensaje = '¿Está seguro de confirmar la reserva seleccionada?'
+        if (modalTitle) modalTitle.textContent = titulo;
+        if (modalBody) modalBody.textContent = mensaje;
+      }
+      else if (accion === 'revocar') {
+        const modalTitle = document.getElementById('staticBackdropLabel');
+        const modalBody = document.getElementById('Modalbody');
+        const titulo = 'Revocar Reserva ' + this.reservaActiva?.public_id;
+        const mensaje = '¿Está seguro de revocar la reserva seleccionada? Esta acción no es reversible.'
+        if (modalTitle) modalTitle.textContent = titulo;
+        if (modalBody) modalBody.textContent = mensaje;
+      }
+      this.modalReserva?.show();
+    }
+
+    ocultar_modal(): void {
+      this.modalReserva?.hide();
+    }
+  }
