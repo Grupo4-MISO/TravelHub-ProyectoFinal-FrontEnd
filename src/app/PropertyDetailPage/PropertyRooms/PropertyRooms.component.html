@@ -9,7 +9,7 @@
         <p>Código: {{ room.code }}</p>
         <p>Capacidad: {{ room.capacidad }} persona(s)</p>
         <p class="price">${{ room.precio }} {{localCurrency}} / noche</p>
-        <button class="btn-primary" (click)="reservar(room)">Reservar ahora</button>
+        <button class="btn-primary" data-cy="reservar-habitacion" (click)="reservar(room)">Reservar ahora</button>
       </div>
     </article>
   </div>
