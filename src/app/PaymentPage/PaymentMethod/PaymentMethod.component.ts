@@ -44,7 +44,7 @@ export class PaymentMethodComponent implements OnInit {
     //private api_url = environment.apiUrl;
   
     // Para desarrollo local, usar la URL del inventarios
-  private api_url = environment.trasacciones;
+  private api_url = environment.apiUrl;
 
   private readonly providersEndpoint = `${this.api_url}/api/v1/Transactions/providers`;
 
