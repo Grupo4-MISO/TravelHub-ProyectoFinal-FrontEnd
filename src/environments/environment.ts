@@ -1,4 +1,4 @@
-const api_production = 'http://ac80c79bc131b4f59a3bf324ff01f02f-1979437291.us-east-1.elb.amazonaws.com';
+const api_production = 'https://dpyrs6tuvj15e.cloudfront.net';
 
 export const environment = {
     inventariosUrl: api_production,
