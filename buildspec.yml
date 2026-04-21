@@ -3,12 +3,12 @@ version: 0.2
 env:
   variables:
     S3_BUCKET: frontend-grupo-4
-    CLOUDFRONT_DISTRIBUTION_ID: ESCOR63MVWODB
+    CLOUDFRONT_DISTRIBUTION_ID: ESABIEJ70ULPV
 
 phases:
   install:
     runtime-versions:
-      nodejs: 24
+      nodejs: 20
     commands:
       - echo "Instalando dependencias..."
       - npm install -g @angular/cli
@@ -26,10 +26,15 @@ phases:
 
   post_build:
     commands:
-      - echo "Desplegando en S3..."
-      - aws s3 sync dist/travelhub/browser/ s3://$S3_BUCKET --delete
+      - echo "Desplegando archivos estáticos en S3..."
+
+      - aws s3 sync dist/travelhub/browser/ s3://$S3_BUCKET --delete --exclude "index.html" --exclude "*.html" --cache-control "public, max-age=31536000, immutable"
+
+      - aws s3 cp dist/travelhub/browser/index.html s3://$S3_BUCKET/index.html --cache-control "no-cache, no-store, must-revalidate"
+
       - echo "Invalidando caché de CloudFront..."
-      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/index.html"
+
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/" "/index.html" "/*"
 
 cache:
   paths:
