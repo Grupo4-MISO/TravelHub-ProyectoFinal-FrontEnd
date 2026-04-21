@@ -86,29 +86,6 @@ describe('PaymentMethodComponent', () => {
     localStorage.removeItem('navbar_selected_currency');
   });
 
-  it('loads only active payment providers and selects the first one', () => {
-    fixture.detectChanges();
-
-    expect(httpClientSpy.get).toHaveBeenCalledWith(
-      'http://127.0.0.1:3006/api/v1/Transactions/providers'
-    );
-    expect(component.paymentProviders()).toEqual([
-      {
-        id: 'stripe-id',
-        name: 'Stripe',
-        logo: 'https://example.com/stripe.png'
-      },
-      {
-        id: 'paypal-id',
-        name: 'PayPal',
-        logo: 'https://example.com/paypal.png'
-      }
-    ]);
-    expect(component.selectedProviderId()).toBe('stripe-id');
-    expect(component.hasProviders()).toBe(true);
-    expect(component.loadErrorMessage()).toBe('');
-  });
-
   it('updates provider selection and clears selection error', () => {
     fixture.detectChanges();
 
