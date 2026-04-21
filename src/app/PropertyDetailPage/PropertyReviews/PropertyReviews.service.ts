@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class PropertyReviewsService {
-  private api_url = environment.apiUrl;
+  private api_url = environment.comentariosUrl;
 
   constructor(private http: HttpClient) { }
 

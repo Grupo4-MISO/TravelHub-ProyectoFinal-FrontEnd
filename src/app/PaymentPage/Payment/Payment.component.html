@@ -10,7 +10,15 @@
       [pais]="reservationData()?.pais ?? 'CO'"
     ></app-payment-rate>
   </div>
-  <app-payment-method (confirmReservation)="submitHoldReservation()"></app-payment-method>
+  <app-payment-method
+    [habitacionId]="reservationData()?.habitacionId ?? ''"
+    [roomDescripcion]="reservationData()?.roomDescripcion ?? ''"
+    [propertyNombre]="reservationData()?.propertyNombre ?? ''"
+    [checkIn]="reservationData()?.checkIn ?? ''"
+    [checkOut]="reservationData()?.checkOut ?? ''"
+    [precio]="precioNumerico()"
+    [pais]="reservationData()?.pais ?? 'CO'"
+  ></app-payment-method>
   } @else {
   <section class="availability-error" aria-live="assertive" role="alert">
     <h2 class="availability-error-title">Pago no disponible</h2>

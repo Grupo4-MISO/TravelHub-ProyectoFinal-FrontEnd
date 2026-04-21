@@ -28,8 +28,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let reserva of reservas">
-          <td>{{ reserva.id_visual }}</td>
+        <tr #fila *ngFor="let reserva of reservas" (click)="ver_reserva(reserva, fila)">
+          <td>{{ reserva.public_id }}</td>
           <td>{{ reserva.id_visual_habitacion }}</td>
           <td>{{ reserva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
           <td>{{ reserva.check_in }} - {{ reserva.check_out }}</td>
@@ -56,10 +56,77 @@
           <td>{{ room.descripcion }}</td>
           <td>{{ room.capacidad }}</td>
           <td>{{ room.precio | currency:'COP ': 'symbol': '1.0-0' }}</td>
-          <td><div *ngFor="let reserva of room.reservas">{{ reserva.id_visual }}: {{ reserva.check_in }} | {{ reserva.check_out }}</div></td>
+          <td><div *ngFor="let reserva of room.reservas">{{ reserva.public_id }}: {{ reserva.check_in }} | {{ reserva.check_out }}</div></td>
         </tr>
       </tbody>
     }
   </table>
+
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="detalleReserva" aria-labelledby="offcanvasScrollingLabel" data-bs-backdrop="static">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Reserva: {{ reservaActiva?.public_id }}</h5>
+    </div>
+    <div class="offcanvas-body">
+      @if (reservaActiva) {
+        <table class="table table-striped" style="width: 100%;">
+          <tbody>
+            <tr class="table-info">
+              <th scope="row">Habitación</th>
+              <td>{{ reservaActiva.id_visual_habitacion }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Check-in</th>
+              <td>{{ reservaActiva.check_in }}</td>
+            </tr>
+            <tr class="table-info">
+              <th scope="row">Check-out</th>
+              <td>{{ reservaActiva.check_out }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Valor Total</th>
+              <td>{{ reservaActiva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
+            </tr>
+            <tr class="table-info">
+              <th scope="row">Estado</th>
+              <td>{{ reservaActiva.estado }}</td>
+            </tr>
+          </tbody>
+        </table>
+      } @else {
+        <p class="text-muted">No hay reserva seleccionada</p>
+      }
+      <div class="d-grid gap-2">
+        @if (reservaActiva?.estado === 'pendiente') {
+        <button class="btn btn-success" (click)="mostrar_modal('confirmar')">Confirmar Reserva</button>
+        }
+        <button class="btn btn-warning" (click)="mostrar_modal('revocar')">Revocar Reserva</button>
+        <button class="btn btn-secondary" (click)="ocultar_reserva()">Volver</button>
+      </div>
+
+    </div>
+  </div>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+      </div>
+      <div class="modal-body" id="Modalbody">
+      </div>
+      <div class="modal-footer">
+        @if (accionModal === 'confirmar') {
+        <button type="button" class="btn btn-primary" (click)="confirmar_reserva()">Confirmar Reserva</button>
+        }
+        @if (accionModal === 'revocar') {
+        <button type="button" class="btn btn-danger" (click)="revocar_reserva()">Revocar Reserva</button>
+        }
+        <button type="button" class="btn btn-secondary" (click)="ocultar_modal()">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
