@@ -34,7 +34,7 @@ export class PaymentService {
 	//private api_url = environment.apiUrl;
 	
 	// Para desarrollo local, usar la URL del inventarios
-	private api_url = environment.trasacciones;
+	private api_url = environment.apiUrl;
 	private readonly paymentsEndpoint = `${this.api_url}/api/v1/Transactions/payments`;
 
 	createPayment(payload: CreatePaymentRequest): Observable<CreatePaymentResponse> {
