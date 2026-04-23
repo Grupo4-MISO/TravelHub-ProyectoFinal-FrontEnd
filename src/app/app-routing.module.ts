@@ -4,6 +4,7 @@ import { PrincipalPageComponent } from './PrincipalPage/PrincipalPage/PrincipalP
 import { ResultsPageComponent } from './ResultsPage/ResultsPage/ResultsPage.component';
 import { PropertyDetailComponent } from './PropertyDetailPage/PropertyDetail/PropertyDetail.component';
 import { BookingHotelPageComponent } from './BookingHotelPage/BookingHotelPage/BookingHotelPage.component';
+import { ReservationsPageComponent } from './ReservationsPage/ReservationsPage/ReservationsPage.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalPageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'results', component: ResultsPageComponent },
   { path: 'property', component: PropertyDetailComponent },
   { path: 'booking', component: BookingHotelPageComponent },
+  { path: 'reservations', component: ReservationsPageComponent },
   {
     path: 'payment',
     loadComponent: () => import('./PaymentPage/Payment/Payment.component').then((c) => c.PaymentComponent)

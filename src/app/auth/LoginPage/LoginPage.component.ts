@@ -47,7 +47,7 @@ export class LoginPageComponent implements OnInit {
         sessionStorage.setItem('decodedToken', JSON.stringify(this.helper.decodeToken(res.token)));
         sessionStorage.setItem('token', res.token);
         sessionStorage.setItem('userName', this.helper.decodeToken(res.token).username);
-        sessionStorage.setItem('idUsuario', res.id);
+        sessionStorage.setItem('idUsuario', res.user.id);
         const role = this.helper.decodeToken(res.token).role;
         sessionStorage.setItem('role', role);
         this.toastrService.success('Has iniciado sesion correctamente.', 'Bienvenido ' + this.helper.decodeToken(res.token).username);

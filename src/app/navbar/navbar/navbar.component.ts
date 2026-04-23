@@ -123,4 +123,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.authService.logout();
     this.toastrService.success('Sesión cerrada correctamente.', 'Éxito');
   }
+
+  routeReservations(): void {
+    if(this.isAuthenticated()){
+        window.location.href = '/reservations';
+    } else {
+        window.location.href = '/login';
+    }
+  }
 }
