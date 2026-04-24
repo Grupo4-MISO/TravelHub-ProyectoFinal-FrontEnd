@@ -121,7 +121,7 @@ export class PaymentMethodComponent implements OnInit {
     };
 
     this.reservasService
-      .holdReserva(holdReservaPayload)
+      .crearReserva(holdReservaPayload)
       .pipe(
         switchMap((holdResponse) => {
           const reservaId = this.extractReservaId(holdResponse as HoldReservaResponse);
