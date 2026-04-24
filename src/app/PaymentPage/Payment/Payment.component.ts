@@ -94,7 +94,7 @@ export class PaymentComponent implements OnInit {
     this.reservationData.set(reservationDataFromQuery);
     // Intentamos hacer el hold de la reserva al cargar 
     // la página de pagos para asegurar la disponibilidad de la habitación
-    // this.submitHoldReservation();
+    this.submitHoldReservation();
   }
 
   submitHoldReservation(): void {
