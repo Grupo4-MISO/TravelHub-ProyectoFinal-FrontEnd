@@ -1,0 +1,33 @@
+<section [formGroup]="group()" class="section-card" aria-labelledby="traveler-data-title">
+  <h2 id="traveler-data-title">Datos personales</h2>
+
+  <label for="traveler-document">Numero de documento</label>
+  <input id="traveler-document" type="text" formControlName="documentNumber" autocomplete="off" />
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="traveler-first-name">Nombre</label>
+      <input id="traveler-first-name" type="text" formControlName="first_name" autocomplete="given-name" />
+    </div>
+
+    <div class="field">
+      <label for="traveler-last-name">Apellido</label>
+      <input id="traveler-last-name" type="text" formControlName="last_name" autocomplete="family-name" />
+    </div>
+  </div>
+
+  <label for="traveler-email">Correo</label>
+  <input id="traveler-email" type="email" formControlName="email" autocomplete="email" />
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="traveler-phone">Telefono</label>
+      <input id="traveler-phone" type="tel" formControlName="phone" autocomplete="tel" />
+    </div>
+
+    <div class="field">
+      <label for="traveler-password">Contraseña</label>
+      <input id="traveler-password" type="password" formControlName="password" autocomplete="new-password" />
+    </div>
+  </div>
+</section>

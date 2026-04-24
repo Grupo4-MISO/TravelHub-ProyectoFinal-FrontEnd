@@ -15,6 +15,16 @@ const routes: Routes = [
   {
     path: 'payment',
     loadComponent: () => import('./PaymentPage/Payment/Payment.component').then((c) => c.PaymentComponent)
+  },
+  {
+    path: 'provider/new',
+    loadComponent: () =>
+      import('./ProviderPage/ProviderForm/ProviderForm.component').then((c) => c.ProviderFormComponent)
+  },
+  {
+    path: 'traveler/new',
+    loadComponent: () =>
+      import('./TravelerPage/TravelerForm/TravelerForm.component').then((c) => c.TravelerFormComponent)
   }
 ];
 

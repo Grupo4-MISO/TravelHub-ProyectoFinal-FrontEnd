@@ -1,0 +1,33 @@
+<section class="provider-page" aria-labelledby="provider-form-title">
+  <header class="page-header">
+    <h1 id="provider-form-title">Soy Proveedor</h1>
+    <p>Registrate como proveedor de servicios y empieza a recibir reservas.</p>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <app-provider-company [group]="companyGroup"></app-provider-company>
+    <app-provider-manager [group]="managerGroup"></app-provider-manager>
+    <app-provider-address
+      [group]="addressGroup"
+      [states]="stateOptions()"
+      [cities]="cityOptions()"
+      [isLoadingStates]="isLoadingStates()"
+      [isLoadingCities]="isLoadingCities()"
+      [statesError]="statesError()"
+      [citiesError]="citiesError()"></app-provider-address>
+
+    @if (submitError()) {
+      <p class="feedback error" role="alert">{{ submitError() }}</p>
+    }
+
+    @if (submitSuccess()) {
+      <p class="feedback success" role="status">{{ submitSuccess() }}</p>
+    }
+
+    <div class="actions">
+      <button type="submit" [disabled]="isSubmitting()">
+        {{ isSubmitting() ? 'Guardando...' : 'Crear mi cuenta' }}
+      </button>
+    </div>
+  </form>
+</section>

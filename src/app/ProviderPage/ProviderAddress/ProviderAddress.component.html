@@ -1,0 +1,90 @@
+<section [formGroup]="group()" class="section-card" aria-labelledby="provider-address-title">
+  <h2 id="provider-address-title">Direccion</h2>
+
+  <label for="address-line1">Linea 1</label>
+  <input id="address-line1" type="text" formControlName="line1" autocomplete="address-line1" />
+
+  <label for="address-line2">Linea 2</label>
+  <input id="address-line2" type="text" formControlName="line2" autocomplete="address-line2" />
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="address-city">Ciudad</label>
+      @if (cities().length === 0) {
+        <input
+          id="address-city"
+          type="text"
+          formControlName="city"
+          autocomplete="address-level2"
+          [readonly]="isLoadingCities()"
+          placeholder="Ingresa la ciudad" />
+      } @else {
+        <select
+          id="address-city"
+          formControlName="city"
+          autocomplete="address-level2"
+          [disabled]="isLoadingCities()">
+          @if (isLoadingCities()) {
+            <option value="">Cargando ciudades...</option>
+          } @else {
+            @for (city of cities(); track city) {
+              <option [value]="city">{{ city }}</option>
+            }
+          }
+        </select>
+      }
+
+      @if (citiesError()) {
+        <p class="field-feedback" role="alert">{{ citiesError() }}</p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="address-state">Estado</label>
+      @if (states().length === 0) {
+        <input
+          id="address-state"
+          type="text"
+          formControlName="state"
+          autocomplete="address-level1"
+          [readonly]="isLoadingStates()"
+          placeholder="Ingresa el estado" />
+      } @else {
+        <select
+          id="address-state"
+          formControlName="state"
+          autocomplete="address-level1"
+          [disabled]="isLoadingStates()">
+          @if (isLoadingStates()) {
+            <option value="">Cargando estados...</option>
+          } @else {
+            @for (state of states(); track state) {
+              <option [value]="state">{{ state }}</option>
+            }
+          }
+        </select>
+      }
+
+      @if (statesError()) {
+        <p class="field-feedback" role="alert">{{ statesError() }}</p>
+      }
+    </div>
+  </div>
+
+  <div class="grid-three">
+    <div class="field">
+      <label for="address-country">Pais</label>
+      <input id="address-country" type="text" formControlName="country" autocomplete="country-name" readonly />
+    </div>
+
+    <div class="field">
+      <label for="address-country-code">Codigo pais</label>
+      <input id="address-country-code" type="text" formControlName="countryCode" autocomplete="country" readonly />
+    </div>
+
+    <div class="field">
+      <label for="address-postal">Codigo postal</label>
+      <input id="address-postal" type="text" formControlName="postal_code" autocomplete="postal-code" />
+    </div>
+  </div>
+</section>

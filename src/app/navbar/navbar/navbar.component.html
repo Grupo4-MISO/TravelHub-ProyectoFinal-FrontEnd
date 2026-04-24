@@ -76,7 +76,7 @@
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2">
       <button type="button" class="btn btn-lg btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
-      <button type="button" class="btn btn-lg btn-brand-secondary">Crear Cuenta</button>
+      <button type="button" class="btn btn-lg btn-brand-secondary" [routerLink]="['/auth/create']">Crear Cuenta</button>
     </div>
   }
   @if (isAuthenticated()) {
