@@ -35,6 +35,10 @@ export class ReservasService {
     return this.http.post(`${this.ApiUrl}/api/v1/reservas/hold`, payload);
   }
 
+  crearReserva(payload: HoldReservaRequest): Observable<unknown> {
+    return this.http.post(`${this.ApiUrl}/api/v1/reservas/crear`, payload);
+  }
+
   calcularTarifaReserva(payload: TarifaReservaRequest): Observable<TarifaReservaResponse> {
     return this.http.post<TarifaReservaResponse>(`${this.ApiUrl}/api/v1/reservas/tarifa`, payload);
   }
