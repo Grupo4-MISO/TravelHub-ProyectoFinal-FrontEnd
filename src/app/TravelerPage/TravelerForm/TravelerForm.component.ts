@@ -1,25 +1,44 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { finalize } from 'rxjs';
-import { TravelerAddressComponent } from '../TravelerAddress/TravelerAddress.component';
+import { Router } from '@angular/router';
+import { catchError, finalize, of } from 'rxjs';
+import { CountryList } from '../../navbar/countrylist';
+import { NavbarService } from '../../navbar/navbar.service';
+import { CountryState, ProviderLocationService, StateCity } from '../../ProviderPage/provider-location.service';
+import { AddressFormComponent } from '../../Utilities/Forms/AddressForm.component';
 import { TravelerDataComponent } from '../TravelerData/TravelerData.component';
 import { CreateTravelerPayload } from '../traveler.models';
 import { TravelerService } from '../traveler.service';
 
 @Component({
   selector: 'app-traveler-form',
-  imports: [ReactiveFormsModule, TravelerDataComponent, TravelerAddressComponent],
+  imports: [ReactiveFormsModule, TravelerDataComponent, AddressFormComponent],
   templateUrl: './TravelerForm.component.html',
   styleUrl: './TravelerForm.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TravelerFormComponent {
+  private readonly defaultCountryName = 'Colombia';
+  private readonly destroyRef = inject(DestroyRef);
   private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
   private readonly travelerService = inject(TravelerService);
+  private readonly providerLocationService = inject(ProviderLocationService);
+  private readonly navbarService = inject(NavbarService);
+
+  currentCountry: CountryList | null = null;
+  currentCountryCode = 'CO';
 
   readonly isSubmitting = signal(false);
+  readonly isLoadingStates = signal(false);
+  readonly isLoadingCities = signal(false);
+  readonly statesError = signal('');
+  readonly citiesError = signal('');
   readonly submitError = signal('');
   readonly submitSuccess = signal('');
+  readonly states = signal<readonly CountryState[]>([]);
+  readonly cities = signal<readonly StateCity[]>([]);
 
   readonly form = this.fb.nonNullable.group({
     traveler: this.fb.nonNullable.group({
@@ -42,7 +61,37 @@ export class TravelerFormComponent {
     })
   });
 
-  readonly isInvalid = computed(() => this.form.invalid);
+  readonly stateOptions = computed(() => this.states().map((state) => state.name));
+  readonly cityOptions = computed(() => this.cities().map((city) => city.name));
+
+  constructor() {
+    this.navbarService.country$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((country: CountryList | null) => {
+        if (country) {
+          this.currentCountry = country;
+          this.currentCountryCode = country.code.trim().toUpperCase();
+          this.applyCountrySelection(country.name, this.currentCountryCode);
+        }
+      });
+
+    this.addressGroup.controls.state.valueChanges
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((stateName) => {
+        this.handleStateChange(stateName);
+      });
+
+    const initialCountry = this.navbarService.getCurrentCountry();
+
+    if (initialCountry) {
+      this.currentCountry = initialCountry;
+      this.currentCountryCode = initialCountry.code.trim().toUpperCase();
+      this.applyCountrySelection(initialCountry.name, this.currentCountryCode);
+      return;
+    }
+
+    this.applyCountrySelection(this.defaultCountryName, this.currentCountryCode);
+  }
 
   get travelerGroup() {
     return this.form.controls.traveler;
@@ -96,6 +145,12 @@ export class TravelerFormComponent {
           this.submitSuccess.set('Traveler creado correctamente.');
           this.form.reset();
           this.form.controls.traveler.controls.travelerStatus.patchValue('Pending');
+
+          const countryName = this.currentCountry?.name ?? this.defaultCountryName;
+          const countryCode = this.currentCountry?.code?.trim().toUpperCase() ?? this.currentCountryCode;
+
+          this.currentCountryCode = countryCode;
+          this.applyCountrySelection(countryName, countryCode);
         },
         error: (error) => {
           const backendMessage = error?.error?.message;
@@ -107,6 +162,99 @@ export class TravelerFormComponent {
 
           this.submitError.set(parsedMessage);
         }
+      });
+  }
+
+  private handleStateChange(stateName: string): void {
+    const normalizedStateName = stateName.trim();
+
+    if (!normalizedStateName) {
+      this.cities.set([]);
+      this.citiesError.set('');
+      this.addressGroup.controls.city.patchValue('', { emitEvent: false });
+      return;
+    }
+
+    const selectedState = this.states().find((state) => state.name === normalizedStateName);
+
+    if (!selectedState) {
+      this.cities.set([]);
+      this.citiesError.set('No fue posible resolver el estado seleccionado.');
+      this.addressGroup.controls.city.patchValue('', { emitEvent: false });
+      return;
+    }
+
+    this.loadCitiesByState(this.currentCountryCode, selectedState.iso2);
+  }
+
+  private applyCountrySelection(countryName: string, countryCode: string): void {
+    this.form.controls.address.patchValue(
+      {
+        country: countryName,
+        countryCode,
+        state: '',
+        city: ''
+      },
+      { emitEvent: false }
+    );
+
+    this.loadStatesByCountry(countryCode);
+  }
+
+  private loadStatesByCountry(countryCode: string): void {
+    this.isLoadingStates.set(true);
+    this.statesError.set('');
+    this.states.set([]);
+    this.cities.set([]);
+    this.citiesError.set('');
+
+    this.providerLocationService
+      .getStatesByCountry(countryCode)
+      .pipe(
+        catchError((error) => {
+          console.error('Error al consultar estados por pais.', error);
+          this.statesError.set('No se pudieron cargar los estados para el pais seleccionado.');
+          return of([] as CountryState[]);
+        }),
+        finalize(() => this.isLoadingStates.set(false))
+      )
+      .subscribe((states) => {
+        this.states.set(states);
+
+        if (states.length === 0) {
+          this.addressGroup.controls.state.patchValue('', { emitEvent: false });
+          this.addressGroup.controls.city.patchValue('', { emitEvent: false });
+          return;
+        }
+
+        this.addressGroup.controls.state.patchValue(states[0].name);
+      });
+  }
+
+  private loadCitiesByState(countryCode: string, stateCode: string): void {
+    this.isLoadingCities.set(true);
+    this.citiesError.set('');
+    this.cities.set([]);
+
+    this.providerLocationService
+      .getCitiesByState(countryCode, stateCode)
+      .pipe(
+        catchError((error) => {
+          console.error('Error al consultar ciudades por estado.', error);
+          this.citiesError.set('No se pudieron cargar las ciudades del estado seleccionado.');
+          return of([] as StateCity[]);
+        }),
+        finalize(() => this.isLoadingCities.set(false))
+      )
+      .subscribe((cities) => {
+        this.cities.set(cities);
+
+        if (cities.length === 0) {
+          this.addressGroup.controls.city.patchValue('', { emitEvent: false });
+          return;
+        }
+
+        this.addressGroup.controls.city.patchValue(cities[0].name, { emitEvent: false });
       });
   }
 }

@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-provider-address',
+  selector: 'app-address-form',
   imports: [ReactiveFormsModule],
-  templateUrl: './ProviderAddress.component.html',
-  styleUrl: './ProviderAddress.component.css',
+  templateUrl: './AddressForm.component.html',
+  styleUrl: './AddressForm.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProviderAddressComponent {
+export class AddressFormComponent {
   readonly group = input.required<FormGroup>();
   readonly states = input<readonly string[]>([]);
   readonly cities = input<readonly string[]>([]);

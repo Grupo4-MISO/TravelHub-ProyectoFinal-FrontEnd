@@ -7,14 +7,14 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
     <app-provider-company [group]="companyGroup"></app-provider-company>
     <app-provider-manager [group]="managerGroup"></app-provider-manager>
-    <app-provider-address
+    <app-address-form
       [group]="addressGroup"
       [states]="stateOptions()"
       [cities]="cityOptions()"
       [isLoadingStates]="isLoadingStates()"
       [isLoadingCities]="isLoadingCities()"
       [statesError]="statesError()"
-      [citiesError]="citiesError()"></app-provider-address>
+      [citiesError]="citiesError()"></app-address-form>
 
     @if (submitError()) {
       <p class="feedback error" role="alert">{{ submitError() }}</p>

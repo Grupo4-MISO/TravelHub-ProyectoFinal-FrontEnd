@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { catchError, finalize, of } from 'rxjs';
 import { NavbarService } from '../../navbar/navbar.service';
-import { ProviderAddressComponent } from '../ProviderAddress/ProviderAddress.component';
+import { AddressFormComponent } from '../../Utilities/Forms/AddressForm.component';
 import { ProviderCompanyComponent } from '../ProviderCompany/ProviderCompany.component';
 import { ProviderManagerComponent } from '../ProviderManager/ProviderManager.component';
 import { CountryState, ProviderLocationService, StateCity } from '../provider-location.service';
@@ -17,7 +18,7 @@ import { CountryList } from '../../navbar/countrylist';
     ReactiveFormsModule,
     ProviderCompanyComponent,
     ProviderManagerComponent,
-    ProviderAddressComponent
+    AddressFormComponent
   ],
   templateUrl: './ProviderForm.component.html',
   styleUrl: './ProviderForm.component.css',
@@ -27,6 +28,7 @@ export class ProviderFormComponent {
   private readonly defaultCountryName = 'Colombia';
   private readonly destroyRef = inject(DestroyRef);
   private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
   private readonly providerService = inject(ProviderService);
   private readonly providerLocationService = inject(ProviderLocationService);
   private readonly navbarService = inject(NavbarService);

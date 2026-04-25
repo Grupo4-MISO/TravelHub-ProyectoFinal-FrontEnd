@@ -8,7 +8,9 @@
     formControlName="name"
     autocomplete="organization"
     placeholder="Ej: Hoteles Andinos SAS" />
-
+  @if (group().controls['name'].touched && group().controls['name'].invalid) {
+    <p class="field-feedback" role="alert">El nombre debe tener entre 2 y 100 caracteres.</p>
+  }
   <label for="provider-document">Numero de documento</label>
   <input
     id="provider-document"
@@ -16,4 +18,7 @@
     formControlName="DocumentNumber"
     autocomplete="off"
     placeholder="NIT, CUIT, RFC, RUC o documento" />
+  @if (group().controls['DocumentNumber'].touched && group().controls['DocumentNumber'].invalid) {
+    <p class="field-feedback" role="alert">El numero de documento debe tener entre 8 y 10 caracteres.</p>
+  }
 </section>

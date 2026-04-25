@@ -56,3 +56,10 @@ button:disabled {
 .feedback.success {
   color: #067647;
 }
+
+
+.field-feedback {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.86rem;
+}

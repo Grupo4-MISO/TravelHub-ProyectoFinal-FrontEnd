@@ -6,7 +6,14 @@
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
     <app-traveler-data [group]="travelerGroup"></app-traveler-data>
-    <app-traveler-address [group]="addressGroup"></app-traveler-address>
+    <app-address-form
+      [group]="addressGroup"
+      [states]="stateOptions()"
+      [cities]="cityOptions()"
+      [isLoadingStates]="isLoadingStates()"
+      [isLoadingCities]="isLoadingCities()"
+      [statesError]="statesError()"
+      [citiesError]="citiesError()"></app-address-form>
 
     @if (submitError()) {
       <p class="feedback error" role="alert">{{ submitError() }}</p>
@@ -17,7 +24,7 @@
     }
 
     <div class="actions">
-      <button type="submit" [disabled]="isSubmitting() || isInvalid()">
+      <button type="submit" [disabled]="isSubmitting()">
         {{ isSubmitting() ? 'Guardando...' : 'Crear mi cuenta' }}
       </button>
     </div>

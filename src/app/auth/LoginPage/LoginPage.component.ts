@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../auth.service';
-import { Role } from '../../utilities/Role';
+import { Role } from '../../Utilities/Role';
 import { auth } from '../auth';
 import { ProviderService } from '../../ProviderPage/provider.service';
 import { TravelerService } from '../../TravelerPage/traveler.service';
