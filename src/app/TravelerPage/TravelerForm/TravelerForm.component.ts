@@ -10,6 +10,7 @@ import { AddressFormComponent } from '../../Utilities/Forms/AddressForm.componen
 import { TravelerDataComponent } from '../TravelerData/TravelerData.component';
 import { CreateTravelerPayload } from '../traveler.models';
 import { TravelerService } from '../traveler.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-traveler-form',
@@ -48,7 +49,9 @@ export class TravelerFormComponent {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.maxLength(20)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(80)]],
-      travelerStatus: ['Pending', [Validators.required, Validators.maxLength(20)]]
+      travelerStatus: ['Pending', [Validators.required, Validators.maxLength(20)]],
+      gender: ['Female', [Validators.required, Validators.maxLength(20)]],
+      photo: ['']
     }),
     address: this.fb.nonNullable.group({
       line1: ['', [Validators.required, Validators.maxLength(120)]],
@@ -64,7 +67,7 @@ export class TravelerFormComponent {
   readonly stateOptions = computed(() => this.states().map((state) => state.name));
   readonly cityOptions = computed(() => this.cities().map((city) => city.name));
 
-  constructor() {
+  constructor(private toastrService: ToastrService) {
     this.navbarService.country$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((country: CountryList | null) => {
@@ -122,7 +125,9 @@ export class TravelerFormComponent {
         email: traveler.email.trim().toLowerCase(),
         phone: traveler.phone.trim(),
         password: traveler.password,
-        travelerStatus: traveler.travelerStatus.trim() || 'Pending'
+        travelerStatus: traveler.travelerStatus.trim() || 'Pending',
+        gender: traveler.gender.trim(),
+        photo: traveler.photo.trim()
       },
       address: {
         line1: address.line1.trim(),
@@ -136,6 +141,7 @@ export class TravelerFormComponent {
     };
 
     this.isSubmitting.set(true);
+    console.log('Payload:', JSON.stringify(payload, null, 2));
 
     this.travelerService
       .createTraveler(payload)
@@ -151,6 +157,8 @@ export class TravelerFormComponent {
 
           this.currentCountryCode = countryCode;
           this.applyCountrySelection(countryName, countryCode);
+          this.toastrService.success('Cuenta creada correctamente.', 'Bienvenido '+ payload.traveler.first_name);
+          this.router.navigate(['/login']);
         },
         error: (error) => {
           const backendMessage = error?.error?.message;

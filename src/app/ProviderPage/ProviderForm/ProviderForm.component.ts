@@ -11,6 +11,7 @@ import { CountryState, ProviderLocationService, StateCity } from '../provider-lo
 import { CreateProviderPayload } from '../provider.models';
 import { ProviderService } from '../provider.service';
 import { CountryList } from '../../navbar/countrylist';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-provider-form',
@@ -73,7 +74,7 @@ export class ProviderFormComponent {
   readonly stateOptions = computed(() => this.states().map((state) => state.name));
   readonly cityOptions = computed(() => this.cities().map((city) => city.name));
 
-  constructor() {
+  constructor(private toastrService: ToastrService) {
     this.navbarService.country$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((country: CountryList | null) => {
@@ -164,6 +165,8 @@ export class ProviderFormComponent {
 
           this.currentCountryCode = countryCode;
           this.applyCountrySelection(countryName, countryCode);
+          this.toastrService.success('Cuenta creada correctamente.', 'Bienvenido '+ manager.first_name);
+          this.router.navigate(['/login']);
         },
         error: (error) => {
           const backendMessage = error?.error?.message;

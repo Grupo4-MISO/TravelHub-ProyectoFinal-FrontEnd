@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../auth.service';
@@ -17,16 +17,24 @@ import { TravelerService } from '../../TravelerPage/traveler.service';
 export class LoginPageComponent implements OnInit {
   error: string = '';
   helper = new JwtHelperService();
+  redirect: string = '/';
+  private queryParams: Record<string, string> = {};
 
   constructor(
     private authService: AuthService,
     private toastrService: ToastrService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private providerService: ProviderService,
     private travelerService: TravelerService
   ) {}
 
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.redirect = params['redirect'] || '/';
+      const { redirect, ...rest } = params;
+      this.queryParams = rest;
+    });
     sessionStorage.setItem('decodedToken', '');
     sessionStorage.setItem('token', '');
     sessionStorage.setItem('idUsuario', '');
@@ -70,11 +78,11 @@ export class LoginPageComponent implements OnInit {
               sessionStorage.setItem('name', traveler.first_name + ' ' + traveler.last_name);
               sessionStorage.setItem('documentNumber', traveler.documentNumber);
               sessionStorage.setItem('travelerStatus', traveler.travelerStatus);
-              this.router.navigate([`/`]);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
             error: () => {
               this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
-              this.router.navigate([`/`]);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
           });
         }
@@ -85,15 +93,15 @@ export class LoginPageComponent implements OnInit {
               sessionStorage.setItem('name', provider.name);
               sessionStorage.setItem('documentNumber', provider.documentNumber);
               sessionStorage.setItem('providerStatus', provider.providerStatus);
-              this.router.navigate([`/`]);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
             error: () => {
               this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
-              this.router.navigate([`/`]);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
           });
         }
-        this.router.navigate([`/`]);
+        this.router.navigate([this.redirect], { queryParams: this.queryParams });
       },
       (error) => {
         this.error = 'Usuario o contraseña incorrectos';

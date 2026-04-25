@@ -32,13 +32,24 @@
 
   <div class="grid-two">
     <div class="field">
+      <label for="traveler-gender">Genero</label>
+      <select id="traveler-gender" formControlName="gender">
+        <option value="Female">Femenino</option>
+        <option value="Male">Masculino</option>
+        <option value="Other">Otro</option>
+      </select>
+    </div>
+
+    <div class="field">
       <label for="traveler-phone">Telefono</label>
       <input id="traveler-phone" type="tel" formControlName="phone" placeholder="Ej: 3001234567" autocomplete="tel" />
       @if (group().controls['phone'].touched && group().controls['phone'].invalid) {
         <p class="field-feedback" role="alert">El telefono debe tener entre 10 y 15 caracteres.</p>
       }
     </div>
+  </div>
 
+  <div class="grid-two">
     <div class="field">
       <label for="traveler-password">Contraseña</label>
       <input id="traveler-password" type="password" formControlName="password" placeholder="Ej: ********" autocomplete="new-password" />
@@ -47,4 +58,6 @@
       }
     </div>
   </div>
+
+  <input type="hidden" formControlName="photo" />
 </section>

@@ -6,6 +6,8 @@ export interface TravelerPayload {
   phone: string;
   password: string;
   travelerStatus: string;
+  gender: string;
+  photo?: string;
 }
 
 export interface TravelerAddressPayload {
