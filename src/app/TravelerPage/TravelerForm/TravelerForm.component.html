@@ -1,0 +1,32 @@
+<section class="traveler-page" aria-labelledby="traveler-form-title">
+  <header class="page-header">
+    <h1 id="traveler-form-title">Soy Viajero</h1>
+    <p>Registrate como cliente y comienza a disfrutar de nuestros servicios.</p>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <app-traveler-data [group]="travelerGroup"></app-traveler-data>
+    <app-address-form
+      [group]="addressGroup"
+      [states]="stateOptions()"
+      [cities]="cityOptions()"
+      [isLoadingStates]="isLoadingStates()"
+      [isLoadingCities]="isLoadingCities()"
+      [statesError]="statesError()"
+      [citiesError]="citiesError()"></app-address-form>
+
+    @if (submitError()) {
+      <p class="feedback error" role="alert">{{ submitError() }}</p>
+    }
+
+    @if (submitSuccess()) {
+      <p class="feedback success" role="status">{{ submitSuccess() }}</p>
+    }
+
+    <div class="actions">
+      <button type="submit" [disabled]="isSubmitting()">
+        {{ isSubmitting() ? 'Guardando...' : 'Crear mi cuenta' }}
+      </button>
+    </div>
+  </form>
+</section>

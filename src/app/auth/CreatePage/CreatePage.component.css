@@ -1,0 +1,75 @@
+.create-account-page {
+  max-width: 1120px;
+  margin: 2rem auto;
+  padding: 0 1rem 2rem;
+}
+
+.create-header {
+      display: flex;
+  flex-direction: column;
+  align-items: center; /* centra horizontalmente */
+  text-align: center;  /* centra el texto */
+  margin-bottom: 1rem;
+}
+
+.create-header h1 {
+  margin: 0;
+  color: #13233a;
+}
+
+.create-header p {
+  margin: 0.4rem 0 0;
+  color: #425066;
+}
+
+.switch {
+    display: flex;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px; /* espacio entre botones */
+    margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+  border: 1px solid #c4cede;
+  border-radius: 12px;
+  background-color: #f5f8ff;
+
+  justify-content: center; /* centra los botones */
+
+
+}
+
+.switch button {
+  min-width: 130px;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #425066;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.switch button.active {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+.switch button:focus-visible {
+  outline: 2px solid #0d6efd66;
+  outline-offset: 2px;
+}
+
+.content-panel {
+  border-top: 1px solid #d9e0ed;
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .switch {
+    width: 100%;
+  }
+
+  .switch button {
+    min-width: 0;
+  }
+}

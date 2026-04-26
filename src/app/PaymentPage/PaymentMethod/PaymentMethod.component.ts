@@ -44,7 +44,7 @@ export class PaymentMethodComponent implements OnInit {
     //private api_url = environment.apiUrl;
   
     // Para desarrollo local, usar la URL del inventarios
-  private api_url = environment.apiUrl;
+  private api_url = environment.trasacciones;
 
   private readonly providersEndpoint = `${this.api_url}/api/v1/Transactions/providers`;
 
@@ -99,7 +99,7 @@ export class PaymentMethodComponent implements OnInit {
 
     if (!userId) {
       this.submitErrorMessage.set('No hay usuario en sesion. Inicia sesion para continuar.');
-      this.router.navigate(['/login']);
+      // this.router.navigate(['/login']);
       return;
     }
 

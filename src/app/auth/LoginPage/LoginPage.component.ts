@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../auth.service';
-import { Role } from '../../utilities/Role';
+import { Role } from '../../Utilities/Role';
 import { auth } from '../auth';
+import { ProviderService } from '../../ProviderPage/provider.service';
+import { TravelerService } from '../../TravelerPage/traveler.service';
 
 @Component({
   selector: 'app-LoginPage',
@@ -15,17 +17,31 @@ import { auth } from '../auth';
 export class LoginPageComponent implements OnInit {
   error: string = '';
   helper = new JwtHelperService();
+  redirect: string = '/';
+  private queryParams: Record<string, string> = {};
 
   constructor(
     private authService: AuthService,
     private toastrService: ToastrService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private providerService: ProviderService,
+    private travelerService: TravelerService
   ) {}
 
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.redirect = params['redirect'] || '/';
+      const { redirect, ...rest } = params;
+      this.queryParams = rest;
+    });
     sessionStorage.setItem('decodedToken', '');
     sessionStorage.setItem('token', '');
     sessionStorage.setItem('idUsuario', '');
+    sessionStorage.setItem('provider_id', '');
+    sessionStorage.setItem('name', '');
+    sessionStorage.setItem('documentNumber', '');
+    sessionStorage.setItem('providerStatus', '');
   }
 
   Authlogin(email: string, password: string) {
@@ -56,12 +72,36 @@ export class LoginPageComponent implements OnInit {
           // this.router.navigate([`/admin`, res.id]);
         }
         if (role == Role.TRAVELER) {
-          // this.router.navigate([`/Traveler/ByUserId`,res.id]);
+          this.travelerService.getTravelerByUserId(res.id).subscribe({
+            next: (traveler) => {
+              sessionStorage.setItem('traveler_id', traveler.id);
+              sessionStorage.setItem('name', traveler.first_name + ' ' + traveler.last_name);
+              sessionStorage.setItem('documentNumber', traveler.documentNumber);
+              sessionStorage.setItem('travelerStatus', traveler.travelerStatus);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+            error: () => {
+              this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+          });
         }
-        if (role == Role.MANAGER) {
-          // this.router.navigate([`/Manager/ByUserId`,res.id]);
+        if (role == Role.MANAGER || role == Role.ACCOMODATION) {
+          this.providerService.getProviderByUserId(res.id).subscribe({
+            next: (provider) => {
+              sessionStorage.setItem('provider_id', provider.id);
+              sessionStorage.setItem('name', provider.name);
+              sessionStorage.setItem('documentNumber', provider.documentNumber);
+              sessionStorage.setItem('providerStatus', provider.providerStatus);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+            error: () => {
+              this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+          });
         }
-        this.router.navigate([`/`]);
+        this.router.navigate([this.redirect], { queryParams: this.queryParams });
       },
       (error) => {
         this.error = 'Usuario o contraseña incorrectos';

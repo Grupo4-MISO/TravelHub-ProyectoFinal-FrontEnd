@@ -1,0 +1,45 @@
+<section [formGroup]="group()" class="section-card" aria-labelledby="provider-manager-title">
+  <h2 id="provider-manager-title">Datos del administrador</h2>
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="manager-first-name">Nombre</label>
+      <input id="manager-first-name" type="text" formControlName="first_name" placeholder="Ej: Juan" autocomplete="given-name" />
+      @if (group().controls['first_name'].touched && group().controls['first_name'].invalid) {
+        <p class="field-feedback" role="alert">El nombre debe tener entre 2 y 100 caracteres.</p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="manager-last-name">Apellido</label>
+      <input id="manager-last-name" type="text" formControlName="last_name" placeholder="Ej: Pérez" autocomplete="family-name" />
+      @if (group().controls['last_name'].touched && group().controls['last_name'].invalid) {
+        <p class="field-feedback" role="alert">El apellido debe tener entre 2 y 100 caracteres.</p>
+      }
+    </div>
+  </div>
+
+  <label for="manager-email">Correo</label>
+  <input id="manager-email" type="email" formControlName="email" placeholder="Ej: juan@micorreo.com" autocomplete="email" />
+  @if (group().controls['email'].touched && group().controls['email'].invalid) {
+    <p class="field-feedback" role="alert">Ingresa un correo valido (juan@micorreo.com).</p>
+  }
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="manager-password">Contrasena</label>
+      <input id="manager-password" type="password" formControlName="password" placeholder="Ej: ********" autocomplete="new-password" />
+      @if (group().controls['password'].touched && group().controls['password'].invalid) {
+        <p class="field-feedback" role="alert">La contrasena debe tener al menos 8 caracteres.</p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="manager-phone">Telefono</label>
+      <input id="manager-phone" type="tel" formControlName="phone" placeholder="Ej: 3001234567" autocomplete="tel" />
+      @if (group().controls['phone'].touched && group().controls['phone'].invalid) {
+        <p class="field-feedback" role="alert">El telefono debe tener entre 10 y 15 caracteres.</p>
+      }
+    </div>
+  </div>
+</section>

@@ -4,6 +4,8 @@ export const environment = {
     searchUrl: 'http://localhost:3002',
     comentariosUrl: 'http://localhost:3003',
     authUrl: 'http://localhost:3004',
+    proveedores: "http://localhost:3005",
     trasacciones: "http://127.0.0.1:3006",
+    clientes: "http://localhost:3007",
     apiUrl: 'https://dpyrs6tuvj15e.cloudfront.net'
 };
