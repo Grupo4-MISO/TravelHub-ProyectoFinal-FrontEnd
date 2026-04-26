@@ -76,12 +76,17 @@
               <td>{{ reservaActiva.id_visual_habitacion }}</td>
             </tr>
             <tr>
-              <th scope="row">Check-in</th>
-              <td>{{ reservaActiva.check_in }}</td>
+              <th scope="row">Fechas</th>
+              <td>Desde: {{ reservaActiva.check_in }} <br>
+               Hasta: {{ reservaActiva.check_out }}
+               </td>
             </tr>
             <tr class="table-info">
-              <th scope="row">Check-out</th>
-              <td>{{ reservaActiva.check_out }}</td>
+              <th scope="row">Titular</th>
+              <td>{{ reservaActiva.usuario?.first_name }} {{ reservaActiva.usuario?.last_name }} <br>
+                {{ reservaActiva.usuario?.country }} <br>
+                {{ reservaActiva.usuario?.email }}  
+            </td>
             </tr>
             <tr>
               <th scope="row">Valor Total</th>

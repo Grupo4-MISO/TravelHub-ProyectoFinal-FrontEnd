@@ -1,0 +1,103 @@
+<div class="containterDashboard"> 
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        @if(usuario?.gender == 'Male'){
+          <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1776915887/jeffrey-keenan-pUhxoSapPFA-unsplash_iak6s7.jpg" class="img-fluid rounded-start" alt="...">
+        }
+        @if(usuario?.gender == 'Female'){
+          <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775406880/cld-sample.jpg" class="img-fluid rounded-start" alt="...">
+        }
+
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"> {{ usuario?.first_name || 'Cargando Usuario...'}} {{ usuario?.last_name }}</h5>
+          <p class="card-text">{{ usuario?.country }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <table class="table table-hover">
+      <thead>
+        <tr class="table-secondary" data-cy="reservas-header">
+          <th scope="col" colspan="7">Reservas</th>
+        </tr>
+        <tr>
+          <th scope="col">Id Reserva</th>
+          <th scope="col">Hotel</th>
+          <th scope="col">Check in</th>
+          <th scope="col">Check out</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr #fila *ngFor="let reserva of reservas; let i = index" (click)="ver_reserva(reserva, fila)">
+          <td>{{ reserva.public_id }}</td>
+          <td>{{ reserva.nombre_hotel || 'Cargando Hotel...' }}</td>
+          <td>{{ reserva.check_in }}</td>
+          <td>{{ reserva.check_out }}</td>
+        </tr>
+      </tbody>
+  </table>
+
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="detalleReserva" aria-labelledby="offcanvasScrollingLabel" data-bs-backdrop="static">
+    <div class="offcanvas-body">
+      @if (reservaActiva) {
+        <img [src]="reservaActiva.imagen" class="img-fluid mb-3" alt="Imagen de la habitación">
+        <table class="table table-striped" style="width: 100%;">
+          <tbody>
+            <tr class="table-info">
+              <th scope="row">Código</th>
+              <td>{{ reservaActiva.public_id }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Hotel</th>
+              <td>{{ reservaActiva.nombre_hotel }} <br> 
+                {{ reservaActiva.direccion_hotel }} {{ reservaActiva.pais_hotel }}</td>
+            </tr>
+            <tr class="table-info">
+              <th scope="row">Fechas</th>
+              <td>Desde: {{ reservaActiva.check_in }} <br> Hasta: {{reservaActiva.check_out}}</td>
+            </tr>
+            <!-- <tr>
+              <th scope="row">Valor</th>
+              <td>{{ reservaActiva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
+            </tr> -->
+            <tr>
+              <th scope="row">Estado</th>
+              <td>{{ reservaActiva.estado }}</td>
+            </tr>
+          </tbody>
+        </table>
+      } @else {
+        <p class="text-muted">No hay reserva seleccionada</p>
+      }
+      <div class="d-grid gap-2">
+        <button class="btn btn-danger" (click)="mostrar_modal()">Cancelar Reserva</button>
+        <button class="btn btn-secondary" (click)="ocultar_reserva()">Volver</button>
+      </div>
+
+    </div>
+  </div>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cancelar Reserva</h1>
+      </div>
+      <div class="modal-body" id="Modalbody">
+        <p>¿Está seguro de que desea cancelar la reserva {{ reservaActiva?.public_id }}? Esta acción no es revertible</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="cancelar_reserva()">Cancelar Reserva</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

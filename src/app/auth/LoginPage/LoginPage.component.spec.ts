@@ -56,7 +56,7 @@ describe('LoginPageComponent', () => {
   });
 
   it('should login successfully, persist session data and navigate to home', () => {
-    authServiceSpy.login.mockReturnValue(of({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QtdXNlciIsInJvbGUiOiJUUkFWRUxFUiJ9.signature', id: '25' }));
+    authServiceSpy.login.mockReturnValue(of({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QtdXNlciIsInJvbGUiOiJUUkFWRUxFUiJ9.signature', user: { id: '25' } }));
     vi.spyOn(component.helper, 'decodeToken').mockReturnValueOnce(
       { username: 'test-user', role: Role.TRAVELER },
     ).mockReturnValueOnce(
