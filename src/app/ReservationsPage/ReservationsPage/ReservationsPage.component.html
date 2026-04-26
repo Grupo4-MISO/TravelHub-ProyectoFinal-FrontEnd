@@ -2,8 +2,13 @@
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        imagen del usuario para conseguir
-        <img src="" class="img-fluid rounded-start" alt="...">
+        @if(usuario?.gender == 'Male'){
+          <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1776915887/jeffrey-keenan-pUhxoSapPFA-unsplash_iak6s7.jpg" class="img-fluid rounded-start" alt="...">
+        }
+        @if(usuario?.gender == 'Female'){
+          <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775406880/cld-sample.jpg" class="img-fluid rounded-start" alt="...">
+        }
+
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -17,53 +22,50 @@
   <table class="table table-hover">
       <thead>
         <tr class="table-secondary" data-cy="reservas-header">
-          <th scope="col" colspan="5">Reservas</th>
+          <th scope="col" colspan="7">Reservas</th>
         </tr>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Id Habitacion</th>
-          <th scope="col">Valor de la Reserva</th>
-          <th scope="col">Fechas</th>
-          <th scope="col">Estado</th>
+          <th scope="col">Id Reserva</th>
+          <th scope="col">Hotel</th>
+          <th scope="col">Check in</th>
+          <th scope="col">Check out</th>
         </tr>
       </thead>
       <tbody>
-        <tr #fila *ngFor="let reserva of reservas" (click)="ver_reserva(reserva, fila)">
+        <tr #fila *ngFor="let reserva of reservas; let i = index" (click)="ver_reserva(reserva, fila)">
           <td>{{ reserva.public_id }}</td>
-          <td>{{ reserva.id_visual_habitacion }}</td>
-          <td>{{ reserva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
-          <td>{{ reserva.check_in }} - {{ reserva.check_out }}</td>
-          <td>{{ reserva.estado }}</td>
+          <td>{{ reserva.nombre_hotel || 'Cargando Hotel...' }}</td>
+          <td>{{ reserva.check_in }}</td>
+          <td>{{ reserva.check_out }}</td>
         </tr>
       </tbody>
   </table>
 
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="detalleReserva" aria-labelledby="offcanvasScrollingLabel" data-bs-backdrop="static">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Reserva: {{ reservaActiva?.public_id }}</h5>
-    </div>
     <div class="offcanvas-body">
       @if (reservaActiva) {
+        <img [src]="reservaActiva.imagen" class="img-fluid mb-3" alt="Imagen de la habitación">
         <table class="table table-striped" style="width: 100%;">
           <tbody>
             <tr class="table-info">
-              <th scope="row">Habitación</th>
-              <td>{{ reservaActiva.id_visual_habitacion }}</td>
+              <th scope="row">Código</th>
+              <td>{{ reservaActiva.public_id }}</td>
             </tr>
             <tr>
-              <th scope="row">Check-in</th>
-              <td>{{ reservaActiva.check_in }}</td>
+              <th scope="row">Hotel</th>
+              <td>{{ reservaActiva.nombre_hotel }} <br> 
+                {{ reservaActiva.direccion_hotel }} {{ reservaActiva.pais_hotel }}</td>
             </tr>
             <tr class="table-info">
-              <th scope="row">Check-out</th>
-              <td>{{ reservaActiva.check_out }}</td>
+              <th scope="row">Fechas</th>
+              <td>Desde: {{ reservaActiva.check_in }} <br> Hasta: {{reservaActiva.check_out}}</td>
             </tr>
-            <tr>
-              <th scope="row">Valor Total</th>
+            <!-- <tr>
+              <th scope="row">Valor</th>
               <td>{{ reservaActiva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
-            </tr>
-            <tr class="table-info">
+            </tr> -->
+            <tr>
               <th scope="row">Estado</th>
               <td>{{ reservaActiva.estado }}</td>
             </tr>
@@ -73,11 +75,8 @@
         <p class="text-muted">No hay reserva seleccionada</p>
       }
       <div class="d-grid gap-2">
-        @if (reservaActiva?.estado === 'pendiente') {
-        <button class="btn btn-success">Confirmar Reserva</button>
-        }
-        <button class="btn btn-warning">Revocar Reserva</button>
-        <button class="btn btn-secondary">Volver</button>
+        <button class="btn btn-danger" (click)="mostrar_modal()">Cancelar Reserva</button>
+        <button class="btn btn-secondary" (click)="ocultar_reserva()">Volver</button>
       </div>
 
     </div>
@@ -88,13 +87,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cancelar Reserva</h1>
       </div>
       <div class="modal-body" id="Modalbody">
+        <p>¿Está seguro de que desea cancelar la reserva {{ reservaActiva?.public_id }}? Esta acción no es revertible</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger">Revocar Reserva</button>
-        <button type="button" class="btn btn-secondary">Volver</button>
+        <button type="button" class="btn btn-danger" (click)="cancelar_reserva()">Cancelar Reserva</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
       </div>
     </div>
   </div>
