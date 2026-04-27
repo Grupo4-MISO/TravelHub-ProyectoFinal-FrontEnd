@@ -38,6 +38,8 @@ export class PaymentService {
 	private readonly paymentsEndpoint = `${this.api_url}/api/v1/Transactions/payments`;
 
 	createPayment(payload: CreatePaymentRequest): Observable<CreatePaymentResponse> {
-		return this.http.post<CreatePaymentResponse>(this.paymentsEndpoint, payload);
+		const token = sessionStorage.getItem('token');
+    	const headers = { 'Authorization': `Bearer ${token}` };
+		return this.http.post<CreatePaymentResponse>(this.paymentsEndpoint, payload, { headers });
 	}
 }
