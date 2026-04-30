@@ -1,0 +1,63 @@
+<section [formGroup]="group()" class="section-card" aria-labelledby="traveler-data-title">
+  <h2 id="traveler-data-title">Datos personales</h2>
+
+  <label for="traveler-document">Numero de documento</label>
+  <input id="traveler-document" type="text" formControlName="documentNumber" placeholder="Ej: 502356897" autocomplete="off" />
+@if (group().controls['documentNumber'].touched && group().controls['documentNumber'].invalid) {
+    <p class="field-feedback" role="alert">El numero de documento debe tener entre 8 y 10 caracteres.</p>
+  }
+  <div class="grid-two">
+    <div class="field">
+      <label for="traveler-first-name">Nombre</label>
+      <input id="traveler-first-name" type="text" formControlName="first_name" placeholder="Ej: Juan" autocomplete="given-name" />
+      @if (group().controls['first_name'].touched && group().controls['first_name'].invalid) {
+        <p class="field-feedback" role="alert">El nombre debe tener entre 2 y 100 caracteres.</p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="traveler-last-name">Apellido</label>
+      <input id="traveler-last-name" type="text" formControlName="last_name" placeholder="Ej: Pérez" autocomplete="family-name" />
+      @if (group().controls['last_name'].touched && group().controls['last_name'].invalid) {
+        <p class="field-feedback" role="alert">El apellido debe tener entre 2 y 100 caracteres.</p>
+      }
+    </div>
+  </div>
+
+  <label for="traveler-email">Correo</label>
+  <input id="traveler-email" type="email" formControlName="email" placeholder="Ej: juan@micorreo.com" autocomplete="email" />
+  @if (group().controls['email'].touched && group().controls['email'].invalid) {
+    <p class="field-feedback" role="alert">Ingresa un correo valido (juan@micorreo.com).</p>
+  }
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="traveler-gender">Genero</label>
+      <select id="traveler-gender" formControlName="gender">
+        <option value="Female">Femenino</option>
+        <option value="Male">Masculino</option>
+        <option value="Other">Otro</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="traveler-phone">Telefono</label>
+      <input id="traveler-phone" type="tel" formControlName="phone" placeholder="Ej: 3001234567" autocomplete="tel" />
+      @if (group().controls['phone'].touched && group().controls['phone'].invalid) {
+        <p class="field-feedback" role="alert">El telefono debe tener entre 10 y 15 caracteres.</p>
+      }
+    </div>
+  </div>
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="traveler-password">Contraseña</label>
+      <input id="traveler-password" type="password" formControlName="password" placeholder="Ej: ********" autocomplete="new-password" />
+      @if (group().controls['password'].touched && group().controls['password'].invalid) {
+        <p class="field-feedback" role="alert">La contraseña debe tener al menos 8 caracteres.</p>
+      }
+    </div>
+  </div>
+
+  <input type="hidden" formControlName="photo" />
+</section>

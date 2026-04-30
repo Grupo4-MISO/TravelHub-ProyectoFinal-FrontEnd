@@ -6,5 +6,8 @@ export const environment = {
     searchUrl: api_production,
     authUrl: api_production,
     comentariosUrl: api_production,
+    proveedores: api_production,
+    trasacciones: api_production,
+    clientes: api_production,
     apiUrl: api_production
 };

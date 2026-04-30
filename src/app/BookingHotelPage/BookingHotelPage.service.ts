@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class BookingHotelPageService {
   private inventarios_url = environment.inventariosUrl;
   private reservas_url = environment.reservasUrl;
+  private users_url = environment.authUrl;
 
 constructor(private http: HttpClient) { }
 
@@ -37,5 +39,11 @@ constructor(private http: HttpClient) { }
 
   revocarReserva(reservaId: string){
     return this.http.post<any>(`${this.reservas_url}/api/v1/reservas/revocar/${reservaId}`, {});
+  }
+
+  obtenerUsuario(userId: string){
+    const token = sessionStorage.getItem('token');
+    const headers = { 'Authorization': `Bearer ${token}` };
+    return this.http.get<any>(`${this.users_url}/api/v1/auth/users/${userId}`, { headers });
   }
 }

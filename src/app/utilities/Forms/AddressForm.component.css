@@ -1,0 +1,71 @@
+.section-card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 1px solid #d4dbe8;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.grid-two,
+.grid-three {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: 600;
+  color: #223047;
+}
+
+input,
+select {
+  height: 2.6rem;
+  border: 1px solid #c4cede;
+  border-radius: 8px;
+  padding: 0 0.75rem;
+  background-color: #ffffff;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #0d6efd66;
+  border-color: #0d6efd;
+}
+
+.field-feedback {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 900px) {
+  .grid-three {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .grid-two,
+  .grid-three {
+    grid-template-columns: 1fr;
+  }
+}

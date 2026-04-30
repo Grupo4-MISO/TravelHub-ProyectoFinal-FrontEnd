@@ -1,0 +1,115 @@
+<section [formGroup]="group()" class="section-card" aria-labelledby="address-form-title">
+  <h2 id="address-form-title">Direccion</h2>
+
+  <div class="field">
+    <label for="address-line1">Linea 1</label>
+    <input id="address-line1" type="text" formControlName="line1" placeholder="Ej: Calle 123" autocomplete="address-line1" />
+    @if (group().controls['line1'].touched && group().controls['line1'].invalid) {
+      <p class="field-feedback" role="alert">La linea 1 es obligatoria y debe tener hasta 120 caracteres.</p>
+    }
+  </div>
+
+  <div class="field">
+    <label for="address-line2">Linea 2</label>
+    <input id="address-line2" type="text" formControlName="line2" placeholder="Ej: Apt 456" autocomplete="address-line2" />
+    @if (group().controls['line2'].touched && group().controls['line2'].invalid) {
+      <p class="field-feedback" role="alert">La linea 2 debe tener hasta 120 caracteres.</p>
+    }
+  </div>
+
+  <div class="grid-two">
+    <div class="field">
+      <label for="address-city">Ciudad</label>
+      @if (cities().length === 0) {
+        <input
+          id="address-city"
+          type="text"
+          formControlName="city"
+          autocomplete="address-level2"
+          [readonly]="isLoadingCities()"
+          placeholder="Ej: Ciudad de México" />
+      } @else {
+        <select
+          id="address-city"
+          formControlName="city"
+          autocomplete="address-level2"
+          [disabled]="isLoadingCities()">
+          @if (isLoadingCities()) {
+            <option value="">Cargando ciudades...</option>
+          } @else {
+            @for (city of cities(); track city) {
+              <option [value]="city">{{ city }}</option>
+            }
+          }
+        </select>
+      }
+
+      @if (citiesError()) {
+        <p class="field-feedback" role="alert">{{ citiesError() }}</p>
+      }
+      @if (group().controls['city'].touched && group().controls['city'].invalid) {
+        <p class="field-feedback" role="alert">La ciudad es obligatoria y debe tener hasta 80 caracteres.</p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="address-state">Estado/Departamento</label>
+      @if (states().length === 0) {
+        <input
+          id="address-state"
+          type="text"
+          formControlName="state"
+          autocomplete="address-level1"
+          [readonly]="isLoadingStates()"
+          placeholder="Ej: Estado de México" />
+      } @else {
+        <select
+          id="address-state"
+          formControlName="state"
+          autocomplete="address-level1"
+          [disabled]="isLoadingStates()">
+          @if (isLoadingStates()) {
+            <option value="">Cargando estados...</option>
+          } @else {
+            @for (state of states(); track state) {
+              <option [value]="state">{{ state }}</option>
+            }
+          }
+        </select>
+      }
+
+      @if (statesError()) {
+        <p class="field-feedback" role="alert">{{ statesError() }}</p>
+      }
+      @if (group().controls['state'].touched && group().controls['state'].invalid) {
+        <p class="field-feedback" role="alert">El estado/departamento es obligatorio y debe tener hasta 80 caracteres.</p>
+      }
+    </div>
+  </div>
+
+  <div class="grid-three">
+    <div class="field">
+      <label for="address-country">Pais</label>
+      <input id="address-country" type="text" formControlName="country" autocomplete="country-name" readonly />
+      @if (group().controls['country'].touched && group().controls['country'].invalid) {
+        <p class="field-feedback" role="alert">El pais es obligatorio y debe tener hasta 80 caracteres.</p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="address-country-code">Codigo pais</label>
+      <input id="address-country-code" type="text" formControlName="countryCode" autocomplete="country" readonly />
+      @if (group().controls['countryCode'].touched && group().controls['countryCode'].invalid) {
+        <p class="field-feedback" role="alert">El codigo de pais es obligatorio y debe tener hasta 6 caracteres.</p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="address-postal">Codigo postal</label>
+      <input id="address-postal" type="text" formControlName="postal_code" autocomplete="postal-code" placeholder="Ej: 12345" />
+      @if (group().controls['postal_code'].touched && group().controls['postal_code'].invalid) {
+        <p class="field-feedback" role="alert">El codigo postal es obligatorio y debe tener hasta 20 caracteres.</p>
+      }
+    </div>
+  </div>
+</section>

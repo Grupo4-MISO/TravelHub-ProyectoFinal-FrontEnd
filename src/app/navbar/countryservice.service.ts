@@ -4,7 +4,7 @@ import { CountryList } from './countrylist';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class CountryService {

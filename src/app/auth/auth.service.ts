@@ -53,4 +53,9 @@ export class AuthService {
   getRoleUser(): string | null {
     return sessionStorage.getItem('role');
   }
+
+  resolveCurrentUserId(): string | null {
+    const idUsuario = sessionStorage.getItem('idUsuario');
+    return idUsuario && idUsuario.trim().length > 0 ? idUsuario : null;
+  }
 }

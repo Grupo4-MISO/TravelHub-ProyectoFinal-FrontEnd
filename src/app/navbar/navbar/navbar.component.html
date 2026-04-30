@@ -16,7 +16,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nv-link">
+        <a class="nav-link nv-link" (click)="routeReservations()">
           <img src="/iconos/calendar-ico.svg" class="nv-icon">
           Reservas
         </a>
@@ -37,7 +37,7 @@
       </li>
     }
     <li class="nav-item">
-      <a class="nav-link nv-link final" href="#">
+      <a class="nav-link nv-link final" [routerLink]="['/help']">
         <img src="/iconos/service-bell.svg" class="nv-icon">
         Ayuda
       </a>
@@ -76,7 +76,7 @@
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2">
       <button type="button" class="btn btn-lg btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
-      <button type="button" class="btn btn-lg btn-brand-secondary">Crear Cuenta</button>
+      <button type="button" class="btn btn-lg btn-brand-secondary" [routerLink]="['/auth/create']">Crear Cuenta</button>
     </div>
   }
   @if (isAuthenticated()) {

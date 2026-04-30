@@ -1,0 +1,34 @@
+<section class="create-account-page" aria-labelledby="create-account-title">
+  <header class="create-header">
+    <h1 id="create-account-title">Crear Cuenta</h1>
+    <p>¿Cómo quieres aparecer en la plataforma?.</p>
+  </header>
+
+  <div class="switch" role="tablist" aria-label="Seleccion de tipo de cuenta">
+    <button
+      type="button"
+      role="tab"
+      [attr.aria-selected]="isTravelerView()"
+      [class.active]="isTravelerView()"
+      (click)="showTraveler()">
+      Viajero
+    </button>
+
+    <button
+      type="button"
+      role="tab"
+      [attr.aria-selected]="!isTravelerView()"
+      [class.active]="!isTravelerView()"
+      (click)="showProvider()">
+      Proveedor
+    </button>
+  </div>
+
+  <div class="content-panel">
+    @if (isTravelerView()) {
+      <app-traveler-form></app-traveler-form>
+    } @else {
+      <app-provider-form></app-provider-form>
+    }
+  </div>
+</section>

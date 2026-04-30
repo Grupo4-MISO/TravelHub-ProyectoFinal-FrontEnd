@@ -38,6 +38,15 @@ export class PaymentService {
 	private readonly paymentsEndpoint = `${this.api_url}/api/v1/Transactions/payments`;
 
 	createPayment(payload: CreatePaymentRequest): Observable<CreatePaymentResponse> {
-		return this.http.post<CreatePaymentResponse>(this.paymentsEndpoint, payload);
+		const token = sessionStorage.getItem('token');
+    	const headers = { 'Authorization': `Bearer ${token}` };
+		return this.http.post<CreatePaymentResponse>(this.paymentsEndpoint, payload, { headers });
+	}
+
+	getpaymentbyReserve(reserva_id: string): Observable<CreatePaymentResponse> {
+		const token = sessionStorage.getItem('token');
+		const headers = { 'Authorization': `Bearer ${token}` };
+		const url = `${this.paymentsEndpoint}/reserva/${reserva_id}`;
+		return this.http.get<CreatePaymentResponse>(url, { headers });
 	}
 }

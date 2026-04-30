@@ -3,7 +3,10 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/co
 import { BookingHotelPageService } from '../BookingHotelPage.service';
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import { PropertyDetailService } from '../../PropertyDetailPage/PropertyDetail.service';
+import { PaymentService } from '../../PaymentPage/Payment.service';
 import * as bootstrap from 'bootstrap';
+
 
 interface Hotel {
   id: string;
@@ -25,11 +28,22 @@ interface Reserva {
   id: string;
   public_id: string;
   habitacion_id: string;
+  user_id: string;
   id_visual_habitacion: string;
   valor: number;
+  moneda: string;
   check_in: string;
   check_out: string;
   estado: string;
+  usuario: Usuario | null;
+}
+
+interface Usuario {
+  id: string;
+  first_name: string;
+  last_name: string;
+  country: string;
+  email: string;
 }
 
 @Component({
@@ -57,6 +71,8 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
 
   constructor(
     private bookingService: BookingHotelPageService,
+    private propertyDetailService: PropertyDetailService,
+    private paymentService: PaymentService,
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef
   ) {}
@@ -96,8 +112,9 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     this.cargandoReservas = true;
 
     try {
+      const uuid_hotel = sessionStorage.getItem('idUsuario');
       const hotel = await firstValueFrom(
-        this.bookingService.identificarHospedaje(this.username)
+        this.propertyDetailService.getPropertyById(uuid_hotel!,"COP")
       ) as Hotel;
 
       this.hotel = hotel ?? null;
@@ -132,13 +149,30 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       this.cdr.detectChanges();
       this.actualizarReservas();
       this.cdr.detectChanges();
-      // console.log(this.reservas);
+      
+      this.cargarUsuarios();
+      this.cargarPagos();
 
     } catch (e) {
       this.hotel = null;
       this.habitaciones = [];
       console.error('Error cargando booking page', e);
     }
+    }
+
+    private async cargarUsuarios(){
+      const reservasConUsuario = this.reservas.filter(r => r.user_id);
+      for (let reserva of reservasConUsuario) {
+        try {
+          const usuario = await firstValueFrom(
+            this.bookingService.obtenerUsuario(reserva.user_id)
+          ) as Usuario;
+          reserva.usuario = usuario;
+        } catch (e) {
+          console.error('Error cargando usuario para reserva ' + reserva.id, e);
+        }}
+      
+      this.cdr.detectChanges();
     }
 
     idHabitaciones(): string[] {
@@ -168,6 +202,22 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       const dias = Math.ceil(diferenciaTiempo / (1000 * 3600 * 24));
       return dias;
     }
+
+    private async cargarPagos(){
+      for (let reserva of this.reservas) {
+        try {
+          const pagos = await firstValueFrom(
+            this.paymentService.getpaymentbyReserve(reserva.id)
+          ) as any;
+          console.log(pagos);
+          const pago = pagos?.[0];
+          if (pago?.amount) {
+            reserva.valor = Number(pago.amount);
+            reserva.moneda = pago.currency
+          }
+          this.cdr.detectChanges();
+        } catch (e) {}
+    }}
 
     ver_reserva(reserva: Reserva, fila: HTMLTableRowElement): void {
       const filas = document.querySelectorAll('.active_reserve');
