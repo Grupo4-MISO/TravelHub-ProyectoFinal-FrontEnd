@@ -31,7 +31,7 @@
         <tr #fila *ngFor="let reserva of reservas" (click)="ver_reserva(reserva, fila)">
           <td>{{ reserva.public_id }}</td>
           <td>{{ reserva.id_visual_habitacion }}</td>
-          <td>{{ reserva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
+          <td>{{ reserva.moneda || 'COP' }}: {{ (reserva.valor) | number:'1.0-0' }}</td>
           <td>{{ reserva.check_in }} - {{ reserva.check_out }}</td>
           <td>{{ reserva.estado }}</td>
         </tr>
@@ -39,7 +39,7 @@
     }
     @if (modo=='habitaciones'){
       <thead>
-        <tr class="table-secondary">
+        <tr class="table-secondary">  
           <th scope="col" colspan="5">Habitaciones</th>
         </tr>
         <tr>
@@ -84,13 +84,13 @@
             <tr class="table-info">
               <th scope="row">Titular</th>
               <td>{{ reservaActiva.usuario?.first_name }} {{ reservaActiva.usuario?.last_name }} <br>
-                {{ reservaActiva.usuario?.country }} <br>
+                {{ reservaActiva.usuario?.country || 'Colombia'}} <br>
                 {{ reservaActiva.usuario?.email }}  
             </td>
             </tr>
             <tr>
               <th scope="row">Valor Total</th>
-              <td>{{ reservaActiva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
+              <td>{{ reservaActiva.moneda || 'COP' }}: {{ (reservaActiva.valor) | number:'1.0-0' }}</td>
             </tr>
             <tr class="table-info">
               <th scope="row">Estado</th>

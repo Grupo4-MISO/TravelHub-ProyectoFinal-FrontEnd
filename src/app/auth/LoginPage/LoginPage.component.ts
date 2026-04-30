@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../auth.service';
-import { Role } from '../../Utilities/Role';
+import { Role } from '../../utilities/Role';
 import { auth } from '../auth';
 import { ProviderService } from '../../ProviderPage/provider.service';
 import { TravelerService } from '../../TravelerPage/traveler.service';
@@ -81,7 +81,7 @@ export class LoginPageComponent implements OnInit {
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
             error: () => {
-              this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
+              // this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
           });
@@ -96,7 +96,7 @@ export class LoginPageComponent implements OnInit {
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
             error: () => {
-              this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
+              // this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
           });

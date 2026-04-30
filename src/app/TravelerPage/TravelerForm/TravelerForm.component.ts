@@ -6,7 +6,7 @@ import { catchError, finalize, of } from 'rxjs';
 import { CountryList } from '../../navbar/countrylist';
 import { NavbarService } from '../../navbar/navbar.service';
 import { CountryState, ProviderLocationService, StateCity } from '../../ProviderPage/provider-location.service';
-import { AddressFormComponent } from '../../Utilities/Forms/AddressForm.component';
+import { AddressFormComponent } from '../../utilities/Forms/AddressForm.component';
 import { TravelerDataComponent } from '../TravelerData/TravelerData.component';
 import { CreateTravelerPayload } from '../traveler.models';
 import { TravelerService } from '../traveler.service';

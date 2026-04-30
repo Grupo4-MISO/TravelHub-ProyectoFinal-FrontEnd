@@ -4,7 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError, finalize, of } from 'rxjs';
 import { NavbarService } from '../../navbar/navbar.service';
-import { AddressFormComponent } from '../../Utilities/Forms/AddressForm.component';
+import { AddressFormComponent } from '../../utilities/Forms/AddressForm.component';
 import { ProviderCompanyComponent } from '../ProviderCompany/ProviderCompany.component';
 import { ProviderManagerComponent } from '../ProviderManager/ProviderManager.component';
 import { CountryState, ProviderLocationService, StateCity } from '../provider-location.service';
