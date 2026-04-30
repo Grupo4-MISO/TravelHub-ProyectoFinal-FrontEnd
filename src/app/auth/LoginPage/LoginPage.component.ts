@@ -96,7 +96,7 @@ export class LoginPageComponent implements OnInit {
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
             error: () => {
-              this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
+              // this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
           });

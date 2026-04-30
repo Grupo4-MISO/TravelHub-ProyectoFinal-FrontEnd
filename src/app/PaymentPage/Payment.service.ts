@@ -42,4 +42,11 @@ export class PaymentService {
     	const headers = { 'Authorization': `Bearer ${token}` };
 		return this.http.post<CreatePaymentResponse>(this.paymentsEndpoint, payload, { headers });
 	}
+
+	getpaymentbyReserve(reserva_id: string): Observable<CreatePaymentResponse> {
+		const token = sessionStorage.getItem('token');
+		const headers = { 'Authorization': `Bearer ${token}` };
+		const url = `${this.paymentsEndpoint}/reserva/${reserva_id}`;
+		return this.http.get<CreatePaymentResponse>(url, { headers });
+	}
 }

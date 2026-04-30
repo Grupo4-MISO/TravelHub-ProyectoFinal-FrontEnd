@@ -4,6 +4,7 @@ import { BookingHotelPageService } from '../BookingHotelPage.service';
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { PropertyDetailService } from '../../PropertyDetailPage/PropertyDetail.service';
+import { PaymentService } from '../../PaymentPage/Payment.service';
 import * as bootstrap from 'bootstrap';
 
 
@@ -70,6 +71,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
   constructor(
     private bookingService: BookingHotelPageService,
     private propertyDetailService: PropertyDetailService,
+    private paymentService: PaymentService,
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef
   ) {}
@@ -148,6 +150,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       this.cdr.detectChanges();
       
       this.cargarUsuarios();
+      this.cargarPagos();
 
     } catch (e) {
       this.hotel = null;
@@ -198,6 +201,20 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       const dias = Math.ceil(diferenciaTiempo / (1000 * 3600 * 24));
       return dias;
     }
+
+    private async cargarPagos(){
+      for (let reserva of this.reservas) {
+        try {
+          const pagos = await firstValueFrom(
+            this.paymentService.getpaymentbyReserve(reserva.id)
+          ) as any;
+          const pago = pagos?.[0];
+          if (pago?.amount) {
+            reserva.valor = Number(pago.amount);
+          }
+          this.cdr.detectChanges();
+        } catch (e) {}
+    }}
 
     ver_reserva(reserva: Reserva, fila: HTMLTableRowElement): void {
       const filas = document.querySelectorAll('.active_reserve');

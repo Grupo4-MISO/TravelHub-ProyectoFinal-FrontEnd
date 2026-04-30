@@ -2,13 +2,11 @@
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        @if(usuario?.gender == 'Male'){
-          <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1776915887/jeffrey-keenan-pUhxoSapPFA-unsplash_iak6s7.jpg" class="img-fluid rounded-start" alt="...">
-        }
         @if(usuario?.gender == 'Female'){
           <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775406880/cld-sample.jpg" class="img-fluid rounded-start" alt="...">
+        }@else {
+          <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1776915887/jeffrey-keenan-pUhxoSapPFA-unsplash_iak6s7.jpg" class="img-fluid rounded-start" alt="...">
         }
-
       </div>
       <div class="col-md-8">
         <div class="card-body">
