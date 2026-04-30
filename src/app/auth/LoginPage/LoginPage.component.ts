@@ -81,7 +81,7 @@ export class LoginPageComponent implements OnInit {
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
             error: () => {
-              this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
+              // this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
               this.router.navigate([this.redirect], { queryParams: this.queryParams });
             },
           });
