@@ -59,14 +59,21 @@
               <th scope="row">Fechas</th>
               <td>Desde: {{ reservaActiva.check_in }} <br> Hasta: {{reservaActiva.check_out}}</td>
             </tr>
-            <!-- <tr>
+            @if (reservaActiva.valor){
+            <tr>
               <th scope="row">Valor</th>
-              <td>{{ reservaActiva.valor | currency:'COP ': 'symbol': '1.0-0' }}</td>
-            </tr> -->
+              <td>{{ reservaActiva.moneda || 'COP' }}: {{ (reservaActiva.valor) | number:'1.0-0' }}</td>
+            </tr> 
+            <tr class ="table-info">
+              <th scope="row">Estado</th>
+              <td>{{ reservaActiva.estado }}</td>
+            </tr>
+          } @else {
             <tr>
               <th scope="row">Estado</th>
               <td>{{ reservaActiva.estado }}</td>
             </tr>
+          }
           </tbody>
         </table>
       } @else {

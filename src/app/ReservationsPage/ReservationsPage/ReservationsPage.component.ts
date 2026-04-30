@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationsPageService } from '../ReservationsPage.service';
+import { PaymentService } from '../../PaymentPage/Payment.service';
 import { firstValueFrom } from 'rxjs';
 import { ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
@@ -22,6 +23,7 @@ interface Reserva{
   check_in: string;
   check_out: string;
   valor: number;
+  moneda: string;
   estado: string;
   nombre_hotel: string;
   pais_hotel: string;
@@ -55,6 +57,7 @@ export class ReservationsPageComponent implements OnInit, AfterViewInit {
 
   constructor(
     private reservationsService: ReservationsPageService,
+    private paymentService: PaymentService,
     private cdr: ChangeDetectorRef
   ) { }
 
@@ -66,6 +69,7 @@ export class ReservationsPageComponent implements OnInit, AfterViewInit {
     await this.cargarUsuario();
     await this.cargarReservas();
     await this.cargarHoteles();
+    await this.cargarPagos();
   }
 
   ngAfterViewInit(): void {
@@ -116,6 +120,22 @@ export class ReservationsPageComponent implements OnInit, AfterViewInit {
       this.cdr.detectChanges();
     }  
   }
+
+  async cargarPagos() {
+      for (let reserva of this.reservas) {
+        try {
+          const pagos = await firstValueFrom(
+            this.paymentService.getpaymentbyReserve(reserva.id)
+          ) as any;
+          console.log(pagos);
+          const pago = pagos?.[0];
+          if (pago?.amount) {
+            reserva.valor = Number(pago.amount);
+            reserva.moneda = pago.currency
+          }
+          this.cdr.detectChanges();
+        } catch (e) {}
+  }}
 
   ver_reserva(reserva: Reserva, fila: HTMLTableRowElement): void {
     const filas = document.querySelectorAll('.active_reserve');

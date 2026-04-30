@@ -31,6 +31,7 @@ interface Reserva {
   user_id: string;
   id_visual_habitacion: string;
   valor: number;
+  moneda: string;
   check_in: string;
   check_out: string;
   estado: string;
@@ -208,9 +209,11 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
           const pagos = await firstValueFrom(
             this.paymentService.getpaymentbyReserve(reserva.id)
           ) as any;
+          console.log(pagos);
           const pago = pagos?.[0];
           if (pago?.amount) {
             reserva.valor = Number(pago.amount);
+            reserva.moneda = pago.currency
           }
           this.cdr.detectChanges();
         } catch (e) {}
