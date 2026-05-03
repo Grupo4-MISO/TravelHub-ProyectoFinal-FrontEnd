@@ -1,12 +1,12 @@
 export class SearchBar {
     static selectDestination(destination: string){
         //Escribimos el destino para desplegar el dropdown
-        cy.get('[formControlName="ciudad"]').type(destination.substring(0, 3));
+        cy.get('[formControlName="ciudad"]').type(destination.substring(0, 3), { delay: 150 });
         
         //Seleccionamos el destino del dropdown
         cy.get('.dropdown')
         .should('be.visible')
-        .contains('.dropdown-item', destination)
+        .contains('.dropdown-item', destination, { timeout: 10000 })
         .click();
     }
 

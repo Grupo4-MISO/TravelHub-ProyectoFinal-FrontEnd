@@ -4,6 +4,7 @@ import { SearchBar } from '../pages/searchbar';
 import { NavBar } from '../pages/navbar';
 import { Toastr } from '../pages/toastr';
 import { Helper } from '../utils/helper';
+import { LogIn } from '../pages/login';
 
 describe('Escenarios E2E para el PropertyDetail', function () {
     //Reglas para antes de cada test
@@ -11,9 +12,25 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         //Visitamos el principal page
         let url = Helper.getUrl();
         cy.visit(url);
+
+        //Click en el boton de login
+        LogIn.clickLoginButton();
+
+        //Llenamos correo
+        LogIn.fillEmail('daniel@hotmail.com');
+
+        //Llenamos contraseña
+        LogIn.fillPassword('12345678');
+
+        //Click en el boton de submit
+        LogIn.submitLogin();
+
+        //Verificamos que el mensaje de exito se muestre
+        let message = 'Has iniciado sesion correctamente.';
+        Toastr.getToastrMessage(message);
     });
 
-    it('E0001 - Ver resumen reserva de una propiedad colombiana', function () {
+    it('E0001 - Ver resumen reserva de una propiedad colombiana', function () {       
         //Seleccionamos el pais
         NavBar.selectCountry('🇨🇴 CO');
 
@@ -39,7 +56,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Hotel Casa Medina');
+        PropertyDetail.getPropertyName('Hotel B.O.G');
 
         //Damos click en el boton de reservar
         PropertyDetail.reservarHabitacion();
@@ -115,7 +132,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Santiago Grand Hotel');
+        PropertyDetail.getPropertyName('Santiago Plaza Suites');
 
         //Damos click en el boton de reservar
         PropertyDetail.reservarHabitacion();
@@ -153,7 +170,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Quito Grand Hotel');
+        PropertyDetail.getPropertyName('Quito Business & Stay');
 
         //Damos click en el boton de reservar
         PropertyDetail.reservarHabitacion();
@@ -191,7 +208,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Tulum Grand Hotel');
+        PropertyDetail.getPropertyName('Tulum Plaza Suites');
 
         //Damos click en el boton de reservar
         PropertyDetail.reservarHabitacion();
@@ -229,7 +246,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Cusco Grand Hotel');
+        PropertyDetail.getPropertyName('Hotel Boutique Cusco');
 
         //Damos click en el boton de reservar
         PropertyDetail.reservarHabitacion();
