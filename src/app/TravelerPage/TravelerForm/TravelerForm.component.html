@@ -16,7 +16,7 @@
       [citiesError]="citiesError()"></app-address-form>
 
     @if (submitError()) {
-      <p class="feedback error" role="alert">{{ submitError() }}</p>
+      <p data-cy="submit-error" class="feedback error" role="alert">{{ submitError() }}</p>
     }
 
     @if (submitSuccess()) {
@@ -24,7 +24,7 @@
     }
 
     <div class="actions">
-      <button type="submit" [disabled]="isSubmitting()">
+      <button data-cy="create-account-button" type="submit" [disabled]="isSubmitting()">
         {{ isSubmitting() ? 'Guardando...' : 'Crear mi cuenta' }}
       </button>
     </div>
