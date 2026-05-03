@@ -30,7 +30,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr #fila *ngFor="let reserva of reservas; let i = index" (click)="ver_reserva(reserva, fila)">
+        <tr #fila *ngFor="let reserva of reservas; let i = index" data-cy="select-reserva" (click)="ver_reserva(reserva, fila)">
           <td>{{ reserva.public_id }}</td>
           <td>{{ reserva.nombre_hotel || 'Cargando Hotel...' }}</td>
           <td>{{ reserva.check_in }}</td>
@@ -44,7 +44,7 @@
     <div class="offcanvas-body">
       @if (reservaActiva) {
         <img [src]="reservaActiva.imagen" class="img-fluid mb-3" alt="Imagen de la habitación">
-        <table class="table table-striped" style="width: 100%;">
+        <table class="table table-striped" style="width: 100%;" data-cy="modal-info">
           <tbody>
             <tr class="table-info">
               <th scope="row">Código</th>
@@ -80,8 +80,8 @@
         <p class="text-muted">No hay reserva seleccionada</p>
       }
       <div class="d-grid gap-2">
-        <button class="btn btn-danger" (click)="mostrar_modal()">Cancelar Reserva</button>
-        <button class="btn btn-secondary" (click)="ocultar_reserva()">Volver</button>
+        <button class="btn btn-danger" data-cy="cancel-reserva" (click)="mostrar_modal()">Cancelar Reserva</button>
+        <button class="btn btn-secondary" data-cy="volver-button-panel" (click)="ocultar_reserva()">Volver</button>
       </div>
 
     </div>
@@ -92,14 +92,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cancelar Reserva</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel" data-cy="modal-title">Cancelar Reserva</h1>
       </div>
       <div class="modal-body" id="Modalbody">
         <p>¿Está seguro de que desea cancelar la reserva {{ reservaActiva?.public_id }}? Esta acción no es revertible</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" (click)="cancelar_reserva()">Cancelar Reserva</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-cy="volver-button-modal">Volver</button>
       </div>
     </div>
   </div>
