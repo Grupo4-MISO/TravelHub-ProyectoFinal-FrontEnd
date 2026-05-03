@@ -38,7 +38,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Hotel Casa Medina');
+        PropertyDetail.getPropertyName('Hotel B.O.G');
     });
 
     it('E0002 - Detalle de una propiedad argentina', function () {
@@ -96,7 +96,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Santiago Grand Hotel');
+        PropertyDetail.getPropertyName('Santiago Plaza Suites');
     });
 
     it('E0004 - Detalle de una propiedad ecuatoriana', function () {
@@ -125,7 +125,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Quito Grand Hotel');
+        PropertyDetail.getPropertyName('Quito Business & Stay');
     });
 
     it('E0005 - Detalle de una propiedad mexicana', function () {
@@ -154,7 +154,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Tulum Grand Hotel');
+        PropertyDetail.getPropertyName('Tulum Plaza Suites');
     });
 
     it('E0006 - Detalle de una propiedad peruana', function () {
@@ -183,6 +183,6 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         PropertyDetail.selectPropertyDetail();
 
         //Validamos nombre del hospedaje
-        PropertyDetail.getPropertyName('Cusco Grand Hotel');
+        PropertyDetail.getPropertyName('Hotel Boutique Cusco');
     });
 });
