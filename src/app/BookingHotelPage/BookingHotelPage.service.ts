@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class BookingHotelPageService {
   private inventarios_url = environment.inventariosUrl;
-  private reservas_url = environment.reservasUrl;
+  public reservas_url = environment.reservasUrl;
   private users_url = environment.authUrl;
 
 constructor(private http: HttpClient) { }
