@@ -4,16 +4,18 @@ import { BookingHotelPageService } from '../../BookingHotelPage/BookingHotelPage
 
 @Component({
   selector: 'app-checkin-page',
-  templateUrl: './CheckInPage.component.html',
-  styleUrls: ['./CheckInPage.component.css'],
+  templateUrl: './CheckinPage.component.html',
+  styleUrls: ['./CheckinPage.component.css'],
   standalone: false
 })
-export class CheckInPageComponent implements OnInit {
+export class CheckinPageComponent implements OnInit {
 
   cargando = true;
   exito = false;
+
   mensaje = '';
-  codigoReserva = '';
+
+  reserva: any = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,28 +24,40 @@ export class CheckInPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const reservaId = this.route.snapshot.paramMap.get('id');
+    const reservaId =
+      this.route.snapshot.paramMap.get('id');
 
     if (!reservaId) {
+
       this.cargando = false;
       this.exito = false;
+
       this.mensaje = 'Reserva inválida';
+
       return;
     }
 
-    this.codigoReserva = reservaId;
-
-    this.bookingService.completarReserva(reservaId)
+    this.bookingService
+      .completarReserva(reservaId)
       .subscribe({
-        next: () => {
+
+        next: (response) => {
+
+          this.reserva = response.reserva;
+
+          this.mensaje = response.msg;
+
           this.cargando = false;
           this.exito = true;
-          this.mensaje = 'Tu check-in ha sido registrado exitosamente';
         },
+
         error: () => {
+
           this.cargando = false;
           this.exito = false;
-          this.mensaje = 'No fue posible completar el check-in';
+
+          this.mensaje =
+            'No fue posible completar el check-in';
         }
       });
   }
