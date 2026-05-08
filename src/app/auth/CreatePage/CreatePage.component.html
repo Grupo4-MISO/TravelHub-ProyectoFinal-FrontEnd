@@ -1,6 +1,6 @@
 <section class="create-account-page" aria-labelledby="create-account-title">
   <header class="create-header">
-    <h1 id="create-account-title">Crear Cuenta</h1>
+    <h1 id="create-account-title" data-cy="create-form-traveler">Crear Cuenta</h1>
     <p>¿Cómo quieres aparecer en la plataforma?.</p>
   </header>
 
@@ -10,7 +10,8 @@
       role="tab"
       [attr.aria-selected]="isTravelerView()"
       [class.active]="isTravelerView()"
-      (click)="showTraveler()">
+      (click)="showTraveler()"
+      data-cy="traveler-form-button">
       Viajero
     </button>
 

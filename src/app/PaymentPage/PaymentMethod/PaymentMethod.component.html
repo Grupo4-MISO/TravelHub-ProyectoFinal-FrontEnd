@@ -13,7 +13,8 @@
           [attr.aria-checked]="selectedProviderId() === provider.id"
           [attr.aria-label]="'Metodo de pago ' + provider.name"
           [class.is-selected]="selectedProviderId() === provider.id"
-          (click)="onSelectProvider(provider.id)">
+          (click)="onSelectProvider(provider.id)"
+          [attr.data-cy]="'payment-method-' + provider.name">
           <img
             class="provider-logo"
             [src]="provider.logo"
@@ -48,7 +49,9 @@
     type="button"
     class="confirm-btn"
     [disabled]="isLoadingProviders() || isSubmittingPayment() || !hasProviders()"
-    (click)="onConfirmReservation()">
+    (click)="onConfirmReservation()"
+    data-cy="confirmar-reserva"
+    >
     {{ isSubmittingPayment() ? 'Procesando pago...' : 'Confirmar Reserva' }}
   </button>
 </div>

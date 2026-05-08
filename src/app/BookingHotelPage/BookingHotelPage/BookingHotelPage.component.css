@@ -35,3 +35,45 @@ img{
     margin-left: 10%;
     align-items: center;
 }
+
+.qr-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-card{
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  text-align: center;
+  border: 1px solid #ececec;
+}
+
+.qr-header h5{
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: #222;
+}
+
+.qr-header p{
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.qr-code-wrapper{
+  margin: 20px 0;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+.qr-footer{
+  color: #666;
+  font-size: 13px;
+}

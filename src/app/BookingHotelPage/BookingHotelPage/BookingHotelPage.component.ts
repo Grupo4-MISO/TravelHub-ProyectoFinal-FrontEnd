@@ -69,6 +69,8 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
   offcanvasReserva: bootstrap.Offcanvas | null = null;
   modalReserva: bootstrap.Modal | null = null;
 
+  qrUrl: string = '';
+
   constructor(
     private bookingService: BookingHotelPageService,
     private propertyDetailService: PropertyDetailService,
@@ -76,7 +78,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef
   ) {}
-
+  
   ngOnInit(): void {
     this.username = sessionStorage.getItem('userName');
     this.cargarHotelYListas();
@@ -220,6 +222,8 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     }}
 
     ver_reserva(reserva: Reserva, fila: HTMLTableRowElement): void {
+      this.qrUrl = `${this.bookingService.reservas_url}/check-in/${reserva.id}`;
+      
       const filas = document.querySelectorAll('.active_reserve');
       filas.forEach(f => f.classList.remove('active_reserve'));
 
