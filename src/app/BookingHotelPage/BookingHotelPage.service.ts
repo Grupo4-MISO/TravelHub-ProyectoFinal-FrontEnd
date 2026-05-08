@@ -39,6 +39,12 @@ constructor(private http: HttpClient) { }
     return this.http.post<any>(`${this.reservas_url}/api/v1/reservas/confirmar/${reservaId}`, {}, { headers });
   }
 
+  completarReserva(reservaId: string){
+    let token = sessionStorage.getItem('token');
+    const headers = { 'Authorization': `Bearer ${token}` };
+    return this.http.post<any>(`${this.reservas_url}/api/v1/reservas/completar/${reservaId}`, {}, { headers });
+  }
+
   revocarReserva(reservaId: string){
     return this.http.post<any>(`${this.reservas_url}/api/v1/reservas/revocar/${reservaId}`, {});
   }

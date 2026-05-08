@@ -222,7 +222,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     }}
 
     ver_reserva(reserva: Reserva, fila: HTMLTableRowElement): void {
-      this.qrUrl = `${this.bookingService.reservas_url}/api/v1/reservas/completar/${reserva.id}`;
+      this.qrUrl = `${this.bookingService.reservas_url}/check-in/${reserva.id}`;
       
       const filas = document.querySelectorAll('.active_reserve');
       filas.forEach(f => f.classList.remove('active_reserve'));

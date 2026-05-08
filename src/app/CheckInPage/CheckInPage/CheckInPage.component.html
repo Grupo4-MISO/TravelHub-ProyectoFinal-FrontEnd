@@ -1,0 +1,75 @@
+<!-- CheckinPage.component.html -->
+
+<div class="checkin-page">
+
+  <div class="checkin-card">
+
+    @if (cargando) {
+
+      <div class="loading-container">
+
+        <div class="spinner-border text-primary loading-spinner" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <h2>Procesando Check-In...</h2>
+
+        <p>
+          Estamos validando la reserva
+        </p>
+
+      </div>
+
+    }
+
+    @if (!cargando && exito) {
+
+      <div class="success-container">
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <h1>Check-In Confirmado!</h1>
+
+        <p class="success-message">
+          {{ mensaje }}
+        </p>
+
+        <div class="reservation-box">
+
+          <span class="reservation-label">
+            Código de la reserva
+          </span>
+
+          <span class="reservation-code">
+            {{ codigoReserva }}
+          </span>
+
+        </div>
+
+      </div>
+
+    }
+
+    @if (!cargando && !exito) {
+
+      <div class="error-container">
+
+        <div class="error-icon">
+          ✕
+        </div>
+
+        <h1>Error en el Check-In</h1>
+
+        <p class="error-message">
+          {{ mensaje }}
+        </p>
+
+      </div>
+
+    }
+
+  </div>
+
+</div>
