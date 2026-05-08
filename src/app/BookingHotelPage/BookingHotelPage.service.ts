@@ -34,7 +34,9 @@ constructor(private http: HttpClient) { }
   }
 
   confirmarReserva(reservaId: string){
-    return this.http.post<any>(`${this.reservas_url}/api/v1/reservas/confirmar/${reservaId}`, {});
+    let token = sessionStorage.getItem('token');
+    const headers = { 'Authorization': `Bearer ${token}` };
+    return this.http.post<any>(`${this.reservas_url}/api/v1/reservas/confirmar/${reservaId}`, {}, { headers });
   }
 
   revocarReserva(reservaId: string){
