@@ -78,11 +78,11 @@ export class LoginPageComponent implements OnInit {
               sessionStorage.setItem('name', traveler.first_name + ' ' + traveler.last_name);
               sessionStorage.setItem('documentNumber', traveler.documentNumber);
               sessionStorage.setItem('travelerStatus', traveler.travelerStatus);
-              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+              this.router.navigateByUrl(this.redirect);
             },
             error: () => {
               // this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
-              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+              this.router.navigateByUrl(this.redirect);
             },
           });
         }
@@ -93,15 +93,15 @@ export class LoginPageComponent implements OnInit {
               sessionStorage.setItem('name', provider.name);
               sessionStorage.setItem('documentNumber', provider.documentNumber);
               sessionStorage.setItem('providerStatus', provider.providerStatus);
-              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+              this.router.navigateByUrl(this.redirect);
             },
             error: () => {
               // this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
-              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+              this.router.navigateByUrl(this.redirect);
             },
           });
         }
-        this.router.navigate([this.redirect], { queryParams: this.queryParams });
+        // this.router.navigate([this.redirect], { queryParams: this.queryParams });
       },
       (error) => {
         this.error = 'Usuario o contraseña incorrectos';

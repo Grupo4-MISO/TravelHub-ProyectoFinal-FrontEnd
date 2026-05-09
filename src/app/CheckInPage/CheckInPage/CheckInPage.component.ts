@@ -26,60 +26,71 @@ export class CheckInPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const reservaId =
-      this.route.snapshot.paramMap.get('id');
+    this.route.paramMap.subscribe(params => {
 
-    if (!reservaId) {
+      const reservaId = params.get('id');
 
-      this.cargando = false;
+      if (!reservaId) {
+
+        this.cargando = false;
+        this.exito = false;
+
+        this.mensaje = 'Reserva inválida';
+
+        return;
+      }
+
+      // Validamos si existe sesión
+      const token = sessionStorage.getItem('token');
+
+      // Si NO hay token -> login
+      if (!token) {
+
+        this.router.navigate(
+          ['/login'],
+          {
+            queryParams: {
+              redirect: `/check-in/${reservaId}`
+            }
+          }
+        );
+
+        return;
+      }
+
+      // Reiniciamos estados
+      this.cargando = true;
       this.exito = false;
 
-      this.mensaje = 'Reserva inválida';
+      // Ejecutamos check-in
+      this.bookingService
+        .completarReserva(reservaId)
+        .subscribe({
 
-      return;
-    }
+          next: (response) => {
 
-    // Validamos si existe sesión
-    const token = sessionStorage.getItem('token');
+            console.log('CHECKIN OK', response);
 
-    // Si NO hay token -> login
-    if (!token) {
+            this.reserva = response.reserva;
 
-      this.router.navigate(
-        ['/login'],
-        {
-          queryParams: {
-            redirect: `/check-in/${reservaId}`
+            this.mensaje = response.msg;
+
+            this.cargando = false;
+            this.exito = true;
+          },
+
+          error: (err) => {
+
+            console.error('ERROR CHECKIN', err);
+
+            this.cargando = false;
+            this.exito = false;
+
+            this.mensaje =
+              'No fue posible completar el check-in';
           }
-        }
-      );
+        });
 
-      return;
-    }
-
-    // Si SI hay token -> ejecutar checkin
-    this.bookingService
-      .completarReserva(reservaId)
-      .subscribe({
-
-        next: (response) => {
-
-          this.reserva = response.reserva;
-
-          this.mensaje = response.msg;
-
-          this.cargando = false;
-          this.exito = true;
-        },
-
-        error: () => {
-
-          this.cargando = false;
-          this.exito = false;
-
-          this.mensaje =
-            'No fue posible completar el check-in';
-        }
-      });
+    });
   }
 }
