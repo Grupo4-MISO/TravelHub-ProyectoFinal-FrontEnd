@@ -49,7 +49,7 @@ export class CheckInPageComponent implements OnInit {
         ['/login'],
         {
           queryParams: {
-            redirect: `/checkin/${reservaId}`
+            redirect: `/check-in/${reservaId}`
           }
         }
       );
