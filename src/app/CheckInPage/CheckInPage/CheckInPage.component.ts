@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookingHotelPageService } from '../../BookingHotelPage/BookingHotelPage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkin-page',
@@ -19,7 +20,8 @@ export class CheckInPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private bookingService: BookingHotelPageService
+    private bookingService: BookingHotelPageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +39,25 @@ export class CheckInPageComponent implements OnInit {
       return;
     }
 
+    // Validamos si existe sesión
+    const token = sessionStorage.getItem('token');
+
+    // Si NO hay token -> login
+    if (!token) {
+
+      this.router.navigate(
+        ['/login'],
+        {
+          queryParams: {
+            redirect: `/checkin/${reservaId}`
+          }
+        }
+      );
+
+      return;
+    }
+
+    // Si SI hay token -> ejecutar checkin
     this.bookingService
       .completarReserva(reservaId)
       .subscribe({
