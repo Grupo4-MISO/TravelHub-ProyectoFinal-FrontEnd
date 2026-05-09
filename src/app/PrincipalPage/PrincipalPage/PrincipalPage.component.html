@@ -16,3 +16,55 @@
 </div>
 
 <app-searchbar></app-searchbar>
+
+<section class="featured-section">
+  <h2 class="featured-title">Propiedades Destacadas</h2>
+
+  <div *ngIf="loadingPopular" class="featured-loading">
+    <div class="spinner"></div>
+    <p><b>Cargando propiedades destacadas...</b></p>
+  </div>
+
+  <div *ngIf="!loadingPopular && errorPopular" class="featured-error">
+    <p>{{ errorPopular }}</p>
+  </div>
+
+  <div *ngIf="!loadingPopular && !errorPopular && popularAccommodations.length === 0" class="featured-empty">
+    <p>No hay propiedades destacadas disponibles en este momento.</p>
+  </div>
+
+  <div *ngIf="!loadingPopular && popularAccommodations.length > 0" class="featured-grid">
+    <div class="featured-card" *ngFor="let item of popularAccommodations">
+      <div class="featured-card-img">
+        <img [src]="item.imagenes[0]" alt="{{ item.nombre }}" loading="lazy">
+      </div>
+      <div class="featured-card-body">
+        <h3 class="featured-card-name">{{ item.nombre }}</h3>
+        <span class="featured-card-city">{{ item.ciudad }}, {{ item.pais }}</span>
+
+        <div class="featured-card-rating">
+          <div class="stars">
+            <span *ngFor="let star of getStarArray(item.rating)" class="star filled">★</span>
+            <span *ngFor="let star of getEmptyStarArray(item.rating)" class="star">☆</span>
+          </div>
+          <span class="rating-value">{{ item.rating }}</span>
+          <span class="rating-reviews">({{ item.reviews }} reseñas)</span>
+        </div>
+
+        <div class="featured-card-room">
+          <span class="room-badge">{{ item.habitacion_mas_economica.capacidad }} persona(s)</span>
+          <span class="room-type">{{ item.habitacion_mas_economica.descripcion }}</span>
+        </div>
+
+        <div class="featured-card-price">
+          <span class="price-amount">${{ item.habitacion_mas_economica.precio | number }}</span>
+          <span class="price-period">/noche</span>
+        </div>
+
+        <button class="featured-card-btn" (click)="verDetallePopular(item.id)">
+          Ver detalle
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
