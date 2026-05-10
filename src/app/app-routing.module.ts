@@ -22,6 +22,18 @@ const routes: Routes = [
     loadComponent: () => import('./PaymentPage/Payment/Payment.component').then((c) => c.PaymentComponent)
   },
   {
+    path: 'tarifas',
+    loadComponent: () => import('./TarifasPage/TarifasPage/TarifasPage.component').then((c) => c.TarifasPageComponent)
+  },
+  {
+    path: 'tarifas/new',
+    loadComponent: () => import('./TarifasPage/TarifaCreate/TarifaCreate.component').then((c) => c.TarifaCreateComponent)
+  },
+  {
+    path: 'tarifas/edit/:id',
+    loadComponent: () => import('./TarifasPage/TarifaCreate/TarifaCreate.component').then((c) => c.TarifaCreateComponent)
+  },
+  {
     path: 'provider/new',
     loadComponent: () =>
       import('./ProviderPage/ProviderForm/ProviderForm.component').then((c) => c.ProviderFormComponent)
