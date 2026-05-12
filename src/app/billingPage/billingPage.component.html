@@ -1,0 +1,73 @@
+<div class="billingContainer">
+    <div class="row mb-2">
+      <div class="card mb-3" style="max-width: 540px; border: none;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775408091/vojtech-bruzek-Yrxr3bsPdS0-unsplash_l4ja49.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
+              <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="card mb-3 ingresos-card">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h5 class="card-title">Ingreso total - Mayo 2026</h5>
+        <h4> $1,234.56 </h4>
+        <p> Total generado por reservas confirmadas</p>
+      </div>
+      <div class="col-md-6 text-end">
+        <div class="chart-wrapper">
+          <canvas id="Ingresos"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+<table class="table table-striped">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="col">Habitación</th>
+      <th scope="col">Reservas Confirmadas</th>
+      <th scope="col">Ingreso total</th>
+      <th scope="col">Porcentaje del total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Habitación 101</td>
+      <td>15</td>
+      <td>$500.00</td>
+      <td>40%</td>
+    </tr>
+    <tr>
+      <td>Habitación 102</td>
+      <td>10</td>
+      <td>$300.00</td>
+      <td>24%</td>
+    </tr>
+    <tr>
+      <td>Habitación 103</td>
+      <td>5</td>
+      <td>$200.00</td>
+      <td>16%</td>
+    </tr>
+    <tr>
+      <td>Habitación 104</td>
+      <td>8</td>
+      <td>$234.56</td>
+      <td>20%</td>
+    </tr>
+  </tbody>
+</table>
+ 
+</div>

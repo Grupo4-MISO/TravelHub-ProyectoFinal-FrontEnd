@@ -7,6 +7,7 @@ import { BookingHotelPageComponent } from './BookingHotelPage/BookingHotelPage/B
 import { ReservationsPageComponent } from './ReservationsPage/ReservationsPage/ReservationsPage.component';
 import { HelpPageComponent } from './HelpPage/HelpPage.component';
 import { CheckinPageComponent } from './CheckInPage/CheckInPage/CheckInPage.component';
+import { BillingPageComponent } from './billingPage/billingPage.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalPageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'property', component: PropertyDetailComponent },
   { path: 'booking', component: BookingHotelPageComponent },
   { path: 'reservations', component: ReservationsPageComponent },
+  { path: 'billing', component: BillingPageComponent },
   { path: 'help', component: HelpPageComponent },
   {
     path: 'payment',
