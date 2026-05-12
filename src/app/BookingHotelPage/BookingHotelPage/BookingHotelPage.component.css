@@ -36,6 +36,36 @@ img{
     align-items: center;
 }
 
+#canvasBuscar {
+    padding: 16px;
+}   
+
+#canvasBuscar .btn {
+    width: 80%;
+    margin-left: 10%;
+}
+
+#canvasBuscar label  {
+    color: #015C77;
+}
+
+#botonFiltros {
+    background-color: #015C77 ;
+    color: white;
+    width: 140px;
+    margin-top: 30px;
+}
+
+#botonRemoverFiltros {
+    background-color: #F06D51  ;
+    color: white;
+    width: 140px;
+}
+
+.header-filtrado {
+    background-color: #f1c232   ;
+    color: black;
+    font-size: medium;
 .qr-container{
   display: flex;
   justify-content: center;

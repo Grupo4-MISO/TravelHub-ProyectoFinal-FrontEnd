@@ -1,23 +1,34 @@
 <div class="containterDashboard"> 
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775408091/vojtech-bruzek-Yrxr3bsPdS0-unsplash_l4ja49.jpg" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
-          <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
+  <div class="row mb-2">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775408091/vojtech-bruzek-Yrxr3bsPdS0-unsplash_l4ja49.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
+            <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
+          </div>
         </div>
       </div>
     </div>
+
+    @if(modo === 'reservas') {
+      <div class="col-md-3 d-flex flex-column align-items-end gap-2">
+        <button class="btn" id="botonFiltros" (click)="mostrar_filtros()">Buscar Reservas</button>
+        @if(filtroActivo) {
+          <button class="btn" id="botonRemoverFiltros" (click)="removerFiltros()">Remover Filtros</button>  
+        }
+      </div>
+    }
   </div>
   
   <table class="table table-hover">
     @if (modo=='reservas'){
       <thead>
         <tr class="table-secondary" data-cy="reservas-header">
-          <th scope="col" colspan="5">Reservas</th>
+          <th scope="col" colspan="5" id="headerReservas">Reservas</th>
         </tr>
         <tr>
           <th scope="col">Id</th>
@@ -29,11 +40,13 @@
       </thead>
       <tbody>
         <tr #fila *ngFor="let reserva of reservas" (click)="ver_reserva(reserva, fila)">
+          @if(reserva.visible) {
           <td>{{ reserva.public_id }}</td>
           <td>{{ reserva.id_visual_habitacion }}</td>
           <td>{{ reserva.moneda || 'COP' }}: {{ (reserva.valor) | number:'1.0-0' }}</td>
           <td>{{ reserva.check_in }} - {{ reserva.check_out }}</td>
           <td>{{ reserva.estado }}</td>
+          }
         </tr>
       </tbody>
     }
@@ -138,6 +151,89 @@
       </div>
     </div>
   </div>
+
+<div  class="offcanvas offcanvas-end" 
+      tabindex="-1" 
+      (input)="manejarFiltros()"
+      (change)="manejarFiltros()"
+      id="canvasBuscar" 
+      aria-labelledby="offcanvasScrollingLabel" 
+      data-bs-backdrop="static">
+  <h3> Filtrar Reservas</h3>
+  <div class="mb-2">
+    <label for="codigo" class="form-label">Código de Reserva</label>
+    <input
+      type="text"
+      class="form-control"
+      id="codigo"
+      list="listaCodigos"
+      placeholder="Escribe el código de reserva">
+
+    <datalist id="listaCodigos">
+      @for (reserva of reservas; track reserva.public_id) {
+        <option [value]="reserva.public_id"></option>
+      }
+    </datalist>
+  </div>
+
+  <div class="mb-2">
+    <label for="habitacion" class="form-label">Habitación</label>
+    <input
+      type="text"
+      class="form-control"
+      id="habitacion"
+      list="listaHabitaciones"
+      placeholder="Escribe el número de habitación">
+    <datalist id="listaHabitaciones">
+      @for (room of habitaciones; track room.id_visual) {
+        <option [value]="room.id_visual"></option>
+      }
+    </datalist>
+  </div>
+
+  <div class="mb-2">
+    <label for="checkIn" class="form-label">Fecha check in</label>
+    <input
+      type="date"
+      class="form-control"
+      id="checkIn">
+  </div>
+
+  <div class="mb-2">
+    <label for="checkOut" class="form-label">Fecha check out</label>
+    <input
+      type="date"
+      class="form-control"
+      id="checkOut">
+  </div>
+
+  <div class="mb-2">
+    <label for="correoViajero" class="form-label">Correo Usuario</label>
+    <input
+      type="email"
+      class="form-control"
+      id="correoViajero"
+      list="listaCorreos"
+      placeholder="Escribe el correo del viajero">
+    <datalist id="listaCorreos">
+      @for (correo of correosViajeros; track correo) {
+        <option [value]="correo"></option>
+      }
+    </datalist>
+  </div>
+
+  <div class="mb-2">
+    <label for="estadoReserva" class="form-label">Estado reserva</label>
+    <select class="form-select" id="estadoReserva">
+      <option selected>Selecciona un estado</option>
+      <option value="confirmada">Confirmada</option>
+      <option value="pendiente">Pendiente</option>
+    </select>
+  </div>
+  <p id="resultadoFiltros"></p>
+  <button class="btn btn-primary mb-2" (click)="aplicarFiltros()">Aplicar Filtros</button>
+  <button class="btn btn-secondary" (click)="ocultar_filtros()">Volver</button>
+</div>
 
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
