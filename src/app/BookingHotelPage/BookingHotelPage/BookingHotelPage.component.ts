@@ -220,7 +220,6 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
           const pagos = await firstValueFrom(
             this.paymentService.getpaymentbyReserve(reserva.id)
           ) as any;
-          console.log(pagos);
           const pago = pagos?.[0];
           if (pago?.amount) {
             reserva.valor = Number(pago.amount);
