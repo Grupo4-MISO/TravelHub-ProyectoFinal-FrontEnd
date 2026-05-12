@@ -4,8 +4,8 @@ import { BookingHotelPageService } from '../../BookingHotelPage/BookingHotelPage
 
 @Component({
   selector: 'app-checkin-page',
-  templateUrl: './CheckinPage.component.html',
-  styleUrls: ['./CheckinPage.component.css'],
+  templateUrl: './CheckInPage.component.html',
+  styleUrls: ['./CheckInPage.component.css'],
   standalone: false
 })
 export class CheckinPageComponent implements OnInit {

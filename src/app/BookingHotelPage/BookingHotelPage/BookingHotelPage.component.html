@@ -50,6 +50,7 @@
         </tr>
       </tbody>
     }
+    
     @if (modo=='habitaciones'){
       <thead>
         <tr class="table-secondary">  
@@ -137,7 +138,8 @@
               <qrcode
                 [qrdata]="qrUrl"
                 [width]="220"
-                [errorCorrectionLevel]="'M'">
+                [errorCorrectionLevel]="'M'"
+                >
               </qrcode>
             </div>
 
