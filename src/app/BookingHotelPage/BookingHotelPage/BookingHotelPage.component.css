@@ -66,6 +66,8 @@ img{
     background-color: #f1c232   ;
     color: black;
     font-size: medium;
+}
+
 .qr-container{
   display: flex;
   justify-content: center;
