@@ -41,10 +41,10 @@ describe('Escenarios E2E para el LogIn', function () {
         LogIn.clickLoginButton();
 
         //Llenamos correo
-        LogIn.fillEmail('alojamiento_prueba@gmail.com');
+        LogIn.fillEmail('buenos_aires_plaza_suites@gmail.com');
 
         //Llenamos contraseña
-        LogIn.fillPassword('alojamiento');
+        LogIn.fillPassword('12345');
 
         //Click en el boton de submit
         LogIn.submitLogin();

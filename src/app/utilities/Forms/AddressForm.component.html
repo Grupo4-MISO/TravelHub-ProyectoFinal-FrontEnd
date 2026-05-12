@@ -3,7 +3,7 @@
 
   <div class="field">
     <label for="address-line1">Linea 1</label>
-    <input id="address-line1" type="text" formControlName="line1" placeholder="Ej: Calle 123" autocomplete="address-line1" />
+    <input data-cy="address-line1" id="address-line1" type="text" formControlName="line1" placeholder="Ej: Calle 123" autocomplete="address-line1" />
     @if (group().controls['line1'].touched && group().controls['line1'].invalid) {
       <p class="field-feedback" role="alert">La linea 1 es obligatoria y debe tener hasta 120 caracteres.</p>
     }
@@ -11,7 +11,7 @@
 
   <div class="field">
     <label for="address-line2">Linea 2</label>
-    <input id="address-line2" type="text" formControlName="line2" placeholder="Ej: Apt 456" autocomplete="address-line2" />
+    <input data-cy="address-line2" id="address-line2" type="text" formControlName="line2" placeholder="Ej: Apt 456" autocomplete="address-line2" />
     @if (group().controls['line2'].touched && group().controls['line2'].invalid) {
       <p class="field-feedback" role="alert">La linea 2 debe tener hasta 120 caracteres.</p>
     }
@@ -27,7 +27,8 @@
           formControlName="city"
           autocomplete="address-level2"
           [readonly]="isLoadingCities()"
-          placeholder="Ej: Ciudad de México" />
+          placeholder="Ej: Ciudad de México"
+          data-cy="address-city"/>
       } @else {
         <select
           id="address-city"
@@ -61,7 +62,8 @@
           formControlName="state"
           autocomplete="address-level1"
           [readonly]="isLoadingStates()"
-          placeholder="Ej: Estado de México" />
+          placeholder="Ej: Estado de México"
+          data-cy="address-state"/>
       } @else {
         <select
           id="address-state"
@@ -106,7 +108,7 @@
 
     <div class="field">
       <label for="address-postal">Codigo postal</label>
-      <input id="address-postal" type="text" formControlName="postal_code" autocomplete="postal-code" placeholder="Ej: 12345" />
+      <input data-cy="address-postal" type="text" formControlName="postal_code" autocomplete="postal-code" placeholder="Ej: 12345" />
       @if (group().controls['postal_code'].touched && group().controls['postal_code'].invalid) {
         <p class="field-feedback" role="alert">El codigo postal es obligatorio y debe tener hasta 20 caracteres.</p>
       }

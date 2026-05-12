@@ -16,7 +16,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nv-link" (click)="routeReservations()">
+        <a class="nav-link nv-link" data-cy="reservas-button" (click)="routeReservations()">
           <img src="/iconos/calendar-ico.svg" class="nv-icon">
           Reservas
         </a>
@@ -76,7 +76,7 @@
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2">
       <button type="button" class="btn btn-lg btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
-      <button type="button" class="btn btn-lg btn-brand-secondary" [routerLink]="['/auth/create']">Crear Cuenta</button>
+      <button type="button" class="btn btn-lg btn-brand-secondary" data-cy="crear-cuenta-button" [routerLink]="['/auth/create']">Crear Cuenta</button>
     </div>
   }
   @if (isAuthenticated()) {
