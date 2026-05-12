@@ -122,6 +122,33 @@
         <button class="btn btn-secondary" (click)="ocultar_reserva()">Volver</button>
       </div>
 
+      <div class="qr-container mt-4">
+        @if (reservaActiva?.estado === 'confirmada') {
+          <div class="qr-card">
+
+            <div class="qr-header">
+              <h5>Check-in de Reserva</h5>
+              <p>
+                Reserva #{{ reservaActiva?.public_id }}
+              </p>
+            </div>
+
+            <div class="qr-code-wrapper">
+              <qrcode
+                [qrdata]="qrUrl"
+                [width]="220"
+                [errorCorrectionLevel]="'M'">
+              </qrcode>
+            </div>
+
+            <div class="qr-footer">
+              <small>
+                Escanea este código para validar la reserva
+              </small>
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </div>
 

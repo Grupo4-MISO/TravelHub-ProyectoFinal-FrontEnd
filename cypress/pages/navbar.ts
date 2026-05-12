@@ -6,4 +6,8 @@ export class NavBar {
     static clickReservas() {
         return cy.get('[data-cy="reservas-button"]').click({ force: true });
     }
+
+    static clickCrearCuenta(){
+        return cy.get('[data-cy="crear-cuenta-button"]').click({ force: true });
+    }
 }

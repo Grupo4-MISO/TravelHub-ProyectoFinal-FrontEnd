@@ -1,0 +1,122 @@
+<!-- CheckinPage.component.html -->
+
+<div class="checkin-page">
+
+  <div class="checkin-card">
+
+    @if (cargando) {
+
+      <div class="loading-container">
+
+        <div
+          class="spinner-border text-primary loading-spinner"
+          role="status">
+        </div>
+
+        <h2>Procesando Check-In...</h2>
+
+        <p>
+          Estamos validando la reserva
+        </p>
+
+      </div>
+
+    }
+
+    @if (!cargando && exito) {
+
+      <div class="success-container">
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <h1>Check-In Confirmado!</h1>
+
+        <p class="success-message">
+          {{ mensaje }}
+        </p>
+
+        <div class="reservation-box">
+
+          <span class="reservation-label">
+            Código de la reserva
+          </span>
+
+          <span class="reservation-code">
+            {{ reserva?.public_id }}
+          </span>
+
+        </div>
+
+        <div class="details-card">
+
+        <h3>
+          Detalles de la reserva
+        </h3>
+
+        <div class="detail-row">
+          <span class="detail-label">
+            Hotel:
+          </span>
+
+          <span class="detail-value">
+            {{ reserva?.nombre_hospedaje }}
+          </span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">
+            Habitación:
+          </span>
+
+          <span class="detail-value">
+            {{ reserva?.tipo_habitacion }}
+          </span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">
+            Check-In:
+          </span>
+
+          <span class="detail-value">
+            {{ reserva?.check_in }}
+          </span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">
+            Check-Out:
+          </span>
+
+          <span class="detail-value">
+            {{ reserva?.check_out }}
+          </span>
+        </div>
+
+      </div>
+
+    }
+
+    @if (!cargando && !exito) {
+
+      <div class="error-container">
+
+        <div class="error-icon">
+          ✕
+        </div>
+
+        <h1>Error en el Check-In</h1>
+
+        <p class="error-message">
+          {{ mensaje }}
+        </p>
+
+      </div>
+
+    }
+
+  </div>
+
+</div>

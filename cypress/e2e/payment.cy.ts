@@ -30,7 +30,7 @@ describe('Escenarios E2E para el PropertyDetail', function () {
         Toastr.getToastrMessage(message);
     });
 
-    it('E0001 - Ver resumen reserva de una propiedad colombiana', function () {       
+    it('E0001 - Ir al pago de una propiedad colombiana', function () {       
         //Seleccionamos el pais
         NavBar.selectCountry('🇨🇴 CO');
 
@@ -66,9 +66,15 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
         //Verificamos que la tarifa de la reserva aparezca
         PaymentPage.viewPaymentSummary();
+
+        //Seleccionamos el metodo de pago
+        PaymentPage.selectPaymentMethod('Stripe');
+
+        //Damos click en confirmacion de reserva para ir a pagos
+        PaymentPage.confirmarReserva();
     });
 
-    it('E0002 - Ver resumen reserva de una propiedad argentina', function () {
+    it('E0002 - Ir al pago de una propiedad argentina', function () {
         //Seleccionamos el pais
         NavBar.selectCountry('🇦🇷 AR');
 
@@ -104,9 +110,15 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
         //Verificamos que la tarifa de la reserva aparezca
         PaymentPage.viewPaymentSummary();
+
+        //Seleccionamos el metodo de pago
+        PaymentPage.selectPaymentMethod('PayPal');
+
+        //Damos click en confirmacion de reserva para ir a pagos
+        PaymentPage.confirmarReserva();
     });
 
-    it('E0003 - Ver resumen reserva de una propiedad chilena', function () {
+    it('E0003 - Ir al pago de una propiedad chilena', function () {
         //Seleccionamos el pais
         NavBar.selectCountry('🇨🇱 CL');
 
@@ -142,9 +154,15 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
         //Verificamos que la tarifa de la reserva aparezca
         PaymentPage.viewPaymentSummary();
+
+        //Seleccionamos el metodo de pago
+        PaymentPage.selectPaymentMethod('MercadoPago');
+
+        //Damos click en confirmacion de reserva para ir a pagos
+        PaymentPage.confirmarReserva();
     });
 
-    it('E0004 - Ver resumen reserva de una propiedad ecuatoriana', function () {
+    it('E0004 - Ir al pago de una propiedad ecuatoriana', function () {
         //Seleccionamos el pais
         NavBar.selectCountry('🇪🇨 EC');
 
@@ -180,9 +198,15 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
         //Verificamos que la tarifa de la reserva aparezca
         PaymentPage.viewPaymentSummary();
+
+        //Seleccionamos el metodo de pago
+        PaymentPage.selectPaymentMethod('Stripe');
+
+        //Damos click en confirmacion de reserva para ir a pagos
+        PaymentPage.confirmarReserva();
     });
 
-    it('E0005 - Ver resumen reserva de una propiedad mexicana', function () {
+    it('E0005 - Ir al pago de una propiedad mexicana', function () {
         //Seleccionamos el pais
         NavBar.selectCountry('🇲🇽 MX');
 
@@ -218,9 +242,15 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
         //Verificamos que la tarifa de la reserva aparezca
         PaymentPage.viewPaymentSummary();
+
+        //Seleccionamos el metodo de pago
+        PaymentPage.selectPaymentMethod('PayPal');
+
+        //Damos click en confirmacion de reserva para ir a pagos
+        PaymentPage.confirmarReserva();
     });
 
-    it('E0006 - Ver resumen reserva de una propiedad peruana', function () {
+    it('E0006 - Ir al pago de una propiedad peruana', function () {
         //Seleccionamos el pais
         NavBar.selectCountry('🇵🇪 PE');
 
@@ -256,5 +286,11 @@ describe('Escenarios E2E para el PropertyDetail', function () {
 
         //Verificamos que la tarifa de la reserva aparezca
         PaymentPage.viewPaymentSummary();
+
+        //Seleccionamos el metodo de pago
+        PaymentPage.selectPaymentMethod('MercadoPago');
+
+        //Damos click en confirmacion de reserva para ir a pagos
+        PaymentPage.confirmarReserva();
     });
 });
