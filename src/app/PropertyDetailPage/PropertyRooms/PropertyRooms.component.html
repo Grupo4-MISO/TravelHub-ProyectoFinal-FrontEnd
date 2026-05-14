@@ -1,14 +1,24 @@
 <section class="rooms-section">
   <h2>Habitaciones disponibles</h2>
 
-  <div class="rooms-grid" *ngIf="rooms.length > 0; else noRooms">
-    <article class="room-card" *ngFor="let room of rooms">
+  <div class="rooms-grid" *ngIf="roomsWithPrices.length > 0; else noRooms">
+    <article class="room-card" *ngFor="let room of roomsWithPrices">
       <img class="room-image" [src]="room.imageUrl" [alt]="room.descripcion" />
       <div class="room-content">
         <h3>{{ room.descripcion }}</h3>
         <p>Código: {{ room.code }}</p>
         <p>Capacidad: {{ room.capacidad }} persona(s)</p>
-        <p class="price">${{ room.precio }} {{localCurrency}} / noche</p>
+        <p *ngIf="room.tarifaAplicada" class="tariff-applied">
+          <small>Tarifa vigente: <strong>{{ room.tarifaNombre }}</strong></small>
+        </p>
+        @if (room.tarifaAplicada && room.descuentoActivo && room.precio_original) {
+          <p class="price mb-1">
+            <span class="text-decoration-line-through text-muted me-2">${{ room.precio_original }} {{localCurrency}}</span>
+            <strong>${{ room.precio }} {{localCurrency}}</strong> / noche
+          </p>
+        } @else {
+          <p class="price">${{ room.precio }} {{localCurrency}} / noche</p>
+        }
         <button class="btn-primary" data-cy="reservar-habitacion" (click)="reservar(room)">Reservar ahora</button>
       </div>
     </article>

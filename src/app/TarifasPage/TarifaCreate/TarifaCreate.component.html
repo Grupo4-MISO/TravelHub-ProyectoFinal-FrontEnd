@@ -31,10 +31,9 @@
 
               <div class="col-md-4">
                 <label class="form-label">Categoría de habitación</label>
-                <select class="form-select">
-                  <option value="">Seleccione una categoría</option>
+                <select class="form-select" [(ngModel)]="tarifa.categoria_habitacion" name="categoria_habitacion">
                   @for (categoria of categorias; track categoria) {
-                    <option [value]="categoria" [selected]="categoria === tarifa.categoria_habitacion">{{ categoria }}</option>
+                    <option [value]="categoria">{{ categoria }}</option>
                   }
                 </select>
               </div>
@@ -47,8 +46,9 @@
               <div class="col-md-2">
                 <label class="form-label">Moneda</label>
                 <select class="form-select" [(ngModel)]="tarifa.moneda" name="moneda">
-                  <option value="COP">COP</option>
-                  <option value="USD">USD</option>
+                  @for (moneda of monedas; track moneda) {
+                    <option [value]="moneda">{{ moneda }}</option>
+                  }
                 </select>
               </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="row g-3 mt-3">
               <div class="col-md-6">
                 <label class="form-label">Identificador</label>
-                <input class="form-control" placeholder="Ej. TAR-EST-001" [(ngModel)]="tarifa.identificador" name="identificador" />
+                <input class="form-control" placeholder="Ej. TAR-EST-001" [(ngModel)]="tarifa.identificador" name="identificador" required />
               </div>
               <div class="col-md-6">
                 <label class="form-label">Descripción</label>

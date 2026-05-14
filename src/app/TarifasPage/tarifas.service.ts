@@ -36,6 +36,7 @@ export type Tarifa = {
   descuentos_activos: Descuento[];
   created_at: string;
   updated_at: string;
+  descuentos?: Partial<Descuento>[];
 };
 
 @Injectable({ providedIn: 'root' })

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TarifasService, Tarifa, Descuento } from '../tarifas.service';
 
+export const MONEDAS_TARIFA = ['COP', 'USD', 'PEN', 'MXN', 'CLP', 'ARS'] as const;
+
 @Component({
   selector: 'app-tarifa-create',
   standalone: true,
@@ -15,6 +17,7 @@ import { TarifasService, Tarifa, Descuento } from '../tarifas.service';
 })
 export class TarifaCreateComponent implements OnInit {
   categorias = ['SENCILLA', 'DOBLE', 'TRIPLE', 'SUITE', 'DELUXE', 'FAMILIAR'];
+  monedas = MONEDAS_TARIFA;
 
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
@@ -30,7 +33,7 @@ export class TarifaCreateComponent implements OnInit {
     identificador: '',
     descripcion: '',
     valor_base: 0,
-    moneda: 'COP',
+    moneda: this.monedas[0],
     categoria_habitacion: this.categorias[0],
     vigencia_inicio: '',
     vigencia_fin: ''
@@ -65,7 +68,11 @@ export class TarifaCreateComponent implements OnInit {
             vigencia_inicio: t.vigencia_inicio ? t.vigencia_inicio.split('T')[0] : '',
             vigencia_fin: t.vigencia_fin ? t.vigencia_fin.split('T')[0] : ''
           };
-          this.descuentos = t.descuentos_activos || [];
+          this.descuentos = (t.descuentos_activos || []).map(descuento => ({
+            ...descuento,
+            vigencia_inicio: this.toDateOnly(descuento.vigencia_inicio),
+            vigencia_fin: this.toDateOnly(descuento.vigencia_fin)
+          }));
           this.cdr.markForCheck();
         },
         error: (err) => {
@@ -92,6 +99,24 @@ export class TarifaCreateComponent implements OnInit {
     const normalized = value.includes('T') ? value : `${value}T00:00:00Z`;
     const date = new Date(normalized);
     return Number.isNaN(date.getTime()) ? null : date;
+  }
+
+  private toDateOnly(value?: string): string {
+    if (!value) {
+      return '';
+    }
+
+    return value.split('T')[0];
+  }
+
+  private formatStartOfDayUtc(value?: string): string | undefined {
+    const dateOnly = this.toDateOnly(value);
+    return dateOnly ? `${dateOnly}T00:00:00Z` : undefined;
+  }
+
+  private formatEndOfDayUtc(value?: string): string | undefined {
+    const dateOnly = this.toDateOnly(value);
+    return dateOnly ? `${dateOnly}T23:59:59Z` : undefined;
   }
 
   private validarFechasDescuento(descuento: Partial<Descuento>): boolean {
@@ -122,6 +147,15 @@ export class TarifaCreateComponent implements OnInit {
 
     if (descuentoFin > tarifaFin) {
       this.toastr.error('La fecha de fin del descuento debe ser igual o anterior a la fecha de fin de la tarifa', 'Fechas inválidas');
+      return false;
+    }
+
+    return true;
+  }
+
+  private validarIdentificador(): boolean {
+    if (!this.tarifa.identificador || !this.tarifa.identificador.trim()) {
+      this.toastr.error('El identificador de la tarifa no puede estar vacío', 'Validación');
       return false;
     }
 
@@ -173,12 +207,8 @@ export class TarifaCreateComponent implements OnInit {
         activo: descuento.activo !== false,
       };
 
-      if (descuento.vigencia_inicio) {
-        body.vigencia_inicio = `${descuento.vigencia_inicio}T00:00:00Z`;
-      }
-      if (descuento.vigencia_fin) {
-        body.vigencia_fin = `${descuento.vigencia_fin}T23:59:59Z`;
-      }
+      body.vigencia_inicio = this.formatStartOfDayUtc(descuento.vigencia_inicio);
+      body.vigencia_fin = this.formatEndOfDayUtc(descuento.vigencia_fin);
 
       this.tarifasService.createDescuento(body).subscribe({
         next: () => {
@@ -197,34 +227,44 @@ export class TarifaCreateComponent implements OnInit {
   }
 
   save(): void {
+    if (!this.validarIdentificador()) {
+      return;
+    }
+
     const hotelId = sessionStorage.getItem('provider_id') || '';
 
     const body: any = {
       nombre: this.tarifa.nombre,
       hotel_id: hotelId,
-      identificador: this.tarifa.identificador,
+      identificador: this.tarifa.identificador?.trim(),
       descripcion: this.tarifa.descripcion,
       valor_base: Number(this.tarifa.valor_base) || 0,
       moneda: this.tarifa.moneda || 'COP',
       categoria_habitacion: this.tarifa.categoria_habitacion,
     };
 
-    if (this.tarifa.vigencia_inicio) {
-      body.vigencia_inicio = `${this.tarifa.vigencia_inicio}T00:00:00Z`;
-    }
-    if (this.tarifa.vigencia_fin) {
-      body.vigencia_fin = `${this.tarifa.vigencia_fin}T23:59:59Z`;
-    }
+    body.vigencia_inicio = this.formatStartOfDayUtc(this.tarifa.vigencia_inicio);
+    body.vigencia_fin = this.formatEndOfDayUtc(this.tarifa.vigencia_fin);
+
+    // Add descuentos array to body if provided
+    body.descuentos = this.descuentos
+      .filter(descuento => descuento.vigencia_inicio && descuento.vigencia_fin)
+      .map(descuento => {
+        const descuentoObj: any = {
+          nombre: descuento.nombre,
+          porcentaje: Number(descuento.porcentaje) || 0,
+          activo: descuento.activo !== false,
+          vigencia_inicio: this.formatStartOfDayUtc(descuento.vigencia_inicio),
+          vigencia_fin: this.formatEndOfDayUtc(descuento.vigencia_fin),
+        };
+        return descuentoObj;
+      });
 
     if (this.isEdit && this.tarifaId) {
       this.tarifasService.updateTarifa(this.tarifaId, body).subscribe({
         next: () => {
           this.toastr.success('Tarifa actualizada correctamente', 'Éxito');
-          if (this.descuentos.length > 0) {
-            this.crearDescuentos(this.tarifaId!);
-          } else {
-            this.router.navigate(['/tarifas']);
-          }
+          this.router.navigate(['/tarifas']);
         },
         error: (err) => {
           console.error('Error actualizando tarifa', err);
@@ -235,11 +275,7 @@ export class TarifaCreateComponent implements OnInit {
       this.tarifasService.createTarifa(body).subscribe({
         next: (tarifaCreada) => {
           this.toastr.success('Tarifa creada correctamente', 'Éxito');
-          if (this.descuentos.length > 0) {
-            this.crearDescuentos(tarifaCreada.id);
-          } else {
-            this.router.navigate(['/tarifas']);
-          }
+          this.router.navigate(['/tarifas']);
         },
         error: (err) => {
           console.error('Error creando tarifa', err);
