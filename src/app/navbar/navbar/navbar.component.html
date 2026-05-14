@@ -39,6 +39,10 @@
         <a class="nav-link nv-link" [routerLink]="['/tarifas']">
           <img src="/iconos/calendar-ico.svg" class="nv-icon">
           Tarifas
+      <li class ="nav-item">
+        <a class="nav-link nv-link" [routerLink]="['/billing']">
+          <img src="/iconos/bill.svg" class="nv-icon">
+          Facturación
         </a>
       </li>
     }
@@ -50,6 +54,7 @@
     </li>
   </ul>
 
+  @if (userRole !== 'Accomodation'){
   <!-- SELECTORES MODERNOS -->
   <div class="navbar-selectors">
     <!-- País -->
@@ -78,6 +83,7 @@
       </select>
     </div>
   </div>
+  }
 
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2 flex-wrap">

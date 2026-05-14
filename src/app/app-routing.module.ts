@@ -6,7 +6,8 @@ import { PropertyDetailComponent } from './PropertyDetailPage/PropertyDetail/Pro
 import { BookingHotelPageComponent } from './BookingHotelPage/BookingHotelPage/BookingHotelPage.component';
 import { ReservationsPageComponent } from './ReservationsPage/ReservationsPage/ReservationsPage.component';
 import { HelpPageComponent } from './HelpPage/HelpPage.component';
-import { CheckInPageComponent } from './CheckInPage/CheckInPage/CheckInPage.component';
+import { CheckinPageComponent } from './CheckInPage/CheckInPage/CheckInPage.component';
+import { BillingPageComponent } from './billingPage/billingPage.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalPageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'property', component: PropertyDetailComponent },
   { path: 'booking', component: BookingHotelPageComponent },
   { path: 'reservations', component: ReservationsPageComponent },
+  { path: 'billing', component: BillingPageComponent },
   { path: 'help', component: HelpPageComponent },
   {
     path: 'payment',
@@ -43,7 +45,7 @@ const routes: Routes = [
     loadComponent: () =>
       import('./TravelerPage/TravelerForm/TravelerForm.component').then((c) => c.TravelerFormComponent)
   },
-  { path: 'check-in/:id', component: CheckInPageComponent }
+  { path: 'check-in/:id', component: CheckinPageComponent }
 ];
 
 @NgModule({
