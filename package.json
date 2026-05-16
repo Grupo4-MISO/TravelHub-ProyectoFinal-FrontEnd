@@ -24,6 +24,7 @@
     "@auth0/angular-jwt": "^5.2.0",
     "angularx-qrcode": "^21.0.5",
     "bootstrap": "^5.3.8",
+    "chart.js": "^4.5.1",
     "ngx-toastr": "^20.0.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -34,6 +35,7 @@
     "@angular/compiler-cli": "^21.2.10",
     "@cypress/schematic": "^5.0.0",
     "@types/bootstrap": "^5.2.10",
+    "@types/chart.js": "^2.9.41",
     "cypress": "15.13.1",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",

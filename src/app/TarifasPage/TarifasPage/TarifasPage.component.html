@@ -1,0 +1,44 @@
+<section class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="m-0">Tarifas creadas</h2>
+    <div>
+      @if (userRole === 'Accomodation') {
+        <a class="btn btn-primary me-2" [routerLink]="['/tarifas','new']">Nueva tarifa</a>
+      }
+      <button class="btn btn-outline-secondary" (click)="goBack()">Volver</button>
+    </div>
+  </div>
+
+  @if (userRole !== 'Accomodation') {
+    <div class="alert alert-danger">No estás autorizado para ver esta página.</div>
+  }
+
+  @if (userRole === 'Accomodation') {
+
+    @if (tarifas.length === 0) {
+      <p>No hay tarifas disponibles.</p>
+    }
+
+    @for (tarifa of tarifas; track tarifa.id) {
+      <div class="tarifa-card p-3 mb-3 border rounded">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h5 class="mb-1">{{ tarifa.nombre }}</h5>
+            <div class="text-muted small">{{ tarifa.identificador }} · {{ tarifa.categoria_habitacion }}</div>
+            <p class="mb-0">{{ tarifa.descripcion }}</p>
+          </div>
+          <div class="text-end">
+            <div class="h4 mb-1">{{ tarifa.valor_final }} {{ tarifa.moneda }}</div>
+            @if (tarifa.valor_descuento_total > 0) {
+              <div class="text-success small">Descuento: {{ tarifa.valor_descuento_total }} {{ tarifa.moneda }}</div>
+            }
+            <div class="mt-2">
+              <a class="btn btn-sm btn-outline-primary" [routerLink]="['/tarifas','edit', tarifa.id]">Editar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+  }
+</section>

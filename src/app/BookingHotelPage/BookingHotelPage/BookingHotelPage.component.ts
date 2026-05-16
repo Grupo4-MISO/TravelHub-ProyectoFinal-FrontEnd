@@ -36,6 +36,7 @@ interface Reserva {
   check_out: string;
   estado: string;
   usuario: Usuario | null;
+  visible: boolean;
 }
 
 interface Usuario {
@@ -58,7 +59,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
   hotel: Hotel | null = null;
   habitaciones: Habitacion[] = [];
   reservas: Reserva[] = [];
-
+  
   cargandoHotel = false;
   cargandoHabitaciones = false;
   cargandoReservas = false;  
@@ -67,8 +68,11 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
   accionModal: string = '';
 
   offcanvasReserva: bootstrap.Offcanvas | null = null;
+  canvasBuscar: bootstrap.Offcanvas | null = null;
   modalReserva: bootstrap.Modal | null = null;
 
+  reservasFiltradas: Reserva[] = [];
+  filtroActivo: boolean = false;
   qrUrl: string = '';
 
   constructor(
@@ -92,6 +96,10 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     const modalElement = document.getElementById('staticBackdrop');
     if (modalElement) {
       this.modalReserva = new bootstrap.Modal(modalElement);
+    }
+    const canvasBuscarElement = document.getElementById('canvasBuscar');
+    if (canvasBuscarElement) {
+      this.canvasBuscar = new bootstrap.Offcanvas(canvasBuscarElement);
     }
   }
 
@@ -195,6 +203,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
         const habitacion = this.habitaciones.find(h => h.habitacion_id === reserva.habitacion_id);
         reserva.id_visual_habitacion = habitacion ? habitacion.id_visual : "N/A";
         reserva.valor = habitacion ? habitacion.precio * this.dar_dias(reserva.check_in, reserva.check_out) : 0;
+        reserva.visible = true;
       }}
 
     dar_dias(check_in: string, check_out: string): number {
@@ -211,7 +220,6 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
           const pagos = await firstValueFrom(
             this.paymentService.getpaymentbyReserve(reserva.id)
           ) as any;
-          console.log(pagos);
           const pago = pagos?.[0];
           if (pago?.amount) {
             reserva.valor = Number(pago.amount);
@@ -289,4 +297,216 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     ocultar_modal(): void {
       this.modalReserva?.hide();
     }
+
+    mostrar_filtros(): void {
+      this.canvasBuscar?.show();
+      this.manejarFiltros();
+    }
+
+    ocultar_filtros(): void {
+      this.canvasBuscar?.hide();
+      if (!this.filtroActivo) {
+        this.removerFiltros();
+      }
+    }
+
+    get correosViajeros(): string[] {
+      const correos = this.reservas
+        .map(reserva => reserva.usuario?.email)
+        .filter(email => email !== undefined) as string[];  
+        return Array.from(new Set(correos));
+      
+    }
+
+    manejarFiltros(): void{
+      const codigoInput = (document.getElementById('codigo') as HTMLInputElement)?.value.trim() || '';
+      const habitacionInput = (document.getElementById('habitacion') as HTMLInputElement)?.value.trim() || '';
+      const fechaInInput = (document.getElementById('checkIn') as HTMLInputElement)?.value || '';
+      const fechaOutInput = (document.getElementById('checkOut') as HTMLInputElement)?.value || '';
+      const correoInput = (document.getElementById('correoViajero') as HTMLInputElement)?.value.trim() || '';
+      var estadoInput = (document.getElementById('estadoReserva') as HTMLInputElement)?.value.trim() || '';
+
+      if (estadoInput === 'Selecciona un estado') {
+        estadoInput = '';
+      }
+
+      this.reservasFiltradas = this.reservas
+
+      if(codigoInput){
+        this.resaltar_input('codigo');
+        this.reservasFiltradas = this.reservasFiltradas.filter(
+          r => r.public_id.toLowerCase().includes(codigoInput.toLowerCase()));
+      } else {
+        this.desmarcar_input('codigo');
+      }
+
+      if(habitacionInput){
+        this.resaltar_input('habitacion');
+        this.reservasFiltradas = this.reservasFiltradas.filter(
+          r => r.id_visual_habitacion.toLowerCase().includes(habitacionInput.toLowerCase()));
+      } else {
+        this.desmarcar_input('habitacion');
+      }
+
+      if(fechaInInput){
+        this.resaltar_input('checkIn');
+        this.reservasFiltradas = this.reservasFiltradas.filter(
+          r => r.check_in === fechaInInput);
+      } else {
+        this.desmarcar_input('checkIn');
+      }
+
+      if(fechaOutInput){
+        this.resaltar_input('checkOut');
+        this.reservasFiltradas = this.reservasFiltradas.filter(
+          r => r.check_out === fechaOutInput);
+      } else {
+        this.desmarcar_input('checkOut');
+      }
+
+      if(correoInput){
+        this.resaltar_input('correoViajero');
+        this.reservasFiltradas = this.reservasFiltradas.filter(
+          r => r.usuario?.email === correoInput);
+      } else {
+        this.desmarcar_input('correoViajero');
+      }
+
+      if(estadoInput){
+        this.resaltar_input('estadoReserva');
+        this.reservasFiltradas = this.reservasFiltradas.filter(
+          r => r.estado === estadoInput);
+      } else {
+        this.desmarcar_input('estadoReserva');
+      }
+
+      this.mapearSalida();
+
+    }
+
+    private resaltar_input(inputId: string): void {
+      const input = document.getElementById(inputId) as HTMLInputElement;
+      input.style.backgroundColor = '#FFF2CC';
+    }
+
+    private desmarcar_input(inputId: string){
+      const input = document.getElementById(inputId) as HTMLInputElement;
+      input.style.backgroundColor = '';
+    }
+
+    private mapearSalida(): void {
+      const salida = document.getElementById('resultadoFiltros');
+      const encontradas = this.reservasFiltradas.length
+      var texto = `${encontradas} reservas coinciden con los criterios de búsqueda.`;
+
+      if (encontradas === this.reservas.length) {
+        texto = '';
+      }
+
+      if (salida) {
+        salida.textContent = texto;
+        if (encontradas === 0) {
+          salida.classList.add('text-danger');
+          salida.classList.remove('text-success');
+        } else {
+          salida.classList.add('text-success');
+          salida.classList.remove('text-danger');
+        }
+      }
+      
+    }
+
+    aplicarFiltros(): void {
+      if(this.reservasFiltradas.length === this.reservas.length){
+        this.ocultar_filtros();
+        return;
+      }
+      for (let reserva of this.reservas) {
+        reserva.visible = this.reservasFiltradas.includes(reserva);
+      } 
+      this.filtroActivo = true;
+      this.ocultar_filtros();
+      this.activar_head_filtrado();
+    }
+
+    removerFiltros(): void {
+      for (let reserva of this.reservas) {
+        reserva.visible = true;
+      }
+      this.filtroActivo = false;
+      this.desactivar_head_filtrado();
+      const codigoInput = document.getElementById('codigo') as HTMLInputElement;
+      const habitacionInput = document.getElementById('habitacion') as HTMLInputElement;
+      const fechaInInput = document.getElementById('checkIn') as HTMLInputElement;
+      const fechaOutInput = document.getElementById('checkOut') as HTMLInputElement;
+      const correoInput = document.getElementById('correoViajero') as HTMLInputElement;
+      const estadoInput = document.getElementById('estadoReserva') as HTMLInputElement;
+      const salida = document.getElementById('resultadoFiltros');
+
+      if (codigoInput) codigoInput.value = '';
+      if (habitacionInput) habitacionInput.value = '';
+      if (fechaInInput) fechaInInput.value = '';
+      if (fechaOutInput) fechaOutInput.value = '';
+      if (correoInput) correoInput.value = '';
+      if (estadoInput) estadoInput.value = 'Selecciona un estado';
+      if (salida) salida.textContent = '';
+    }
+
+    activar_head_filtrado(): void {
+      const header = document.getElementById('headerReservas');
+      if (header) {
+        header.classList.add('header-filtrado');
+        header.innerText = this.texto_filtros();
+      }
+    }
+
+    desactivar_head_filtrado(): void {
+      const header = document.getElementById('headerReservas');
+      if (header) {
+        header.classList.remove('header-filtrado');
+        header.innerText = 'Reservas';
+      }
+    }
+
+    private texto_filtros(): string {
+      const codigoInput = (document.getElementById('codigo') as HTMLInputElement)?.value.trim() || '';
+      const habitacionInput = (document.getElementById('habitacion') as HTMLInputElement)?.value.trim() || '';
+      const fechaInInput = (document.getElementById('checkIn') as HTMLInputElement)?.value || '';
+      const fechaOutInput = (document.getElementById('checkOut') as HTMLInputElement)?.value || '';
+      const correoInput = (document.getElementById('correoViajero') as HTMLInputElement)?.value.trim() || '';
+      var estadoInput = (document.getElementById('estadoReserva') as HTMLInputElement)?.value.trim() || '';
+
+      if (estadoInput === 'Selecciona un estado') {
+        estadoInput = '';
+      }
+
+      var resutado = "Reservas encontradas para: "
+
+      if(codigoInput){
+        resutado += `Código "${codigoInput}" `
+      }
+
+      if(habitacionInput){
+        resutado += `Habitación "${habitacionInput}" `
+      }
+
+      if(fechaInInput){
+        resutado += `Check-in "${fechaInInput}" `
+      }
+
+      if(fechaOutInput){
+        resutado += `Check-out "${fechaOutInput}" `
+      }
+
+      if(correoInput){
+        resutado += `Correo "${correoInput}" `
+      }
+
+      if(estadoInput){
+        resutado += `Estado "${estadoInput}" `
+      }
+
+      return resutado
+    }
+
   }

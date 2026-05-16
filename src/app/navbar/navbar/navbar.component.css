@@ -13,6 +13,25 @@ nav {
 
 .logo {
   width: 250px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 100px;
+  }
 }
 
 .btn-brand-primary {
@@ -45,6 +64,10 @@ nav {
   font-weight: 400;
   border-right: black 1px solid;
   cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .nv-link.final {
@@ -54,7 +77,37 @@ nav {
 .nv-icon {
   width: 20px;
   height: 20px;
-  margin-left: 5px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .nv-link {
+    font-size: 1rem;
+  }
+  .nv-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nv-link {
+    font-size: 0.9rem;
+  }
+  .nv-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nv-link {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  .nv-link span {
+    display: none;
+  }
 }
 
 .bar-icon {
@@ -139,13 +192,122 @@ nav {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  nav.navbar-shell {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .navbar-selectors {
-    gap: 10px;
-    padding: 4px 12px;
+    gap: 12px;
+    padding: 6px 12px;
   }
   .selector select {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     padding-right: 18px;
+  }
+  .dropdown button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    height: auto;
+    min-height: 60px;
+  }
+  
+  nav.navbar-shell {
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 10px;
+  }
+  
+  .navbar-selectors {
+    gap: 8px;
+    padding: 4px 10px;
+    order: 4;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .selector select {
+    font-size: 0.8rem;
+    padding: 4px 18px 4px 4px;
+  }
+  
+  .dropdown button {
+    font-size: 0.95rem;
+    padding: 4px 8px;
+  }
+  
+  .btn-brand-primary, .btn-brand-secondary {
+    --bs-btn-padding-y: 0.4rem;
+    --bs-btn-padding-x: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :host {
+    height: auto;
+    min-height: 50px;
+  }
+  
+  nav.navbar-shell {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    gap: 6px;
+  }
+  
+  .nav {
+    display: none !important;
+  }
+  
+  .navbar-selectors {
+    gap: 6px;
+    padding: 2px 8px;
+    order: 3;
+  }
+  
+  .selector {
+    padding: 2px 4px;
+  }
+  
+  .selector select {
+    font-size: 0.7rem;
+    padding: 2px 14px 2px 2px;
+  }
+  
+  .dropdown button {
+    font-size: 0.85rem;
+    padding: 2px 6px;
+  }
+  
+  .nv-icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .btn-brand-primary, .btn-brand-secondary {
+    --bs-btn-padding-y: 0.3rem;
+    --bs-btn-padding-x: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-selectors {
+    width: 100%;
+    order: 4;
+    margin-top: 4px;
+  }
+  
+  .selector select {
+    font-size: 0.65rem;
+  }
+  
+  .dropdown button {
+    font-size: 0.8rem;
   }
 }
