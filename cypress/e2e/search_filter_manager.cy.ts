@@ -99,6 +99,9 @@ describe('Escenarios E2E para el LogIn', function () {
         let codigo_reserva = 'RSV-973853AA';
         HotelPage.buscarReservaPorCodigo(codigo_reserva);
 
+        //Hacemos click en campo de habitaciones
+        HotelPage.clickCampoHabitaciones();
+
         //Validamos que el resultado de los filtros se muestre
         let filter_result = '1 reservas coinciden con los criterios de búsqueda.';
         HotelPage.getResultadosFiltros(filter_result);
@@ -134,6 +137,9 @@ describe('Escenarios E2E para el LogIn', function () {
         let codigo_reserva = 'ñmdlmlksdmfklsdf';
         HotelPage.buscarReservaPorCodigo(codigo_reserva);
 
+        //Hacemos click en campo de habitaciones
+        HotelPage.clickCampoHabitaciones();
+
         //Validamos que el resultado de los filtros se muestre
         let filter_result = '0 reservas coinciden con los criterios de búsqueda.';
         HotelPage.getResultadosFiltros(filter_result);
@@ -168,6 +174,9 @@ describe('Escenarios E2E para el LogIn', function () {
         //Buscamos una reserva por codigo
         let codigo_reserva = 'RSV-973853AA';
         HotelPage.buscarReservaPorCodigo(codigo_reserva);
+
+        //Hacemos click en campo de habitaciones
+        HotelPage.clickCampoHabitaciones();
 
         //Validamos que el resultado de los filtros se muestre
         let filter_result = '1 reservas coinciden con los criterios de búsqueda.';
@@ -210,6 +219,9 @@ describe('Escenarios E2E para el LogIn', function () {
         //Buscamos una reserva por codigo
         let codigo_reserva = 'RSV-973853AA';
         HotelPage.buscarReservaPorCodigo(codigo_reserva);
+
+        //Hacemos click en campo de habitaciones
+        HotelPage.clickCampoHabitaciones();
 
         //Validamos que el resultado de los filtros se muestre
         let filter_result = '1 reservas coinciden con los criterios de búsqueda.';

@@ -26,4 +26,8 @@ export class HotelPage {
     static clickRemoverFiltros(){
         return cy.get('[data-cy="canvas-remover-filtros"]').click({ force: true });
     }
+
+    static clickCampoHabitaciones(){
+        return cy.get('[data-cy="campo-habitaciones"]').click({ force: true });
+    }
 }

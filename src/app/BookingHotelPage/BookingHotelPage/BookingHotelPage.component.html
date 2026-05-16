@@ -186,7 +186,8 @@
       class="form-control"
       id="habitacion"
       list="listaHabitaciones"
-      placeholder="Escribe el número de habitación">
+      placeholder="Escribe el número de habitación"
+      data-cy="campo-habitaciones">
     <datalist id="listaHabitaciones">
       @for (room of habitaciones; track room.id_visual) {
         <option [value]="room.id_visual"></option>
