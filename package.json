@@ -38,6 +38,7 @@
     "@types/chart.js": "^2.9.41",
     "cypress": "15.13.1",
     "jsdom": "^28.0.0",
+    "playwright": "^1.59.1",
     "prettier": "^3.8.1",
     "typescript": "^5.8.3",
     "vitest": "^4.0.8"
