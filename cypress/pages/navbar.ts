@@ -10,4 +10,8 @@ export class NavBar {
     static clickCrearCuenta(){
         return cy.get('[data-cy="crear-cuenta-button"]').click({ force: true });
     }
+
+    static clickTarifas(){
+        cy.visit('/tarifas');
+    }
 }

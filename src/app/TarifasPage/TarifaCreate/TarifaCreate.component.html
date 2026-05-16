@@ -13,7 +13,7 @@
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 7H17V17H7z" stroke="#000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div>
-          <h1 class="h4 mb-1">Nueva tarifa</h1>
+          <h1 class="h4 mb-1" data-cy="new-tarifa-title">Nueva tarifa</h1>
           <p class="text-muted mb-0">Crea y asocia una nueva tarifa a una categoría de habitación.</p>
         </div>
       </div>
@@ -26,7 +26,7 @@
             <div class="row g-3 mt-2">
               <div class="col-md-4">
                 <label class="form-label">Nombre de la tarifa</label>
-                <input class="form-control" placeholder="Ej. Tarifa Flexible" [(ngModel)]="tarifa.nombre" name="nombre" />
+                <input class="form-control" placeholder="Ej. Tarifa Flexible" data-cy="tarifa-nombre" [(ngModel)]="tarifa.nombre" name="nombre" />
               </div>
 
               <div class="col-md-4">
@@ -40,7 +40,7 @@
 
               <div class="col-md-2">
                 <label class="form-label">Valor por noche</label>
-                <input class="form-control" type="number" [(ngModel)]="tarifa.valor_base" name="valor_base" />
+                <input class="form-control" type="number" data-cy="tarifa-valor-base" [(ngModel)]="tarifa.valor_base" name="valor_base" />
               </div>
 
               <div class="col-md-2">
@@ -56,11 +56,11 @@
             <div class="row g-3 mt-3">
               <div class="col-md-6">
                 <label class="form-label">Identificador</label>
-                <input class="form-control" placeholder="Ej. TAR-EST-001" [(ngModel)]="tarifa.identificador" name="identificador" required />
+                <input class="form-control" placeholder="Ej. TAR-EST-001" data-cy="tarifa-identificador" [(ngModel)]="tarifa.identificador" name="identificador" required />
               </div>
               <div class="col-md-6">
                 <label class="form-label">Descripción</label>
-                <input class="form-control" placeholder="Descripción breve" [(ngModel)]="tarifa.descripcion" name="descripcion" />
+                <input class="form-control" placeholder="Descripción breve" data-cy="tarifa-descripcion" [(ngModel)]="tarifa.descripcion" name="descripcion" />
               </div>
             </div>
 
@@ -70,11 +70,11 @@
             <div class="row g-3 mt-2">
               <div class="col-md-6">
                 <label class="form-label">Fecha de inicio</label>
-                <input class="form-control" type="date" [(ngModel)]="tarifa.vigencia_inicio" name="vigencia_inicio" />
+                <input class="form-control" type="date" data-cy="tarifa-vigencia-inicio" [(ngModel)]="tarifa.vigencia_inicio" name="vigencia_inicio" />
               </div>
               <div class="col-md-6">
                 <label class="form-label">Fecha de finalización</label>
-                <input class="form-control" type="date" [(ngModel)]="tarifa.vigencia_fin" name="vigencia_fin" />
+                <input class="form-control" type="date" data-cy="tarifa-vigencia-fin" [(ngModel)]="tarifa.vigencia_fin" name="vigencia_fin" />
               </div>
             </div>
 
@@ -85,7 +85,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h5 class="m-0">Descuentos (Opcional)</h5>
-              <button type="button" class="btn btn-sm btn-outline-primary" (click)="toggleFormDescuento()">
+              <button type="button" class="btn btn-sm btn-outline-primary" data-cy="agregar-descuento-button" (click)="toggleFormDescuento()">
                 {{ mostrarFormDescuento ? 'Ocultar' : 'Agregar descuento' }}
               </button>
             </div>
@@ -96,11 +96,11 @@
                 <div class="row g-3 mt-2">
                   <div class="col-md-4">
                     <label class="form-label">Nombre del descuento</label>
-                    <input class="form-control" placeholder="Ej. Promo verano" [(ngModel)]="descuentoForm.nombre" name="descuentoNombre" />
+                    <input class="form-control" placeholder="Ej. Promo verano" data-cy="descuento-nombre" [(ngModel)]="descuentoForm.nombre" name="descuentoNombre" />
                   </div>
                   <div class="col-md-3">
                     <label class="form-label">Porcentaje (%)</label>
-                    <input class="form-control" type="number" [(ngModel)]="descuentoForm.porcentaje" name="descuentoPorcentaje" />
+                    <input class="form-control" type="number" data-cy="descuento-porcentaje" [(ngModel)]="descuentoForm.porcentaje" name="descuentoPorcentaje" />
                   </div>
                   <div class="col-md-5">
                     <label class="form-check-label">
@@ -113,11 +113,11 @@
                 <div class="row g-3 mt-2">
                   <div class="col-md-6">
                     <label class="form-label">Fecha de inicio</label>
-                    <input class="form-control" type="date" [(ngModel)]="descuentoForm.vigencia_inicio" name="descuentoInicio" />
+                    <input class="form-control" type="date" data-cy="descuento-vigencia-inicio" [(ngModel)]="descuentoForm.vigencia_inicio" name="descuentoInicio" />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">Fecha de finalización</label>
-                    <input class="form-control" type="date" [(ngModel)]="descuentoForm.vigencia_fin" name="descuentoFin" />
+                    <input class="form-control" type="date" data-cy="descuento-vigencia-fin" [(ngModel)]="descuentoForm.vigencia_fin" name="descuentoFin" />
                   </div>
                 </div>
 
@@ -147,8 +147,8 @@
         </div>
 
         <div class="d-flex justify-content-end gap-2">
-          <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancelar</button>
-          <button type="button" class="btn btn-danger" (click)="save()">Guardar tarifa</button>
+          <button type="button" class="btn btn-outline-secondary" data-cy="cancelar-tarifa-button" (click)="cancel()">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-cy="guardar-tarifa-button" (click)="save()">Guardar tarifa</button>
         </div>
       </form>
     </div>
