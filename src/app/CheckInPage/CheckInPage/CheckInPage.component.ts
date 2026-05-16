@@ -8,7 +8,7 @@ import { BookingHotelPageService } from '../../BookingHotelPage/BookingHotelPage
   styleUrls: ['./CheckInPage.component.css'],
   standalone: false
 })
-export class CheckinPageComponent implements OnInit {
+export class CheckInPageComponent implements OnInit {
 
   cargando = true;
   exito = false;

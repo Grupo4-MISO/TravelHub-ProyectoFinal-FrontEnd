@@ -6,7 +6,7 @@ import { PropertyDetailComponent } from './PropertyDetailPage/PropertyDetail/Pro
 import { BookingHotelPageComponent } from './BookingHotelPage/BookingHotelPage/BookingHotelPage.component';
 import { ReservationsPageComponent } from './ReservationsPage/ReservationsPage/ReservationsPage.component';
 import { HelpPageComponent } from './HelpPage/HelpPage.component';
-import { CheckinPageComponent } from './CheckInPage/CheckInPage/CheckInPage.component';
+import { CheckInPageComponent } from './CheckInPage/CheckInPage/CheckInPage.component';
 import { BillingPageComponent } from './billingPage/billingPage.component';
 
 const routes: Routes = [
@@ -24,6 +24,18 @@ const routes: Routes = [
     loadComponent: () => import('./PaymentPage/Payment/Payment.component').then((c) => c.PaymentComponent)
   },
   {
+    path: 'tarifas',
+    loadComponent: () => import('./TarifasPage/TarifasPage/TarifasPage.component').then((c) => c.TarifasPageComponent)
+  },
+  {
+    path: 'tarifas/new',
+    loadComponent: () => import('./TarifasPage/TarifaCreate/TarifaCreate.component').then((c) => c.TarifaCreateComponent)
+  },
+  {
+    path: 'tarifas/edit/:id',
+    loadComponent: () => import('./TarifasPage/TarifaCreate/TarifaCreate.component').then((c) => c.TarifaCreateComponent)
+  },
+  {
     path: 'provider/new',
     loadComponent: () =>
       import('./ProviderPage/ProviderForm/ProviderForm.component').then((c) => c.ProviderFormComponent)
@@ -33,7 +45,7 @@ const routes: Routes = [
     loadComponent: () =>
       import('./TravelerPage/TravelerForm/TravelerForm.component').then((c) => c.TravelerFormComponent)
   },
-  { path: 'check-in/:id', component: CheckinPageComponent }
+  { path: 'check-in/:id', component: CheckInPageComponent }
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
-<nav class="navbar-shell d-flex align-items-center justify-content-between px-5">
-  <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/">
+<nav class="navbar-shell d-flex align-items-center justify-content-between px-lg-5 px-md-3 px-2">
+  <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/" [attr.aria-label]="'Ir a inicio'">
 
   <ul class="nav">
     <li class="nav-item">
@@ -33,6 +33,12 @@
         <a class="nav-link nv-link" data-cy="reservas-button" [routerLink]="['/booking']" [queryParams]="{ mode: 'reservations' }">
           <img src="/iconos/key.svg" class="nv-icon">
           Reservas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nv-link" [routerLink]="['/tarifas']">
+          <img src="/iconos/calendar-ico.svg" class="nv-icon">
+          Tarifas
         </a>
       </li>
       <li class ="nav-item">
@@ -82,9 +88,9 @@
   }
 
   @if (isNotAuthenticated()) {
-    <div class="d-flex gap-2">
-      <button type="button" class="btn btn-lg btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
-      <button type="button" class="btn btn-lg btn-brand-secondary" data-cy="crear-cuenta-button" [routerLink]="['/auth/create']">Crear Cuenta</button>
+    <div class="d-flex gap-2 flex-wrap">
+      <button type="button" class="btn btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
+      <button type="button" class="btn btn-brand-secondary" data-cy="crear-cuenta-button" [routerLink]="['/auth/create']">Crear Cuenta</button>
     </div>
   }
   @if (isAuthenticated()) {

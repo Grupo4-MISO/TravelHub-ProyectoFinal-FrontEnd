@@ -4,7 +4,12 @@ export interface PropertyRoom {
   descripcion: string;
   capacidad: number;
   precio: number;
+  precio_original?: number;
   imageUrl: string;
+  categoria_habitacion?: string;
+  tarifaAplicada?: boolean;
+  tarifaNombre?: string;
+  descuentoActivo?: boolean;
 }
 
 export interface PropertyImage {
@@ -26,6 +31,7 @@ export interface PropertyDetail {
   pais: string;
   ciudad: string;
   direccion: string;
+  categoria: string;
   latitude: number;
   longitude: number;
   rating: number;
