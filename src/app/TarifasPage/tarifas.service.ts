@@ -42,8 +42,8 @@ export type Tarifa = {
 @Injectable({ providedIn: 'root' })
 export class TarifasService {
   private readonly http = inject(HttpClient);
-  //private readonly tarifasEndpoint = `${environment.apiUrl}/tarifas`;
-  private readonly tarifasEndpoint = 'http://localhost:3008/tarifas';
+  private readonly tarifasEndpoint = `${environment.apiUrl}/api/v1/tarifas`;
+  // private readonly tarifasEndpoint = 'http://localhost:3008/tarifas';
   private readonly descuentosEndpoint = 'http://localhost:3008/descuentos';
 
   getTarifas(): Observable<Tarifa[]> {
