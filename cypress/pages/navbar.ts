@@ -14,4 +14,8 @@ export class NavBar {
     static clickTarifas(){
         cy.visit('/tarifas');
     }
+
+    static clickFacturacion(){
+        cy.visit('/billing');
+    }
 }
