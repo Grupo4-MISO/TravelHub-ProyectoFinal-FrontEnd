@@ -13,15 +13,47 @@
           </div>
         </div>
       </div>
+
+      <div class="col-12 col-md-4 ms-md-3 d-flex align-items-start">
+        <div class="w-50">
+          <div>
+            <label for="billingYear" class="form-label">Año</label>
+            <select id="billingYear" class="form-select" (change)="onDateChange()">
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option selected value="2026">2026</option>
+            </select>
+          </div>
+        </div>
+        <div class="w-50 ms-3">
+          <div class="mb-2">
+            <label for="billingMonth" class="form-label">Mes</label>
+            <select id="billingMonth" class="form-select" (change)="onDateChange()">
+              <option value="1">Enero</option>
+              <option value="2">Febrero</option>
+              <option value="3">Marzo</option>
+              <option value="4">Abril</option>
+              <option selected value="5">Mayo</option>
+              <option value="6">Junio</option>
+              <option value="7">Julio</option>
+              <option value="8">Agosto</option>
+              <option value="9">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
 
 <div class="card mb-3 ingresos-card">
   <div class="card-body">
     <div class="row align-items-center">
       <div class="col-md-6">
-        <h5 class="card-title" data-cy="billing-page-title">Ingreso total - Mayo 2026</h5>
-        <h4> $1,234.56 </h4>
-        <p data-cy="billing-page-generated"> Total generado por reservas confirmadas</p>
+        <h5 class="card-title">Ingreso total - {{ strMonth(mesActivo) }} {{ anoActivo }}</h5>
+        <h4> {{ingresoMes | currency: '$'}} </h4>
+        <p> Total generado por reservas confirmadas</p>
       </div>
       <div class="col-md-6 text-end">
         <div class="chart-wrapper">
@@ -43,29 +75,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Habitación 101</td>
-      <td>15</td>
-      <td>$500.00</td>
-      <td>40%</td>
-    </tr>
-    <tr>
-      <td>Habitación 102</td>
-      <td>10</td>
-      <td>$300.00</td>
-      <td>24%</td>
-    </tr>
-    <tr>
-      <td>Habitación 103</td>
-      <td>5</td>
-      <td>$200.00</td>
-      <td>16%</td>
-    </tr>
-    <tr>
-      <td>Habitación 104</td>
-      <td>8</td>
-      <td>$234.56</td>
-      <td>20%</td>
+    <tr *ngFor="let habitacion of habitaciones">
+        <td>{{ habitacion.descripcion }}</td>
+        <td>{{ habitacion.reservas }}</td>
+        <td>{{ habitacion.ingresos | currency: '$' }}</td>
+        <td>{{ habitacion.participacion | number:'1.2-2' }}%  </td>
+      
     </tr>
   </tbody>
 </table>
