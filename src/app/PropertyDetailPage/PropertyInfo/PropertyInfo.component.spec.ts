@@ -18,6 +18,7 @@ describe('PropertyInfoComponent', () => {
     longitude: -74.1,
     rating: 4.2,
     reviews: 10,
+    categoria: 'Hotel',
     habitaciones: [],
     amenidades: [],
     imagenes: [],

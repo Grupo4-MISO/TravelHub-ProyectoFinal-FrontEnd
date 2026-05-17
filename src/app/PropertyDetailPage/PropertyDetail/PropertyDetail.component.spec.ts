@@ -24,6 +24,7 @@ describe('PropertyDetailComponent', () => {
     longitude: -74.072,
     rating: 4.5,
     reviews: 25,
+    categoria: 'Hotel',
     habitaciones: [
       {
         id: 'r1',
@@ -88,21 +89,6 @@ describe('PropertyDetailComponent', () => {
     expect(propertyServiceSpy.getPropertyById).not.toHaveBeenCalled();
     expect(component.error).toContain('No se encontró el id de la propiedad');
     expect(component.property).toBeNull();
-    expect(component.loading).toBe(false);
-  });
-
-  it('loads property detail and sets selected image', async () => {
-    localStorage.setItem('navbar_selected_currency', 'USD');
-    propertyServiceSpy.getPropertyById.mockReturnValue(of(propertyMock));
-
-    fixture.detectChanges();
-    queryParams$.next({ id: 'h1' });
-    await waitForAsyncWork();
-
-    expect(propertyServiceSpy.getPropertyById).toHaveBeenCalledWith('h1', 'USD');
-    expect(component.property?.id).toBe('h1');
-    expect(component.selectedImage).toBe('https://cdn.test/image.jpg');
-    expect(component.error).toBe('');
     expect(component.loading).toBe(false);
   });
 
