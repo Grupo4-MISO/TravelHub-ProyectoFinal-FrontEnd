@@ -49,6 +49,7 @@ export class PaymentMethodComponent implements OnInit {
   private readonly providersEndpoint = `${this.api_url}/api/v1/Transactions/providers`;
 
   readonly habitacionId = input('');
+  readonly propiedadId = input('');
   readonly roomDescripcion = input('');
   readonly propertyNombre = input('');
   readonly checkIn = input('');
@@ -83,6 +84,7 @@ export class PaymentMethodComponent implements OnInit {
     }
 
     const habitacionId = this.habitacionId().trim();
+    const propiedadId = this.propiedadId().trim();
     const roomDescripcion = this.roomDescripcion().trim();
     const propertyNombre = this.propertyNombre().trim();
     const checkIn = this.checkIn().trim();
@@ -143,6 +145,7 @@ export class PaymentMethodComponent implements OnInit {
               return this.paymentService.createPayment({
                 reserva_id: reservaId,
                 provider_id: providerId,
+                propiedad_id: propiedadId,
                 amount: rateResponse.tarifa_total,
                 currency,
                 status: 'pending',
