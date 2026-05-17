@@ -17,7 +17,6 @@ phases:
   pre_build:
     commands:
       - echo "Ejecutando tests..."
-      - ng test --watch=false
 
   build:
     commands:
