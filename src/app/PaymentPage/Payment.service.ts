@@ -13,6 +13,7 @@ export type PaymentMetadata = {
 export type CreatePaymentRequest = {
 	readonly reserva_id: string;
 	readonly provider_id: string;
+	readonly propiedad_id: string;
 	readonly amount: number;
 	readonly currency: string;
 	readonly status: 'pending';
@@ -34,7 +35,7 @@ export class PaymentService {
 	//private api_url = environment.apiUrl;
 	
 	// Para desarrollo local, usar la URL del inventarios
-	private api_url = environment.apiUrl;
+	private api_url = environment.trasacciones;
 	private readonly paymentsEndpoint = `${this.api_url}/api/v1/Transactions/payments`;
 
 	createPayment(payload: CreatePaymentRequest): Observable<CreatePaymentResponse> {
