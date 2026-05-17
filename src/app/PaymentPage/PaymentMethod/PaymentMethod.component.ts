@@ -78,7 +78,7 @@ export class PaymentMethodComponent implements OnInit {
 
   onConfirmReservation(): void {
     if (!this.selectedProviderId()) {
-      this.selectionErrorMessage.set('Selecciona un metodo de pago para continuar.');
+      this.selectionErrorMessage.set($localize`:@@selectPaymentMethod:Selecciona un metodo de pago para continuar.`);
       return;
     }
 
@@ -93,24 +93,24 @@ export class PaymentMethodComponent implements OnInit {
     const userId = sessionStorage.getItem('idUsuario')?.trim();
 
     if (!habitacionId || !roomDescripcion || !propertyNombre || !checkIn || !checkOut || !providerId) {
-      this.submitErrorMessage.set('No hay informacion completa para registrar el pago.');
+      this.submitErrorMessage.set($localize`:@@incompletePaymentInfo:No hay informacion completa para registrar el pago.`);
       return;
     }
 
     if (!userId) {
-      this.submitErrorMessage.set('No hay usuario en sesion. Inicia sesion para continuar.');
+      this.submitErrorMessage.set($localize`:@@noUserSession:No hay usuario en sesion. Inicia sesion para continuar.`);
       // this.router.navigate(['/login']);
       return;
     }
 
     if (!Number.isFinite(amountBase) || amountBase <= 0) {
-      this.submitErrorMessage.set('El valor del pago es invalido.');
+      this.submitErrorMessage.set($localize`:@@invalidPaymentAmount:El valor del pago es invalido.`);
       return;
     }
 
     this.selectionErrorMessage.set('');
     this.submitErrorMessage.set('');
-    this.submitStatusMessage.set('Generando transaccion de pago...');
+    this.submitStatusMessage.set($localize`:@@generatingTransaction:Generando transaccion de pago...`);
     this.isSubmittingPayment.set(true);
 
     const holdReservaPayload: HoldReservaRequest = {
@@ -127,7 +127,7 @@ export class PaymentMethodComponent implements OnInit {
           const reservaId = this.extractReservaId(holdResponse as HoldReservaResponse);
 
           if (!reservaId) {
-            throw new Error('No fue posible obtener el id de la reserva para crear el pago.');
+            throw new Error($localize`:@@noReservationId:No fue posible obtener el id de la reserva para crear el pago.`);
           }
 
           return this.reservasService.calcularTarifaReserva({
@@ -146,7 +146,7 @@ export class PaymentMethodComponent implements OnInit {
                 amount: rateResponse.tarifa_total,
                 currency,
                 status: 'pending',
-                description: `Pago por reserva del hotel ${propertyNombre}`,
+                description: $localize`:@@paymentForHotelReservation:Pago por reserva del hotel ${propertyNombre}`,
                 provider_payment_id: null,
                 url: null,
                 metadata: {
@@ -170,13 +170,13 @@ export class PaymentMethodComponent implements OnInit {
 
           if (!providerPaymentId || !paymentUrl) {
             this.submitErrorMessage.set(
-              'El proveedor no devolvio la URL de pago. Intenta nuevamente.'
+              $localize`:@@noPaymentUrl:El proveedor no devolvio la URL de pago. Intenta nuevamente.`
             );
             this.submitStatusMessage.set('');
             return;
           }
 
-          this.submitStatusMessage.set('Cargando... te redirigiremos para completar el pago.');
+          this.submitStatusMessage.set($localize`:@@redirectingPayment:Cargando... te redirigiremos para completar el pago.`);
           window.open(paymentUrl, '_blank', 'noopener,noreferrer');
 
           setTimeout(() => {
@@ -186,7 +186,7 @@ export class PaymentMethodComponent implements OnInit {
         error: (error) => {
           console.error('Error al crear el pago.', error);
           this.submitStatusMessage.set('');
-          this.submitErrorMessage.set('No se pudo generar la transaccion de pago. Intenta nuevamente.');
+          this.submitErrorMessage.set($localize`:@@transactionFailed:No se pudo generar la transaccion de pago. Intenta nuevamente.`);
         }
       });
   }
@@ -211,7 +211,7 @@ export class PaymentMethodComponent implements OnInit {
       .pipe(
         catchError((error) => {
           console.error('Error al consultar metodos de pago.', error);
-          this.loadErrorMessage.set('No se pudieron cargar los metodos de pago. Intenta de nuevo.');
+          this.loadErrorMessage.set($localize`:@@loadPaymentMethodsFailed:No se pudieron cargar los metodos de pago. Intenta de nuevo.`);
           return of([] as PaymentProviderApi[]);
         }),
         finalize(() => {
@@ -233,7 +233,7 @@ export class PaymentMethodComponent implements OnInit {
           this.selectedProviderId.set(null);
 
           if (!this.loadErrorMessage()) {
-            this.loadErrorMessage.set('No hay metodos de pago disponibles en este momento.');
+            this.loadErrorMessage.set($localize`:@@noPaymentMethodsAvailable:No hay metodos de pago disponibles en este momento.`);
           }
 
           return;

@@ -7,8 +7,8 @@
         </div>
         <div class="col-md-7">
           <div class="card-body">
-            <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
-            <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
+             <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
+             <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
           </div>
         </div>
       </div>
@@ -16,9 +16,9 @@
 
     @if(modo === 'reservas') {
       <div class="col-md-3 d-flex flex-column align-items-end gap-2">
-        <button class="btn" id="botonFiltros" data-cy="canvas-buscar" (click)="mostrar_filtros()">Buscar Reservas</button>
+        <button class="btn" id="botonFiltros" data-cy="canvas-buscar" (click)="mostrar_filtros()" i18n>Buscar Reservas</button>
         @if(filtroActivo) {
-          <button class="btn" id="botonRemoverFiltros" data-cy="canvas-remover-filtros" (click)="removerFiltros()">Remover Filtros</button>  
+          <button class="btn" id="botonRemoverFiltros" data-cy="canvas-remover-filtros" (click)="removerFiltros()" i18n>Remover Filtros</button>  
         }
       </div>
     }
@@ -28,14 +28,14 @@
     @if (modo=='reservas'){
       <thead>
         <tr class="table-secondary" data-cy="reservas-header">
-          <th scope="col" colspan="5" id="headerReservas">Reservas</th>
+          <th scope="col" colspan="5" id="headerReservas" i18n>Reservas</th>
         </tr>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Id Habitacion</th>
-          <th scope="col">Valor de la Reserva</th>
-          <th scope="col">Fechas</th>
-          <th scope="col">Estado</th>
+          <th scope="col" i18n>Id</th>
+          <th scope="col" i18n>Id Habitacion</th>
+          <th scope="col" i18n>Valor de la Reserva</th>
+          <th scope="col" i18n>Fechas</th>
+          <th scope="col" i18n>Estado</th>
         </tr>
       </thead>
       <tbody>
@@ -54,14 +54,14 @@
     @if (modo=='habitaciones'){
       <thead>
         <tr class="table-secondary">  
-          <th scope="col" colspan="5">Habitaciones</th>
+          <th scope="col" colspan="5" i18n>Habitaciones</th>
         </tr>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Tipo de Habitación</th>
-          <th scope="col">Capacidad</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Reservas</th>
+          <th scope="col" i18n>Id</th>
+          <th scope="col" i18n>Tipo de Habitación</th>
+          <th scope="col" i18n>Capacidad</th>
+          <th scope="col" i18n>Precio</th>
+          <th scope="col" i18n>Reservas</th>
         </tr>
       </thead>
       <tbody>
@@ -79,48 +79,48 @@
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="detalleReserva" aria-labelledby="offcanvasScrollingLabel" data-bs-backdrop="static">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Reserva: {{ reservaActiva?.public_id }}</h5>
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel" i18n>Reserva: {{ reservaActiva?.public_id }}</h5>
     </div>
     <div class="offcanvas-body">
       @if (reservaActiva) {
         <table class="table table-striped" style="width: 100%;">
           <tbody>
             <tr class="table-info">
-              <th scope="row">Habitación</th>
+              <th scope="row" i18n>Habitación</th>
               <td>{{ reservaActiva.id_visual_habitacion }}</td>
             </tr>
             <tr>
-              <th scope="row">Fechas</th>
-              <td>Desde: {{ reservaActiva.check_in }} <br>
+              <th scope="row" i18n>Fechas</th>
+              <td i18n>Desde: {{ reservaActiva.check_in }} <br>
                Hasta: {{ reservaActiva.check_out }}
                </td>
             </tr>
             <tr class="table-info">
-              <th scope="row">Titular</th>
+              <th scope="row" i18n>Titular</th>
               <td>{{ reservaActiva.usuario?.first_name }} {{ reservaActiva.usuario?.last_name }} <br>
                 {{ reservaActiva.usuario?.country || 'Colombia'}} <br>
                 {{ reservaActiva.usuario?.email }}  
             </td>
             </tr>
             <tr>
-              <th scope="row">Valor Total</th>
+              <th scope="row" i18n>Valor Total</th>
               <td>{{ reservaActiva.moneda || 'COP' }}: {{ (reservaActiva.valor) | number:'1.0-0' }}</td>
             </tr>
             <tr class="table-info">
-              <th scope="row">Estado</th>
+              <th scope="row" i18n>Estado</th>
               <td>{{ reservaActiva.estado }}</td>
             </tr>
           </tbody>
         </table>
       } @else {
-        <p class="text-muted">No hay reserva seleccionada</p>
+        <p class="text-muted" i18n>No hay reserva seleccionada</p>
       }
       <div class="d-grid gap-2">
         @if (reservaActiva?.estado === 'pendiente') {
-        <button class="btn btn-success" (click)="mostrar_modal('confirmar')">Confirmar Reserva</button>
+        <button class="btn btn-success" (click)="mostrar_modal('confirmar')" i18n>Confirmar Reserva</button>
         }
-        <button class="btn btn-warning" (click)="mostrar_modal('revocar')">Revocar Reserva</button>
-        <button class="btn btn-secondary" (click)="ocultar_reserva()">Volver</button>
+        <button class="btn btn-warning" (click)="mostrar_modal('revocar')" i18n>Revocar Reserva</button>
+        <button class="btn btn-secondary" (click)="ocultar_reserva()" i18n>Volver</button>
       </div>
 
       <div class="qr-container mt-4">
@@ -128,8 +128,8 @@
           <div class="qr-card">
 
             <div class="qr-header">
-              <h5>Check-in de Reserva</h5>
-              <p>
+              <h5 i18n>Check-in de Reserva</h5>
+              <p i18n>
                 Reserva #{{ reservaActiva?.public_id }}
               </p>
             </div>
@@ -144,7 +144,7 @@
             </div>
 
             <div class="qr-footer">
-              <small>
+              <small i18n>
                 Escanea este código para validar la reserva
               </small>
             </div>
@@ -161,16 +161,17 @@
       id="canvasBuscar" 
       aria-labelledby="offcanvasScrollingLabel" 
       data-bs-backdrop="static">
-  <h3> Filtrar Reservas</h3>
+  <h3 i18n> Filtrar Reservas</h3>
   <div class="mb-2">
-    <label for="codigo" class="form-label">Código de Reserva</label>
+    <label for="codigo" class="form-label" i18n>Código de Reserva</label>
     <input
       type="text"
       class="form-control"
       id="codigo"
       list="listaCodigos"
       placeholder="Escribe el código de reserva"
-      data-cy="codigo_reserva">
+      data-cy="codigo_reserva"
+      i18n-placeholder>
 
     <datalist id="listaCodigos">
       @for (reserva of reservas; track reserva.public_id) {
@@ -180,14 +181,15 @@
   </div>
 
   <div class="mb-2">
-    <label for="habitacion" class="form-label">Habitación</label>
+    <label for="habitacion" class="form-label" i18n>Habitación</label>
     <input
       type="text"
       class="form-control"
       id="habitacion"
       list="listaHabitaciones"
       placeholder="Escribe el número de habitación"
-      data-cy="campo-habitaciones">
+      data-cy="campo-habitaciones"
+      i18n-placeholder>
     <datalist id="listaHabitaciones">
       @for (room of habitaciones; track room.id_visual) {
         <option [value]="room.id_visual"></option>
@@ -196,7 +198,7 @@
   </div>
 
   <div class="mb-2">
-    <label for="checkIn" class="form-label">Fecha check in</label>
+    <label for="checkIn" class="form-label" i18n>Fecha check in</label>
     <input
       type="date"
       class="form-control"
@@ -204,7 +206,7 @@
   </div>
 
   <div class="mb-2">
-    <label for="checkOut" class="form-label">Fecha check out</label>
+    <label for="checkOut" class="form-label" i18n>Fecha check out</label>
     <input
       type="date"
       class="form-control"
@@ -212,13 +214,14 @@
   </div>
 
   <div class="mb-2">
-    <label for="correoViajero" class="form-label">Correo Usuario</label>
+    <label for="correoViajero" class="form-label" i18n>Correo Usuario</label>
     <input
       type="email"
       class="form-control"
       id="correoViajero"
       list="listaCorreos"
-      placeholder="Escribe el correo del viajero">
+      placeholder="Escribe el correo del viajero"
+      i18n-placeholder>
     <datalist id="listaCorreos">
       @for (correo of correosViajeros; track correo) {
         <option [value]="correo"></option>
@@ -227,17 +230,17 @@
   </div>
 
   <div class="mb-2">
-    <label for="estadoReserva" class="form-label">Estado reserva</label>
+    <label for="estadoReserva" class="form-label" i18n>Estado reserva</label>
     <select class="form-select" id="estadoReserva">
-      <option selected>Selecciona un estado</option>
-      <option value="confirmada">Confirmada</option>
-      <option value="pendiente">Pendiente</option>
-      <option value="completada">Completada</option>
+      <option selected i18n>Selecciona un estado</option>
+      <option value="confirmada" i18n>Confirmada</option>
+      <option value="pendiente" i18n>Pendiente</option>
+      <option value="completada" i18n>Completada</option>
     </select>
   </div>
   <p id="resultadoFiltros" data-cy="resultados-filtros"></p>
-  <button class="btn btn-primary mb-2" data-cy="canvas-filtros" (click)="aplicarFiltros()">Aplicar Filtros</button>
-  <button class="btn btn-secondary" data-cy="canvas-volver" (click)="ocultar_filtros()">Volver</button>
+  <button class="btn btn-primary mb-2" data-cy="canvas-filtros" (click)="aplicarFiltros()" i18n>Aplicar Filtros</button>
+  <button class="btn btn-secondary" data-cy="canvas-volver" (click)="ocultar_filtros()" i18n>Volver</button>
 </div>
 
 
@@ -251,12 +254,12 @@
       </div>
       <div class="modal-footer">
         @if (accionModal === 'confirmar') {
-        <button type="button" class="btn btn-primary" (click)="confirmar_reserva()">Confirmar Reserva</button>
+        <button type="button" class="btn btn-primary" (click)="confirmar_reserva()" i18n>Confirmar Reserva</button>
         }
         @if (accionModal === 'revocar') {
-        <button type="button" class="btn btn-danger" (click)="revocar_reserva()">Revocar Reserva</button>
+        <button type="button" class="btn btn-danger" (click)="revocar_reserva()" i18n>Revocar Reserva</button>
         }
-        <button type="button" class="btn btn-secondary" (click)="ocultar_modal()">Volver</button>
+        <button type="button" class="btn btn-secondary" (click)="ocultar_modal()" i18n>Volver</button>
       </div>
     </div>
   </div>

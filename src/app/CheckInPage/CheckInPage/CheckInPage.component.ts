@@ -32,7 +32,7 @@ export class CheckInPageComponent implements OnInit {
       this.cargando = false;
       this.exito = false;
 
-      this.mensaje = 'Reserva inválida';
+      this.mensaje = $localize`:@@checkinInvalid:Reserva inválida`;
 
       return;
     }
@@ -57,7 +57,7 @@ export class CheckInPageComponent implements OnInit {
           this.exito = false;
 
           this.mensaje =
-            'No fue posible completar el check-in';
+            $localize`:@@checkinFailed:No fue posible completar el check-in`;
         }
       });
   }

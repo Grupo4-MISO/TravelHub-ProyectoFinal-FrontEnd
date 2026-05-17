@@ -6,6 +6,7 @@ import { CountryList } from '../countrylist';
 import { NavbarService } from '../navbar.service';
 import { Subscription } from 'rxjs';
 import { ChangeDetectorRef } from '@angular/core';
+import { getCurrentLocale, changeLanguage, Locale } from '../../locale-helper';
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   countries: CountryList[] = [];
   selectedCountry!: CountryList;
   selectedCurrency!: string;
+  currentLanguage: Locale = 'es';
 
   private subscriptions = new Subscription();
 
@@ -30,6 +32,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.currentLanguage = getCurrentLocale();
     this.loadCountries();
     this.subscribeToServiceChanges();
   }
@@ -103,6 +106,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   onCurrencyChange(currency: string) {
     this.selectedCurrency = currency;
     this.navbarService.setCurrency(currency);
+  }
+
+  onLanguageChange(lang: Locale) {
+    changeLanguage(lang);
   }
 
   // ---- AUTH (sin cambios) ----

@@ -110,7 +110,7 @@ export class TravelerFormComponent {
 
     if (this.form.invalid) {
       this.form.markAllAsTouched();
-      this.submitError.set('Completa correctamente todos los campos obligatorios.');
+      this.submitError.set($localize`:traveler-required-fields:Completa correctamente todos los campos obligatorios.`);
       return;
     }
 
@@ -148,7 +148,7 @@ export class TravelerFormComponent {
       .pipe(finalize(() => this.isSubmitting.set(false)))
       .subscribe({
         next: () => {
-          this.submitSuccess.set('Traveler creado correctamente.');
+          this.submitSuccess.set($localize`:traveler-created:Traveler creado correctamente.`);
           this.form.reset();
           this.form.controls.traveler.controls.travelerStatus.patchValue('Pending');
 
@@ -157,7 +157,7 @@ export class TravelerFormComponent {
 
           this.currentCountryCode = countryCode;
           this.applyCountrySelection(countryName, countryCode);
-          this.toastrService.success('Cuenta creada correctamente.', 'Bienvenido '+ payload.traveler.first_name);
+          this.toastrService.success($localize`:traveler-account-created:Cuenta creada correctamente.`, $localize`:traveler-welcome:Bienvenido `+ payload.traveler.first_name);
           this.router.navigate(['/login']);
         },
         error: (error) => {
@@ -166,7 +166,7 @@ export class TravelerFormComponent {
             ? backendMessage.join(' | ')
             : typeof backendMessage === 'string'
               ? backendMessage
-              : 'No fue posible crear el traveler. Intenta nuevamente.';
+              : $localize`:traveler-create-error:No fue posible crear el traveler. Intenta nuevamente.`;
 
           this.submitError.set(parsedMessage);
         }
@@ -187,7 +187,7 @@ export class TravelerFormComponent {
 
     if (!selectedState) {
       this.cities.set([]);
-      this.citiesError.set('No fue posible resolver el estado seleccionado.');
+      this.citiesError.set($localize`:traveler-state-resolve-error:No fue posible resolver el estado seleccionado.`);
       this.addressGroup.controls.city.patchValue('', { emitEvent: false });
       return;
     }
@@ -221,7 +221,7 @@ export class TravelerFormComponent {
       .pipe(
         catchError((error) => {
           console.error('Error al consultar estados por pais.', error);
-          this.statesError.set('No se pudieron cargar los estados para el pais seleccionado.');
+          this.statesError.set($localize`:traveler-states-load-error:No se pudieron cargar los estados para el pais seleccionado.`);
           return of([] as CountryState[]);
         }),
         finalize(() => this.isLoadingStates.set(false))
@@ -249,7 +249,7 @@ export class TravelerFormComponent {
       .pipe(
         catchError((error) => {
           console.error('Error al consultar ciudades por estado.', error);
-          this.citiesError.set('No se pudieron cargar las ciudades del estado seleccionado.');
+          this.citiesError.set($localize`:traveler-cities-load-error:No se pudieron cargar las ciudades del estado seleccionado.`);
           return of([] as StateCity[]);
         }),
         finalize(() => this.isLoadingCities.set(false))

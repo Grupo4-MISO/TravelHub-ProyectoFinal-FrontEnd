@@ -77,7 +77,7 @@ export class TarifaCreateComponent implements OnInit {
         },
         error: (err) => {
           console.error('Error cargando tarifa', err);
-          this.toastr.error('No se pudo cargar la tarifa', 'Error');
+          this.toastr.error($localize`:@@errorCargarTarifa:No se pudo cargar la tarifa`, $localize`:@@error:Error`);
         }
       });
     }
@@ -126,27 +126,27 @@ export class TarifaCreateComponent implements OnInit {
     const descuentoFin = this.parseDate(descuento.vigencia_fin);
 
     if (!tarifaInicio || !tarifaFin) {
-      this.toastr.error('Primero define las fechas de vigencia de la tarifa', 'Fechas inválidas');
+      this.toastr.error($localize`:@@primeroDefineFechas:Primero define las fechas de vigencia de la tarifa`, $localize`:@@fechasInvalidas:Fechas inválidas`);
       return false;
     }
 
     if (!descuentoInicio || !descuentoFin) {
-      this.toastr.error('Debes completar las fechas de vigencia del descuento', 'Fechas inválidas');
+      this.toastr.error($localize`:@@completarFechasDescuento:Debes completar las fechas de vigencia del descuento`, $localize`:@@fechasInvalidas:Fechas inválidas`);
       return false;
     }
 
     if (descuentoInicio > descuentoFin) {
-      this.toastr.error('La fecha de inicio del descuento no puede ser mayor que la fecha de fin', 'Fechas inválidas');
+      this.toastr.error($localize`:@@inicioMayorFin:La fecha de inicio del descuento no puede ser mayor que la fecha de fin`, $localize`:@@fechasInvalidas:Fechas inválidas`);
       return false;
     }
 
     if (descuentoInicio < tarifaInicio) {
-      this.toastr.error('La fecha de inicio del descuento debe ser igual o posterior a la fecha de inicio de la tarifa', 'Fechas inválidas');
+      this.toastr.error($localize`:@@inicioDescuentoPosterior:La fecha de inicio del descuento debe ser igual o posterior a la fecha de inicio de la tarifa`, $localize`:@@fechasInvalidas:Fechas inválidas`);
       return false;
     }
 
     if (descuentoFin > tarifaFin) {
-      this.toastr.error('La fecha de fin del descuento debe ser igual o anterior a la fecha de fin de la tarifa', 'Fechas inválidas');
+      this.toastr.error($localize`:@@finDescuentoAnterior:La fecha de fin del descuento debe ser igual o anterior a la fecha de fin de la tarifa`, $localize`:@@fechasInvalidas:Fechas inválidas`);
       return false;
     }
 
@@ -155,7 +155,7 @@ export class TarifaCreateComponent implements OnInit {
 
   private validarIdentificador(): boolean {
     if (!this.tarifa.identificador || !this.tarifa.identificador.trim()) {
-      this.toastr.error('El identificador de la tarifa no puede estar vacío', 'Validación');
+      this.toastr.error($localize`:@@identificadorVacio:El identificador de la tarifa no puede estar vacío`, $localize`:@@validacion:Validación`);
       return false;
     }
 
@@ -214,13 +214,13 @@ export class TarifaCreateComponent implements OnInit {
         next: () => {
           descuentosCreados++;
           if (descuentosCreados === descuentosNuevos.length) {
-            this.toastr.success('Descuentos creados correctamente', 'Éxito');
+            this.toastr.success($localize`:@@descuentosCreados:Descuentos creados correctamente`, $localize`:@@exito:Éxito`);
             this.router.navigate(['/tarifas']);
           }
         },
         error: (err) => {
           console.error('Error creando descuento', err);
-          this.toastr.error('No se pudo crear un descuento', 'Error');
+          this.toastr.error($localize`:@@errorCrearDescuento:No se pudo crear un descuento`, $localize`:@@error:Error`);
         }
       });
     }
@@ -263,23 +263,23 @@ export class TarifaCreateComponent implements OnInit {
     if (this.isEdit && this.tarifaId) {
       this.tarifasService.updateTarifa(this.tarifaId, body).subscribe({
         next: () => {
-          this.toastr.success('Tarifa actualizada correctamente', 'Éxito');
+          this.toastr.success($localize`:@@tarifaActualizada:Tarifa actualizada correctamente`, $localize`:@@exito:Éxito`);
           this.router.navigate(['/tarifas']);
         },
         error: (err) => {
           console.error('Error actualizando tarifa', err);
-          this.toastr.error('No se pudo actualizar la tarifa', 'Error');
+          this.toastr.error($localize`:@@errorActualizarTarifa:No se pudo actualizar la tarifa`, $localize`:@@error:Error`);
         }
       });
     } else {
       this.tarifasService.createTarifa(body).subscribe({
         next: (tarifaCreada) => {
-          this.toastr.success('Tarifa creada correctamente', 'Éxito');
+          this.toastr.success($localize`:@@tarifaCreada:Tarifa creada correctamente`, $localize`:@@exito:Éxito`);
           this.router.navigate(['/tarifas']);
         },
         error: (err) => {
           console.error('Error creando tarifa', err);
-          this.toastr.error('No se pudo crear la tarifa', 'Error');
+          this.toastr.error($localize`:@@errorCrearTarifa:No se pudo crear la tarifa`, $localize`:@@error:Error`);
         }
       });
     }

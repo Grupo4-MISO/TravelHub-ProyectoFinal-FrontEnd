@@ -20,13 +20,13 @@
   <table class="table table-hover">
       <thead>
         <tr class="table-secondary" data-cy="reservas-header">
-          <th scope="col" colspan="7">Reservas</th>
+          <th scope="col" colspan="7" i18n="reservations|header">Reservas</th>
         </tr>
         <tr>
-          <th scope="col">Id Reserva</th>
-          <th scope="col">Hotel</th>
-          <th scope="col">Check in</th>
-          <th scope="col">Check out</th>
+          <th scope="col" i18n="reservations|id">Id Reserva</th>
+          <th scope="col" i18n="reservations|hotel">Hotel</th>
+          <th scope="col" i18n="reservations|checkin">Check in</th>
+          <th scope="col" i18n="reservations|checkout">Check out</th>
         </tr>
       </thead>
       <tbody>
@@ -47,41 +47,41 @@
         <table class="table table-striped" style="width: 100%;" data-cy="modal-info">
           <tbody>
             <tr class="table-info">
-              <th scope="row">Código</th>
+              <th scope="row" i18n="reservations|code">Código</th>
               <td>{{ reservaActiva.public_id }}</td>
             </tr>
             <tr>
-              <th scope="row">Hotel</th>
+              <th scope="row" i18n="reservations|hotel-label">Hotel</th>
               <td>{{ reservaActiva.nombre_hotel }} <br> 
                 {{ reservaActiva.direccion_hotel }} {{ reservaActiva.pais_hotel }}</td>
             </tr>
             <tr class="table-info">
-              <th scope="row">Fechas</th>
-              <td>Desde: {{ reservaActiva.check_in }} <br> Hasta: {{reservaActiva.check_out}}</td>
+              <th scope="row" i18n="reservations|dates">Fechas</th>
+              <td><span i18n="reservations|from">Desde:</span> {{ reservaActiva.check_in }} <br> <span i18n="reservations|until">Hasta:</span> {{reservaActiva.check_out}}</td>
             </tr>
             @if (reservaActiva.valor){
             <tr>
-              <th scope="row">Valor</th>
+              <th scope="row" i18n="reservations|value">Valor</th>
               <td>{{ reservaActiva.moneda || 'COP' }}: {{ (reservaActiva.valor) | number:'1.0-0' }}</td>
             </tr> 
             <tr class ="table-info">
-              <th scope="row">Estado</th>
+              <th scope="row" i18n="reservations|status2">Estado</th>
               <td>{{ reservaActiva.estado }}</td>
             </tr>
           } @else {
             <tr>
-              <th scope="row">Estado</th>
+              <th scope="row" i18n="reservations|status3">Estado</th>
               <td>{{ reservaActiva.estado }}</td>
             </tr>
           }
           </tbody>
         </table>
       } @else {
-        <p class="text-muted">No hay reserva seleccionada</p>
+        <p class="text-muted" i18n="reservations|no-selection">No hay reserva seleccionada</p>
       }
       <div class="d-grid gap-2">
-        <button class="btn btn-danger" data-cy="cancel-reserva" (click)="mostrar_modal()">Cancelar Reserva</button>
-        <button class="btn btn-secondary" data-cy="volver-button-panel" (click)="ocultar_reserva()">Volver</button>
+        <button class="btn btn-danger" data-cy="cancel-reserva" (click)="mostrar_modal()" i18n="reservations|cancel">Cancelar Reserva</button>
+        <button class="btn btn-secondary" data-cy="volver-button-panel" (click)="ocultar_reserva()" i18n="reservations|back">Volver</button>
       </div>
 
     </div>
@@ -92,14 +92,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel" data-cy="modal-title">Cancelar Reserva</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel" data-cy="modal-title" i18n="reservations|cancel-modal">Cancelar Reserva</h1>
       </div>
       <div class="modal-body" id="Modalbody">
-        <p>¿Está seguro de que desea cancelar la reserva {{ reservaActiva?.public_id }}? Esta acción no es revertible</p>
+        <p i18n="reservations|cancel-confirm">¿Está seguro de que desea cancelar la reserva {{ reservaActiva?.public_id }}? Esta acción no es revertible</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="cancelar_reserva()">Cancelar Reserva</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-cy="volver-button-modal">Volver</button>
+        <button type="button" class="btn btn-danger" (click)="cancelar_reserva()" i18n="reservations|cancel-btn">Cancelar Reserva</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-cy="volver-button-modal" i18n="reservations|back-modal">Volver</button>
       </div>
     </div>
   </div>

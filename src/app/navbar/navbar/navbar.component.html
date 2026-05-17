@@ -1,22 +1,22 @@
 <nav class="navbar-shell d-flex align-items-center justify-content-between px-lg-5 px-md-3 px-2">
-  <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/" [attr.aria-label]="'Ir a inicio'">
+  <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/" [attr.aria-label]="'Ir a inicio'" i18n-aria-label="navbar|Logo aria label">
 
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link nv-link" href="#"> 
+      <a class="nav-link nv-link" href="#" i18n> 
         <img src="/iconos/search.svg" class="nv-icon">
         Buscar
       </a>
     </li>
     @if (userRole !== 'Accomodation'){
       <li class="nav-item">
-        <a class="nav-link nv-link" href="#">
+        <a class="nav-link nv-link" href="#" i18n>
           <img src="/iconos/fire.svg" class="nv-icon">
           Ofertas
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nv-link" data-cy="reservas-button" (click)="routeReservations()">
+        <a class="nav-link nv-link" data-cy="reservas-button" (click)="routeReservations()" i18n>
           <img src="/iconos/calendar-ico.svg" class="nv-icon">
           Reservas
         </a>
@@ -24,32 +24,32 @@
     }
     @if (userRole === 'Accomodation') {
       <li class="nav-item">
-        <a class="nav-link nv-link" [routerLink]="['/booking']" [queryParams]="{ mode: 'rooms' }">
+        <a class="nav-link nv-link" [routerLink]="['/booking']" [queryParams]="{ mode: 'rooms' }" i18n>
           <img src="/iconos/room.svg" class="nv-icon">
           Habitaciones
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nv-link" data-cy="reservas-button-accom" [routerLink]="['/booking']" [queryParams]="{ mode: 'reservations' }">
+        <a class="nav-link nv-link" data-cy="reservas-button-accom" [routerLink]="['/booking']" [queryParams]="{ mode: 'reservations' }" i18n>
           <img src="/iconos/key.svg" class="nv-icon">
           Reservas
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nv-link" [routerLink]="['/tarifas']">
+        <a class="nav-link nv-link" [routerLink]="['/tarifas']" i18n>
           <img src="/iconos/calendar-ico.svg" class="nv-icon">
           Tarifas
         </a>
       </li>
       <li class ="nav-item">
-        <a class="nav-link nv-link" [routerLink]="['/billing']">
+        <a class="nav-link nv-link" [routerLink]="['/billing']" i18n>
           <img src="/iconos/bill.svg" class="nv-icon">
           Facturación
         </a>
       </li>
     }
     <li class="nav-item">
-      <a class="nav-link nv-link final" [routerLink]="['/help']">
+      <a class="nav-link nv-link final" [routerLink]="['/help']" i18n>
         <img src="/iconos/service-bell.svg" class="nv-icon">
         Ayuda
       </a>
@@ -87,10 +87,22 @@
   </div>
   }
 
+  <!-- Selector de idioma (visible para todos) -->
+  <div class="selector">
+    <select
+      data-cy="language-selector"
+      [ngModel]="currentLanguage"
+      (ngModelChange)="onLanguageChange($event)"
+    >
+      <option value="es">ES</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
+
   @if (isNotAuthenticated()) {
     <div class="d-flex gap-2 flex-wrap">
-      <button type="button" class="btn btn-brand-primary" data-cy="login-button" [routerLink]="['/login']">Iniciar sesión</button>
-      <button type="button" class="btn btn-brand-secondary" data-cy="crear-cuenta-button" [routerLink]="['/auth/create']">Crear Cuenta</button>
+      <button type="button" class="btn btn-brand-primary" data-cy="login-button" [routerLink]="['/login']" i18n>Iniciar sesión</button>
+      <button type="button" class="btn btn-brand-secondary" data-cy="crear-cuenta-button" [routerLink]="['/auth/create']" i18n>Crear Cuenta</button>
     </div>
   }
   @if (isAuthenticated()) {
@@ -107,13 +119,13 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="#" i18n>
               <img src="/iconos/config.svg" class="nv-icon">
               Configuración</a>
           </li>
           <li><hr class="dropdown-divider"></li>
           <li>
-            <a class="dropdown-item" href="#" data-cy="logout-button" (click)="logout()">
+            <a class="dropdown-item" href="#" data-cy="logout-button" (click)="logout()" i18n>
               <img src="/iconos/exit.svg" class="nv-icon">
               Cerrar Sesión
             </a>

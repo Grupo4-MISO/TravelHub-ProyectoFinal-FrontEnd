@@ -1,20 +1,20 @@
 <section class="availability-section">
-  <h2>Disponibilidad seleccionada</h2>
+  <h2 i18n>Disponibilidad seleccionada</h2>
 
   <div class="availability-grid">
     <article class="availability-item">
-      <p class="label">Check-In</p>
+      <p class="label" i18n>Check-In</p>
       <p class="value">{{ formatDate(check_in) }}</p>
     </article>
 
     <article class="availability-item">
-      <p class="label">Check-Out</p>
+      <p class="label" i18n>Check-Out</p>
       <p class="value">{{ formatDate(check_out) }}</p>
     </article>
 
     <article class="availability-item">
-      <p class="label">Capacidad</p>
-      <p class="value">{{ capacidad ?? 'No definida' }} persona(s)</p>
+      <p class="label" i18n>Capacidad</p>
+      <p class="value" i18n>{{ capacidad ?? 'No definida' }} persona(s)</p>
     </article>
   </div>
 </section>

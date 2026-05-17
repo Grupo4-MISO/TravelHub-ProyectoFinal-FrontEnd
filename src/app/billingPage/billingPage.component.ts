@@ -62,7 +62,7 @@ export class BillingPageComponent implements OnInit, AfterViewInit {
       data: {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
         datasets: [{
-          label: 'Ingresos del Mes',
+          label: $localize`:@@billingMonthlyIncome:Ingresos del Mes`,
           data: [10, 25, 15, 30, 20, 35, 25, 40, 30, 45],
           borderColor: '#015C77',
           tension: 0.3

@@ -278,16 +278,16 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       if (accion === 'confirmar') {
         const modalTitle = document.getElementById('staticBackdropLabel');
         const modalBody = document.getElementById('Modalbody');
-        const titulo = 'Confirmar Reserva ' + this.reservaActiva?.public_id;
-        const mensaje = '¿Está seguro de confirmar la reserva seleccionada?'
+        const titulo = $localize`:@@confirmarReserva:Confirmar Reserva` + ' ' + this.reservaActiva?.public_id;
+        const mensaje = $localize`:@@confirmarReservaMsg:¿Está seguro de confirmar la reserva seleccionada?`
         if (modalTitle) modalTitle.textContent = titulo;
         if (modalBody) modalBody.textContent = mensaje;
       }
       else if (accion === 'revocar') {
         const modalTitle = document.getElementById('staticBackdropLabel');
         const modalBody = document.getElementById('Modalbody');
-        const titulo = 'Revocar Reserva ' + this.reservaActiva?.public_id;
-        const mensaje = '¿Está seguro de revocar la reserva seleccionada? Esta acción no es reversible.'
+        const titulo = $localize`:@@revocarReserva:Revocar Reserva` + ' ' + this.reservaActiva?.public_id;
+        const mensaje = $localize`:@@revocarReservaMsg:¿Está seguro de revocar la reserva seleccionada? Esta acción no es reversible.`
         if (modalTitle) modalTitle.textContent = titulo;
         if (modalBody) modalBody.textContent = mensaje;
       }
@@ -326,7 +326,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       const correoInput = (document.getElementById('correoViajero') as HTMLInputElement)?.value.trim() || '';
       var estadoInput = (document.getElementById('estadoReserva') as HTMLInputElement)?.value.trim() || '';
 
-      if (estadoInput === 'Selecciona un estado') {
+      if (estadoInput === $localize`:@@seleccionaEstado:Selecciona un estado`) {
         estadoInput = '';
       }
 
@@ -397,7 +397,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     private mapearSalida(): void {
       const salida = document.getElementById('resultadoFiltros');
       const encontradas = this.reservasFiltradas.length
-      var texto = `${encontradas} reservas coinciden con los criterios de búsqueda.`;
+      var texto = $localize`:@@reservasCoinciden:${encontradas} reservas coinciden con los criterios de búsqueda.`;
 
       if (encontradas === this.reservas.length) {
         texto = '';
@@ -448,7 +448,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       if (fechaInInput) fechaInInput.value = '';
       if (fechaOutInput) fechaOutInput.value = '';
       if (correoInput) correoInput.value = '';
-      if (estadoInput) estadoInput.value = 'Selecciona un estado';
+      if (estadoInput) estadoInput.value = $localize`:@@seleccionaEstado:Selecciona un estado`;
       if (salida) salida.textContent = '';
     }
 
@@ -464,7 +464,7 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       const header = document.getElementById('headerReservas');
       if (header) {
         header.classList.remove('header-filtrado');
-        header.innerText = 'Reservas';
+        header.innerText = $localize`:@@reservas:Reservas`;
       }
     }
 
@@ -476,11 +476,11 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
       const correoInput = (document.getElementById('correoViajero') as HTMLInputElement)?.value.trim() || '';
       var estadoInput = (document.getElementById('estadoReserva') as HTMLInputElement)?.value.trim() || '';
 
-      if (estadoInput === 'Selecciona un estado') {
+      if (estadoInput === $localize`:@@seleccionaEstado:Selecciona un estado`) {
         estadoInput = '';
       }
 
-      var resutado = "Reservas encontradas para: "
+      var resutado = $localize`:@@reservasEncontradasPara:Reservas encontradas para: `
 
       if(codigoInput){
         resutado += `Código "${codigoInput}" `

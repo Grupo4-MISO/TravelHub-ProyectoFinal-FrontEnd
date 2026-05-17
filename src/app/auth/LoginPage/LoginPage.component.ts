@@ -50,7 +50,7 @@ export class LoginPageComponent implements OnInit {
     const normalizedPassword = password.trim();
 
     if (normalizedEmail.length === 0 || normalizedPassword.length === 0) {
-      this.error = 'Por favor, ingrese su correo electrónico y contraseña.';
+      this.error = $localize`:login-message:Por favor, ingrese su correo electronico y contrasena.`;
       return;
     }
 
@@ -66,7 +66,7 @@ export class LoginPageComponent implements OnInit {
         sessionStorage.setItem('idUsuario', res.user.id);
         const role = this.helper.decodeToken(res.token).role;
         sessionStorage.setItem('role', role);
-        this.toastrService.success('Has iniciado sesion correctamente.', 'Bienvenido ' + this.helper.decodeToken(res.token).username);
+        this.toastrService.success($localize`:login-success:Has iniciado sesion correctamente.`, $localize`:login-title:Bienvenido ` + this.helper.decodeToken(res.token).username);
 
         if (role == Role.ADMIN) {
           // this.router.navigate([`/admin`, res.id]);
@@ -105,7 +105,7 @@ export class LoginPageComponent implements OnInit {
       },
       (error) => {
         this.error = 'Usuario o contraseña incorrectos';
-        this.toastrService.error('Usuario o contraseña incorrectos.', 'Error');
+        this.toastrService.error($localize`:login-error:Usuario o contraseña incorrectos.`, $localize`:login-error-title:Error`);
       },
     );
   }

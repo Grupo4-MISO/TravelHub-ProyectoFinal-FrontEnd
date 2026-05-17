@@ -1,8 +1,8 @@
 <section class="payment-method" aria-labelledby="method-title">
-  <h2 id="method-title" class="method-title">Medio de Pago</h2>
+  <h2 id="method-title" class="method-title" i18n>Medio de Pago</h2>
 
   @if (isLoadingProviders()) {
-    <p class="status-text">Cargando metodos de pago...</p>
+    <p class="status-text" i18n>Cargando metodos de pago...</p>
   } @else {
     <div class="method-options" role="radiogroup" aria-label="Metodos de pago">
       @for (provider of paymentProviders(); track provider.id) {
@@ -51,7 +51,7 @@
     [disabled]="isLoadingProviders() || isSubmittingPayment() || !hasProviders()"
     (click)="onConfirmReservation()"
     data-cy="confirmar-reserva"
-    >
+    i18n>
     {{ isSubmittingPayment() ? 'Procesando pago...' : 'Confirmar Reserva' }}
   </button>
 </div>

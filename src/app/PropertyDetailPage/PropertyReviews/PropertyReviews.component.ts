@@ -35,7 +35,7 @@ export class PropertyReviewsComponent {
         return of<ReviewsState>({
           loading: false,
           comments: [],
-          error: 'No se puede cargar opiniones porque no llegó el id del hospedaje.',
+          error: $localize`:@@noHospedajeId:No se puede cargar opiniones porque no llegó el id del hospedaje.`,
           errorDetail: 'Verifica que la URL incluya el query param id.'
         });
       }
@@ -61,7 +61,7 @@ export class PropertyReviewsComponent {
             return of<ReviewsState>({
               loading: false,
               comments: [],
-              error: 'El servicio de opiniones tardo demasiado en responder.',
+              error: $localize`:@@reviewsTimeout:El servicio de opiniones tardo demasiado en responder.`,
               errorDetail: `Endpoint: ${this.reviewsService.getReviewsUrl(hospedajeId)}`
             });
           }
