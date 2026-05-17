@@ -312,68 +312,134 @@
           <context context-type="linenumber">242,243</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cargandoHotel" datatype="html">
+        <source>Cargando hotel...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hotelNoDisponible" datatype="html">
+        <source>Hotel no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cargandoDireccion" datatype="html">
+        <source>Cargando dirección...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="direccionNoDisponible" datatype="html">
+        <source>Dirección no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cargandoPais" datatype="html">
+        <source>Cargando país...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="paisNoDisponible" datatype="html">
+        <source>País no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="confirmarReserva" datatype="html">
         <source>Confirmar Reserva</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">281</context>
+          <context context-type="linenumber">299</context>
         </context-group>
       </trans-unit>
       <trans-unit id="confirmarReservaMsg" datatype="html">
         <source>¿Está seguro de confirmar la reserva seleccionada?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">282</context>
+          <context context-type="linenumber">300</context>
         </context-group>
       </trans-unit>
       <trans-unit id="revocarReserva" datatype="html">
         <source>Revocar Reserva</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">289</context>
+          <context context-type="linenumber">307</context>
         </context-group>
       </trans-unit>
       <trans-unit id="revocarReservaMsg" datatype="html">
         <source>¿Está seguro de revocar la reserva seleccionada? Esta acción no es reversible.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">290</context>
+          <context context-type="linenumber">308</context>
         </context-group>
       </trans-unit>
       <trans-unit id="seleccionaEstado" datatype="html">
         <source>Selecciona un estado</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">329</context>
+          <context context-type="linenumber">347</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">451</context>
+          <context context-type="linenumber">469</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">479</context>
+          <context context-type="linenumber">497</context>
         </context-group>
       </trans-unit>
       <trans-unit id="reservasCoinciden" datatype="html">
         <source><x id="PH" equiv-text="encontradas"/> reservas coinciden con los criterios de búsqueda.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">400</context>
+          <context context-type="linenumber">418</context>
         </context-group>
       </trans-unit>
       <trans-unit id="reservas" datatype="html">
         <source>Reservas</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">467</context>
+          <context context-type="linenumber">485</context>
         </context-group>
       </trans-unit>
       <trans-unit id="reservasEncontradasPara" datatype="html">
         <source>Reservas encontradas para: </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
-          <context context-type="linenumber">483</context>
+          <context context-type="linenumber">501</context>
         </context-group>
       </trans-unit>
       <trans-unit id="923044049424696480" datatype="html">
@@ -388,6 +454,62 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
           <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="396309482822294769" datatype="html">
+        <source>Check-In Confirmado!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2921249265008332294" datatype="html">
+        <source> Código de la reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2673375998850130631" datatype="html">
+        <source> Detalles de la reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5106558913698272360" datatype="html">
+        <source> Hotel: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2824260676235709546" datatype="html">
+        <source> Habitación: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7100749345467439595" datatype="html">
+        <source> Check-In: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1875542024659394306" datatype="html">
+        <source> Check-Out: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6926937270291817061" datatype="html">
+        <source>Error en el Check-In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">112,114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="checkinInvalid" datatype="html">
@@ -584,99 +706,116 @@
           <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7708270344948043036" datatype="html">
-        <source> <x id="INTERPOLATION" equiv-text="{{ isSubmittingPayment() ? &apos;Procesando pago...&apos; : &apos;Confirmar Reserva&apos; }}"/> </source>
+      <trans-unit id="3701243248307311721" datatype="html">
+        <source>Metodos de pago</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
-          <context context-type="linenumber">55,57</context>
+          <context context-type="linenumber">7</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="4400789001442918690" datatype="html">
+        <source> Procesando pago... </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">89,90</context>
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3170694086320313149" datatype="html">
+        <source> Confirmar Reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="payment-method-label" datatype="html">
+        <source>Metodo de pago <x id="PH" equiv-text="provider.name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="selectPaymentMethod" datatype="html">
         <source>Selecciona un metodo de pago para continuar.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="incompletePaymentInfo" datatype="html">
         <source>No hay informacion completa para registrar el pago.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="noUserSession" datatype="html">
         <source>No hay usuario en sesion. Inicia sesion para continuar.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
       <trans-unit id="invalidPaymentAmount" datatype="html">
         <source>El valor del pago es invalido.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="generatingTransaction" datatype="html">
         <source>Generando transaccion de pago...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">119</context>
         </context-group>
       </trans-unit>
       <trans-unit id="noReservationId" datatype="html">
         <source>No fue posible obtener el id de la reserva para crear el pago.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">136</context>
         </context-group>
       </trans-unit>
       <trans-unit id="paymentForHotelReservation" datatype="html">
         <source>Pago por reserva del hotel <x id="PH" equiv-text="propertyNombre"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">156</context>
         </context-group>
       </trans-unit>
       <trans-unit id="noPaymentUrl" datatype="html">
         <source>El proveedor no devolvio la URL de pago. Intenta nuevamente.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">173</context>
+          <context context-type="linenumber">180</context>
         </context-group>
       </trans-unit>
       <trans-unit id="redirectingPayment" datatype="html">
         <source>Cargando... te redirigiremos para completar el pago.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">179</context>
+          <context context-type="linenumber">186</context>
         </context-group>
       </trans-unit>
       <trans-unit id="transactionFailed" datatype="html">
         <source>No se pudo generar la transaccion de pago. Intenta nuevamente.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">189</context>
+          <context context-type="linenumber">196</context>
         </context-group>
       </trans-unit>
       <trans-unit id="loadPaymentMethodsFailed" datatype="html">
         <source>No se pudieron cargar los metodos de pago. Intenta de nuevo.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">214</context>
+          <context context-type="linenumber">221</context>
         </context-group>
       </trans-unit>
       <trans-unit id="noPaymentMethodsAvailable" datatype="html">
         <source>No hay metodos de pago disponibles en este momento.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
-          <context context-type="linenumber">236</context>
+          <context context-type="linenumber">243</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4974508120976928964" datatype="html">
@@ -691,6 +830,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
           <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5456772768636594384" datatype="html">
+        <source>Detalle de tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1767943113144973999" datatype="html">
@@ -756,18 +902,25 @@
           <context context-type="linenumber">2,4</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="8376830740524331942" datatype="html">
+        <source>Resumen de la reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentReservationSummary/PaymentReservationSummary.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="5555148991494117721" datatype="html">
         <source>Pago no disponible</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.html</context>
-          <context context-type="linenumber">24,25</context>
+          <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="187187500641108332" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ holdReservationErrorMessage() }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.html</context>
-          <context context-type="linenumber">25,26</context>
+          <context context-type="linenumber">26,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="missingReservationData" datatype="html">
@@ -981,6 +1134,13 @@
           <context context-type="linenumber">4,7</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="imagenDe" datatype="html">
+        <source>Imagen de <x id="PH" equiv-text="this.propertyName"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyImages/PropertyImages.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4229553481192754928" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ property.rating }}"/> (<x id="INTERPOLATION_1" equiv-text="{{ property.reviews }}"/> reseñas)</source>
         <context-group purpose="location">
@@ -1014,6 +1174,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyMap/PropertyMap.component.html</context>
           <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mapaDe" datatype="html">
+        <source>Mapa de <x id="PH" equiv-text="this.propertyName"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyMap/PropertyMap.component.ts</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6666311555603028019" datatype="html">
@@ -1611,6 +1778,20 @@
         <note priority="1" from="description">cancel-confirm</note>
         <note priority="1" from="meaning">reservations</note>
       </trans-unit>
+      <trans-unit id="cargandoUsuario" datatype="html">
+        <source>Cargando Usuario...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cargandoHotelReserva" datatype="html">
+        <source>Cargando Hotel...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="8725631384128232063" datatype="html">
         <source>Buscando hospedajes...</source>
         <context-group purpose="location">
@@ -1769,7 +1950,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">115,116</context>
+          <context context-type="linenumber">121,122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="21694922362979010" datatype="html">
@@ -1780,7 +1961,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">119,120</context>
+          <context context-type="linenumber">125,126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="165702607570028626" datatype="html">
@@ -1790,229 +1971,257 @@
           <context context-type="linenumber">87,88</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="7509596783505333696" datatype="html">
+        <source> Ocultar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6930841167180208705" datatype="html">
+        <source> Agregar descuento </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1677645728168024050" datatype="html">
         <source>Nuevo descuento</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">95,96</context>
+          <context context-type="linenumber">101,102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4912352538038742914" datatype="html">
         <source>Nombre del descuento</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">98,99</context>
+          <context context-type="linenumber">104,105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8578017397557692623" datatype="html">
         <source>Ej. Promo verano</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1803224391187997356" datatype="html">
         <source>Porcentaje (%)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">102,103</context>
+          <context context-type="linenumber">108,109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1830507234332447951" datatype="html">
         <source><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input type=&quot;checkbox&quot; class=&quot;form-check-input&quot; [(ngModel)]=&quot;descuentoForm.activo&quot; name=&quot;descuentoActivo&quot; /&gt;"/> Activo </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">107,108</context>
+          <context context-type="linenumber">113,114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6367108784204442474" datatype="html">
         <source>Agregar a lista</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">125,126</context>
+          <context context-type="linenumber">131,132</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8159522354450123434" datatype="html">
         <source>Descuentos agregados:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">132,133</context>
+          <context context-type="linenumber">138,139</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6665903341931535342" datatype="html">
         <source>Eliminar</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">140,141</context>
+          <context context-type="linenumber">146,147</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6402951927316857780" datatype="html">
         <source>Cancelar</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">150,151</context>
+          <context context-type="linenumber">156,157</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6531128545611535253" datatype="html">
         <source>Guardar tarifa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
-          <context context-type="linenumber">151,152</context>
+          <context context-type="linenumber">157,158</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="activo" datatype="html">
+        <source>Activo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="inactivo" datatype="html">
+        <source>Inactivo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="errorCargarTarifa" datatype="html">
         <source>No se pudo cargar la tarifa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="error" datatype="html">
         <source>Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">84</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">223</context>
+          <context context-type="linenumber">227</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">271</context>
+          <context context-type="linenumber">275</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">282</context>
+          <context context-type="linenumber">286</context>
         </context-group>
       </trans-unit>
       <trans-unit id="primeroDefineFechas" datatype="html">
         <source>Primero define las fechas de vigencia de la tarifa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">133</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fechasInvalidas" datatype="html">
         <source>Fechas inválidas</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">133</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">138</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">139</context>
+          <context context-type="linenumber">143</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">144</context>
+          <context context-type="linenumber">148</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">153</context>
         </context-group>
       </trans-unit>
       <trans-unit id="completarFechasDescuento" datatype="html">
         <source>Debes completar las fechas de vigencia del descuento</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">138</context>
         </context-group>
       </trans-unit>
       <trans-unit id="inicioMayorFin" datatype="html">
         <source>La fecha de inicio del descuento no puede ser mayor que la fecha de fin</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">139</context>
+          <context context-type="linenumber">143</context>
         </context-group>
       </trans-unit>
       <trans-unit id="inicioDescuentoPosterior" datatype="html">
         <source>La fecha de inicio del descuento debe ser igual o posterior a la fecha de inicio de la tarifa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">144</context>
+          <context context-type="linenumber">148</context>
         </context-group>
       </trans-unit>
       <trans-unit id="finDescuentoAnterior" datatype="html">
         <source>La fecha de fin del descuento debe ser igual o anterior a la fecha de fin de la tarifa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">153</context>
         </context-group>
       </trans-unit>
       <trans-unit id="identificadorVacio" datatype="html">
         <source>El identificador de la tarifa no puede estar vacío</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">158</context>
+          <context context-type="linenumber">162</context>
         </context-group>
       </trans-unit>
       <trans-unit id="validacion" datatype="html">
         <source>Validación</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">158</context>
+          <context context-type="linenumber">162</context>
         </context-group>
       </trans-unit>
       <trans-unit id="descuentosCreados" datatype="html">
         <source>Descuentos creados correctamente</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">217</context>
+          <context context-type="linenumber">221</context>
         </context-group>
       </trans-unit>
       <trans-unit id="exito" datatype="html">
         <source>Éxito</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">217</context>
+          <context context-type="linenumber">221</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">266</context>
+          <context context-type="linenumber">270</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">277</context>
+          <context context-type="linenumber">281</context>
         </context-group>
       </trans-unit>
       <trans-unit id="errorCrearDescuento" datatype="html">
         <source>No se pudo crear un descuento</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">223</context>
+          <context context-type="linenumber">227</context>
         </context-group>
       </trans-unit>
       <trans-unit id="tarifaActualizada" datatype="html">
         <source>Tarifa actualizada correctamente</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">266</context>
+          <context context-type="linenumber">270</context>
         </context-group>
       </trans-unit>
       <trans-unit id="errorActualizarTarifa" datatype="html">
         <source>No se pudo actualizar la tarifa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">271</context>
+          <context context-type="linenumber">275</context>
         </context-group>
       </trans-unit>
       <trans-unit id="tarifaCreada" datatype="html">
         <source>Tarifa creada correctamente</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">277</context>
+          <context context-type="linenumber">281</context>
         </context-group>
       </trans-unit>
       <trans-unit id="errorCrearTarifa" datatype="html">
         <source>No se pudo crear la tarifa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
-          <context context-type="linenumber">282</context>
+          <context context-type="linenumber">286</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3150794451316859032" datatype="html">
@@ -2172,6 +2381,13 @@
           <context context-type="linenumber">4,5</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2093836562703919639" datatype="html">
+        <source>Seleccion de tipo de cuenta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/CreatePage/CreatePage.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1839214969341819610" datatype="html">
         <source> Viajero </source>
         <context-group purpose="location">
@@ -2273,29 +2489,171 @@
         </context-group>
         <note priority="1" from="description">login-error-title</note>
       </trans-unit>
-      <trans-unit id="3731870663776031949" datatype="html">
-        <source>Ingreso total - Mayo 2026</source>
+      <trans-unit id="4448379371353374337" datatype="html">
+        <source>Año</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="linenumber">20,21</context>
         </context-group>
-        <note priority="1" from="description">income-title</note>
-        <note priority="1" from="meaning">billing</note>
       </trans-unit>
-      <trans-unit id="5063078307039073547" datatype="html">
-        <source> Total generado por reservas confirmadas</source>
+      <trans-unit id="2303355164832133056" datatype="html">
+        <source>Mes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">24,26</context>
+          <context context-type="linenumber">30,31</context>
         </context-group>
-        <note priority="1" from="description">total-generated</note>
-        <note priority="1" from="meaning">billing</note>
+      </trans-unit>
+      <trans-unit id="157531952224492388" datatype="html">
+        <source>Enero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1568691619928329005" datatype="html">
+        <source>Febrero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1148164967291934461" datatype="html">
+        <source>Marzo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1939993228172670836" datatype="html">
+        <source>Abril</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4319219690673073995" datatype="html">
+        <source>Mayo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4851770799627452" datatype="html">
+        <source>Junio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2418464672718869339" datatype="html">
+        <source>Julio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7197813819561794370" datatype="html">
+        <source>Agosto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3326769019519634531" datatype="html">
+        <source>Septiembre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="114628500143238762" datatype="html">
+        <source>Octubre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3156687797817467177" datatype="html">
+        <source>Noviembre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6960620651951213236" datatype="html">
+        <source>Diciembre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5875527295041649818" datatype="html">
+        <source>Ingreso total - <x id="INTERPOLATION" equiv-text="{{ strMonth(mesActivo) }}"/> <x id="INTERPOLATION_1" equiv-text="{{ anoActivo }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2363159593939939610" datatype="html">
+        <source>Total generado por reservas confirmadas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">56,57</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="1736069189225224893" datatype="html">
         <source>Habitación</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">39,40</context>
+          <context context-type="linenumber">71,72</context>
         </context-group>
         <note priority="1" from="description">room</note>
         <note priority="1" from="meaning">billing</note>
@@ -2304,7 +2662,7 @@
         <source>Reservas Confirmadas</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">72,73</context>
         </context-group>
         <note priority="1" from="description">confirmed-reservations</note>
         <note priority="1" from="meaning">billing</note>
@@ -2313,7 +2671,7 @@
         <source>Ingreso total</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">41,42</context>
+          <context context-type="linenumber">73,74</context>
         </context-group>
         <note priority="1" from="description">total-income</note>
         <note priority="1" from="meaning">billing</note>
@@ -2322,52 +2680,16 @@
         <source>Porcentaje del total</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">42,46</context>
+          <context context-type="linenumber">74,77</context>
         </context-group>
         <note priority="1" from="description">total-percentage</note>
         <note priority="1" from="meaning">billing</note>
       </trans-unit>
-      <trans-unit id="5145618637935957044" datatype="html">
-        <source>Habitación 101</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">47,49</context>
-        </context-group>
-        <note priority="1" from="description">room-101</note>
-        <note priority="1" from="meaning">billing</note>
-      </trans-unit>
-      <trans-unit id="2976962863025133805" datatype="html">
-        <source>Habitación 102</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">53,55</context>
-        </context-group>
-        <note priority="1" from="description">room-102</note>
-        <note priority="1" from="meaning">billing</note>
-      </trans-unit>
-      <trans-unit id="175814362142862459" datatype="html">
-        <source>Habitación 103</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">59,61</context>
-        </context-group>
-        <note priority="1" from="description">room-103</note>
-        <note priority="1" from="meaning">billing</note>
-      </trans-unit>
-      <trans-unit id="1803222629429265802" datatype="html">
-        <source>Habitación 104</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
-          <context context-type="linenumber">65,67</context>
-        </context-group>
-        <note priority="1" from="description">room-104</note>
-        <note priority="1" from="meaning">billing</note>
-      </trans-unit>
-      <trans-unit id="billingMonthlyIncome" datatype="html">
-        <source>Ingresos del Mes</source>
+      <trans-unit id="2564714321776354436" datatype="html">
+        <source>Facturación diaria por reservas</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">123</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8205336234288481017" datatype="html">
@@ -2449,6 +2771,27 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
           <context context-type="linenumber">129,130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="errorCargandoPaises" datatype="html">
+        <source>Error cargando países</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2351608257679682780" datatype="html">
+        <source>Sesión cerrada correctamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1869653312977722301" datatype="html">
+        <source>Éxito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">131</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2663825149706385665" datatype="html">

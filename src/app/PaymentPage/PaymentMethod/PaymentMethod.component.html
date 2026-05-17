@@ -4,14 +4,14 @@
   @if (isLoadingProviders()) {
     <p class="status-text" i18n>Cargando metodos de pago...</p>
   } @else {
-    <div class="method-options" role="radiogroup" aria-label="Metodos de pago">
+    <div class="method-options" role="radiogroup" aria-label="Metodos de pago" i18n-aria-label>
       @for (provider of paymentProviders(); track provider.id) {
         <button
           type="button"
           class="method-card"
           role="radio"
           [attr.aria-checked]="selectedProviderId() === provider.id"
-          [attr.aria-label]="'Metodo de pago ' + provider.name"
+          [attr.aria-label]="getPaymentMethodAriaLabel(provider)"
           [class.is-selected]="selectedProviderId() === provider.id"
           (click)="onSelectProvider(provider.id)"
           [attr.data-cy]="'payment-method-' + provider.name">
@@ -45,13 +45,24 @@
 </section>
 
 <div class="action-row">
-  <button
-    type="button"
-    class="confirm-btn"
-    [disabled]="isLoadingProviders() || isSubmittingPayment() || !hasProviders()"
-    (click)="onConfirmReservation()"
-    data-cy="confirmar-reserva"
-    i18n>
-    {{ isSubmittingPayment() ? 'Procesando pago...' : 'Confirmar Reserva' }}
-  </button>
+  @if (isSubmittingPayment()) {
+    <button
+      type="button"
+      class="confirm-btn"
+      disabled
+      data-cy="confirmar-reserva"
+      i18n>
+      Procesando pago...
+    </button>
+  } @else {
+    <button
+      type="button"
+      class="confirm-btn"
+      [disabled]="isLoadingProviders() || !hasProviders()"
+      (click)="onConfirmReservation()"
+      data-cy="confirmar-reserva"
+      i18n>
+      Confirmar Reserva
+    </button>
+  }
 </div>

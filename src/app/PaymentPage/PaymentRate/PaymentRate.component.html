@@ -6,7 +6,7 @@
   } @else if (errorMessage()) {
   <p class="rate-message error">{{ errorMessage() }}</p>
   } @else if (rate()) {
-  <div class="rate-grid" role="table" aria-label="Detalle de tarifa">
+  <div class="rate-grid" role="table" aria-label="Detalle de tarifa" i18n-aria-label>
     <div class="rate-row" role="row">
       <span class="label" role="cell" i18n>Precio por noche</span>
       <span class="value" role="cell">{{ precio() }}</span>

@@ -13,7 +13,7 @@
       (click)="selectImage(img.url)"
       [class.active]="(selectedImage || images[0].url) === img.url"
     >
-      <img [src]="img.url" [alt]="'Imagen de ' + propertyName" />
+      <img [src]="img.url" [alt]="getThumbAlt()" />
     </button>
   </div>
 </section>

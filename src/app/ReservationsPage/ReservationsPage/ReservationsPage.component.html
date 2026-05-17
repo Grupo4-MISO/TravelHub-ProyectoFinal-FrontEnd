@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title"> {{ usuario?.first_name || 'Cargando Usuario...'}} {{ usuario?.last_name }}</h5>
+          <h5 class="card-title"> {{ userName }} {{ usuario?.last_name }}</h5>
           <p class="card-text">{{ usuario?.country }}</p>
         </div>
       </div>
@@ -32,7 +32,7 @@
       <tbody>
         <tr #fila *ngFor="let reserva of reservas; let i = index" data-cy="select-reserva" (click)="ver_reserva(reserva, fila)">
           <td>{{ reserva.public_id }}</td>
-          <td>{{ reserva.nombre_hotel || 'Cargando Hotel...' }}</td>
+          <td>{{ reservaNombreHotel(reserva) }}</td>
           <td>{{ reserva.check_in }}</td>
           <td>{{ reserva.check_out }}</td>
         </tr>

@@ -4,7 +4,7 @@
   <div class="map-frame" *ngIf="mapUrl; else noMap">
     <iframe
       [src]="mapUrl"
-      [title]="'Mapa de ' + propertyName"
+      [title]="getMapTitle()"
       loading="lazy"
       referrerpolicy="no-referrer"
     ></iframe>

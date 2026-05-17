@@ -68,6 +68,10 @@ export class PaymentMethodComponent implements OnInit {
 
   readonly hasProviders = computed(() => this.paymentProviders().length > 0);
 
+  getPaymentMethodAriaLabel(provider: { name: string }): string {
+    return $localize`:@@payment-method-label:Metodo de pago ${provider.name}`;
+  }
+
   ngOnInit(): void {
     this.loadPaymentProviders();
   }

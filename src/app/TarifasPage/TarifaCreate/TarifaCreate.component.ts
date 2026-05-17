@@ -49,6 +49,10 @@ export class TarifaCreateComponent implements OnInit {
   };
   mostrarFormDescuento = false;
 
+  getEstadoText(activo: boolean | undefined): string {
+    return activo ? $localize`:@@activo:Activo` : $localize`:@@inactivo:Inactivo`;
+  }
+
   constructor() {}
 
   ngOnInit(): void {

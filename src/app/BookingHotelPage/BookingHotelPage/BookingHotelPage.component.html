@@ -7,8 +7,8 @@
         </div>
         <div class="col-md-7">
           <div class="card-body">
-             <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
-             <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
+             <h5 class="card-title">{{ hotelTitle }}</h5>
+             <p class="card-text">{{ hotelAddress }} <br> {{ hotelCountry }}</p>
           </div>
         </div>
       </div>

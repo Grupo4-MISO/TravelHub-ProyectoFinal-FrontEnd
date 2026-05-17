@@ -87,7 +87,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.cdr.detectChanges(); // Forzar actualización de la vista
       },
       error: () => {
-        this.toastrService.error('Error cargando países');
+        this.toastrService.error($localize`:@@errorCargandoPaises:Error cargando países`);
         this.cdr.detectChanges();
       }
     });
@@ -128,7 +128,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   logout(): void {
     this.authService.logout();
-    this.toastrService.success('Sesión cerrada correctamente.', 'Éxito');
+    this.toastrService.success($localize`Sesión cerrada correctamente.`, $localize`Éxito`);
   }
 
   routeReservations(): void {

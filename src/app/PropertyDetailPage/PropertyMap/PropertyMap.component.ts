@@ -32,6 +32,10 @@ export class PropertyMapComponent {
     );
   }
 
+  getMapTitle(): string {
+    return $localize`:@@mapaDe:Mapa de ${this.propertyName}`;
+  }
+
   get openMapUrl(): string {
     if (!this.latitude && !this.longitude) {
       return '';

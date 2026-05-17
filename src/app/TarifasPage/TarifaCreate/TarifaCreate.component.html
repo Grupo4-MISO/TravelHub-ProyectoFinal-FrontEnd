@@ -85,9 +85,15 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h5 class="m-0" i18n>Descuentos (Opcional)</h5>
-              <button type="button" class="btn btn-sm btn-outline-primary" data-cy="agregar-descuento-button" (click)="toggleFormDescuento()" i18n>
-                {{ mostrarFormDescuento ? 'Ocultar' : 'Agregar descuento' }}
-              </button>
+              @if (mostrarFormDescuento) {
+                <button type="button" class="btn btn-sm btn-outline-primary" data-cy="agregar-descuento-button" (click)="toggleFormDescuento()" i18n>
+                  Ocultar
+                </button>
+              } @else {
+                <button type="button" class="btn btn-sm btn-outline-primary" data-cy="agregar-descuento-button" (click)="toggleFormDescuento()" i18n>
+                  Agregar descuento
+                </button>
+              }
             </div>
 
             @if (mostrarFormDescuento) {
@@ -135,7 +141,7 @@
                     <div class="list-group-item d-flex justify-content-between align-items-center">
                   <div>
                     <h6 class="mb-1">{{ descuento.nombre }}</h6>
-                    <small class="text-muted">{{ descuento.porcentaje }}% - {{ descuento.activo ? 'Activo' : 'Inactivo' }}</small>
+                    <small class="text-muted">{{ descuento.porcentaje }}% - {{ getEstadoText(descuento.activo) }}</small>
                   </div>
                   <button type="button" class="btn btn-sm btn-outline-danger" (click)="eliminarDescuento($index)" i18n>Eliminar</button>
                     </div>

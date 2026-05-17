@@ -103,6 +103,24 @@ export class BookingHotelPageComponent implements OnInit, AfterViewInit {
     }
   }
 
+  get hotelTitle(): string {
+    return this.cargandoHotel
+      ? $localize`:@@cargandoHotel:Cargando hotel...`
+      : (this.hotel?.nombre || $localize`:@@hotelNoDisponible:Hotel no disponible`);
+  }
+
+  get hotelAddress(): string {
+    return this.cargandoHotel
+      ? $localize`:@@cargandoDireccion:Cargando dirección...`
+      : (this.hotel?.direccion || $localize`:@@direccionNoDisponible:Dirección no disponible`);
+  }
+
+  get hotelCountry(): string {
+    return this.cargandoHotel
+      ? $localize`:@@cargandoPais:Cargando país...`
+      : (this.hotel?.pais || $localize`:@@paisNoDisponible:País no disponible`);
+  }
+
   get modo(): string {
     const mode = this.route.snapshot.queryParamMap.get('mode') || '';
     if (mode === 'rooms') return 'habitaciones';
