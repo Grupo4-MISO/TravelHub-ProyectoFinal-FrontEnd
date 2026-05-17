@@ -45,20 +45,12 @@ export class LoginPageComponent implements OnInit {
   }
 
   Authlogin(email: string, password: string) {
-
     this.error = '';
-
     const normalizedEmail = email.trim();
     const normalizedPassword = password.trim();
 
-    if (
-      normalizedEmail.length === 0 ||
-      normalizedPassword.length === 0
-    ) {
-
-      this.error =
-        'Por favor, ingrese su correo electrónico y contraseña.';
-
+    if (normalizedEmail.length === 0 || normalizedPassword.length === 0) {
+      this.error = $localize`:login-message:Por favor, ingrese su correo electronico y contrasena.`;
       return;
     }
 
@@ -66,151 +58,55 @@ export class LoginPageComponent implements OnInit {
       email: normalizedEmail,
       password: normalizedPassword,
     };
-
-    this.authService.login(credentials).subscribe({
-
-      next: (res) => {
-
-        const decoded =
-          this.helper.decodeToken(res.token);
-
-        const role = decoded.role;
-
-        // SESSION STORAGE
-        sessionStorage.setItem(
-          'decodedToken',
-          JSON.stringify(decoded)
-        );
-
+    this.authService.login(credentials).subscribe(
+      (res) => {
+        sessionStorage.setItem('decodedToken', JSON.stringify(this.helper.decodeToken(res.token)));
         sessionStorage.setItem('token', res.token);
+        sessionStorage.setItem('userName', this.helper.decodeToken(res.token).username);
+        sessionStorage.setItem('idUsuario', res.user.id);
+        const role = this.helper.decodeToken(res.token).role;
+        sessionStorage.setItem('role', role);
+        this.toastrService.success($localize`:login-success:Has iniciado sesion correctamente.`, $localize`:login-title:Bienvenido ` + this.helper.decodeToken(res.token).username);
 
-        sessionStorage.setItem(
-          'userName',
-          decoded.username
-        );
-
-        sessionStorage.setItem(
-          'idUsuario',
-          res.user.id
-        );
-
-        sessionStorage.setItem(
-          'role',
-          role
-        );
-
-        this.toastrService.success(
-          'Has iniciado sesión correctamente.',
-          'Bienvenido ' + decoded.username
-        );
-
-        // ADMIN
         if (role == Role.ADMIN) {
-
-          this.router.navigateByUrl(this.redirect);
-
-          return;
+          // this.router.navigate([`/admin`, res.id]);
         }
-
-        // TRAVELER
         if (role == Role.TRAVELER) {
-
-          this.travelerService
-            .getTravelerByUserId(res.id)
-            .subscribe({
-
-              next: (traveler) => {
-
-                sessionStorage.setItem(
-                  'traveler_id',
-                  traveler.id
-                );
-
-                sessionStorage.setItem(
-                  'name',
-                  traveler.first_name + ' ' + traveler.last_name
-                );
-
-                sessionStorage.setItem(
-                  'documentNumber',
-                  traveler.documentNumber
-                );
-
-                sessionStorage.setItem(
-                  'travelerStatus',
-                  traveler.travelerStatus
-                );
-
-                this.router.navigateByUrl(this.redirect);
-              },
-
-              error: () => {
-
-                this.router.navigateByUrl(this.redirect);
-              },
-            });
-
-          return;
+          this.travelerService.getTravelerByUserId(res.id).subscribe({
+            next: (traveler) => {
+              sessionStorage.setItem('traveler_id', traveler.id);
+              sessionStorage.setItem('name', traveler.first_name + ' ' + traveler.last_name);
+              sessionStorage.setItem('documentNumber', traveler.documentNumber);
+              sessionStorage.setItem('travelerStatus', traveler.travelerStatus);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+            error: () => {
+              // this.toastrService.warning('No se pudo obtener el viajero.', 'Atencion');
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+          });
         }
-
-        // PROVIDER / MANAGER
-        if (
-          role == Role.MANAGER ||
-          role == Role.ACCOMODATION
-        ) {
-
-          this.providerService
-            .getProviderByUserId(res.id)
-            .subscribe({
-
-              next: (provider) => {
-
-                sessionStorage.setItem(
-                  'provider_id',
-                  provider.id
-                );
-
-                sessionStorage.setItem(
-                  'name',
-                  provider.name
-                );
-
-                sessionStorage.setItem(
-                  'documentNumber',
-                  provider.documentNumber
-                );
-
-                sessionStorage.setItem(
-                  'providerStatus',
-                  provider.providerStatus
-                );
-
-                this.router.navigateByUrl(this.redirect);
-              },
-
-              error: () => {
-
-                this.router.navigateByUrl(this.redirect);
-              },
-            });
-
-          return;
+        if (role == Role.MANAGER || role == Role.ACCOMODATION) {
+          this.providerService.getProviderByUserId(res.id).subscribe({
+            next: (provider) => {
+              sessionStorage.setItem('provider_id', provider.id);
+              sessionStorage.setItem('name', provider.name);
+              sessionStorage.setItem('documentNumber', provider.documentNumber);
+              sessionStorage.setItem('providerStatus', provider.providerStatus);
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+            error: () => {
+              // this.toastrService.warning('No se pudo obtener el proveedor del manager.', 'Atencion');
+              this.router.navigate([this.redirect], { queryParams: this.queryParams });
+            },
+          });
         }
-
-        // fallback
-        this.router.navigateByUrl(this.redirect);
+        this.router.navigate([this.redirect], { queryParams: this.queryParams });
       },
-
-      error: () => {
-
-        this.error =
-          'Usuario o contraseña incorrectos';
-
-        this.toastrService.error(
-          'Usuario o contraseña incorrectos.',
-          'Error'
-        );
+      (error) => {
+        this.error = 'Usuario o contraseña incorrectos';
+        this.toastrService.error($localize`:login-error:Usuario o contraseña incorrectos.`, $localize`:login-error-title:Error`);
       },
-    });
+    );
   }
 }

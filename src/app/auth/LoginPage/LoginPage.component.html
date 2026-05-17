@@ -3,40 +3,40 @@
     <section class="img-container w-50">
       <img
         src="https://res.cloudinary.com/drpipdmgz/image/upload/v1775407179/img_login_msfzh6.png"
-        alt="Imagen publicitaria TravelHub"
+        i18n-alt="login|Imagen publicitaria" alt="Imagen publicitaria TravelHub"
         style="object-fit: cover;"
       />
     </section>
     <section class="login-card" aria-labelledby="login-title">
       <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/">
-      <p id="login-title" class="login-subtitle">Inicia sesion para continuar</p>
+      <p i18n id="login-title" class="login-subtitle">Inicia sesion para continuar</p>
       @if (error) {
       <p class="login-error" role="alert" aria-live="polite">{{ error }}</p>
       }
       <form class="login-form" (submit)="Authlogin(email.value, password.value); $event.preventDefault()">
         <div class="form-group">
-          <label for="email">Email</label>
+          <label i18n for="email">Email</label>
           <input
             data-cy="email-input"
             #email
             id="email"
             name="email"
             type="email"
-            placeholder="micorreo@email.com"
+            i18n-placeholder="login|Email placeholder" placeholder="micorreo@email.com"
             autocomplete="email"
             required
           />
         </div>
 
         <div class="form-group">
-          <label for="password">Password</label>
+          <label i18n for="password">Password</label>
           <input
             data-cy="password-input"
             #password
             id="password"
             name="password"
             type="password"
-            placeholder="Mi clave"
+            i18n-placeholder="login|Password placeholder" placeholder="Mi clave"
             autocomplete="current-password"
             required
           />
@@ -45,7 +45,7 @@
         <button 
         type="submit" 
         data-cy="login-submit-button"
-        class="login-button">Iniciar sesion</button>
+        i18n class="login-button">Iniciar sesion</button>
       </form>
     </section>
   </div>

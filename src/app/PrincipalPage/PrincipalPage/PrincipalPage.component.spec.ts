@@ -2,6 +2,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
 import { SearchBarComponent } from '../../searchbar/searchbar/searchbar.component';
 import { PrincipalPageComponent } from './PrincipalPage.component';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -14,7 +15,7 @@ describe('PrincipalPageComponent', () => {
   beforeEach(async() => {
     await TestBed.configureTestingModule({
       declarations: [PrincipalPageComponent, SearchBarComponent],
-      imports: [RouterTestingModule, ReactiveFormsModule]
+      imports: [RouterTestingModule, ReactiveFormsModule, ToastrModule.forRoot()]
     }).compileComponents();
   });
 

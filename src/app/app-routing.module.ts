@@ -7,6 +7,7 @@ import { BookingHotelPageComponent } from './BookingHotelPage/BookingHotelPage/B
 import { ReservationsPageComponent } from './ReservationsPage/ReservationsPage/ReservationsPage.component';
 import { HelpPageComponent } from './HelpPage/HelpPage.component';
 import { CheckInPageComponent } from './CheckInPage/CheckInPage/CheckInPage.component';
+import { BillingPageComponent } from './billingPage/billingPage.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalPageComponent },
@@ -16,10 +17,23 @@ const routes: Routes = [
   { path: 'property', component: PropertyDetailComponent },
   { path: 'booking', component: BookingHotelPageComponent },
   { path: 'reservations', component: ReservationsPageComponent },
+  { path: 'billing', component: BillingPageComponent },
   { path: 'help', component: HelpPageComponent },
   {
     path: 'payment',
     loadComponent: () => import('./PaymentPage/Payment/Payment.component').then((c) => c.PaymentComponent)
+  },
+  {
+    path: 'tarifas',
+    loadComponent: () => import('./TarifasPage/TarifasPage/TarifasPage.component').then((c) => c.TarifasPageComponent)
+  },
+  {
+    path: 'tarifas/new',
+    loadComponent: () => import('./TarifasPage/TarifaCreate/TarifaCreate.component').then((c) => c.TarifaCreateComponent)
+  },
+  {
+    path: 'tarifas/edit/:id',
+    loadComponent: () => import('./TarifasPage/TarifaCreate/TarifaCreate.component').then((c) => c.TarifaCreateComponent)
   },
   {
     path: 'provider/new',

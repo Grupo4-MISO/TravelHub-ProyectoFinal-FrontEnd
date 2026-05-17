@@ -1,0 +1,9 @@
+.tarifa-create .icon-placeholder{
+  width:64px;
+  height:64px;
+  background: #f6f8fa;
+}
+
+.card-body h5{font-weight:600}
+
+.btn-danger{background:#ff6b4a;border-color:#ff6b4a}

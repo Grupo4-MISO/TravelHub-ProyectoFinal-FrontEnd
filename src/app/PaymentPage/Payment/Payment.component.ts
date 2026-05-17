@@ -37,11 +37,11 @@ export class PaymentComponent implements OnInit {
   private readonly reservasService = inject(ReservasService);
 
   private readonly missingReservationDataMessage =
-    'No se puede hacer el pago porque faltan datos de la reserva.';
+    $localize`:@@missingReservationData:No se puede hacer el pago porque faltan datos de la reserva.`;
   private readonly missingSessionUserMessage =
-    'No se puede hacer el pago porque no hay usuario en sesion (idUsuario).';
+    $localize`:@@missingSessionUser:No se puede hacer el pago porque no hay usuario en sesion (idUsuario).`;
   private readonly holdReservationErrorMessageText =
-    'No se puede hacer el pago porque la habitacion no esta disponible.';
+    $localize`:@@holdReservationError:No se puede hacer el pago porque la habitacion no esta disponible.`;
 
   readonly holdReservationErrorMessage = signal('');
   readonly reservationData = signal<PaymentReservationData | null>(null);
@@ -54,22 +54,22 @@ export class PaymentComponent implements OnInit {
     }
 
     return [
-      { label: 'Hospedaje', value: reservationData.propertyNombre },
-      { label: 'Propiedad ID', value: reservationData.propiedadId },
-      { label: 'Habitacion', value: reservationData.roomDescripcion },
-      { label: 'Habitacion ID', value: reservationData.habitacionId },
-      { label: 'Pais', value: reservationData.pais },
-      { label: 'Numero de personas', value: reservationData.capacidad },
+      { label: $localize`:@@labelHospedaje:Hospedaje`, value: reservationData.propertyNombre },
+      { label: $localize`:@@labelPropiedadID:Propiedad ID`, value: reservationData.propiedadId },
+      { label: $localize`:@@labelHabitacion:Habitacion`, value: reservationData.roomDescripcion },
+      { label: $localize`:@@labelHabitacionID:Habitacion ID`, value: reservationData.habitacionId },
+      { label: $localize`:@@labelPais:Pais`, value: reservationData.pais },
+      { label: $localize`:@@labelNumeroPersonas:Numero de personas`, value: reservationData.capacidad },
       {
-        label: 'Check-in',
+        label: $localize`:@@labelCheckIn:Check-in`,
         value: reservationData.checkIn,
-        label2: 'Check-out',
+        label2: $localize`:@@labelCheckOut:Check-out`,
         value2: reservationData.checkOut
       },
       {
-        label: 'Precio por noche',
+        label: $localize`:@@labelPrecioPorNoche:Precio por noche`,
         value: reservationData.precio,
-        label2: 'Moneda',
+        label2: $localize`:@@labelMoneda:Moneda`,
         value2: localStorage.getItem('navbar_selected_currency') || 'COP'
       }
     ];

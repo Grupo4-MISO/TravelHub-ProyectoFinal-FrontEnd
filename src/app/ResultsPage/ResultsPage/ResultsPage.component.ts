@@ -42,14 +42,14 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
           console.log('Resultados obtenidos:', this.resultados);
           this.loading = false;
           this.isSearching = false;
-          this.toastr.success('Hospedajes encontrados', '', { positionClass: 'toast-bottom-right' });
+          this.toastr.success($localize`:success:Hospedajes encontrados`, '', { positionClass: 'toast-bottom-right' });
           this.cdr.detectChanges();
         },
         error: (err) => {
           this.error = err?.error?.msg || 'Error al buscar hospedajes';
           this.loading = false;
           this.isSearching = false;
-          this.toastr.error(this.error, '', { positionClass: 'toast-bottom-right' });
+          this.toastr.error($localize`:error:Error al buscar hospedajes`, '', { positionClass: 'toast-bottom-right' });
           this.cdr.detectChanges();
         }
       });

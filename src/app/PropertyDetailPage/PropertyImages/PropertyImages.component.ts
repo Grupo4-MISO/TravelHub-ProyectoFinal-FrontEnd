@@ -18,4 +18,8 @@ export class PropertyImagesComponent {
   selectImage(url: string): void {
     this.imageSelected.emit(url);
   }
+
+  getThumbAlt(): string {
+    return $localize`:@@imagenDe:Imagen de ${this.propertyName}`;
+  }
 }

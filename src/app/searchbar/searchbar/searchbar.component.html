@@ -3,14 +3,14 @@
 
   <!-- Ciudad -->
   <div class="field autocomplete">
-    <label>Destino</label>
+    <label i18n>Destino</label>
 
     <input 
       type="text" 
       formControlName="ciudad"
       (focus)="mostrarTodas()"
       autocomplete="off"
-      placeholder="Ciudad destino"
+      placeholder="Ciudad destino" i18n-placeholder
       [class.invalid]="searchForm.get('ciudad')?.invalid && searchForm.get('ciudad')?.touched">
 
     <ul *ngIf="ciudadesFiltradas.length > 0" class="dropdown">
@@ -34,42 +34,42 @@
     </ul>
 
     <!-- Error -->
-    <small *ngIf="searchForm.get('ciudad')?.touched && searchForm.get('ciudad')?.hasError('required')">
+    <small *ngIf="searchForm.get('ciudad')?.touched && searchForm.get('ciudad')?.hasError('required')" i18n>
       La ciudad es obligatoria
     </small>
   </div>
 
   <!-- Check-in -->
   <div class="field">
-    <label>Check-In</label>
+    <label i18n>Check-In</label>
     <input
       data-cy="check-in"
       type="date" 
       formControlName="check_in"
       [class.invalid]="searchForm.get('check_in')?.invalid && searchForm.get('check_in')?.touched">
 
-    <small *ngIf="searchForm.get('check_in')?.touched && searchForm.get('check_in')?.hasError('required')">
+    <small *ngIf="searchForm.get('check_in')?.touched && searchForm.get('check_in')?.hasError('required')" i18n>
       La fecha de entrada es obligatoria
     </small>
   </div>
 
   <!-- Check-out -->
   <div class="field">
-    <label>Check-Out</label>
+    <label i18n>Check-Out</label>
     <input
       data-cy="check-out" 
       type="date" 
       formControlName="check_out"
       [class.invalid]="searchForm.get('check_out')?.invalid && searchForm.get('check_out')?.touched">
 
-    <small *ngIf="searchForm.get('check_out')?.touched && searchForm.get('check_out')?.hasError('required')">
+    <small *ngIf="searchForm.get('check_out')?.touched && searchForm.get('check_out')?.hasError('required')" i18n>
       La fecha de salida es obligatoria
     </small>
   </div>
 
   <!-- Huéspedes -->
   <div class="field">
-    <label>Huéspedes</label>
+    <label i18n>Huéspedes</label>
     <input 
       data-cy="guests"
       type="number" 
@@ -78,18 +78,18 @@
       [class.invalid]="searchForm.get('capacidad')?.invalid && searchForm.get('capacidad')?.touched">
 
     <!-- requerido -->
-    <small *ngIf="searchForm.get('capacidad')?.touched && searchForm.get('capacidad')?.hasError('required')">
+    <small *ngIf="searchForm.get('capacidad')?.touched && searchForm.get('capacidad')?.hasError('required')" i18n>
       La cantidad de huéspedes es obligatoria
     </small>
 
     <!-- mínimo -->
-    <small *ngIf="searchForm.get('capacidad')?.touched && searchForm.get('capacidad')?.hasError('min')">
+    <small *ngIf="searchForm.get('capacidad')?.touched && searchForm.get('capacidad')?.hasError('min')" i18n>
       Debe haber al menos 1 huésped
     </small>
   </div>
 
   <!-- Error de fechas -->
-  <div class="error-fechas" *ngIf="searchForm.hasError('fechasInvalidas')">
+  <div class="error-fechas" *ngIf="searchForm.hasError('fechasInvalidas')" i18n>
     La fecha de salida debe ser posterior al check-in
   </div>
 
@@ -100,7 +100,8 @@
     class="search-btn"
     [disabled]="searchForm.invalid || loading">
 
-    {{ loading ? 'Buscando...' : 'Buscar' }}
+    <span *ngIf="loading" i18n>Buscando...</span>
+    <span *ngIf="!loading" i18n>Buscar</span>
   </button>
   </form>
 </div>

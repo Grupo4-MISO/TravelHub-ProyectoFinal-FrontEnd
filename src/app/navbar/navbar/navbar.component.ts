@@ -6,6 +6,7 @@ import { CountryList } from '../countrylist';
 import { NavbarService } from '../navbar.service';
 import { Subscription } from 'rxjs';
 import { ChangeDetectorRef } from '@angular/core';
+import { getCurrentLocale, changeLanguage, Locale } from '../../locale-helper';
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   countries: CountryList[] = [];
   selectedCountry!: CountryList;
   selectedCurrency!: string;
+  currentLanguage: Locale = 'es';
 
   private subscriptions = new Subscription();
 
@@ -30,6 +32,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.currentLanguage = getCurrentLocale();
     this.loadCountries();
     this.subscribeToServiceChanges();
   }
@@ -84,7 +87,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.cdr.detectChanges(); // Forzar actualización de la vista
       },
       error: () => {
-        this.toastrService.error('Error cargando países');
+        this.toastrService.error($localize`:@@errorCargandoPaises:Error cargando países`);
         this.cdr.detectChanges();
       }
     });
@@ -105,6 +108,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.navbarService.setCurrency(currency);
   }
 
+  onLanguageChange(lang: Locale) {
+    changeLanguage(lang);
+  }
+
   // ---- AUTH (sin cambios) ----
   get userRole(): string | null {
     return sessionStorage.getItem('role');
@@ -121,7 +128,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   logout(): void {
     this.authService.logout();
-    this.toastrService.success('Sesión cerrada correctamente.', 'Éxito');
+    this.toastrService.success($localize`Sesión cerrada correctamente.`, $localize`Éxito`);
   }
 
   routeReservations(): void {

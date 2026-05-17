@@ -1,0 +1,162 @@
+<nav aria-label="breadcrumb" class="mb-3">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/tarifas" i18n>Tarifas</a></li>
+    <li class="breadcrumb-item active" aria-current="page" i18n>Nueva tarifa</li>
+  </ol>
+</nav>
+
+<div class="tarifa-create container">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-placeholder rounded-3 d-flex align-items-center justify-content-center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 7H17V17H7z" stroke="#000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h1 class="h4 mb-1" data-cy="new-tarifa-title" i18n>Nueva tarifa</h1>
+          <p class="text-muted mb-0" i18n>Crea y asocia una nueva tarifa a una categoría de habitación.</p>
+        </div>
+      </div>
+
+      <form>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 i18n>Información de la tarifa</h5>
+
+            <div class="row g-3 mt-2">
+              <div class="col-md-4">
+                <label class="form-label" i18n>Nombre de la tarifa</label>
+                <input class="form-control" placeholder="Ej. Tarifa Flexible" data-cy="tarifa-nombre" [(ngModel)]="tarifa.nombre" name="nombre" i18n-placeholder />
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label" i18n>Categoría de habitación</label>
+                <select class="form-select" [(ngModel)]="tarifa.categoria_habitacion" name="categoria_habitacion">
+                  @for (categoria of categorias; track categoria) {
+                    <option [value]="categoria">{{ categoria }}</option>
+                  }
+                </select>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label" i18n>Valor por noche</label>
+                <input class="form-control" type="number" data-cy="tarifa-valor-base" [(ngModel)]="tarifa.valor_base" name="valor_base" />
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label" i18n>Moneda</label>
+                <select class="form-select" [(ngModel)]="tarifa.moneda" name="moneda">
+                  @for (moneda of monedas; track moneda) {
+                    <option [value]="moneda">{{ moneda }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+
+            <div class="row g-3 mt-3">
+              <div class="col-md-6">
+                <label class="form-label" i18n>Identificador</label>
+                <input class="form-control" placeholder="Ej. TAR-EST-001" data-cy="tarifa-identificador" [(ngModel)]="tarifa.identificador" name="identificador" required i18n-placeholder />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" i18n>Descripción</label>
+                <input class="form-control" placeholder="Descripción breve" data-cy="tarifa-descripcion" [(ngModel)]="tarifa.descripcion" name="descripcion" i18n-placeholder />
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <h5 i18n>Período de vigencia</h5>
+            <div class="row g-3 mt-2">
+              <div class="col-md-6">
+                <label class="form-label" i18n>Fecha de inicio</label>
+                <input class="form-control" type="date" data-cy="tarifa-vigencia-inicio" [(ngModel)]="tarifa.vigencia_inicio" name="vigencia_inicio" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" i18n>Fecha de finalización</label>
+                <input class="form-control" type="date" data-cy="tarifa-vigencia-fin" [(ngModel)]="tarifa.vigencia_fin" name="vigencia_fin" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="m-0" i18n>Descuentos (Opcional)</h5>
+              @if (mostrarFormDescuento) {
+                <button type="button" class="btn btn-sm btn-outline-primary" data-cy="agregar-descuento-button" (click)="toggleFormDescuento()" i18n>
+                  Ocultar
+                </button>
+              } @else {
+                <button type="button" class="btn btn-sm btn-outline-primary" data-cy="agregar-descuento-button" (click)="toggleFormDescuento()" i18n>
+                  Agregar descuento
+                </button>
+              }
+            </div>
+
+            @if (mostrarFormDescuento) {
+              <div class="border rounded p-3 mb-3">
+                <h6 i18n>Nuevo descuento</h6>
+                <div class="row g-3 mt-2">
+                  <div class="col-md-4">
+                    <label class="form-label" i18n>Nombre del descuento</label>
+                    <input class="form-control" placeholder="Ej. Promo verano" data-cy="descuento-nombre" [(ngModel)]="descuentoForm.nombre" name="descuentoNombre" i18n-placeholder />
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label" i18n>Porcentaje (%)</label>
+                    <input class="form-control" type="number" data-cy="descuento-porcentaje" [(ngModel)]="descuentoForm.porcentaje" name="descuentoPorcentaje" />
+                  </div>
+                  <div class="col-md-5">
+                    <label class="form-check-label" i18n>
+                      <input type="checkbox" class="form-check-input" [(ngModel)]="descuentoForm.activo" name="descuentoActivo" />
+                      Activo
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-2">
+                  <div class="col-md-6">
+                    <label class="form-label" i18n>Fecha de inicio</label>
+                    <input class="form-control" type="date" data-cy="descuento-vigencia-inicio" [(ngModel)]="descuentoForm.vigencia_inicio" name="descuentoInicio" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" i18n>Fecha de finalización</label>
+                    <input class="form-control" type="date" data-cy="descuento-vigencia-fin" [(ngModel)]="descuentoForm.vigencia_fin" name="descuentoFin" />
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <button type="button" class="btn btn-sm btn-success" (click)="agregarDescuento()" i18n>Agregar a lista</button>
+                </div>
+              </div>
+            }
+
+            @if (descuentos.length > 0) {
+              <div class="mt-3">
+                <h6 i18n>Descuentos agregados:</h6>
+                <div class="list-group">
+                  @for (descuento of descuentos; track $index) {
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="mb-1">{{ descuento.nombre }}</h6>
+                    <small class="text-muted">{{ descuento.porcentaje }}% - {{ getEstadoText(descuento.activo) }}</small>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-danger" (click)="eliminarDescuento($index)" i18n>Eliminar</button>
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-outline-secondary" data-cy="cancelar-tarifa-button" (click)="cancel()" i18n>Cancelar</button>
+          <button type="button" class="btn btn-danger" data-cy="guardar-tarifa-button" (click)="save()" i18n>Guardar tarifa</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

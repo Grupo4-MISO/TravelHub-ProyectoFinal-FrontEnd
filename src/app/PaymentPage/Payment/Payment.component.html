@@ -6,12 +6,13 @@
       [checkIn]="reservationData()?.checkIn ?? ''"
       [checkOut]="reservationData()?.checkOut ?? ''"
       [precio]="precioNumerico()"
-      [descuento]="0.10"
+      [descuento]="0"
       [pais]="reservationData()?.pais ?? 'CO'"
     ></app-payment-rate>
   </div>
   <app-payment-method
     [habitacionId]="reservationData()?.habitacionId ?? ''"
+    [propiedadId]="reservationData()?.propiedadId ?? ''"
     [roomDescripcion]="reservationData()?.roomDescripcion ?? ''"
     [propertyNombre]="reservationData()?.propertyNombre ?? ''"
     [checkIn]="reservationData()?.checkIn ?? ''"
@@ -21,8 +22,8 @@
   ></app-payment-method>
   } @else {
   <section class="availability-error" aria-live="assertive" role="alert">
-    <h2 class="availability-error-title">Pago no disponible</h2>
-    <p class="availability-error-message">{{ holdReservationErrorMessage() }}</p>
+    <h2 class="availability-error-title" i18n>Pago no disponible</h2>
+    <p class="availability-error-message" i18n>{{ holdReservationErrorMessage() }}</p>
   </section>
   }
 </main>

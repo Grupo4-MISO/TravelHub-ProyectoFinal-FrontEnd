@@ -1,0 +1,88 @@
+<div class="billingContainer">
+    <div class="row mb-2">
+      <div class="card mb-3" style="max-width: 540px; border: none;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://res.cloudinary.com/drpipdmgz/image/upload/q_auto/f_auto/v1775408091/vojtech-bruzek-Yrxr3bsPdS0-unsplash_l4ja49.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">{{ hotelTitle }}</h5>
+              <p class="card-text">{{ hotelAddress }} <br> {{ hotelCountry }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 ms-md-3 d-flex align-items-start">
+        <div class="w-50">
+          <div>
+            <label for="billingYear" class="form-label" i18n>Año</label>
+            <select id="billingYear" class="form-select" (change)="onDateChange()">
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option selected value="2026">2026</option>
+            </select>
+          </div>
+        </div>
+        <div class="w-50 ms-3">
+          <div class="mb-2">
+            <label for="billingMonth" class="form-label" i18n>Mes</label>
+            <select id="billingMonth" class="form-select" (change)="onDateChange()">
+              <option value="1" i18n>Enero</option>
+              <option value="2" i18n>Febrero</option>
+              <option value="3" i18n>Marzo</option>
+              <option value="4" i18n>Abril</option>
+              <option selected value="5" i18n>Mayo</option>
+              <option value="6" i18n>Junio</option>
+              <option value="7" i18n>Julio</option>
+              <option value="8" i18n>Agosto</option>
+              <option value="9" i18n>Septiembre</option>
+              <option value="10" i18n>Octubre</option>
+              <option value="11" i18n>Noviembre</option>
+              <option value="12" i18n>Diciembre</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="card mb-3 ingresos-card">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h5 class="card-title" i18n>Ingreso total - {{ strMonth(mesActivo) }} {{ anoActivo }}</h5>
+        <h4> {{ingresoMes | currency: '$'}} </h4>
+        <p i18n>Total generado por reservas confirmadas</p>
+      </div>
+      <div class="col-md-6 text-end">
+        <div class="chart-wrapper">
+          <canvas id="Ingresos"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+<table class="table table-striped" data-cy="billing-table">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="col" i18n="billing|room">Habitación</th>
+      <th scope="col" i18n="billing|confirmed-reservations">Reservas Confirmadas</th>
+      <th scope="col" i18n="billing|total-income">Ingreso total</th>
+      <th scope="col" i18n="billing|total-percentage">Porcentaje del total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let habitacion of habitaciones">
+        <td>{{ habitacion.descripcion }}</td>
+        <td>{{ habitacion.reservas }}</td>
+        <td>{{ habitacion.ingresos | currency: '$' }}</td>
+        <td>{{ habitacion.participacion | number:'1.2-2' }}%  </td>
+      
+    </tr>
+  </tbody>
+</table>
+ 
+</div>
