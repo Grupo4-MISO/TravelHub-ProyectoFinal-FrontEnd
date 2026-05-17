@@ -48,6 +48,24 @@ export class BillingPageComponent implements OnInit, AfterViewInit {
   ingresoMes: number = 0.0;
   ingresosDiarios: number[] = Array(31).fill(0);
 
+  get hotelTitle(): string {
+    return this.cargandoHotel
+      ? $localize`:@@cargandoHotel:Cargando hotel...`
+      : (this.hotel?.nombre || $localize`:@@hotelNoDisponible:Hotel no disponible`);
+  }
+
+  get hotelAddress(): string {
+    return this.cargandoHotel
+      ? $localize`:@@cargandoDireccion:Cargando dirección...`
+      : (this.hotel?.direccion || $localize`:@@direccionNoDisponible:Dirección no disponible`);
+  }
+
+  get hotelCountry(): string {
+    return this.cargandoHotel
+      ? $localize`:@@cargandoPais:Cargando país...`
+      : (this.hotel?.pais || $localize`:@@paisNoDisponible:País no disponible`);
+  }
+
   constructor(
     private propertyDetailService: PropertyDetailService,
     private billingPageService: BillingPageService,
@@ -102,7 +120,7 @@ export class BillingPageComponent implements OnInit, AfterViewInit {
       data: {
         labels: this.getDaysArray(this.anoActivo, this.mesActivo),
         datasets: [{
-          label: 'Facturación diaria por reservas',
+          label: $localize`Facturación diaria por reservas`,
           data: this.ingresosDiarios,
           borderColor: '#015C77',
           tension: 0.3
@@ -131,8 +149,8 @@ export class BillingPageComponent implements OnInit, AfterViewInit {
   }
 
   strMonth(month: number): string {
-    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
-      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const months = [$localize`Enero`, $localize`Febrero`, $localize`Marzo`, $localize`Abril`, $localize`Mayo`, $localize`Junio`, 
+      $localize`Julio`, $localize`Agosto`, $localize`Septiembre`, $localize`Octubre`, $localize`Noviembre`, $localize`Diciembre`];
     return months[month - 1] || '';
   }
 

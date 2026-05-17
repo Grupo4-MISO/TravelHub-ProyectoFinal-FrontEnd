@@ -85,7 +85,7 @@ export class PropertyRoomsComponent implements OnChanges {
         });
       },
       error: (err) => {
-        console.warn('No se pudieron cargar las tarifas públicas', err);
+        console.warn($localize`:@@tarifasPublicasError:No se pudieron cargar las tarifas públicas`, err);
         // keep initial rooms shown
       }
     });

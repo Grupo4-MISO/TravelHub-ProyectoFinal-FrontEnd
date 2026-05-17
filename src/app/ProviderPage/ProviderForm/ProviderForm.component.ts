@@ -121,7 +121,7 @@ export class ProviderFormComponent {
 
     if (this.form.invalid) {
       this.form.markAllAsTouched();
-      this.submitError.set('Completa correctamente todos los campos obligatorios.');
+      this.submitError.set($localize`:provider-required-fields:Completa correctamente todos los campos obligatorios.`);
       return;
     }
 
@@ -157,7 +157,7 @@ export class ProviderFormComponent {
       .pipe(finalize(() => this.isSubmitting.set(false)))
       .subscribe({
         next: () => {
-          this.submitSuccess.set('Proveedor creado correctamente.');
+          this.submitSuccess.set($localize`:provider-created:Proveedor creado correctamente.`);
           this.form.reset();
 
           const countryName = this.currentCountry?.name ?? this.defaultCountryName;
@@ -165,7 +165,7 @@ export class ProviderFormComponent {
 
           this.currentCountryCode = countryCode;
           this.applyCountrySelection(countryName, countryCode);
-          this.toastrService.success('Cuenta creada correctamente.', 'Bienvenido '+ manager.first_name);
+          this.toastrService.success($localize`:provider-account-created:Cuenta creada correctamente.`, $localize`:provider-welcome:Bienvenido `+ manager.first_name);
           this.router.navigate(['/login']);
         },
         error: (error) => {
@@ -174,7 +174,7 @@ export class ProviderFormComponent {
             ? backendMessage.join(' | ')
             : typeof backendMessage === 'string'
               ? backendMessage
-              : 'No fue posible crear el proveedor. Intenta nuevamente.';
+              : $localize`:provider-create-error:No fue posible crear el proveedor. Intenta nuevamente.`;
 
           this.submitError.set(parsedMessage);
         }
@@ -195,7 +195,7 @@ export class ProviderFormComponent {
 
     if (!selectedState) {
       this.cities.set([]);
-      this.citiesError.set('No fue posible resolver el estado seleccionado.');
+      this.citiesError.set($localize`:provider-state-resolve-error:No fue posible resolver el estado seleccionado.`);
       this.addressGroup.controls.city.patchValue('', { emitEvent: false });
       return;
     }
@@ -229,7 +229,7 @@ export class ProviderFormComponent {
       .pipe(
         catchError((error) => {
           console.error('Error al consultar estados por pais.', error);
-          this.statesError.set('No se pudieron cargar los estados para el pais seleccionado.');
+          this.statesError.set($localize`:provider-states-load-error:No se pudieron cargar los estados para el pais seleccionado.`);
           return of([] as CountryState[]);
         }),
         finalize(() => this.isLoadingStates.set(false))
@@ -257,7 +257,7 @@ export class ProviderFormComponent {
       .pipe(
         catchError((error) => {
           console.error('Error al consultar ciudades por estado.', error);
-          this.citiesError.set('No se pudieron cargar las ciudades del estado seleccionado.');
+          this.citiesError.set($localize`:provider-cities-load-error:No se pudieron cargar las ciudades del estado seleccionado.`);
           return of([] as StateCity[]);
         }),
         finalize(() => this.isLoadingCities.set(false))

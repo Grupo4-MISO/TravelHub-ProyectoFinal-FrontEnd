@@ -5,15 +5,15 @@
   <!-- Loading -->
   <div *ngIf="loading" class="state-message">
     <div class="spinner"></div>
-    <p><b>Buscando hospedajes...</b></p>
+    <p><b i18n>Buscando hospedajes...</b></p>
   </div>
 
   <!-- Resultados -->
   <div class="results-list" *ngIf="!loading && resultados.length > 0">
-    <div class="list-length" *ngIf="resultados.length == 1">
+    <div class="list-length" *ngIf="resultados.length == 1" i18n>
       1 Alojamiento encontrado
     </div>
-    <div class="list-length" *ngIf="resultados.length > 1">
+    <div class="list-length" *ngIf="resultados.length > 1" i18n>
         {{ resultados.length }} Alojamientos encontrados
     </div>
 
@@ -34,7 +34,7 @@
         <span class="city">{{ item.ciudad }}, {{ item.pais }}</span>
 
         <div class="room-info">
-          <div class="room-badge">{{ item.capacidad }} persona(s)</div>
+          <div class="room-badge" i18n>{{ item.capacidad }} persona(s)</div>
           <div class="bed-info">{{ item.descripcion }}</div>
         </div>
 
@@ -53,16 +53,16 @@
         </div>
         <!--REVIES-->
         <div class="reviews">
-          ({{ item.reviews }} reseñas)
+          <span i18n>({{ item.reviews }} reseñas)</span>
         </div>
         <!--PRECIO -->
         <div class="price">
           <span class="amount">${{ item.precio }}</span>
-          <span class="period">/noche</span>
+          <span class="period" i18n>/noche</span>
         </div>
 
         <!--BOTÓN -->
-        <button class="btn-primary" data-cy="ver-detalle" (click)="verDetalle(item.hospedaje_id)">
+        <button class="btn-primary" data-cy="ver-detalle" (click)="verDetalle(item.hospedaje_id)" i18n>
           Ver detalle
         </button>
 
@@ -74,7 +74,7 @@
 
   <!-- Sin resultados -->
   <div *ngIf="!loading && resultados.length === 0 && !error" class="state-message">
-    No se encontraron hospedajes disponibles
+    <span i18n>No se encontraron hospedajes disponibles</span>
   </div>
 
 </div>

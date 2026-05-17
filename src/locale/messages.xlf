@@ -1,0 +1,3030 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4494558705689263749" datatype="html">
+        <source>Buscar Reservas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6469137548474122003" datatype="html">
+        <source>Remover Filtros</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3787882446970210798" datatype="html">
+        <source>Reservas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7286430803380181008" datatype="html">
+        <source>Id</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3770610996148139747" datatype="html">
+        <source>Id Habitacion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6614270502827207758" datatype="html">
+        <source>Valor de la Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4010250067161082953" datatype="html">
+        <source>Fechas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">93,94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4963172891871550734" datatype="html">
+        <source>Estado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">110,111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5038571802025261429" datatype="html">
+        <source>Habitaciones</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="116073521494595671" datatype="html">
+        <source>Tipo de Habitación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1563851922566456266" datatype="html">
+        <source>Capacidad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">62,63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyAvailability/PropertyAvailability.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2090485092107532642" datatype="html">
+        <source>Precio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2884998110797395153" datatype="html">
+        <source>Reserva: <x id="INTERPOLATION" equiv-text="{{ reservaActiva?.public_id }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">82,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8245690823310641725" datatype="html">
+        <source>Habitación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">89,90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">184,185</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1705330761476475898" datatype="html">
+        <source>Desde: <x id="INTERPOLATION" equiv-text="{{ reservaActiva.check_in }}"/> <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Hasta: <x id="INTERPOLATION_1" equiv-text="{{ reservaActiva.check_out }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">94,96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7994917603257909831" datatype="html">
+        <source>Titular</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">99,100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2696790918452397632" datatype="html">
+        <source>Valor Total</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">106,107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4324873543442183086" datatype="html">
+        <source>No hay reserva seleccionada</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">116,117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4974596472176294327" datatype="html">
+        <source>Confirmar Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">120,121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">257,258</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9113926992028907050" datatype="html">
+        <source>Revocar Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">122,123</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">260,261</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7329584700537079690" datatype="html">
+        <source>Volver</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">123,124</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">243,244</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">262,263</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifasPage/TarifasPage.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="846893992257451018" datatype="html">
+        <source>Check-in de Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">131,132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3690888635172013343" datatype="html">
+        <source> Reserva #<x id="INTERPOLATION" equiv-text="{{ reservaActiva?.public_id }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">133,134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5603571147294329380" datatype="html">
+        <source> Escanea este código para validar la reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1956413577472227368" datatype="html">
+        <source> Filtrar Reservas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">164,165</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9103743543940824973" datatype="html">
+        <source>Código de Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">166,167</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2311807313251699944" datatype="html">
+        <source>Escribe el código de reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">172,173</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="818991896386153908" datatype="html">
+        <source>Escribe el número de habitación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">190,191</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3612869826811423163" datatype="html">
+        <source>Fecha check in</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">201,202</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4556690110139923796" datatype="html">
+        <source>Fecha check out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">209,210</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6128453535457942870" datatype="html">
+        <source>Correo Usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">217,218</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7146892863241649218" datatype="html">
+        <source>Escribe el correo del viajero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">223,224</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4825524774784749915" datatype="html">
+        <source>Estado reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">233,234</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5808475127167456243" datatype="html">
+        <source>Selecciona un estado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">235,236</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1547495768382140659" datatype="html">
+        <source>Confirmada</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">236,237</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1029150937787246789" datatype="html">
+        <source>Pendiente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">237,238</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6227711055821214491" datatype="html">
+        <source>Completada</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">238,239</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7502569421853595032" datatype="html">
+        <source>Aplicar Filtros</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.html</context>
+          <context context-type="linenumber">242,243</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cargandoHotel" datatype="html">
+        <source>Cargando hotel...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hotelNoDisponible" datatype="html">
+        <source>Hotel no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cargandoDireccion" datatype="html">
+        <source>Cargando dirección...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="direccionNoDisponible" datatype="html">
+        <source>Dirección no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cargandoPais" datatype="html">
+        <source>Cargando país...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="paisNoDisponible" datatype="html">
+        <source>País no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirmarReserva" datatype="html">
+        <source>Confirmar Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">299</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirmarReservaMsg" datatype="html">
+        <source>¿Está seguro de confirmar la reserva seleccionada?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">300</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="revocarReserva" datatype="html">
+        <source>Revocar Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">307</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="revocarReservaMsg" datatype="html">
+        <source>¿Está seguro de revocar la reserva seleccionada? Esta acción no es reversible.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">308</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="seleccionaEstado" datatype="html">
+        <source>Selecciona un estado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">347</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">469</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">497</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reservasCoinciden" datatype="html">
+        <source><x id="PH" equiv-text="encontradas"/> reservas coinciden con los criterios de búsqueda.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">418</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reservas" datatype="html">
+        <source>Reservas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">485</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reservasEncontradasPara" datatype="html">
+        <source>Reservas encontradas para: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/BookingHotelPage/BookingHotelPage/BookingHotelPage.component.ts</context>
+          <context context-type="linenumber">501</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="923044049424696480" datatype="html">
+        <source>Procesando Check-In...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3403405475045819003" datatype="html">
+        <source> Estamos validando la reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="396309482822294769" datatype="html">
+        <source>Check-In Confirmado!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2921249265008332294" datatype="html">
+        <source> Código de la reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2673375998850130631" datatype="html">
+        <source> Detalles de la reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5106558913698272360" datatype="html">
+        <source> Hotel: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2824260676235709546" datatype="html">
+        <source> Habitación: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7100749345467439595" datatype="html">
+        <source> Check-In: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1875542024659394306" datatype="html">
+        <source> Check-Out: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6926937270291817061" datatype="html">
+        <source>Error en el Check-In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.html</context>
+          <context context-type="linenumber">112,114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="checkinInvalid" datatype="html">
+        <source>Reserva inválida</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="checkinFailed" datatype="html">
+        <source>No fue posible completar el check-in</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/CheckInPage/CheckInPage/CheckInPage.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="426459620752270633" datatype="html">
+        <source> Bienvenido a TravelHub </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <note priority="1" from="description">welcome</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="6693625217503401207" datatype="html">
+        <source> Esta aplicación ha sido desarrollada por los estudiantes Daniel Andrade Suarez, Daniel Oicata Hernández, Juan Camilo Mora García y Neider Alejandro Fajardo de la Maestría en Ingeniería de Software -MISO- de la Universidad de Los Andes. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">8,12</context>
+        </context-group>
+        <note priority="1" from="description">developers</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="8047318364849486663" datatype="html">
+        <source>Recursos Gráficos y derechos de autor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+        <note priority="1" from="description">graphic-resources</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="6755432621975657010" datatype="html">
+        <source> Las imagenes publicitarias presentes en la aplicación fueron elaboradas con ChatGPT, para su uso como recurso en el proyecto académico, no hacen referencia a ninguna marca real. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">14,18</context>
+        </context-group>
+        <note priority="1" from="description">chatgpt-images</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="1484386471430503235" datatype="html">
+        <source> Los íconos de la aplicación son recursos gratuitos tomados de https://www.svgrepo.com/ </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">19,22</context>
+        </context-group>
+        <note priority="1" from="description">icons</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="3565763076863596242" datatype="html">
+        <source> Las imagenes de alojamientos o usuarios son recursos gratuitos tomados de https://unsplash.com/es </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">23,26</context>
+        </context-group>
+        <note priority="1" from="description">unsplash</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="5489009510104319336" datatype="html">
+        <source> Las imagenes fueron integradas a la aplicación gracias a los recursos de optimización y almacenamiento en la nube de la capa gratuita de Cloudinary, disponible en https://cloudinary.com/ </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">27,30</context>
+        </context-group>
+        <note priority="1" from="description">cloudinary</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="8875938395808817683" datatype="html">
+        <source>Inicio de Sesión</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+        <note priority="1" from="description">login-section</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="1977476372738586175" datatype="html">
+        <source> Muchas de las funcionalidades de la aplicación requieren inicio sesion para ejecutarse desde un rol específico. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">35,38</context>
+        </context-group>
+        <note priority="1" from="description">login-desc</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="4567301325843277353" datatype="html">
+        <source> Contamos con dos usuarios genéricos que le pueden ayudar a acceder rápidamente a la aplicación. Desde la opción &quot;Iniciar sesión&quot; </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">39,42</context>
+        </context-group>
+        <note priority="1" from="description">generic-users</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="7475770238818541538" datatype="html">
+        <source>Correo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
+        <note priority="1" from="description">email</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="8546190082515541004" datatype="html">
+        <source>Contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+        <note priority="1" from="description">password</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="7199405403458536132" datatype="html">
+        <source>Rol</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+        <note priority="1" from="description">role</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="2428253325409177126" datatype="html">
+        <source>Viajero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">54,57</context>
+        </context-group>
+        <note priority="1" from="description">traveler-role</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="7940347647887377674" datatype="html">
+        <source>Alojamiento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">59,62</context>
+        </context-group>
+        <note priority="1" from="description">accomodation-role</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="2378945510189107320" datatype="html">
+        <source> También algunas funcionalidades involucran varios usuarios, por lo que hemos dispuesto un listado de usuarios genéricos para cada rol, cualquiera de estos usuarios puede acceder con la contraseña 12345 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">64,68</context>
+        </context-group>
+        <note priority="1" from="description">multi-user-desc</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="3818228636453694987" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+        <note priority="1" from="description">email-header</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="4136892789605625448" datatype="html">
+        <source>Recuerde, para cualquier usuario de la tabla anterior, la constraseña es 12345.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/HelpPage/HelpPage.component.html</context>
+          <context context-type="linenumber">109,113</context>
+        </context-group>
+        <note priority="1" from="description">password-reminder</note>
+        <note priority="1" from="meaning">help</note>
+      </trans-unit>
+      <trans-unit id="6802078022489850520" datatype="html">
+        <source>Medio de Pago</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7589452107703127161" datatype="html">
+        <source>Cargando metodos de pago...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3701243248307311721" datatype="html">
+        <source>Metodos de pago</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4400789001442918690" datatype="html">
+        <source> Procesando pago... </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3170694086320313149" datatype="html">
+        <source> Confirmar Reserva </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="payment-method-label" datatype="html">
+        <source>Metodo de pago <x id="PH" equiv-text="provider.name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="selectPaymentMethod" datatype="html">
+        <source>Selecciona un metodo de pago para continuar.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="incompletePaymentInfo" datatype="html">
+        <source>No hay informacion completa para registrar el pago.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noUserSession" datatype="html">
+        <source>No hay usuario en sesion. Inicia sesion para continuar.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="invalidPaymentAmount" datatype="html">
+        <source>El valor del pago es invalido.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="generatingTransaction" datatype="html">
+        <source>Generando transaccion de pago...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noReservationId" datatype="html">
+        <source>No fue posible obtener el id de la reserva para crear el pago.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="paymentForHotelReservation" datatype="html">
+        <source>Pago por reserva del hotel <x id="PH" equiv-text="propertyNombre"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noPaymentUrl" datatype="html">
+        <source>El proveedor no devolvio la URL de pago. Intenta nuevamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="redirectingPayment" datatype="html">
+        <source>Cargando... te redirigiremos para completar el pago.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="transactionFailed" datatype="html">
+        <source>No se pudo generar la transaccion de pago. Intenta nuevamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">196</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="loadPaymentMethodsFailed" datatype="html">
+        <source>No se pudieron cargar los metodos de pago. Intenta de nuevo.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">221</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noPaymentMethodsAvailable" datatype="html">
+        <source>No hay metodos de pago disponibles en este momento.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentMethod/PaymentMethod.component.ts</context>
+          <context context-type="linenumber">243</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4974508120976928964" datatype="html">
+        <source>Tarifa de la Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7703713494698090164" datatype="html">
+        <source>Calculando tarifa...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5456772768636594384" datatype="html">
+        <source>Detalle de tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1767943113144973999" datatype="html">
+        <source>Precio por noche</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2143479762110131149" datatype="html">
+        <source>Total de noches</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7494030135793046441" datatype="html">
+        <source>Precio base</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7284522072451866918" datatype="html">
+        <source>Descuento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5524937920748588019" datatype="html">
+        <source>Impuestos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2134219982301044579" datatype="html">
+        <source>Total a pagar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="insufficientRateData" datatype="html">
+        <source>No hay datos suficientes para calcular la tarifa.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rateCalculationFailed" datatype="html">
+        <source>No se pudo calcular la tarifa de la reserva.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentRate/PaymentRate.component.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5065833235997444526" datatype="html">
+        <source>Resumen de Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentReservationSummary/PaymentReservationSummary.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8376830740524331942" datatype="html">
+        <source>Resumen de la reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/PaymentReservationSummary/PaymentReservationSummary.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5555148991494117721" datatype="html">
+        <source>Pago no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ holdReservationErrorMessage() }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="missingReservationData" datatype="html">
+        <source>No se puede hacer el pago porque faltan datos de la reserva.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="missingSessionUser" datatype="html">
+        <source>No se puede hacer el pago porque no hay usuario en sesion (idUsuario).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="holdReservationError" datatype="html">
+        <source>No se puede hacer el pago porque la habitacion no esta disponible.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelHospedaje" datatype="html">
+        <source>Hospedaje</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelPropiedadID" datatype="html">
+        <source>Propiedad ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelHabitacion" datatype="html">
+        <source>Habitacion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelHabitacionID" datatype="html">
+        <source>Habitacion ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelPais" datatype="html">
+        <source>Pais</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelNumeroPersonas" datatype="html">
+        <source>Numero de personas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelCheckIn" datatype="html">
+        <source>Check-in</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelCheckOut" datatype="html">
+        <source>Check-out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelPrecioPorNoche" datatype="html">
+        <source>Precio por noche</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelMoneda" datatype="html">
+        <source>Moneda</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PaymentPage/Payment/Payment.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="796476787334386963" datatype="html">
+        <source>Propiedades Destacadas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6941905613108315570" datatype="html">
+        <source>Cargando propiedades destacadas...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3877598594493156687" datatype="html">
+        <source>No hay propiedades destacadas disponibles en este momento.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5930532660311939131" datatype="html">
+        <source>(<x id="INTERPOLATION" equiv-text="{{ item.reviews }}"/> reseñas)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">56,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3238388232617080875" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ item.habitacion_mas_economica.capacidad }}"/> persona(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyAvailability/PropertyAvailability.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8242243557963741625" datatype="html">
+        <source>/noche</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6856280914652772182" datatype="html">
+        <source> Ver detalle </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7088799331061510370" datatype="html">
+        <source>No se pudieron cargar las propiedades destacadas.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PrincipalPage/PrincipalPage/PrincipalPage.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <note priority="1" from="description">error</note>
+      </trans-unit>
+      <trans-unit id="3592591339441880696" datatype="html">
+        <source>Amenidades</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyAmenities/PropertyAmenities.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2497937638529399144" datatype="html">
+        <source>Disponibilidad seleccionada</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyAvailability/PropertyAvailability.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1612984180075615192" datatype="html">
+        <source>Check-In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyAvailability/PropertyAvailability.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="219277942760574435" datatype="html">
+        <source>Check-Out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyAvailability/PropertyAvailability.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4635411201685537127" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Cargando detalle del hospedaje...<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyDetail/PropertyDetail.component.html</context>
+          <context context-type="linenumber">4,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="imagenDe" datatype="html">
+        <source>Imagen de <x id="PH" equiv-text="this.propertyName"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyImages/PropertyImages.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4229553481192754928" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ property.rating }}"/> (<x id="INTERPOLATION_1" equiv-text="{{ property.reviews }}"/> reseñas)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyInfo/PropertyInfo.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="27938269079184046" datatype="html">
+        <source>Dirección</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyInfo/PropertyInfo.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8887144634091745639" datatype="html">
+        <source>Ubicación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyMap/PropertyMap.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7868430177238598821" datatype="html">
+        <source> Abrir mapa en nueva pestana </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyMap/PropertyMap.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3097037699057450273" datatype="html">
+        <source>No fue posible cargar el mapa.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyMap/PropertyMap.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mapaDe" datatype="html">
+        <source>Mapa de <x id="PH" equiv-text="this.propertyName"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyMap/PropertyMap.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6666311555603028019" datatype="html">
+        <source>Opiniones de usuarios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyReviews/PropertyReviews.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1969750278150900725" datatype="html">
+        <source>Cargando opiniones...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyReviews/PropertyReviews.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4213727042905161182" datatype="html">
+        <source> Este hospedaje aún no tiene opiniones. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyReviews/PropertyReviews.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noHospedajeId" datatype="html">
+        <source>No se puede cargar opiniones porque no llegó el id del hospedaje.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyReviews/PropertyReviews.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reviewsTimeout" datatype="html">
+        <source>El servicio de opiniones tardo demasiado en responder.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyReviews/PropertyReviews.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3701471454588128048" datatype="html">
+        <source>Habitaciones disponibles</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="233763614064183345" datatype="html">
+        <source>Código: <x id="INTERPOLATION" equiv-text="{{ room.code }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6675437499952764904" datatype="html">
+        <source>Capacidad: <x id="INTERPOLATION" equiv-text="{{ room.capacidad }}"/> persona(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1509919076493793255" datatype="html">
+        <source>Tarifa vigente: <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ room.tarifaNombre }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9011602567322633384" datatype="html">
+        <source>/ noche</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2087496004254291388" datatype="html">
+        <source>$<x id="INTERPOLATION" equiv-text="{{ room.precio }}"/> <x id="INTERPOLATION_1" equiv-text="{{localCurrency}}"/> / noche</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6717298631489049175" datatype="html">
+        <source>Reservar ahora</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4844098693923176508" datatype="html">
+        <source>No hay habitaciones disponibles para este hospedaje.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tarifasPublicasError" datatype="html">
+        <source>No se pudieron cargar las tarifas públicas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/PropertyDetailPage/PropertyRooms/PropertyRooms.component.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="835468211490549171" datatype="html">
+        <source>Datos de la empresa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderCompany/ProviderCompany.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3010685430195702518" datatype="html">
+        <source>Nombre completo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderCompany/ProviderCompany.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6684228626856032600" datatype="html">
+        <source>Ej: Hoteles Andinos SAS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderCompany/ProviderCompany.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6931162303895344249" datatype="html">
+        <source>El nombre debe tener entre 2 y 100 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderCompany/ProviderCompany.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5277179650833744472" datatype="html">
+        <source>Numero de documento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderCompany/ProviderCompany.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5606932666845104082" datatype="html">
+        <source>NIT, CUIT, RFC, RUC o documento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderCompany/ProviderCompany.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1810508352112712198" datatype="html">
+        <source>El numero de documento debe tener entre 8 y 10 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderCompany/ProviderCompany.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3479464062694776144" datatype="html">
+        <source>Soy Proveedor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3422713975402344959" datatype="html">
+        <source>Registrate como proveedor de servicios y empieza a recibir reservas.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1294284085251518548" datatype="html">
+        <source>Guardando...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+        <note priority="1" from="description">saving</note>
+        <note priority="1" from="meaning">provider</note>
+      </trans-unit>
+      <trans-unit id="5336795482521658925" datatype="html">
+        <source>Crear mi cuenta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
+        <note priority="1" from="description">create</note>
+        <note priority="1" from="meaning">provider</note>
+      </trans-unit>
+      <trans-unit id="7311537202318471317" datatype="html">
+        <source>Completa correctamente todos los campos obligatorios.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+        <note priority="1" from="description">provider-required-fields</note>
+      </trans-unit>
+      <trans-unit id="2321205436117169234" datatype="html">
+        <source>Proveedor creado correctamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+        <note priority="1" from="description">provider-created</note>
+      </trans-unit>
+      <trans-unit id="3043408703086729313" datatype="html">
+        <source>Cuenta creada correctamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">168</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+        <note priority="1" from="description">provider-account-created</note>
+      </trans-unit>
+      <trans-unit id="7837485254614421631" datatype="html">
+        <source>Bienvenido </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">168</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">provider-welcome</note>
+      </trans-unit>
+      <trans-unit id="7497830696894055731" datatype="html">
+        <source>No fue posible crear el proveedor. Intenta nuevamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">177</context>
+        </context-group>
+        <note priority="1" from="description">provider-create-error</note>
+      </trans-unit>
+      <trans-unit id="2826663459479374749" datatype="html">
+        <source>No fue posible resolver el estado seleccionado.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">198</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">190</context>
+        </context-group>
+        <note priority="1" from="description">provider-state-resolve-error</note>
+      </trans-unit>
+      <trans-unit id="5106844880721955490" datatype="html">
+        <source>No se pudieron cargar los estados para el pais seleccionado.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">232</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">224</context>
+        </context-group>
+        <note priority="1" from="description">provider-states-load-error</note>
+      </trans-unit>
+      <trans-unit id="5734694760880606375" datatype="html">
+        <source>No se pudieron cargar las ciudades del estado seleccionado.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderForm/ProviderForm.component.ts</context>
+          <context context-type="linenumber">260</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">252</context>
+        </context-group>
+        <note priority="1" from="description">provider-cities-load-error</note>
+      </trans-unit>
+      <trans-unit id="1226968036977734223" datatype="html">
+        <source>Datos del administrador</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5357661269973482487" datatype="html">
+        <source>Nombre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21066521127205346" datatype="html">
+        <source>Ej: Juan</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6121280062403357056" datatype="html">
+        <source>Apellido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1012926565967180191" datatype="html">
+        <source>Ej: Pérez</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2640139418190905120" datatype="html">
+        <source>El apellido debe tener entre 2 y 100 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6597520566647669940" datatype="html">
+        <source>Correo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1157956373286609654" datatype="html">
+        <source>Ej: juan@micorreo.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="411223482949402691" datatype="html">
+        <source>Ingresa un correo valido (juan@micorreo.com).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7518381888635603166" datatype="html">
+        <source>Contrasena</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3914045019754820179" datatype="html">
+        <source>Ej: ********</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4845139389700770249" datatype="html">
+        <source>La contrasena debe tener al menos 8 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5782574739632277665" datatype="html">
+        <source>Telefono</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1442479573169050602" datatype="html">
+        <source>Ej: 3001234567</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8351697010948446298" datatype="html">
+        <source>El telefono debe tener entre 10 y 15 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ProviderPage/ProviderManager/ProviderManager.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6005312703240889873" datatype="html">
+        <source>Reservas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+        <note priority="1" from="description">header</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="6329282237061746186" datatype="html">
+        <source>Id Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+        <note priority="1" from="description">id</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="4596420844027809362" datatype="html">
+        <source>Hotel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+        <note priority="1" from="description">hotel</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="8673973291483537782" datatype="html">
+        <source>Check in</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+        <note priority="1" from="description">checkin</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="1324994667000197553" datatype="html">
+        <source>Check out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">29,31</context>
+        </context-group>
+        <note priority="1" from="description">checkout</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="5391138761907801132" datatype="html">
+        <source>Código</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+        <note priority="1" from="description">code</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="6450047943622634184" datatype="html">
+        <source>Fechas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">59,60</context>
+        </context-group>
+        <note priority="1" from="description">dates</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="4861144659589200210" datatype="html">
+        <source>Desde:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <note priority="1" from="description">from</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="4127328598803029781" datatype="html">
+        <source>Hasta:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <note priority="1" from="description">until</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="7132004546258182684" datatype="html">
+        <source>Valor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+        <note priority="1" from="description">value</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="8355893593043569745" datatype="html">
+        <source>Estado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+        <note priority="1" from="description">status2</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="7079294896184834450" datatype="html">
+        <source>No hay reserva seleccionada</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">80,82</context>
+        </context-group>
+        <note priority="1" from="description">no-selection</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="2007473900753936097" datatype="html">
+        <source>Cancelar Reserva</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">83,84</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">95,97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">101,102</context>
+        </context-group>
+        <note priority="1" from="description">cancel</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="3865345173519851849" datatype="html">
+        <source>Volver</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">84,87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">102,104</context>
+        </context-group>
+        <note priority="1" from="description">back</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="7096663547147717190" datatype="html">
+        <source>¿Está seguro de que desea cancelar la reserva <x id="INTERPOLATION" equiv-text="{{ reservaActiva?.public_id }}"/>? Esta acción no es revertible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.html</context>
+          <context context-type="linenumber">98,99</context>
+        </context-group>
+        <note priority="1" from="description">cancel-confirm</note>
+        <note priority="1" from="meaning">reservations</note>
+      </trans-unit>
+      <trans-unit id="cargandoUsuario" datatype="html">
+        <source>Cargando Usuario...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cargandoHotelReserva" datatype="html">
+        <source>Cargando Hotel...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ReservationsPage/ReservationsPage/ReservationsPage.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8725631384128232063" datatype="html">
+        <source>Buscando hospedajes...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7532299381973681362" datatype="html">
+        <source> 1 Alojamiento encontrado </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7189826382805210293" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ resultados.length }}"/> Alojamientos encontrados </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">17,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="84795485838973911" datatype="html">
+        <source>No se encontraron hospedajes disponibles</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.html</context>
+          <context context-type="linenumber">77,78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7956331044277684407" datatype="html">
+        <source>Hospedajes encontrados</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">success</note>
+      </trans-unit>
+      <trans-unit id="1426743685605303370" datatype="html">
+        <source>Error al buscar hospedajes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResultsPage/ResultsPage/ResultsPage.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description">error</note>
+      </trans-unit>
+      <trans-unit id="8495263310678970689" datatype="html">
+        <source>Tarifas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="909639098208629460" datatype="html">
+        <source>Nueva tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifasPage/TarifasPage.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7300011321734193785" datatype="html">
+        <source>Crea y asocia una nueva tarifa a una categoría de habitación.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2789884673721073647" datatype="html">
+        <source>Información de la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6717771451720467938" datatype="html">
+        <source>Nombre de la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5101577883185562066" datatype="html">
+        <source>Ej. Tarifa Flexible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1063451776414229470" datatype="html">
+        <source>Categoría de habitación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9134853782370763234" datatype="html">
+        <source>Valor por noche</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1197764209145694247" datatype="html">
+        <source>Moneda</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2677103464003237253" datatype="html">
+        <source>Identificador</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6729585575397750213" datatype="html">
+        <source>Ej. TAR-EST-001</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2702769239797460498" datatype="html">
+        <source>Descripción</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">62,63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2443836446092719143" datatype="html">
+        <source>Descripción breve</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5356004132942640953" datatype="html">
+        <source>Período de vigencia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">69,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6132179842722129733" datatype="html">
+        <source>Fecha de inicio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">121,122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21694922362979010" datatype="html">
+        <source>Fecha de finalización</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">76,77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">125,126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="165702607570028626" datatype="html">
+        <source>Descuentos (Opcional)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7509596783505333696" datatype="html">
+        <source> Ocultar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6930841167180208705" datatype="html">
+        <source> Agregar descuento </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1677645728168024050" datatype="html">
+        <source>Nuevo descuento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">101,102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4912352538038742914" datatype="html">
+        <source>Nombre del descuento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">104,105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8578017397557692623" datatype="html">
+        <source>Ej. Promo verano</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1803224391187997356" datatype="html">
+        <source>Porcentaje (%)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">108,109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1830507234332447951" datatype="html">
+        <source><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input type=&quot;checkbox&quot; class=&quot;form-check-input&quot; [(ngModel)]=&quot;descuentoForm.activo&quot; name=&quot;descuentoActivo&quot; /&gt;"/> Activo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">113,114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6367108784204442474" datatype="html">
+        <source>Agregar a lista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">131,132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8159522354450123434" datatype="html">
+        <source>Descuentos agregados:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">138,139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6665903341931535342" datatype="html">
+        <source>Eliminar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">146,147</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6402951927316857780" datatype="html">
+        <source>Cancelar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">156,157</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6531128545611535253" datatype="html">
+        <source>Guardar tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.html</context>
+          <context context-type="linenumber">157,158</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="activo" datatype="html">
+        <source>Activo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="inactivo" datatype="html">
+        <source>Inactivo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="errorCargarTarifa" datatype="html">
+        <source>No se pudo cargar la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="error" datatype="html">
+        <source>Error</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">275</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">286</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="primeroDefineFechas" datatype="html">
+        <source>Primero define las fechas de vigencia de la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fechasInvalidas" datatype="html">
+        <source>Fechas inválidas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="completarFechasDescuento" datatype="html">
+        <source>Debes completar las fechas de vigencia del descuento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="inicioMayorFin" datatype="html">
+        <source>La fecha de inicio del descuento no puede ser mayor que la fecha de fin</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="inicioDescuentoPosterior" datatype="html">
+        <source>La fecha de inicio del descuento debe ser igual o posterior a la fecha de inicio de la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="finDescuentoAnterior" datatype="html">
+        <source>La fecha de fin del descuento debe ser igual o anterior a la fecha de fin de la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="identificadorVacio" datatype="html">
+        <source>El identificador de la tarifa no puede estar vacío</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="validacion" datatype="html">
+        <source>Validación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="descuentosCreados" datatype="html">
+        <source>Descuentos creados correctamente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">221</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exito" datatype="html">
+        <source>Éxito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">221</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">270</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">281</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="errorCrearDescuento" datatype="html">
+        <source>No se pudo crear un descuento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tarifaActualizada" datatype="html">
+        <source>Tarifa actualizada correctamente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">270</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="errorActualizarTarifa" datatype="html">
+        <source>No se pudo actualizar la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">275</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tarifaCreada" datatype="html">
+        <source>Tarifa creada correctamente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">281</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="errorCrearTarifa" datatype="html">
+        <source>No se pudo crear la tarifa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifaCreate/TarifaCreate.component.ts</context>
+          <context context-type="linenumber">286</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3150794451316859032" datatype="html">
+        <source>Tarifas creadas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifasPage/TarifasPage.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2425876563989670334" datatype="html">
+        <source>No estás autorizado para ver esta página.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifasPage/TarifasPage.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2427910658969739747" datatype="html">
+        <source>No hay tarifas disponibles.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifasPage/TarifasPage.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9151120994639543493" datatype="html">
+        <source>Descuento: <x id="INTERPOLATION" equiv-text="{{ tarifa.valor_descuento_total }}"/> <x id="INTERPOLATION_1" equiv-text="{{ tarifa.moneda }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifasPage/TarifasPage.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2153980152639237955" datatype="html">
+        <source>Editar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TarifasPage/TarifasPage/TarifasPage.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1278793175164088387" datatype="html">
+        <source>Datos personales</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5143199243271636449" datatype="html">
+        <source>Ej: 502356897</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1705862489471675289" datatype="html">
+        <source>Genero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="911513332005979723" datatype="html">
+        <source>Femenino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4378543939301377539" datatype="html">
+        <source>Masculino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5908828003557859490" datatype="html">
+        <source>Otro</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7132730488496169673" datatype="html">
+        <source>Contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4403077067073953050" datatype="html">
+        <source>La contraseña debe tener al menos 8 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerData/TravelerData.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6766398087115594345" datatype="html">
+        <source>Soy Viajero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7456504636987801599" datatype="html">
+        <source>Registrate como cliente y comienza a disfrutar de nuestros servicios.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8535325853992764562" datatype="html">
+        <source>Guardando...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+        <note priority="1" from="description">saving</note>
+        <note priority="1" from="meaning">traveler</note>
+      </trans-unit>
+      <trans-unit id="3354465214408129131" datatype="html">
+        <source>Crear mi cuenta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+        <note priority="1" from="description">create</note>
+        <note priority="1" from="meaning">traveler</note>
+      </trans-unit>
+      <trans-unit id="5997445573168099713" datatype="html">
+        <source>Traveler creado correctamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">151</context>
+        </context-group>
+        <note priority="1" from="description">traveler-created</note>
+      </trans-unit>
+      <trans-unit id="7779806539806155496" datatype="html">
+        <source>No fue posible crear el traveler. Intenta nuevamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/TravelerPage/TravelerForm/TravelerForm.component.ts</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+        <note priority="1" from="description">traveler-create-error</note>
+      </trans-unit>
+      <trans-unit id="7875220663406358589" datatype="html">
+        <source>Crear Cuenta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/CreatePage/CreatePage.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">105,106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2742964639993197556" datatype="html">
+        <source>¿Cómo quieres aparecer en la plataforma?.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/CreatePage/CreatePage.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2093836562703919639" datatype="html">
+        <source>Seleccion de tipo de cuenta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/CreatePage/CreatePage.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1839214969341819610" datatype="html">
+        <source> Viajero </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/CreatePage/CreatePage.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1628972686022464586" datatype="html">
+        <source> Proveedor </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/CreatePage/CreatePage.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8254001314721587467" datatype="html">
+        <source>Imagen publicitaria TravelHub</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+        <note priority="1" from="description">Imagen publicitaria</note>
+        <note priority="1" from="meaning">login</note>
+      </trans-unit>
+      <trans-unit id="4026326144357498968" datatype="html">
+        <source>Inicia sesion para continuar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2034164793234516944" datatype="html">
+        <source>micorreo@email.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <note priority="1" from="description">Email placeholder</note>
+        <note priority="1" from="meaning">login</note>
+      </trans-unit>
+      <trans-unit id="1431416938026210429" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9193970690022658823" datatype="html">
+        <source>Mi clave</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+        <note priority="1" from="description">Password placeholder</note>
+        <note priority="1" from="meaning">login</note>
+      </trans-unit>
+      <trans-unit id="3243984405142540584" datatype="html">
+        <source>Iniciar sesion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="897429596989756730" datatype="html">
+        <source>Por favor, ingrese su correo electronico y contrasena.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <note priority="1" from="description">login-message</note>
+      </trans-unit>
+      <trans-unit id="7949119658129922945" datatype="html">
+        <source>Has iniciado sesion correctamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">login-success</note>
+      </trans-unit>
+      <trans-unit id="3902484797171749131" datatype="html">
+        <source>Usuario o contraseña incorrectos.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <note priority="1" from="description">login-error</note>
+      </trans-unit>
+      <trans-unit id="1519954996184640001" datatype="html">
+        <source>Error</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/LoginPage/LoginPage.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <note priority="1" from="description">login-error-title</note>
+      </trans-unit>
+      <trans-unit id="4448379371353374337" datatype="html">
+        <source>Año</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2303355164832133056" datatype="html">
+        <source>Mes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="157531952224492388" datatype="html">
+        <source>Enero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1568691619928329005" datatype="html">
+        <source>Febrero</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1148164967291934461" datatype="html">
+        <source>Marzo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1939993228172670836" datatype="html">
+        <source>Abril</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4319219690673073995" datatype="html">
+        <source>Mayo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4851770799627452" datatype="html">
+        <source>Junio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2418464672718869339" datatype="html">
+        <source>Julio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7197813819561794370" datatype="html">
+        <source>Agosto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3326769019519634531" datatype="html">
+        <source>Septiembre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="114628500143238762" datatype="html">
+        <source>Octubre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3156687797817467177" datatype="html">
+        <source>Noviembre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6960620651951213236" datatype="html">
+        <source>Diciembre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5875527295041649818" datatype="html">
+        <source>Ingreso total - <x id="INTERPOLATION" equiv-text="{{ strMonth(mesActivo) }}"/> <x id="INTERPOLATION_1" equiv-text="{{ anoActivo }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2363159593939939610" datatype="html">
+        <source>Total generado por reservas confirmadas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">56,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1736069189225224893" datatype="html">
+        <source>Habitación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+        <note priority="1" from="description">room</note>
+        <note priority="1" from="meaning">billing</note>
+      </trans-unit>
+      <trans-unit id="485710187955204417" datatype="html">
+        <source>Reservas Confirmadas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+        <note priority="1" from="description">confirmed-reservations</note>
+        <note priority="1" from="meaning">billing</note>
+      </trans-unit>
+      <trans-unit id="1621898565364397191" datatype="html">
+        <source>Ingreso total</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+        <note priority="1" from="description">total-income</note>
+        <note priority="1" from="meaning">billing</note>
+      </trans-unit>
+      <trans-unit id="7564002947990217812" datatype="html">
+        <source>Porcentaje del total</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.html</context>
+          <context context-type="linenumber">74,77</context>
+        </context-group>
+        <note priority="1" from="description">total-percentage</note>
+        <note priority="1" from="meaning">billing</note>
+      </trans-unit>
+      <trans-unit id="2564714321776354436" datatype="html">
+        <source>Facturación diaria por reservas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/billingPage/billingPage.component.ts</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8205336234288481017" datatype="html">
+        <source>© 2026 TravelHub. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Universidad de los Andes - Maestría en Ingeniería de Software MISO <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Proyecto Final - Grupo 4 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer/footer.component.html</context>
+          <context context-type="linenumber">2,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8934768058086434855" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/search.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Buscar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8832467539503714964" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/fire.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Ofertas </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2263973951748769220" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/calendar-ico.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Reservas </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1472430958291887310" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/room.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Habitaciones </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5684706042450414522" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/calendar-ico.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Tarifas </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="573082976933818626" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/bill.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Facturación </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2587171815642333737" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/service-bell.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Ayuda </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">53,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4311569858228721961" datatype="html">
+        <source>Iniciar sesión</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">104,105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="795794659082304012" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/config.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Configuración</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">123,124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6180286226134175077" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/exit.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Cerrar Sesión </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.html</context>
+          <context context-type="linenumber">129,130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="errorCargandoPaises" datatype="html">
+        <source>Error cargando países</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2351608257679682780" datatype="html">
+        <source>Sesión cerrada correctamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1869653312977722301" datatype="html">
+        <source>Éxito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2663825149706385665" datatype="html">
+        <source>Destino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5974728186972621295" datatype="html">
+        <source>Ciudad destino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1274031095432494734" datatype="html">
+        <source> La ciudad es obligatoria </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5277889411193567696" datatype="html">
+        <source> La fecha de entrada es obligatoria </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1638429781094523759" datatype="html">
+        <source> La fecha de salida es obligatoria </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">66,67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5073117193234262171" datatype="html">
+        <source>Huéspedes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76095037126121638" datatype="html">
+        <source> La cantidad de huéspedes es obligatoria </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">82,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2326453530942382852" datatype="html">
+        <source> Debe haber al menos 1 huésped </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4744242330307388251" datatype="html">
+        <source> La fecha de salida debe ser posterior al check-in </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">93,94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="633264440722550638" datatype="html">
+        <source>Buscando...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">103,104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8713073708350341933" datatype="html">
+        <source>Buscar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/searchbar/searchbar/searchbar.component.html</context>
+          <context context-type="linenumber">104,105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5118146539980652094" datatype="html">
+        <source>Direccion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="623287819567811499" datatype="html">
+        <source>Linea 1</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6533327253041591777" datatype="html">
+        <source>Ej: Calle 123</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2816803487918387777" datatype="html">
+        <source>La linea 1 es obligatoria y debe tener hasta 120 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="45141737408760537" datatype="html">
+        <source>Linea 2</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8796885967784650796" datatype="html">
+        <source>Ej: Apt 456</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6090789334137074507" datatype="html">
+        <source>La linea 2 debe tener hasta 120 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="469730375491279314" datatype="html">
+        <source>Ciudad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6584027386828725159" datatype="html">
+        <source>Ej: Ciudad de México</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5557255844870735607" datatype="html">
+        <source>Cargando ciudades...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8394481597679531869" datatype="html">
+        <source>La ciudad es obligatoria y debe tener hasta 80 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2891296791719902525" datatype="html">
+        <source>Estado/Departamento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4194950479240461512" datatype="html">
+        <source>Ej: Estado de México</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3324129195599332118" datatype="html">
+        <source>Cargando estados...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">74,75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6745707382870026162" datatype="html">
+        <source>El estado/departamento es obligatorio y debe tener hasta 80 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="737843568562880982" datatype="html">
+        <source>Pais</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="35943126863035750" datatype="html">
+        <source>El pais es obligatorio y debe tener hasta 80 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">97,98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6826008070947736742" datatype="html">
+        <source>Codigo pais</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">102,103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4871991493182193165" datatype="html">
+        <source>El codigo de pais es obligatorio y debe tener hasta 6 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">105,106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8200667157729976242" datatype="html">
+        <source>Codigo postal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">110,111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6866346567309299430" datatype="html">
+        <source>Ej: 12345</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">111,112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2326576190626089856" datatype="html">
+        <source>El codigo postal es obligatorio y debe tener hasta 20 caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utilities/Forms/AddressForm.component.html</context>
+          <context context-type="linenumber">113,114</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

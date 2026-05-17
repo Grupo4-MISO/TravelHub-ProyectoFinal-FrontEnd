@@ -1,7 +1,7 @@
 <section class="payment-card">
-  <h1 id="payment-title" class="section-title" data-cy="reserva-detalles">Resumen de Reserva</h1>
+  <h1 id="payment-title" class="section-title" data-cy="reserva-detalles" i18n>Resumen de Reserva</h1>
 
-  <div class="reservation-grid" role="table" aria-label="Resumen de la reserva">
+  <div class="reservation-grid" role="table" aria-label="Resumen de la reserva" i18n-aria-label>
     @for (row of reservationRows(); track row.label) {
     <div class="grid-row" role="row">
       <span class="grid-label" role="cell">{{ row.label }}</span>

@@ -49,7 +49,7 @@ export class PaymentRateComponent {
 
       if (!checkIn || !checkOut || !pais || precio <= 0) {
         this.rate.set(null);
-        this.errorMessage.set('No hay datos suficientes para calcular la tarifa.');
+        this.errorMessage.set($localize`:@@insufficientRateData:No hay datos suficientes para calcular la tarifa.`);
         return;
       }
 
@@ -71,7 +71,7 @@ export class PaymentRateComponent {
           },
           error: () => {
             this.rate.set(null);
-            this.errorMessage.set('No se pudo calcular la tarifa de la reserva.');
+            this.errorMessage.set($localize`:@@rateCalculationFailed:No se pudo calcular la tarifa de la reserva.`);
             this.loading.set(false);
           }
         });

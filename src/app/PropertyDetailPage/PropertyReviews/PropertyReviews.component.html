@@ -1,8 +1,8 @@
 <section class="reviews-section">
-  <h2>Opiniones de usuarios</h2>
+  <h2 i18n>Opiniones de usuarios</h2>
 
   <ng-container *ngIf="vm$ | async as vm">
-    <div *ngIf="vm.loading" class="state-message">Cargando opiniones...</div>
+    <div *ngIf="vm.loading" class="state-message" i18n>Cargando opiniones...</div>
     <div *ngIf="!vm.loading && vm.error" class="state-message error-message">
       <div>{{ vm.error }}</div>
       <small *ngIf="vm.errorDetail" class="error-detail">{{ vm.errorDetail }}</small>
@@ -25,7 +25,7 @@
       </article>
     </div>
 
-    <div *ngIf="!vm.loading && !vm.error && vm.comments.length === 0" class="state-message">
+    <div *ngIf="!vm.loading && !vm.error && vm.comments.length === 0" class="state-message" i18n>
       Este hospedaje aún no tiene opiniones.
     </div>
   </ng-container>

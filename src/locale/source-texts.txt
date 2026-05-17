@@ -1,0 +1,306 @@
+ <x id="INTERPOLATION" equiv-text="{{ isSubmittingPayment() ? &apos;Procesando pago...&apos; : &apos;Confirmar Reserva&apos; }}"/> 
+ <x id="INTERPOLATION" equiv-text="{{ resultados.length }}"/> Alojamientos encontrados 
+ 1 Alojamiento encontrado 
+ Abrir mapa en nueva pestana 
+ Bienvenido a TravelHub 
+ Contamos con dos usuarios genéricos que le pueden ayudar a acceder rápidamente a la aplicación. Desde la opción &quot;Iniciar sesión&quot; 
+ Debe haber al menos 1 huésped 
+ Escanea este código para validar la reserva 
+ Esta aplicación ha sido desarrollada por los estudiantes Daniel Andrade Suarez, Daniel Oicata Hernández, Juan Camilo Mora García y Neider Alejandro Fajardo de la Maestría en Ingeniería de Software -MISO- de la Universidad de Los Andes. 
+ Estamos validando la reserva 
+ Este hospedaje aún no tiene opiniones. 
+ Filtrar Reservas
+ La cantidad de huéspedes es obligatoria 
+ La ciudad es obligatoria 
+ La fecha de entrada es obligatoria 
+ La fecha de salida debe ser posterior al check-in 
+ La fecha de salida es obligatoria 
+ Las imagenes de alojamientos o usuarios son recursos gratuitos tomados de https://unsplash.com/es 
+ Las imagenes fueron integradas a la aplicación gracias a los recursos de optimización y almacenamiento en la nube de la capa gratuita de Cloudinary, disponible en https://cloudinary.com/ 
+ Las imagenes publicitarias presentes en la aplicación fueron elaboradas con ChatGPT, para su uso como recurso en el proyecto académico, no hacen referencia a ninguna marca real. 
+ Los íconos de la aplicación son recursos gratuitos tomados de https://www.svgrepo.com/ 
+ Muchas de las funcionalidades de la aplicación requieren inicio sesion para ejecutarse desde un rol específico. 
+ Proveedor 
+ Reserva #<x id="INTERPOLATION" equiv-text="{{ reservaActiva?.public_id }}"/> 
+ También algunas funcionalidades involucran varios usuarios, por lo que hemos dispuesto un listado de usuarios genéricos para cada rol, cualquiera de estos usuarios puede acceder con la contraseña 12345 
+ Total generado por reservas confirmadas
+ Ver detalle 
+ Viajero 
+¿Cómo quieres aparecer en la plataforma?.
+¿Está seguro de confirmar la reserva seleccionada?
+¿Está seguro de que desea cancelar la reserva <x id="INTERPOLATION" equiv-text="{{ reservaActiva?.public_id }}"/>? Esta acción no es revertible
+¿Está seguro de revocar la reserva seleccionada? Esta acción no es reversible.
+(<x id="INTERPOLATION" equiv-text="{{ item.reviews }}"/> reseñas)
+/ noche
+/noche
+© 2026 TravelHub. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Universidad de los Andes - Maestría en Ingeniería de Software MISO <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Proyecto Final - Grupo 4 
+<x id="INTERPOLATION" equiv-text="{{ holdReservationErrorMessage() }}"/>
+<x id="INTERPOLATION" equiv-text="{{ item.habitacion_mas_economica.capacidad }}"/> persona(s)
+<x id="INTERPOLATION" equiv-text="{{ property.rating }}"/> (<x id="INTERPOLATION_1" equiv-text="{{ property.reviews }}"/> reseñas)
+<x id="PH" equiv-text="encontradas"/> reservas coinciden con los criterios de búsqueda.
+<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Cargando detalle del hospedaje...<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/bill.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Facturación 
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/calendar-ico.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Reservas 
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/calendar-ico.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Tarifas 
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/config.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Configuración
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/exit.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Cerrar Sesión 
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/fire.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Ofertas 
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/room.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Habitaciones 
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/search.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Buscar 
+<x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;/iconos/service-bell.svg&quot; class=&quot;nv-icon&quot;&gt;"/> Ayuda 
+<x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input type=&quot;checkbox&quot; class=&quot;form-check-input&quot; [(ngModel)]=&quot;descuentoForm.activo&quot; name=&quot;descuentoActivo&quot; /&gt;"/> Activo 
+$<x id="INTERPOLATION" equiv-text="{{ room.precio }}"/> <x id="INTERPOLATION_1" equiv-text="{{localCurrency}}"/> / noche
+Agregar a lista
+Alojamiento
+Amenidades
+Apellido
+Aplicar Filtros
+Bienvenido 
+Buscando hospedajes...
+Buscar Reservas
+Calculando tarifa...
+Cancelar
+Cancelar Reserva
+Capacidad
+Capacidad: <x id="INTERPOLATION" equiv-text="{{ room.capacidad }}"/> persona(s)
+Cargando ciudades...
+Cargando estados...
+Cargando metodos de pago...
+Cargando opiniones...
+Cargando propiedades destacadas...
+Cargando... te redirigiremos para completar el pago.
+Categoría de habitación
+Check in
+Check out
+Check-in
+Check-in de Reserva
+Check-out
+Ciudad
+Ciudad destino
+Código
+Código de Reserva
+Codigo pais
+Codigo postal
+Código: <x id="INTERPOLATION" equiv-text="{{ room.code }}"/>
+Completa correctamente todos los campos obligatorios.
+Completada
+Confirmada
+Confirmar Reserva
+Contrasena
+Contraseña
+Correo
+Correo Usuario
+Crea y asocia una nueva tarifa a una categoría de habitación.
+Crear Cuenta
+Crear mi cuenta
+Cuenta creada correctamente.
+Datos de la empresa
+Datos del administrador
+Datos personales
+Debes completar las fechas de vigencia del descuento
+Descripción
+Descripción breve
+Descuento
+Descuento: <x id="INTERPOLATION" equiv-text="{{ tarifa.valor_descuento_total }}"/> <x id="INTERPOLATION_1" equiv-text="{{ tarifa.moneda }}"/>
+Descuentos (Opcional)
+Descuentos agregados:
+Descuentos creados correctamente
+Desde:
+Desde: <x id="INTERPOLATION" equiv-text="{{ reservaActiva.check_in }}"/> <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Hasta: <x id="INTERPOLATION_1" equiv-text="{{ reservaActiva.check_out }}"/> 
+Destino
+Direccion
+Dirección
+Disponibilidad seleccionada
+Editar
+Ej: ********
+Ej: 12345
+Ej: 3001234567
+Ej: 502356897
+Ej: Apt 456
+Ej: Calle 123
+Ej: Ciudad de México
+Ej: Estado de México
+Ej: Hoteles Andinos SAS
+Ej: Juan
+Ej: juan@micorreo.com
+Ej: Pérez
+Ej. Promo verano
+Ej. TAR-EST-001
+Ej. Tarifa Flexible
+El apellido debe tener entre 2 y 100 caracteres.
+El codigo de pais es obligatorio y debe tener hasta 6 caracteres.
+El codigo postal es obligatorio y debe tener hasta 20 caracteres.
+El estado/departamento es obligatorio y debe tener hasta 80 caracteres.
+El identificador de la tarifa no puede estar vacío
+El nombre debe tener entre 2 y 100 caracteres.
+El numero de documento debe tener entre 8 y 10 caracteres.
+El pais es obligatorio y debe tener hasta 80 caracteres.
+El proveedor no devolvio la URL de pago. Intenta nuevamente.
+El servicio de opiniones tardo demasiado en responder.
+El telefono debe tener entre 10 y 15 caracteres.
+El valor del pago es invalido.
+Eliminar
+Email
+Error
+Error al buscar hospedajes
+Escribe el código de reserva
+Escribe el correo del viajero
+Escribe el número de habitación
+Estado
+Estado reserva
+Estado/Departamento
+Éxito
+Fecha check in
+Fecha check out
+Fecha de finalización
+Fecha de inicio
+Fechas
+Fechas inválidas
+Femenino
+Generando transaccion de pago...
+Genero
+Guardando...
+Guardar tarifa
+Habitacion
+Habitación
+Habitación 101
+Habitación 102
+Habitación 103
+Habitación 104
+Habitacion ID
+Habitaciones
+Habitaciones disponibles
+Has iniciado sesion correctamente.
+Hasta:
+Hospedaje
+Hospedajes encontrados
+Hotel
+Huéspedes
+Id
+Id Habitacion
+Id Reserva
+Identificador
+Imagen publicitaria TravelHub
+Impuestos
+Información de la tarifa
+Ingresa un correo valido (juan@micorreo.com).
+Ingreso total
+Ingreso total - Mayo 2026
+Ingresos del Mes
+Inicia sesion para continuar
+Iniciar sesion
+Iniciar sesión
+Inicio de Sesión
+La ciudad es obligatoria y debe tener hasta 80 caracteres.
+La contrasena debe tener al menos 8 caracteres.
+La contraseña debe tener al menos 8 caracteres.
+La fecha de fin del descuento debe ser igual o anterior a la fecha de fin de la tarifa
+La fecha de inicio del descuento debe ser igual o posterior a la fecha de inicio de la tarifa
+La fecha de inicio del descuento no puede ser mayor que la fecha de fin
+La linea 1 es obligatoria y debe tener hasta 120 caracteres.
+La linea 2 debe tener hasta 120 caracteres.
+Linea 1
+Linea 2
+Masculino
+Medio de Pago
+Mi clave
+micorreo@email.com
+Moneda
+NIT, CUIT, RFC, RUC o documento
+No estás autorizado para ver esta página.
+No fue posible cargar el mapa.
+No fue posible completar el check-in
+No fue posible crear el proveedor. Intenta nuevamente.
+No fue posible crear el traveler. Intenta nuevamente.
+No fue posible obtener el id de la reserva para crear el pago.
+No fue posible resolver el estado seleccionado.
+No hay datos suficientes para calcular la tarifa.
+No hay habitaciones disponibles para este hospedaje.
+No hay informacion completa para registrar el pago.
+No hay metodos de pago disponibles en este momento.
+No hay propiedades destacadas disponibles en este momento.
+No hay reserva seleccionada
+No hay tarifas disponibles.
+No hay usuario en sesion. Inicia sesion para continuar.
+No se encontraron hospedajes disponibles
+No se pudieron cargar las ciudades del estado seleccionado.
+No se pudieron cargar las propiedades destacadas.
+No se pudieron cargar las tarifas públicas
+No se pudieron cargar los estados para el pais seleccionado.
+No se pudieron cargar los metodos de pago. Intenta de nuevo.
+No se pudo actualizar la tarifa
+No se pudo calcular la tarifa de la reserva.
+No se pudo cargar la tarifa
+No se pudo crear la tarifa
+No se pudo crear un descuento
+No se pudo generar la transaccion de pago. Intenta nuevamente.
+No se puede cargar opiniones porque no llegó el id del hospedaje.
+No se puede hacer el pago porque faltan datos de la reserva.
+No se puede hacer el pago porque la habitacion no esta disponible.
+No se puede hacer el pago porque no hay usuario en sesion (idUsuario).
+Nombre
+Nombre completo
+Nombre de la tarifa
+Nombre del descuento
+Nueva tarifa
+Nuevo descuento
+Numero de documento
+Numero de personas
+Opiniones de usuarios
+Otro
+Pago no disponible
+Pago por reserva del hotel <x id="PH" equiv-text="propertyNombre"/>
+Pais
+Password
+Pendiente
+Período de vigencia
+Por favor, ingrese su correo electronico y contrasena.
+Porcentaje (%)
+Porcentaje del total
+Precio
+Precio base
+Precio por noche
+Primero define las fechas de vigencia de la tarifa
+Procesando Check-In...
+Propiedad ID
+Propiedades Destacadas
+Proveedor creado correctamente.
+Recuerde, para cualquier usuario de la tabla anterior, la constraseña es 12345.
+Recursos Gráficos y derechos de autor
+Registrate como cliente y comienza a disfrutar de nuestros servicios.
+Registrate como proveedor de servicios y empieza a recibir reservas.
+Remover Filtros
+Reserva inválida
+Reserva: <x id="INTERPOLATION" equiv-text="{{ reservaActiva?.public_id }}"/>
+Reservar ahora
+Reservas
+Reservas Confirmadas
+Reservas encontradas para: 
+Resumen de Reserva
+Revocar Reserva
+Rol
+Selecciona un estado
+Selecciona un metodo de pago para continuar.
+Soy Proveedor
+Soy Viajero
+Tarifa actualizada correctamente
+Tarifa creada correctamente
+Tarifa de la Reserva
+Tarifa vigente: <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ room.tarifaNombre }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
+Tarifas
+Tarifas creadas
+Telefono
+Tipo de Habitación
+Titular
+Total a pagar
+Total de noches
+Traveler creado correctamente.
+Ubicación
+Usuario o contraseña incorrectos.
+Validación
+Valor
+Valor de la Reserva
+Valor por noche
+Valor Total
+Viajero
+Volver

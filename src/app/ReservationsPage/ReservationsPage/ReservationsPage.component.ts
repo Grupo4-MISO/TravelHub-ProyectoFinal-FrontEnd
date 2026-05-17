@@ -51,6 +51,14 @@ export class ReservationsPageComponent implements OnInit, AfterViewInit {
   reservaActiva: Reserva | null = null;
   reservas: Reserva[] = [];
 
+  get userName(): string {
+    return this.usuario?.first_name || $localize`:@@cargandoUsuario:Cargando Usuario...`;
+  }
+
+  reservaNombreHotel(reserva: Reserva): string {
+    return reserva.nombre_hotel || $localize`:@@cargandoHotelReserva:Cargando Hotel...`;
+  }
+
   offcanvasReserva: bootstrap.Offcanvas | null = null;
   modalReserva: bootstrap.Modal | null = null;
 

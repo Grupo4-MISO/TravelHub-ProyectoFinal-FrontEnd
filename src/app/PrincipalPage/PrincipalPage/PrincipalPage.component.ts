@@ -61,7 +61,7 @@ export class PrincipalPageComponent implements OnInit, OnDestroy {
       error: () => {
         this.loadingPopular = false;
         this.errorPopular = 'No se pudieron cargar las propiedades destacadas.';
-        this.toastr.error(this.errorPopular, '', { positionClass: 'toast-bottom-right' });
+        this.toastr.error($localize`:error:No se pudieron cargar las propiedades destacadas.`, '', { positionClass: 'toast-bottom-right' });
         this.cdr.detectChanges();
       }
     });

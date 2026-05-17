@@ -18,11 +18,11 @@
 <app-searchbar></app-searchbar>
 
 <section class="featured-section">
-  <h2 class="featured-title">Propiedades Destacadas</h2>
+  <h2 class="featured-title" i18n>Propiedades Destacadas</h2>
 
   <div *ngIf="loadingPopular" class="featured-loading">
     <div class="spinner"></div>
-    <p><b>Cargando propiedades destacadas...</b></p>
+    <p><b i18n>Cargando propiedades destacadas...</b></p>
   </div>
 
   <div *ngIf="!loadingPopular && errorPopular" class="featured-error">
@@ -30,7 +30,7 @@
   </div>
 
   <div *ngIf="!loadingPopular && !errorPopular && popularAccommodations.length === 0" class="featured-empty">
-    <p>No hay propiedades destacadas disponibles en este momento.</p>
+    <p i18n>No hay propiedades destacadas disponibles en este momento.</p>
   </div>
 
   <div *ngIf="!loadingPopular && popularAccommodations.length > 0" class="featured-grid">
@@ -48,20 +48,20 @@
             <span *ngFor="let star of getEmptyStarArray(item.rating)" class="star">☆</span>
           </div>
           <span class="rating-value">{{ item.rating }}</span>
-          <span class="rating-reviews">({{ item.reviews }} reseñas)</span>
+          <span class="rating-reviews" i18n>({{ item.reviews }} reseñas)</span>
         </div>
 
         <div class="featured-card-room">
-          <span class="room-badge">{{ item.habitacion_mas_economica.capacidad }} persona(s)</span>
+          <span class="room-badge" i18n>{{ item.habitacion_mas_economica.capacidad }} persona(s)</span>
           <span class="room-type">{{ item.habitacion_mas_economica.descripcion }}</span>
         </div>
 
         <div class="featured-card-price">
           <span class="price-amount">${{ item.habitacion_mas_economica.precio | number }}</span>
-          <span class="price-period">/noche</span>
+          <span class="price-period" i18n>/noche</span>
         </div>
 
-        <button class="featured-card-btn" (click)="verDetallePopular(item.id)">
+        <button class="featured-card-btn" (click)="verDetallePopular(item.id)" i18n>
           Ver detalle
         </button>
       </div>

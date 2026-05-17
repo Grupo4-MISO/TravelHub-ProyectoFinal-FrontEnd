@@ -7,8 +7,8 @@
           </div>
           <div class="col-md-7">
             <div class="card-body">
-              <h5 class="card-title">{{ cargandoHotel ? 'Cargando hotel...' : (hotel?.nombre || 'Hotel no disponible') }}</h5>
-              <p class="card-text">{{ cargandoHotel ? 'Cargando dirección...' : (hotel?.direccion || 'Dirección no disponible') }} <br> {{ cargandoHotel ? 'Cargando país...' : (hotel?.pais || 'País no disponible') }}</p>
+              <h5 class="card-title">{{ hotelTitle }}</h5>
+              <p class="card-text">{{ hotelAddress }} <br> {{ hotelCountry }}</p>
             </div>
           </div>
         </div>
@@ -17,7 +17,7 @@
       <div class="col-12 col-md-4 ms-md-3 d-flex align-items-start">
         <div class="w-50">
           <div>
-            <label for="billingYear" class="form-label">Año</label>
+            <label for="billingYear" class="form-label" i18n>Año</label>
             <select id="billingYear" class="form-select" (change)="onDateChange()">
               <option value="2024">2024</option>
               <option value="2025">2025</option>
@@ -27,20 +27,20 @@
         </div>
         <div class="w-50 ms-3">
           <div class="mb-2">
-            <label for="billingMonth" class="form-label">Mes</label>
+            <label for="billingMonth" class="form-label" i18n>Mes</label>
             <select id="billingMonth" class="form-select" (change)="onDateChange()">
-              <option value="1">Enero</option>
-              <option value="2">Febrero</option>
-              <option value="3">Marzo</option>
-              <option value="4">Abril</option>
-              <option selected value="5">Mayo</option>
-              <option value="6">Junio</option>
-              <option value="7">Julio</option>
-              <option value="8">Agosto</option>
-              <option value="9">Septiembre</option>
-              <option value="10">Octubre</option>
-              <option value="11">Noviembre</option>
-              <option value="12">Diciembre</option>
+              <option value="1" i18n>Enero</option>
+              <option value="2" i18n>Febrero</option>
+              <option value="3" i18n>Marzo</option>
+              <option value="4" i18n>Abril</option>
+              <option selected value="5" i18n>Mayo</option>
+              <option value="6" i18n>Junio</option>
+              <option value="7" i18n>Julio</option>
+              <option value="8" i18n>Agosto</option>
+              <option value="9" i18n>Septiembre</option>
+              <option value="10" i18n>Octubre</option>
+              <option value="11" i18n>Noviembre</option>
+              <option value="12" i18n>Diciembre</option>
             </select>
           </div>
         </div>
@@ -51,9 +51,9 @@
   <div class="card-body">
     <div class="row align-items-center">
       <div class="col-md-6">
-        <h5 class="card-title">Ingreso total - {{ strMonth(mesActivo) }} {{ anoActivo }}</h5>
+        <h5 class="card-title" i18n>Ingreso total - {{ strMonth(mesActivo) }} {{ anoActivo }}</h5>
         <h4> {{ingresoMes | currency: '$'}} </h4>
-        <p> Total generado por reservas confirmadas</p>
+        <p i18n>Total generado por reservas confirmadas</p>
       </div>
       <div class="col-md-6 text-end">
         <div class="chart-wrapper">
@@ -68,10 +68,10 @@
 <table class="table table-striped" data-cy="billing-table">
   <thead>
     <tr class="table-secondary">
-      <th scope="col">Habitación</th>
-      <th scope="col">Reservas Confirmadas</th>
-      <th scope="col">Ingreso total</th>
-      <th scope="col">Porcentaje del total</th>
+      <th scope="col" i18n="billing|room">Habitación</th>
+      <th scope="col" i18n="billing|confirmed-reservations">Reservas Confirmadas</th>
+      <th scope="col" i18n="billing|total-income">Ingreso total</th>
+      <th scope="col" i18n="billing|total-percentage">Porcentaje del total</th>
     </tr>
   </thead>
   <tbody>

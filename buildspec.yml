@@ -21,20 +21,25 @@ phases:
 
   build:
     commands:
-      - echo "Construyendo la aplicación Angular..."
+      - echo "Construyendo la aplicación Angular (todos los idiomas)..."
       - ng build --configuration production
 
   post_build:
     commands:
       - echo "Desplegando archivos estáticos en S3..."
 
-      - aws s3 sync dist/travelhub/browser/ s3://$S3_BUCKET --delete --exclude "index.html" --exclude "*.html" --cache-control "public, max-age=31536000, immutable"
+      # Sincronizar cada locale a su carpeta en S3
+      - aws s3 sync dist/travelhub/browser/es/ s3://$S3_BUCKET/es/ --delete --exclude "index.html" --cache-control "public, max-age=31536000, immutable"
+      - aws s3 cp dist/travelhub/browser/es/index.html s3://$S3_BUCKET/es/index.html --cache-control "no-cache, no-store, must-revalidate"
 
-      - aws s3 cp dist/travelhub/browser/index.html s3://$S3_BUCKET/index.html --cache-control "no-cache, no-store, must-revalidate"
+      - aws s3 sync dist/travelhub/browser/en/ s3://$S3_BUCKET/en/ --delete --exclude "index.html" --cache-control "public, max-age=31536000, immutable"
+      - aws s3 cp dist/travelhub/browser/en/index.html s3://$S3_BUCKET/en/index.html --cache-control "no-cache, no-store, must-revalidate"
+
+      # Copiar assets compartidos (íconos, logo, favicon) a la raíz para rutas absolutas como /Logo.svg, /iconos/
+      - aws s3 sync dist/travelhub/browser/es/ s3://$S3_BUCKET/ --exclude "index.html" --exclude "*.js" --exclude "*.css" --exclude "*.map" --exclude "*.txt" --exclude "*.json" --cache-control "public, max-age=31536000, immutable"
 
       - echo "Invalidando caché de CloudFront..."
-
-      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/" "/index.html" "/*"
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 
 cache:
   paths:
