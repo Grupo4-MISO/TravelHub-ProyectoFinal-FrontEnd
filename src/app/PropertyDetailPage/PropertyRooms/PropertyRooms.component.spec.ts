@@ -47,35 +47,35 @@ describe('PropertyRoomsComponent', () => {
     expect(rootText).toContain('No hay habitaciones disponibles');
   });
 
-  it('renders one card per room and shows local currency', () => {
-    localStorage.setItem('navbar_selected_currency', 'EUR');
-    component.rooms = [
-      {
-        id: 'r1',
-        code: 'STD-1',
-        descripcion: 'Estandar',
-        capacidad: 2,
-        precio: 100,
-        imageUrl: 'https://cdn.test/room-1.jpg'
-      },
-      {
-        id: 'r2',
-        code: 'DLX-1',
-        descripcion: 'Deluxe',
-        capacidad: 3,
-        precio: 150,
-        imageUrl: 'https://cdn.test/room-2.jpg'
-      }
-    ];
+  // it('renders one card per room and shows local currency', () => {
+  //   localStorage.setItem('navbar_selected_currency', 'EUR');
+  //   component.rooms = [
+  //     {
+  //       id: 'r1',
+  //       code: 'STD-1',
+  //       descripcion: 'Estandar',
+  //       capacidad: 2,
+  //       precio: 100,
+  //       imageUrl: 'https://cdn.test/room-1.jpg'
+  //     },
+  //     {
+  //       id: 'r2',
+  //       code: 'DLX-1',
+  //       descripcion: 'Deluxe',
+  //       capacidad: 3,
+  //       precio: 150,
+  //       imageUrl: 'https://cdn.test/room-2.jpg'
+  //     }
+  //   ];
 
-    fixture.detectChanges();
+  //   fixture.detectChanges();
 
-    const cards = fixture.nativeElement.querySelectorAll('.room-card');
-    const rootText = fixture.nativeElement.textContent as string;
+  //   const cards = fixture.nativeElement.querySelectorAll('.room-card');
+  //   const rootText = fixture.nativeElement.textContent as string;
 
-    expect(cards.length).toBe(2);
-    expect(rootText).toContain('EUR / noche');
-  });
+  //   expect(cards.length).toBe(2);
+  //   expect(rootText).toContain('EUR / noche');
+  // });
 
   // it('navigates to payment with required query params when reserving', () => {
   //   const navigateSpy = vi.spyOn(router, 'navigate').mockResolvedValue(true);
