@@ -1,11 +1,11 @@
 <section class="container py-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2 class="m-0">Tarifas creadas</h2>
+    <h2 class="m-0" data-cy="tarifas-page">Tarifas creadas</h2>
     <div>
       @if (userRole === 'Accomodation') {
-        <a class="btn btn-primary me-2" [routerLink]="['/tarifas','new']">Nueva tarifa</a>
+        <a class="btn btn-primary me-2" data-cy="new-tarifa-button" [routerLink]="['/tarifas','new']">Nueva tarifa</a>
       }
-      <button class="btn btn-outline-secondary" (click)="goBack()">Volver</button>
+      <button class="btn btn-outline-secondary" data-cy="volver-tarifa-button" (click)="goBack()">Volver</button>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
               <div class="text-success small">Descuento: {{ tarifa.valor_descuento_total }} {{ tarifa.moneda }}</div>
             }
             <div class="mt-2">
-              <a class="btn btn-sm btn-outline-primary" [routerLink]="['/tarifas','edit', tarifa.id]">Editar</a>
+              <a class="btn btn-sm btn-outline-primary" data-cy="editar-tarifa-button" [routerLink]="['/tarifas','edit', tarifa.id]">Editar</a>
             </div>
           </div>
         </div>

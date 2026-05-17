@@ -16,9 +16,9 @@
 
     @if(modo === 'reservas') {
       <div class="col-md-3 d-flex flex-column align-items-end gap-2">
-        <button class="btn" id="botonFiltros" (click)="mostrar_filtros()">Buscar Reservas</button>
+        <button class="btn" id="botonFiltros" data-cy="canvas-buscar" (click)="mostrar_filtros()">Buscar Reservas</button>
         @if(filtroActivo) {
-          <button class="btn" id="botonRemoverFiltros" (click)="removerFiltros()">Remover Filtros</button>  
+          <button class="btn" id="botonRemoverFiltros" data-cy="canvas-remover-filtros" (click)="removerFiltros()">Remover Filtros</button>  
         }
       </div>
     }
@@ -169,7 +169,8 @@
       class="form-control"
       id="codigo"
       list="listaCodigos"
-      placeholder="Escribe el código de reserva">
+      placeholder="Escribe el código de reserva"
+      data-cy="codigo_reserva">
 
     <datalist id="listaCodigos">
       @for (reserva of reservas; track reserva.public_id) {
@@ -185,7 +186,8 @@
       class="form-control"
       id="habitacion"
       list="listaHabitaciones"
-      placeholder="Escribe el número de habitación">
+      placeholder="Escribe el número de habitación"
+      data-cy="campo-habitaciones">
     <datalist id="listaHabitaciones">
       @for (room of habitaciones; track room.id_visual) {
         <option [value]="room.id_visual"></option>
@@ -230,11 +232,12 @@
       <option selected>Selecciona un estado</option>
       <option value="confirmada">Confirmada</option>
       <option value="pendiente">Pendiente</option>
+      <option value="completada">Completada</option>
     </select>
   </div>
-  <p id="resultadoFiltros"></p>
-  <button class="btn btn-primary mb-2" (click)="aplicarFiltros()">Aplicar Filtros</button>
-  <button class="btn btn-secondary" (click)="ocultar_filtros()">Volver</button>
+  <p id="resultadoFiltros" data-cy="resultados-filtros"></p>
+  <button class="btn btn-primary mb-2" data-cy="canvas-filtros" (click)="aplicarFiltros()">Aplicar Filtros</button>
+  <button class="btn btn-secondary" data-cy="canvas-volver" (click)="ocultar_filtros()">Volver</button>
 </div>
 
 
