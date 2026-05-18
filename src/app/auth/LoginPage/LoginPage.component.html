@@ -9,7 +9,7 @@
     </section>
     <section class="login-card" aria-labelledby="login-title">
       <img src="/Logo.svg" alt="Logo" class="logo" routerLink="/">
-      <p i18n id="login-title" class="login-subtitle">Inicia sesion para continuar</p>
+      <h1 i18n id="login-title" class="visually-hidden">Inicia sesion para continuar</h1>
       @if (error) {
       <p class="login-error" role="alert" aria-live="polite">{{ error }}</p>
       }

@@ -48,12 +48,12 @@ nav {
 
 .btn-brand-secondary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #f06d51;
-  --bs-btn-border-color: #f06d51;
-  --bs-btn-hover-color: #111827;
-  --bs-btn-hover-bg: #D95E45;
-  --bs-btn-hover-border-color: #D95E45;
-  --bs-btn-active-color: #111827;
+  --bs-btn-bg: #c94d2e;
+  --bs-btn-border-color: #c94d2e;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #b33d1f;
+  --bs-btn-hover-border-color: #b33d1f;
+  --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #f59e0b;
   --bs-btn-active-border-color: #f59e0b;
 }

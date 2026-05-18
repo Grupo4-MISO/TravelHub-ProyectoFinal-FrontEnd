@@ -1,0 +1,42 @@
+https://dpyrs6tuvj15e.cloudfront.net/es/
+
+PROBLEMAS:
+
+1. Garantiza que el contraste entre colores de primer plano y fondo cumple los límites de la ratio para contraste WCAG 2 AA:
+	* Para resolver este problema, es necesario solucionar al menos (1) de los siguientes problemas:
+    		El elemento tiene un contraste de color insuficiente de 2.99 (color de primer plano: #ffffff, color de fondo: #f06d51, tamaño de fuente: 		12.0pt (16px), grosor de fuente: normal). Ratio de contraste esperado: 4.5:1
+
+2. Garantiza que los elementos <img> tienen texto alternativo o un rol de none o presentation:
+	* Para resolver este problema, es necesario solucionar al menos (1) de los siguientes problemas:
+    		El elemento no tiene un atributo alt
+    		El atributo aria-label no existe o está vacío
+    		El atributo aria-labelledby no existe, hace referencia a elementos inexistentes o hace referencia a elementos vacíos
+    		El elemento no tiene atributo title o el atributo title está vacío
+    		Element's default semantics were not overridden with role="none" or role="presentation"
+
+3. Garantiza que cada elemento de formulario tiene una etiqueta:
+	* Para resolver este problema, es necesario solucionar al menos (1) de los siguientes problemas:
+    		El elemento de formulario no tiene un <label> implícito ('envuelto')
+    		El elemento de formulario no tiene un <label> explícito
+    		El atributo aria-label no existe o está vacío
+    		El atributo aria-labelledby no existe, hace referencia a elementos inexistentes o hace referencia a elementos vacíos
+    		El elemento no tiene atributo title o el atributo title está vacío
+    		Element's default semantics were not overridden with role="none" or role="presentation"
+
+4. Ensure select element has an accessible name:
+	* Para resolver este problema, es necesario solucionar al menos (1) de los siguientes problemas:
+    		El elemento de formulario no tiene un <label> implícito ('envuelto')
+    		El elemento de formulario no tiene un <label> explícito
+    		El atributo aria-label no existe o está vacío
+    		El atributo aria-labelledby no existe, hace referencia a elementos inexistentes o hace referencia a elementos vacíos
+    		El elemento no tiene atributo title o el atributo title está vacío
+    		Element's default semantics were not overridden with role="none" or role="presentation"
+
+5. Garantizar que la página, o al menos uno de sus marcos, contiene un encabezado de nivel 1:
+	* Para solucionar este problema, debes corregir lo siguiente:
+		La página debe tener un encabezado de nivel 1
+
+6. Garantiza que todo el contenido de la página está incluido en puntos de referencia:
+	* Para solucionar este problema, debes corregir lo siguiente:
+		La página tiene contenido no incluido en puntos de referencia
+

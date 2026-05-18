@@ -3,9 +3,10 @@
 
   <!-- Ciudad -->
   <div class="field autocomplete">
-    <label i18n>Destino</label>
+    <label i18n for="search-ciudad">Destino</label>
 
     <input 
+      id="search-ciudad"
       type="text" 
       formControlName="ciudad"
       (focus)="mostrarTodas()"
@@ -21,7 +22,7 @@
         <div class="item-content">
           
           <!-- Icono -->
-          <img src="/iconos/location.svg" class="dropdown-icon" alt="location">
+          <img src="/iconos/location.svg" class="dropdown-icon" alt="" role="presentation">
 
           <!-- Texto -->
           <div class="text">
@@ -41,8 +42,9 @@
 
   <!-- Check-in -->
   <div class="field">
-    <label i18n>Check-In</label>
+    <label i18n for="search-checkin">Check-In</label>
     <input
+      id="search-checkin"
       data-cy="check-in"
       type="date" 
       formControlName="check_in"
@@ -55,8 +57,9 @@
 
   <!-- Check-out -->
   <div class="field">
-    <label i18n>Check-Out</label>
+    <label i18n for="search-checkout">Check-Out</label>
     <input
+      id="search-checkout"
       data-cy="check-out" 
       type="date" 
       formControlName="check_out"
@@ -69,8 +72,9 @@
 
   <!-- Huéspedes -->
   <div class="field">
-    <label i18n>Huéspedes</label>
+    <label i18n for="search-huespedes">Huéspedes</label>
     <input 
+      id="search-huespedes"
       data-cy="guests"
       type="number" 
       formControlName="capacidad"

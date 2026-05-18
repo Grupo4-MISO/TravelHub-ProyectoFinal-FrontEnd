@@ -25,13 +25,13 @@
 
             <div class="row g-3 mt-2">
               <div class="col-md-4">
-                <label class="form-label" i18n>Nombre de la tarifa</label>
-                <input class="form-control" placeholder="Ej. Tarifa Flexible" data-cy="tarifa-nombre" [(ngModel)]="tarifa.nombre" name="nombre" i18n-placeholder />
+                <label class="form-label" i18n for="tarifa-nombre">Nombre de la tarifa</label>
+                <input id="tarifa-nombre" class="form-control" placeholder="Ej. Tarifa Flexible" data-cy="tarifa-nombre" [(ngModel)]="tarifa.nombre" name="nombre" i18n-placeholder />
               </div>
 
               <div class="col-md-4">
-                <label class="form-label" i18n>Categoría de habitación</label>
-                <select class="form-select" [(ngModel)]="tarifa.categoria_habitacion" name="categoria_habitacion">
+                <label class="form-label" i18n for="tarifa-categoria">Categoría de habitación</label>
+                <select id="tarifa-categoria" class="form-select" [(ngModel)]="tarifa.categoria_habitacion" name="categoria_habitacion">
                   @for (categoria of categorias; track categoria) {
                     <option [value]="categoria">{{ categoria }}</option>
                   }
@@ -39,13 +39,13 @@
               </div>
 
               <div class="col-md-2">
-                <label class="form-label" i18n>Valor por noche</label>
-                <input class="form-control" type="number" data-cy="tarifa-valor-base" [(ngModel)]="tarifa.valor_base" name="valor_base" />
+                <label class="form-label" i18n for="tarifa-valor-base">Valor por noche</label>
+                <input id="tarifa-valor-base" class="form-control" type="number" data-cy="tarifa-valor-base" [(ngModel)]="tarifa.valor_base" name="valor_base" />
               </div>
 
               <div class="col-md-2">
-                <label class="form-label" i18n>Moneda</label>
-                <select class="form-select" [(ngModel)]="tarifa.moneda" name="moneda">
+                <label class="form-label" i18n for="tarifa-moneda">Moneda</label>
+                <select id="tarifa-moneda" class="form-select" [(ngModel)]="tarifa.moneda" name="moneda">
                   @for (moneda of monedas; track moneda) {
                     <option [value]="moneda">{{ moneda }}</option>
                   }
@@ -55,12 +55,12 @@
 
             <div class="row g-3 mt-3">
               <div class="col-md-6">
-                <label class="form-label" i18n>Identificador</label>
-                <input class="form-control" placeholder="Ej. TAR-EST-001" data-cy="tarifa-identificador" [(ngModel)]="tarifa.identificador" name="identificador" required i18n-placeholder />
+                <label class="form-label" i18n for="tarifa-identificador">Identificador</label>
+                <input id="tarifa-identificador" class="form-control" placeholder="Ej. TAR-EST-001" data-cy="tarifa-identificador" [(ngModel)]="tarifa.identificador" name="identificador" required i18n-placeholder />
               </div>
               <div class="col-md-6">
-                <label class="form-label" i18n>Descripción</label>
-                <input class="form-control" placeholder="Descripción breve" data-cy="tarifa-descripcion" [(ngModel)]="tarifa.descripcion" name="descripcion" i18n-placeholder />
+                <label class="form-label" i18n for="tarifa-descripcion">Descripción</label>
+                <input id="tarifa-descripcion" class="form-control" placeholder="Descripción breve" data-cy="tarifa-descripcion" [(ngModel)]="tarifa.descripcion" name="descripcion" i18n-placeholder />
               </div>
             </div>
 
@@ -69,12 +69,12 @@
             <h5 i18n>Período de vigencia</h5>
             <div class="row g-3 mt-2">
               <div class="col-md-6">
-                <label class="form-label" i18n>Fecha de inicio</label>
-                <input class="form-control" type="date" data-cy="tarifa-vigencia-inicio" [(ngModel)]="tarifa.vigencia_inicio" name="vigencia_inicio" />
+                <label class="form-label" i18n for="tarifa-vigencia-inicio">Fecha de inicio</label>
+                <input id="tarifa-vigencia-inicio" class="form-control" type="date" data-cy="tarifa-vigencia-inicio" [(ngModel)]="tarifa.vigencia_inicio" name="vigencia_inicio" />
               </div>
               <div class="col-md-6">
-                <label class="form-label" i18n>Fecha de finalización</label>
-                <input class="form-control" type="date" data-cy="tarifa-vigencia-fin" [(ngModel)]="tarifa.vigencia_fin" name="vigencia_fin" />
+                <label class="form-label" i18n for="tarifa-vigencia-fin">Fecha de finalización</label>
+                <input id="tarifa-vigencia-fin" class="form-control" type="date" data-cy="tarifa-vigencia-fin" [(ngModel)]="tarifa.vigencia_fin" name="vigencia_fin" />
               </div>
             </div>
 
@@ -101,12 +101,12 @@
                 <h6 i18n>Nuevo descuento</h6>
                 <div class="row g-3 mt-2">
                   <div class="col-md-4">
-                    <label class="form-label" i18n>Nombre del descuento</label>
-                    <input class="form-control" placeholder="Ej. Promo verano" data-cy="descuento-nombre" [(ngModel)]="descuentoForm.nombre" name="descuentoNombre" i18n-placeholder />
+                    <label class="form-label" i18n for="descuento-nombre">Nombre del descuento</label>
+                    <input id="descuento-nombre" class="form-control" placeholder="Ej. Promo verano" data-cy="descuento-nombre" [(ngModel)]="descuentoForm.nombre" name="descuentoNombre" i18n-placeholder />
                   </div>
                   <div class="col-md-3">
-                    <label class="form-label" i18n>Porcentaje (%)</label>
-                    <input class="form-control" type="number" data-cy="descuento-porcentaje" [(ngModel)]="descuentoForm.porcentaje" name="descuentoPorcentaje" />
+                    <label class="form-label" i18n for="descuento-porcentaje">Porcentaje (%)</label>
+                    <input id="descuento-porcentaje" class="form-control" type="number" data-cy="descuento-porcentaje" [(ngModel)]="descuentoForm.porcentaje" name="descuentoPorcentaje" />
                   </div>
                   <div class="col-md-5">
                     <label class="form-check-label" i18n>
@@ -118,12 +118,12 @@
 
                 <div class="row g-3 mt-2">
                   <div class="col-md-6">
-                    <label class="form-label" i18n>Fecha de inicio</label>
-                    <input class="form-control" type="date" data-cy="descuento-vigencia-inicio" [(ngModel)]="descuentoForm.vigencia_inicio" name="descuentoInicio" />
+                    <label class="form-label" i18n for="descuento-vigencia-inicio">Fecha de inicio</label>
+                    <input id="descuento-vigencia-inicio" class="form-control" type="date" data-cy="descuento-vigencia-inicio" [(ngModel)]="descuentoForm.vigencia_inicio" name="descuentoInicio" />
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label" i18n>Fecha de finalización</label>
-                    <input class="form-control" type="date" data-cy="descuento-vigencia-fin" [(ngModel)]="descuentoForm.vigencia_fin" name="descuentoFin" />
+                    <label class="form-label" i18n for="descuento-vigencia-fin">Fecha de finalización</label>
+                    <input id="descuento-vigencia-fin" class="form-control" type="date" data-cy="descuento-vigencia-fin" [(ngModel)]="descuentoForm.vigencia_fin" name="descuentoFin" />
                   </div>
                 </div>
 
