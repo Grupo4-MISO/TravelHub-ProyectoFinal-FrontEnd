@@ -42,7 +42,7 @@ export class PropertyDetailService {
   }
 
   getPublicTarifas(hotelId?: string): Observable<Tarifa[]> {
-    let url = `${this.tarifasUrl}/tarifas/publicas`;
+    let url = `${this.tarifasUrl}/api/v1/tarifas/publicas`;
     if (hotelId) {
       const q = `hotel_ids=${encodeURIComponent(hotelId)}`;
       url = `${url}?${q}`;
