@@ -1,0 +1,124 @@
+.accessibility-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.accessibility-trigger {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.accessibility-trigger:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.accessibility-panel {
+  position: absolute;
+  bottom: 68px;
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.accessibility-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.accessibility-close:hover {
+  color: #000;
+}
+
+.accessibility-title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.accessibility-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.accessibility-toggle:last-of-type {
+  border-bottom: none;
+}
+
+.accessibility-toggle-label {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+  padding-right: 12px;
+}
+
+.accessibility-toggle-switch {
+  width: 40px;
+  height: 22px;
+  background: #ccc;
+  border-radius: 11px;
+  position: relative;
+  transition: background 0.25s;
+  flex-shrink: 0;
+}
+
+.accessibility-toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.accessibility-toggle-switch.active {
+  background: #1a73e8;
+}
+
+.accessibility-toggle-switch.active::after {
+  transform: translateX(18px);
+}
+
+.font-size-level {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a73e8;
+  background: #e8f0fe;
+  padding: 2px 10px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}

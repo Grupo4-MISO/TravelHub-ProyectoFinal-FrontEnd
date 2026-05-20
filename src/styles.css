@@ -16,3 +16,210 @@
 .travelhub-toast-message {
 	font-size: 0.9rem;
 }
+
+.accessibility-font-level-1,
+.accessibility-font-level-1 * {
+	font-size: 1.125rem !important;
+}
+
+.accessibility-font-level-1 h1 { font-size: 2rem !important; }
+.accessibility-font-level-1 h2 { font-size: 1.625rem !important; }
+.accessibility-font-level-1 h3 { font-size: 1.375rem !important; }
+
+.accessibility-font-level-2,
+.accessibility-font-level-2 * {
+	font-size: 1.25rem !important;
+}
+
+.accessibility-font-level-2 h1 { font-size: 2.125rem !important; }
+.accessibility-font-level-2 h2 { font-size: 1.75rem !important; }
+.accessibility-font-level-2 h3 { font-size: 1.5rem !important; }
+
+.accessibility-high-contrast {
+	background-color: #1e1e1e !important;
+	color: #e0e0e0 !important;
+}
+
+.accessibility-high-contrast * {
+	color: #e0e0e0 !important;
+}
+
+.accessibility-widget .accessibility-title { color: #222 !important; }
+.accessibility-widget .accessibility-toggle-label { color: #333 !important; }
+.accessibility-widget .font-size-level { color: #1a73e8 !important; }
+.accessibility-widget .accessibility-close { color: #555 !important; }
+.accessibility-widget .accessibility-close:hover { color: #000 !important; }
+.accessibility-widget .accessibility-trigger { color: #fff !important; }
+
+.accessibility-high-contrast a { color: #6cb4f8 !important; }
+.accessibility-high-contrast .star { color: #555555 !important; }
+.accessibility-high-contrast .star.filled { color: #f5b042 !important; }
+.accessibility-high-contrast .price-amount,
+.accessibility-high-contrast .amount,
+.accessibility-high-contrast .price-period,
+.accessibility-high-contrast .period { color: #69c4d8 !important; }
+.accessibility-high-contrast .room-badge,
+.accessibility-high-contrast .bed-info { color: #8ab4f8 !important; }
+.accessibility-high-contrast .error-message,
+.accessibility-high-contrast .login-error,
+.accessibility-high-contrast .status-error,
+.accessibility-high-contrast .field-feedback,
+.accessibility-high-contrast .availability-error-title,
+.accessibility-high-contrast .error-detail { color: #f87171 !important; }
+.accessibility-high-contrast .success-message,
+.accessibility-high-contrast .feedback.success,
+.accessibility-high-contrast .success-icon { color: #34d399 !important; }
+.accessibility-high-contrast .btn-warning { color: #000000 !important; }
+.accessibility-high-contrast .btn-primary,
+.accessibility-high-contrast .btn-danger,
+.accessibility-high-contrast .btn-success,
+.accessibility-high-contrast .login-button,
+.accessibility-high-contrast .featured-card-btn,
+.accessibility-high-contrast .search-btn,
+.accessibility-high-contrast .confirm-btn,
+.accessibility-high-contrast .btn-brand-primary,
+.accessibility-high-contrast .btn-brand-secondary,
+.accessibility-high-contrast #botonFiltros,
+.accessibility-high-contrast #botonRemoverFiltros { color: #ffffff !important; }
+
+.accessibility-high-contrast .reservation-label { color: #0284c7 !important; }
+.accessibility-high-contrast .price { color: #0f5be8 !important; }
+.accessibility-high-contrast .open-map-link { color: #0f5be8 !important; }
+.accessibility-high-contrast .amenity-icon { color: #0f5be8 !important; }
+
+.accessibility-high-contrast .navbar-selectors,
+.accessibility-high-contrast .search-bar,
+.accessibility-high-contrast .featured-card,
+.accessibility-high-contrast .hotel-card,
+.accessibility-high-contrast .info-panel,
+.accessibility-high-contrast .gallery-panel,
+.accessibility-high-contrast .reviews-section,
+.accessibility-high-contrast .review-card,
+.accessibility-high-contrast .amenities-block,
+.accessibility-high-contrast .map-panel,
+.accessibility-high-contrast .availability-section,
+.accessibility-high-contrast .availability-item,
+.accessibility-high-contrast .room-card,
+.accessibility-high-contrast .checkin-card,
+.accessibility-high-contrast .qr-card,
+.accessibility-high-contrast .qr-code-wrapper,
+.accessibility-high-contrast .payment-card,
+.accessibility-high-contrast .payment-page,
+.accessibility-high-contrast .billingContainer,
+.accessibility-high-contrast .containterDashboard,
+.accessibility-high-contrast .results-container,
+.accessibility-high-contrast .section-card,
+.accessibility-high-contrast .tarifas-card,
+.accessibility-high-contrast .method-card,
+.accessibility-high-contrast .rate-card,
+.accessibility-high-contrast .rate-title,
+.accessibility-high-contrast .rate-row.total,
+.accessibility-high-contrast .reservation-box,
+.accessibility-high-contrast .details-card,
+.accessibility-high-contrast .user-icon,
+.accessibility-high-contrast .header-filtrado,
+.accessibility-high-contrast .availability-error,
+.accessibility-high-contrast .state-message.error,
+.accessibility-high-contrast .dropdown,
+.accessibility-high-contrast .dropdown-menu,
+.accessibility-high-contrast .dropdown-item,
+.accessibility-high-contrast .card,
+.accessibility-high-contrast .card-body,
+.accessibility-high-contrast .modal-content,
+.accessibility-high-contrast .offcanvas,
+.accessibility-high-contrast .offcanvas-body,
+.accessibility-high-contrast .section-title,
+.accessibility-high-contrast .grid-row {
+	background-color: #2a2a2a !important;
+	color: #e0e0e0 !important;
+	border-color: #404040 !important;
+}
+
+.accessibility-high-contrast .checkin-page {
+	background: #2a2a2a !important;
+}
+
+.accessibility-high-contrast .address-block {
+	background-color: #2a2a2a !important;
+	color: #e0e0e0 !important;
+}
+
+.accessibility-high-contrast .amenity-chip {
+	background-color: #333333 !important;
+	color: #8ab4f8 !important;
+	border-color: #404040 !important;
+}
+
+.accessibility-high-contrast .login-card,
+.accessibility-high-contrast .login-error {
+	background-color: #2a2a2a !important;
+	color: #e0e0e0 !important;
+	border-color: #404040 !important;
+}
+
+.accessibility-high-contrast input,
+.accessibility-high-contrast select,
+.accessibility-high-contrast textarea,
+.accessibility-high-contrast option,
+.accessibility-high-contrast .form-control,
+.accessibility-high-contrast .form-select {
+	background-color: #333333 !important;
+	color: #e0e0e0 !important;
+	border-color: #404040 !important;
+}
+
+.accessibility-high-contrast input::placeholder {
+	color: #808080 !important;
+}
+
+.accessibility-high-contrast .switch {
+	background-color: #2a2a2a !important;
+	border-color: #404040 !important;
+}
+
+.accessibility-high-contrast .switch button.active {
+	background-color: #0d6efd !important;
+	color: #ffffff !important;
+}
+
+.accessibility-high-contrast .table,
+.accessibility-high-contrast .table-striped,
+.accessibility-high-contrast .table-secondary,
+.accessibility-high-contrast .table-info {
+	background-color: #2a2a2a !important;
+	color: #e0e0e0 !important;
+}
+
+.accessibility-high-contrast .table td,
+.accessibility-high-contrast .table th {
+	background-color: #2a2a2a !important;
+	color: #e0e0e0 !important;
+	border-color: #404040 !important;
+}
+
+.accessibility-high-contrast .footer {
+	background-color: #2a2a2a !important;
+	color: #e0e0e0 !important;
+}
+
+.accessibility-high-contrast .featured-card,
+.accessibility-high-contrast .hotel-card,
+.accessibility-high-contrast .info-panel,
+.accessibility-high-contrast .gallery-panel,
+.accessibility-high-contrast .reviews-section,
+.accessibility-high-contrast .map-panel,
+.accessibility-high-contrast .availability-section,
+.accessibility-high-contrast .room-card,
+.accessibility-high-contrast .checkin-card,
+.accessibility-high-contrast .qr-card,
+.accessibility-high-contrast .search-bar,
+.accessibility-high-contrast .navbar-selectors,
+.accessibility-high-contrast .payment-card,
+.accessibility-high-contrast .section-card {
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+.accessibility-cursor-large,
+.accessibility-cursor-large * {
+	cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij48cG9seWdvbiBwb2ludHM9IjQsNCA0LDM4IDE0LDI4IDIyLDQyIDI4LDM4IDIwLDI2IDQwLDI2IiBmaWxsPSJibGFjayIgc3Ryb2tlPSIjY2NjIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=") 4 4, auto !important;
+}

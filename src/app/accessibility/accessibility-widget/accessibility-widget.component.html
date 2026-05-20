@@ -1,0 +1,29 @@
+<div class="accessibility-widget">
+  <button class="accessibility-trigger" (click)="toggleMenu()" aria-label="Opciones de accesibilidad">
+    ♿
+  </button>
+
+  @if (menuOpen) {
+    <div class="accessibility-panel">
+      <button class="accessibility-close" (click)="closeMenu()" aria-label="Cerrar menú de accesibilidad">
+        ✕
+      </button>
+      <h3 class="accessibility-title">Accesibilidad</h3>
+
+      <label class="accessibility-toggle" (click)="cycleFontSize()">
+        <span class="accessibility-toggle-label">Tamaño de letra</span>
+        <span class="font-size-level">{{ fontSizeLabels[(service.fontSize$ | async) ?? 0] }}</span>
+      </label>
+
+      <label class="accessibility-toggle" (click)="service.toggleContrast()">
+        <span class="accessibility-toggle-label">Contraste oscuro</span>
+        <span class="accessibility-toggle-switch" [class.active]="(service.contrast$ | async)"></span>
+      </label>
+
+      <label class="accessibility-toggle" (click)="service.toggleCursor()">
+        <span class="accessibility-toggle-label">Aumentar tamaño del cursor</span>
+        <span class="accessibility-toggle-switch" [class.active]="(service.cursor$ | async)"></span>
+      </label>
+    </div>
+  }
+</div>

@@ -15,6 +15,7 @@ import { ResultsPageModule } from './ResultsPage/ResultsPage.module';
 import { FooterModule } from './footer/footer.module';
 import { provideToastr } from 'ngx-toastr';
 import { BillingPageComponent } from './billingPage/billingPage.component';
+import { AccessibilityWidgetComponent } from './accessibility/accessibility-widget/accessibility-widget.component';
 
 export function tokenGetter(): string | null {
   return sessionStorage.getItem('token');
@@ -23,7 +24,8 @@ export function tokenGetter(): string | null {
 @NgModule({
   declarations: [			
     App,
-      BillingPageComponent
+      BillingPageComponent,
+      AccessibilityWidgetComponent
    ],
   imports: [
     BrowserModule,
