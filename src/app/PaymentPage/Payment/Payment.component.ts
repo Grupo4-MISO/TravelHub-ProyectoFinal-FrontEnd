@@ -14,6 +14,7 @@ type PaymentReservationData = {
   readonly propertyNombre: string;
   readonly pais: string;
   readonly precio: string;
+  readonly descuento?: string;
   readonly capacidad: string;
 };
 
@@ -81,6 +82,12 @@ export class PaymentComponent implements OnInit {
     return Number.isFinite(parsed) ? parsed : 0;
   });
 
+  readonly descuentoNumerico = computed<number>(() => {
+    const descuento = this.reservationData()?.descuento;
+    const parsed = Number(descuento);
+    return Number.isFinite(parsed) ? parsed : 0;
+  });
+
   ngOnInit(): void {
     const reservationDataFromQuery = this.readReservationDataFromQueryParams();
 
@@ -142,6 +149,7 @@ export class PaymentComponent implements OnInit {
     const checkIn = this.getQueryParamWithFallback(queryParamMap, ['check_in', 'checkIn']);
     const checkOut = this.getQueryParamWithFallback(queryParamMap, ['check_out', 'checkOut']);
     const precio = this.getQueryParamWithFallback(queryParamMap, ['precio']);
+    const descuento = this.getQueryParamWithFallback(queryParamMap, ['descuento']);
     const capacidad = this.getQueryParamWithFallback(queryParamMap, ['capacidad']);
 
     const missingFields = this.getMissingFields({
@@ -163,6 +171,8 @@ export class PaymentComponent implements OnInit {
       return null;
     }
 
+    console.debug('Payment.readReservationDataFromQueryParams: parsed', { habitacionId, roomDescripcion, propiedadId, propertyNombre, pais, checkIn, checkOut, precio, descuento, capacidad });
+
     return {
       habitacionId: habitacionId!,
       roomDescripcion: roomDescripcion!,
@@ -172,6 +182,7 @@ export class PaymentComponent implements OnInit {
       checkIn: checkIn!,
       checkOut: checkOut!,
       precio: precio!,
+      descuento: descuento || '0',
       capacidad: capacidad!
     };
   }
