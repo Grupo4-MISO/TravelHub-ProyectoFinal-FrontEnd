@@ -13,12 +13,28 @@ export class PaymentRateComponent {
   readonly checkIn = input('');
   readonly checkOut = input('');
   readonly precio = input(0);
-  readonly descuento = input(0.1);
+  readonly descuento = input(0);
   readonly pais = input('CO');
 
   readonly loading = signal(false);
   readonly errorMessage = signal('');
   readonly rate = signal<TarifaReservaResponse | null>(null);
+  readonly descuentoFraccion = computed<number>(() => {
+    const precio = this.precio();
+    const descuento = this.descuento();
+    const totalBase = precio * this.totalNoches();
+
+    if (totalBase <= 0) {
+      return 0;
+    }
+
+    const fraccion = descuento / totalBase;
+    if (!Number.isFinite(fraccion)) {
+      return 0;
+    }
+
+    return Math.min(1, Math.max(0, Number(fraccion.toFixed(4))));
+  });
   readonly totalNoches = computed<number>(() => {
     const checkIn = this.checkIn();
     const checkOut = this.checkOut();
@@ -45,7 +61,10 @@ export class PaymentRateComponent {
       const checkOut = this.checkOut();
       const precio = this.precio();
       const descuento = this.descuento();
+      const descuentoFraccion = this.descuentoFraccion();
       const pais = this.pais();
+
+      console.debug('PaymentRate.effect: inputs', { checkIn, checkOut, precio, descuento, descuentoFraccion, pais, totalNoches: this.totalNoches() });
 
       if (!checkIn || !checkOut || !pais || precio <= 0) {
         this.rate.set(null);
@@ -61,12 +80,13 @@ export class PaymentRateComponent {
           check_in: checkIn,
           check_out: checkOut,
           precio,
-          descuento,
+          descuento: descuentoFraccion,
           pais
         })
         .subscribe({
           next: (rate) => {
             this.rate.set(rate);
+            console.debug('PaymentRate: received rate', rate);
             this.loading.set(false);
           },
           error: () => {
